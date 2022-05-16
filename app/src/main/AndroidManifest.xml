@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rentme" >
         <activity
-            android:name=".TypesActivity"
+            android:name=".ui.types.TypesActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
