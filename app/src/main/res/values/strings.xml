@@ -4,6 +4,10 @@
     <string name="str_home">Home</string>
     <string name="str_upload">Upload</string>
     <string name="str_profile">Profile</string>
-
+//sherzod
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_language">Choose language</string>
+    <string name="uzbek_language">Uzbek language</string>
+    <string name="english_language">English language</string>
+    <string name="russian_language">Russian language</string>
 </resources>
