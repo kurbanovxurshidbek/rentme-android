@@ -12,6 +12,12 @@
             android:name=".ui.types.TypesActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.details.DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.result.ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>

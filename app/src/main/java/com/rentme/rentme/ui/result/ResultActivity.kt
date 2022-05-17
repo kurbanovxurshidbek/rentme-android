@@ -1,4 +1,4 @@
-package com.rentme.rentme.ui.types
+package com.rentme.rentme.ui.result
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
