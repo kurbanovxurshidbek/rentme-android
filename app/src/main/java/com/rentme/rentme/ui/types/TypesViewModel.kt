@@ -1,4 +1,6 @@
 package com.rentme.rentme.ui.types
 
-class TypesViewModel {
+import androidx.lifecycle.ViewModel
+
+class TypesViewModel: ViewModel() {
 }
