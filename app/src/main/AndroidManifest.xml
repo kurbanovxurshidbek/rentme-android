@@ -9,6 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rentme">
         <activity
+            android:name=".InformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LogInActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.update.UpdateActivity"
             android:exported="false" />
         <activity

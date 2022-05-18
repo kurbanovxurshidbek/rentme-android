@@ -12,4 +12,10 @@
     <string name="str_russian_language">Russian language</string>
     <string name="str_phone_number">PHONE NUMBER</string>
     <string name="str_logIn_update">Log In</string>
+    <string name="str_continue">Continue</string>
+    <string name="str_send_sms">Send SmS</string>
+    <string name="str_information">Fill information</string>
+    <string name="str_first_name">Firstname</string>
+    <string name="str_last_name">Lastname</string>
+    <string name="str_email">Email</string>
 </resources>

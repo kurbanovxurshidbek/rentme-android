@@ -5,10 +5,19 @@
       <map>
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/border_language_localization.xml" value="0.171" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_background_rounded_border.xml" value="0.171" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/login_border_and_background.xml" value="0.1575" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_details.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_information.xml" value="0.72" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_localization.xml" value="0.2" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_log_in.xml" value="0.264" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_splash.xml" value="0.14385964912280702" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_update.xml" value="0.3233173076923077" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_home.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_upload.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_main_adds.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_result_layout.xml" value="0.2490740740740741" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_types_layout.xml" value="0.18020833333333333" />
       </map>
     </option>
   </component>
@@ -21,7 +30,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.4" />
+        <option name="scale" value="0.536" />
       </ProjectState>
     </option>
   </component>
