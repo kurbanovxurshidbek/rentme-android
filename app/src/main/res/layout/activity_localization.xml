@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:layout_marginHorizontal="16dp"
+    tools:context=".ui.localization.LocalizationActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="RentMe"
+        android:textColor="#22215B"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".35" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="75dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/str_choose_language"
+            android:textColor="#22215B"
+            android:textSize="25sp"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_language_localization"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="35dp"
+                android:src="@drawable/flag_uzb"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_uzbek_language"
+                android:textColor="#22215B"
+                android:padding="10dp"
+                android:textStyle=""
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_language_localization"
+            android:layout_marginTop="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="35dp"
+                android:src="@drawable/flag_english"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_english_language"
+                android:textColor="#22215B"
+
+                android:padding="10dp"
+                android:textStyle=""
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_language_localization"
+            android:layout_marginTop="25dp"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="35dp"
+                android:src="@drawable/flag_rus"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_russian_language"
+                android:textColor="#22215B"
+                android:padding="10dp"
+                android:textStyle=""
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
