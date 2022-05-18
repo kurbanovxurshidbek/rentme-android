@@ -1,4 +1,7 @@
 package com.rentme.rentme.model
 
-class Types {
-}
+data class Types(
+    var carImage: Int,
+    var carName:String,
+    var carsNumber:String
+)

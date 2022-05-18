@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="320dp"
-    android:layout_gravity="center"
-    android:layout_height="190dp">
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="2dp"
+    android:layout_height="220dp">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/iv_cars_images"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_car_image"
             android:src="@drawable/tesla_car"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/types_borders_radius" />
 
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
+            android:background="@drawable/types_borders_radius"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

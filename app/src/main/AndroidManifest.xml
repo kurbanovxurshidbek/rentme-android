@@ -8,13 +8,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Rentme" >
+        android:theme="@style/Theme.Rentme">
+        <activity
+            android:name=".ui.update.UpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.localization.LocalizationActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.types.TypesActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.details.DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.result.ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

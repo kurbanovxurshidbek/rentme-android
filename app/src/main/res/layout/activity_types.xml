@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingHorizontal="16dp"
     tools:context=".ui.types.TypesActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -51,6 +50,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_types"
+            tools:listitem="@layout/item_types_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
