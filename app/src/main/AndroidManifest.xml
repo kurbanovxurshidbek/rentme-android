@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rentme">
         <activity
+            android:name=".ui.update.UpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="false" />
         <activity
@@ -16,6 +19,12 @@
             android:exported="false" />
         <activity
             android:name=".ui.types.TypesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.details.DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.result.ResultActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

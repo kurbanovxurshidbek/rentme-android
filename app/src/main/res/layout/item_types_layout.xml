@@ -9,7 +9,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/iv_cars_images"
+            android:id="@+id/iv_car_image"
             android:src="@drawable/tesla_car"
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
