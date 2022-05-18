@@ -157,7 +157,7 @@
                 android:layout_marginTop="80dp"
                 app:scv_codeLength="5"
                 app:scv_showCursor="false"
-                app:scv_symbolBorderActiveColor="@color/ll_background"
+                app:scv_symbolBorderActiveColor="@color/black"
                 app:scv_symbolBorderColor="#8c8c8c"
                 app:scv_symbolBorderCornerRadius="10dp"
                 app:scv_symbolTextColor="@color/black"
@@ -181,14 +181,15 @@
     </FrameLayout>
 
     <FrameLayout
+        android:layout_gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <!--    send sms-->
         <Button
             android:id="@+id/btn_send_sms"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center_horizontal|bottom"
             android:layout_marginTop="140dp"
             android:background="@drawable/button_background_rounded_border"
             android:text="Send SMS"
@@ -200,7 +201,7 @@
             android:id="@+id/btn_save_sms"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center_horizontal|bottom"
             android:layout_marginTop="140dp"
             android:background="@drawable/button_background_rounded_border"
             android:text="Save"

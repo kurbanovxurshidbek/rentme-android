@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rentme">
         <activity
-            android:name=".ui.update.UpdateActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.splash.SplashActivity"
@@ -28,7 +28,7 @@
             android:name=".ui.result.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.update.UpdateActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
