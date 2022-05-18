@@ -9,7 +9,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rentme">
         <activity
-            android:name=".SelectLocationActivity"
+            android:name=".ui.location.SelectLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.update.UpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.localization.LocalizationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.types.TypesActivity"
