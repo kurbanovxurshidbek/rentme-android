@@ -68,14 +68,14 @@
 
                     <EditText
                         android:id="@+id/edt_search"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="30dp"
                         android:layout_weight="1"
                         android:background="@drawable/edt_corner_rounded"
                         android:drawableLeft="@drawable/ic_search"
                         android:drawablePadding="10dp"
-                        android:hint="Avtomobil turi"
+                        android:hint="@string/str_search_hint_auto_type"
                         android:minHeight="40dp"
                         android:paddingHorizontal="15dp"
                         android:textSize="20sp"
@@ -184,6 +184,10 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                tools:itemCount="3"
+                tools:listitem="@layout/item_result_layout"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:id="@+id/rv_main_latest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -212,6 +216,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_main_dayly"
+                tools:itemCount="3"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_result_layout"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -239,6 +247,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_main_weekly"
+                tools:itemCount="3"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_result_layout"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -266,6 +278,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_main_monthly"
+                tools:itemCount="3"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_result_layout"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

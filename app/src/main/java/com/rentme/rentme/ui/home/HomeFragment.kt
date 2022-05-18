@@ -7,25 +7,39 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.lifecycle.ViewModelProvider
 import com.rentme.rentme.R
+import com.rentme.rentme.databinding.FragmentHomeBinding
 import com.rentme.rentme.ui.types.TypesActivity
 
 class HomeFragment : Fragment() {
+
+    private lateinit var homeViewModel: HomeViewModel
+    private var _binding: FragmentHomeBinding? = null
+
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<EditText>(R.id.edt_search).setOnClickListener {
-            requireActivity().startActivity(Intent(requireContext(), TypesActivity::class.java))
 
+        binding.edtSearch.setOnClickListener {
+            requireActivity().startActivity(Intent(requireContext(), TypesActivity::class.java))
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }
