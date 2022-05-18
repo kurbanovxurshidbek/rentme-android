@@ -28,7 +28,7 @@ class TypesAdapter(var context: Context, var items:ArrayList<Types>):RecyclerVie
             tv_carsName.text = item.carName
             tv_carNumbers.text = item.carsNumber
 
-            iv_carsImage.setImageResource(R.drawable.img)
+            iv_carsImage.setImageResource(item.carImage)
 
         }
     }
