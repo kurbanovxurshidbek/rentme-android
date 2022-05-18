@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.details.DetailsActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:gravity="center"
+        app:buttonGravity="center_vertical"
+        app:titleTextColor="@color/white">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/iv_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_back"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Update Phone Number"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+   <TextView
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textAllCaps="true"
+        android:text="Update Phone Number"
+        android:textSize="14sp"
+        android:textColor="#8c8c8c"
+        android:gravity="center_vertical"
+        />
+    <EditText
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="+998 (93) 759 57 79 "
+        android:textSize="16sp"
+        android:textColor="#8c8c8c"
+        android:background="@drawable/shape_border_text"/>
+
+
+
+
+
+
+</LinearLayout>

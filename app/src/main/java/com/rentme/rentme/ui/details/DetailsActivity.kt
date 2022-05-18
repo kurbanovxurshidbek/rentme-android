@@ -1,11 +1,12 @@
-package com.rentme.rentme
+package com.rentme.rentme.ui.details
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rentme.rentme.R
 
-class MainActivity : AppCompatActivity() {
+class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_profile)
+        setContentView(R.layout.activity_details)
     }
 }
