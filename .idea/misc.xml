@@ -3,13 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_border_radius.xml" value="0.182" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/costs_border_radius.xml" value="0.182" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/edt_corner_rounded.xml" value="0.182" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/filter_borders_radius.xml" value="0.182" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/ic_image.xml" value="0.1375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/ic_next.xml" value="0.2125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/ll_background_date_month.xml" value="0.182" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/ll_background_rounded_border.xml" value="0.182" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/shape_border_icon_background.xml" value="0.197" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/shape_border_text.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_details.xml" value="0.4639865996649916" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_update.xml" value="0.2" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_update.xml" value="0.176" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
       </map>
     </option>
   </component>
@@ -18,5 +24,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.176" />
+      </ProjectState>
+    </option>
   </component>
 </project>
