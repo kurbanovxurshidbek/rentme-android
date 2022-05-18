@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="ll_background">#F2F3F3</color>
+    <color name="button_background">#143656</color>
+    <color name="light_blue">#46D0D9</color>
 
 </resources>
