@@ -4,13 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.TypesAdapter
 import com.rentme.rentme.databinding.ActivityTypesBinding
 import com.rentme.rentme.model.Types
 import com.rentme.rentme.ui.result.ResultActivity
-import java.lang.reflect.Type
 
 class TypesActivity : AppCompatActivity() {
 
@@ -40,10 +38,10 @@ class TypesActivity : AppCompatActivity() {
 
     private fun getAllTypes(){
         val items: ArrayList<Types> = ArrayList()
-        items.add(Types(R.drawable.img,"Tesla","15"))
-        items.add(Types(R.drawable.img,"GM","10"))
-        items.add(Types(R.drawable.img,"BMW","5"))
-        items.add(Types(R.drawable.img,"Mersades Benz","18"))
+        items.add(Types(R.drawable.im_malibu,"Tesla","15"))
+        items.add(Types(R.drawable.im_malibu,"GM","10"))
+        items.add(Types(R.drawable.im_malibu,"BMW","5"))
+        items.add(Types(R.drawable.im_malibu,"Mersades Benz","18"))
 
         adapter.submitData(items)
 
