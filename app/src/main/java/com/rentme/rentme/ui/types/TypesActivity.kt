@@ -1,5 +1,6 @@
 package com.rentme.rentme.ui.types
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
@@ -8,13 +9,13 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.TypesAdapter
 import com.rentme.rentme.databinding.ActivityTypesBinding
 import com.rentme.rentme.model.Types
+import com.rentme.rentme.ui.result.ResultActivity
 import java.lang.reflect.Type
 
 class TypesActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivityTypesBinding
-    private lateinit var adapter: TypesAdapter
-    private var typesList: ArrayList<Types> = ArrayList()
+    private val adapter by lazy { TypesAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +27,15 @@ class TypesActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        adapter = TypesAdapter(this, typesList)
         binding.rvTypes.layoutManager = GridLayoutManager(this,1)
         binding.rvTypes.adapter = adapter
+        adapter.onClick = { types ->
+            Intent(this,ResultActivity::class.java).also {
+                it.putExtra("carName",types.carName)
+                startActivity(it)
+            }
+        }
+
     }
 
     private fun getAllTypes(){
@@ -38,7 +45,7 @@ class TypesActivity : AppCompatActivity() {
         items.add(Types(R.drawable.img,"BMW","5"))
         items.add(Types(R.drawable.img,"Mersades Benz","18"))
 
-        typesList.addAll(items)
-        adapter.notifyDataSetChanged()
+        adapter.submitData(items)
+
     }
 }
