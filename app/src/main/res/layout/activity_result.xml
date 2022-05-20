@@ -23,6 +23,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/ic_back_to_Types"
                     android:src="@drawable/ic_back_black"
                     android:layout_width="24dp"
                     android:layout_height="24dp"/>
@@ -54,6 +55,7 @@
             android:layout_height="40dp">
 
             <LinearLayout
+                android:id="@+id/ll_filter"
                 android:background="@drawable/filter_borders_radius"
                 android:orientation="horizontal"
                 android:padding="5dp"

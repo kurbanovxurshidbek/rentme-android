@@ -13,5 +13,13 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        initViews()
+    }
+
+    private fun initViews() {
+        binding.ivBackToDetails.setOnClickListener {
+            finish()
+        }
     }
 }

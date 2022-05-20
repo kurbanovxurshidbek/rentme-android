@@ -8,13 +8,19 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable-v24/ic_back_white.xml" value="0.1455" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/border_radius.xml" value="0.1455" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_border_radius.xml" value="0.1455" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_border_radius50.xml" value="0.151" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_border_radius50_white.xml" value="0.151" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/costs_border_radius.xml" value="0.1455" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/filter_border_radius.xml" value="0.1455" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/filter_borders_radius.xml" value="0.1455" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/ll_details_background.xml" value="0.151" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/radio_group_selector.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/types_borders_radius.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_details.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_details.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_favourite.xml" value="0.16973065412569474" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_features.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_filter.xml" value="0.28771384136858474" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_filters.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_filters.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_result.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_search.xml" value="0.4919678714859438" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_types.xml" value="0.25" />
@@ -27,6 +33,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_result_layout.xml" value="0.67" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_result_layout_demo.xml" value="0.18" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_types_layout.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/menu/bnv_menu.xml" value="0.16973065412569474" />
       </map>
     </option>
   </component>

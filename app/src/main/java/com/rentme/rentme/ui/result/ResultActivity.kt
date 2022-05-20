@@ -9,6 +9,7 @@ import com.rentme.rentme.adapter.ResultAdapter
 import com.rentme.rentme.databinding.ActivityResultBinding
 import com.rentme.rentme.model.Result
 import com.rentme.rentme.ui.details.DetailsActivity
+import com.rentme.rentme.ui.filter.FiltersActivity
 
 class ResultActivity : AppCompatActivity() {
 
@@ -31,6 +32,18 @@ class ResultActivity : AppCompatActivity() {
             Intent(this,DetailsActivity::class.java).also {
                 it.putExtra("carName", result.carName)
                 startActivity(it)
+            }
+        }
+
+        binding.apply {
+            llFilter.setOnClickListener {
+                intent = Intent(this@ResultActivity,FiltersActivity::class.java)
+                startActivity(intent)
+            }
+
+
+            icBackToTypes.setOnClickListener {
+                finish()
             }
         }
     }
