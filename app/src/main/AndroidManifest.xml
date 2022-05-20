@@ -9,6 +9,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rentme">
         <activity
+            android:name=".ui.filter.FiltersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.search.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.favourite.FavouriteActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.location.SelectLocationActivity"
             android:exported="false" />
         <activity

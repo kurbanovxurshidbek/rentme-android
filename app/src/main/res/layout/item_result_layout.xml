@@ -1,58 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CalendarView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="320dp"
-    android:layout_marginStart="10dp"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_gravity="center"
-    android:layout_height="270dp">
+    app:cardCornerRadius="15dp"
+    android:layout_marginTop="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
         <LinearLayout
-            android:background="#E4F7FF"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:background="#1A2B49"
-                android:gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="140dp">
+                android:layout_height="200dp">
 
                 <ImageView
                     android:id="@+id/iv_cars_images"
                     android:src="@drawable/tesla_car"
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"/>
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
             <LinearLayout
+                android:background="#E4F7FF"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="80dp">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/tv_cars_name"
+                    android:paddingVertical="5dp"
+                    android:paddingStart="5dp"
                     android:text="Tesla Model 3"
                     android:textSize="18sp"
                     android:textStyle="normal"
                     android:textColor="@color/black"
-                    android:gravity="center_horizontal"
-                    android:layout_marginTop="25dp"
-                    android:layout_weight="3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
-
-                <TextView
-                    android:id="@+id/tv_profile"
-                    android:text="Ranaldo"
-                    android:gravity="center_horizontal"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="25dp"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
@@ -60,10 +50,12 @@
                 android:background="@color/white"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:layout_gravity="bottom"
                     android:orientation="vertical"
+                    android:background="#F2F3F3"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:layout_marginHorizontal="1dp"
@@ -81,19 +73,22 @@
 
                     <TextView
                         android:text="/day"
-                        android:textSize="10sp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <LinearLayout
                         android:background="#FF5722"
                         android:layout_width="match_parent"
+                        android:layout_marginHorizontal="10dp"
                         android:layout_height="5dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="vertical"
+                    android:background="#F2F3F3"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:layout_marginHorizontal="1dp"
@@ -111,18 +106,21 @@
 
                     <TextView
                         android:text="/day"
-                        android:textSize="10sp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <LinearLayout
                         android:background="#6C6767"
+                        android:layout_marginHorizontal="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="5dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="#F2F3F3"
                     android:orientation="vertical"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -141,12 +139,14 @@
 
                     <TextView
                         android:text="/day"
-                        android:textSize="10sp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <LinearLayout
                         android:background="#6C6767"
+                        android:layout_marginHorizontal="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="5dp"/>
 
@@ -156,20 +156,6 @@
 
         </LinearLayout>
 
-        <FrameLayout
-            android:layout_gravity="right|center"
-            android:layout_marginRight="38dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_profile"
-                android:src="@drawable/iv_profile"
-                app:shapeAppearanceOverlay="@style/circle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
-        </FrameLayout>
 
 
-</CalendarView>
+</androidx.cardview.widget.CardView>
