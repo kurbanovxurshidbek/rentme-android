@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="16dp"
+    android:background="#ffffff"
+    tools:context=".ui.logIn.LogInActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".030">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/str_logIn_page"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--current number-->
+            <!--        <LinearLayout-->
+            <!--            android:id="@+id/ll_current_number"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:orientation="vertical"-->
+            <!--            android:visibility="gone">-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:layout_marginTop="30dp"-->
+            <!--                android:gravity="center_vertical"-->
+            <!--                android:paddingLeft="5dp"-->
+            <!--                android:text="Current NUmber"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="#8c8c8c"-->
+            <!--                android:textSize="14dp" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_current_phone_number"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:background="@drawable/shape_border_text"-->
+            <!--                android:gravity="center_vertical"-->
+            <!--                android:paddingLeft="10dp"-->
+            <!--                android:text="+998 (93) 759 57 79 "-->
+            <!--                android:textColor="#8c8c8c" />-->
+            <!--        </LinearLayout>-->
+            <!--        new number 2-->
+            <LinearLayout
+                android:id="@+id/ll_new_number_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
+                    android:id="@+id/phone_number"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="phone number"
+
+                    >
+
+                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:maxLength="17" />
+
+                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--mew number  1-->
+            <!--        <LinearLayout-->
+            <!--            android:id="@+id/ll_new_number_1"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:orientation="vertical"-->
+            <!--            android:visibility="gone">-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:layout_marginTop="30dp"-->
+            <!--                android:gravity="center_vertical"-->
+            <!--                android:paddingLeft="5dp"-->
+            <!--                android:text="New NUmber"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="#8c8c8c"-->
+            <!--                android:textSize="14dp" />-->
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/et_new_number"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:background="@drawable/shape_border_text"-->
+            <!--                android:paddingLeft="10dp"-->
+            <!--                android:text="+998 "-->
+            <!--                android:textColor="#8c8c8c"-->
+            <!--                android:textSize="16sp" />-->
+
+            <!--        </LinearLayout>-->
+            <!--sms confirmation-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.fraggjkee.smsconfirmationview.SmsConfirmationView
+                    android:id="@+id/sms_code_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="80dp"
+                    app:scv_codeLength="6"
+                    app:scv_showCursor="false"
+                    app:scv_symbolBorderActiveColor="@color/ll_background"
+                    app:scv_symbolBorderColor="#8c8c8c"
+                    app:scv_symbolBorderCornerRadius="10dp"
+                    app:scv_symbolTextColor="@color/black"
+                    app:scv_symbolsSpacing="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical|right"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="55dp"
+                    android:text="SMS enter code"
+                    android:textAllCaps="false"
+                    android:textColor="#8c8c8c"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="220dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--    send sms-->
+            <Button
+                android:id="@+id/btn_send_sms"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="140dp"
+                android:background="@drawable/button_background_rounded_border"
+                android:text="Send SMS"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                android:visibility="visible"
+                app:backgroundTint="@null" />
+            <!--    save sms-->
+            <Button
+                android:id="@+id/btn_continue_sms"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="140dp"
+                android:background="@drawable/button_background_rounded_border"
+                android:text="@string/str_continue"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                android:visibility="visible"
+                app:backgroundTint="@null" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="right"
+            android:text="@string/str_skip"
+            android:textColor="#8c8c8c"
+            android:textSize="16sp"
+            android:textStyle="bold|normal"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

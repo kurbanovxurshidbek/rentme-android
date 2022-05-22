@@ -11,6 +11,7 @@
     <color name="ll_background">#F2F3F3</color>
     <color name="button_background">#143656</color>
     <color name="light_blue">#46D0D9</color>
+    <color name="textColorHighlight">#4DD81B60</color>
 
     <color name="main_01">#F38121</color>
 

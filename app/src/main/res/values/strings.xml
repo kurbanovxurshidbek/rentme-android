@@ -91,4 +91,15 @@
     <string name="str_latest_offers">Latest Offers</string>
     <string name="str_daily_offers">Daily Offers</string>
     <string name="str_long_term_offers">Long Term Offers</string>
+    <string name="str_logIn_page">Log In</string>
+    <string name="str_continue">Continue</string>
+    <string name="str_send_sms">Send SmS</string>
+    <string name="str_information">Fill information</string>
+    <string name="str_first_name">Firstname</string>
+    <string name="str_last_name">Lastname</string>
+    <string name="str_email">Email</string>
+    <string name="str_skip">Skip?</string>
+    <string name="str_optional">(Optional)</string>
+    <string name="str_save">Save</string>
+    <string name="str_registration">Registration</string>
 </resources>
