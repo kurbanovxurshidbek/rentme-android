@@ -29,7 +29,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Teslalar"
-                android:fontFamily="@font/londrina_outline_regular"
                 android:shadowRadius="10"
                 android:shadowColor="@color/orange_main_01"
                 android:outlineSpotShadowColor="@color/orange_main_01"
