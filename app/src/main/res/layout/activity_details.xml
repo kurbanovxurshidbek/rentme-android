@@ -12,13 +12,14 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:layout_marginBottom="40dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -30,8 +31,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:background="@drawable/ll_details_background"
-                    android:layout_height="60dp"
-                    android:paddingTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="35dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -104,7 +105,7 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:text="280$"
-                        android:textColor="#FF5722"
+                        android:textColor="@color/orange_main_01"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -120,7 +121,8 @@
                         android:layout_height="5dp"
                         android:layout_marginHorizontal="5dp"
                         android:layout_marginTop="10dp"
-                        android:background="#FF5722" />
+                        android:backgroundTint="@color/orange_main_01"
+                        android:background="@drawable/filter_rounded_corner" />
 
                 </LinearLayout>
 
@@ -156,7 +158,8 @@
                         android:layout_height="5dp"
                         android:layout_marginHorizontal="5dp"
                         android:layout_marginTop="10dp"
-                        android:background="#6C6767" />
+                        android:backgroundTint="#6C6767"
+                        android:background="@drawable/filter_rounded_corner" />
 
                 </LinearLayout>
 
@@ -192,9 +195,38 @@
                         android:layout_height="5dp"
                         android:layout_marginHorizontal="5dp"
                         android:layout_marginTop="10dp"
-                        android:background="#6C6767" />
+                        android:backgroundTint="#6C6767"
+                        android:background="@drawable/filter_rounded_corner" />
 
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="#E5E5E5" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    android:text="@string/str_discription"
+                    android:textSize="@dimen/text_type_18"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_discription"
+                    android:text="Shaxarda yurgan 50 ming km "
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
@@ -235,6 +267,7 @@
                 android:background="#E5E5E5" />
 
             <LinearLayout
+                android:id="@+id/ll_location_details"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginHorizontal="16dp"
