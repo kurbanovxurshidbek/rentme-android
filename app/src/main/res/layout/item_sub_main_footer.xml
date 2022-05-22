@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/main_01"
+            android:background="@color/orange_main_01"
             android:gravity="center"
             android:orientation="vertical"
             android:paddingVertical="50dp">
@@ -39,8 +39,8 @@
                        android:layout_gravity="center"
                        android:text="View All"
                        android:fontFamily="@font/allerta"
-                       android:textColor="@color/main_01"
-                       android:textSize="16sp"
+                       android:textColor="@color/orange_main_01"
+                       android:textSize="14sp"
                        android:textStyle="bold" />
 
                </FrameLayout>
