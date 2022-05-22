@@ -12,15 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/bottom_nav_graph"
-        tools:layout_editor_absoluteX="-124dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:navGraph="@navigation/bottom_nav_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bnv_menu"
-        android:id="@+id/bnv_main"/>
+        app:menu="@menu/bnv_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

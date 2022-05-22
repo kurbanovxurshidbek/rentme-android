@@ -30,12 +30,15 @@
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_select_location.xml" value="0.2" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_types.xml" value="0.17889492753623187" />
-        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_home.xml" value="0.17943925233644858" />
-        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_profile.xml" value="0.18" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_upload.xml" value="0.2" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_main_adds.xml" value="0.16324786324786325" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_main_vehicles.xml" value="0.19895833333333332" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_result_layout.xml" value="0.2" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_search_history.xml" value="0.25" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_sub_main_footer.xml" value="0.22" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_sub_main_vehicles.xml" value="0.25" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/menu/bnv_menu.xml" value="0.2" />
       </map>
     </option>

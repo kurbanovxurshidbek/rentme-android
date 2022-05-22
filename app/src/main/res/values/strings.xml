@@ -45,4 +45,7 @@
     <string name="str_russian_language">Russian language</string>
     <string name="str_phone_number">PHONE NUMBER</string>
     <string name="str_logIn_update">Log In</string>
+    <string name="str_search_hint_auto_type">Search avto type</string>
+    <string name="str_select_your_location">Select your location</string>
+    <string name="str_search_hint_location">Search location</string>
 </resources>
