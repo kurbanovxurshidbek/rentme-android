@@ -44,6 +44,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/uzb_language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_language_localization"
@@ -69,6 +70,7 @@
                 android:textSize="20sp"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/eng_language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_language_localization"
@@ -95,6 +97,7 @@
                 android:textSize="20sp"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/rus_language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_language_localization"

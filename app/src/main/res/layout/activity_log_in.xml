@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <com.fraggjkee.smsconfirmationview.SmsConfirmationView
                     android:id="@+id/sms_code_view"
@@ -138,7 +138,7 @@
                 android:text="@string/str_continue"
                 android:textAllCaps="false"
                 android:textSize="24sp"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:backgroundTint="@null" />
 
         </FrameLayout>
@@ -154,7 +154,7 @@
             android:textColor="#8c8c8c"
             android:textSize="16sp"
             android:textStyle="bold|normal"
-            android:visibility="gone" />
+            android:visibility="visible" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

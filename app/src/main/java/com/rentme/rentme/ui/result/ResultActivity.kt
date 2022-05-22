@@ -51,10 +51,10 @@ class ResultActivity : AppCompatActivity() {
     private fun getAllResult() {
         val items:ArrayList<Result> = ArrayList()
         items.add(Result(R.drawable.im_malibu,"Malibu 2","","200$","",))
-        items.add(Result(R.drawable.im_malibu,"Malibu 3","","250$","",))
-        items.add(Result(R.drawable.im_malibu,"Nexia 2","","100$","",))
-        items.add(Result(R.drawable.im_malibu,"Damas 2","","50$","",))
-        items.add(Result(R.drawable.im_malibu,"Gentra 2","","150$","",))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","350$","",))
+        items.add(Result(R.drawable.im_mersades,"AMG","","400$","",))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","300$","",))
+        items.add(Result(R.drawable.im_mersades,"AMG 2","","350$","",))
 
         adapter.submitData(items)
     }
