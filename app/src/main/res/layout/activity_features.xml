@@ -523,7 +523,6 @@
                         android:layout_height="match_parent"
                         app:shapeAppearanceOverlay="@style/circle"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/icon_car"
                         android:background="@color/black"/>
 
                 </LinearLayout>
