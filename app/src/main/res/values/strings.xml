@@ -40,8 +40,6 @@
     <string name="str_colors">Colors</string>
     <string name="str_result">Result</string>
     <string name="str_clear">Clear</string>
-    <string name="str_color">Color</string>
-    <string name="str_save">Save</string>
 
     //sherzod
     <string name="str_hello_blank_fragment">Hello blank fragment</string>
