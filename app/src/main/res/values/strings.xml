@@ -37,7 +37,7 @@
     <string name="str_radio">Radio</string>
     <string name="str_conditioners">Conditioners</string>
     <string name="str_cost">Cost</string>
-    <string name="str_color">Colors</string>
+    <string name="str_colors">Colors</string>
     <string name="str_result">Result</string>
     <string name="str_clear">Clear</string>
 
@@ -101,6 +101,5 @@
     <string name="str_email">Email</string>
     <string name="str_skip">Skip?</string>
     <string name="str_optional">(Optional)</string>
-    <string name="str_save">Save</string>
     <string name="str_registration">Registration</string>
 </resources>
