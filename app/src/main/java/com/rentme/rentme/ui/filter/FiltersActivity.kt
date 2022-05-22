@@ -41,7 +41,7 @@ class FiltersActivity : AppCompatActivity() {
         binding.spnCars.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0!!.getItemAtPosition(p2)
-                Toast.makeText(this@FiltersActivity, "$selectedItem Selected", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@FiltersActivity, "$selectedItem Selected", Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -61,7 +61,7 @@ class FiltersActivity : AppCompatActivity() {
         binding.spnCarModel.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0!!.getItemAtPosition(p2)
-                Toast.makeText(this@FiltersActivity, "$selectedItem Selected", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@FiltersActivity, "$selectedItem Selected", Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -80,7 +80,7 @@ class FiltersActivity : AppCompatActivity() {
         binding.spnCarModel.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0!!.getItemAtPosition(p2)
-                Toast.makeText(this@FiltersActivity, "$selectedItem Selected", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@FiltersActivity, "$selectedItem Selected", Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
