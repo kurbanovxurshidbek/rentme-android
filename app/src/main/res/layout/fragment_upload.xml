@@ -186,7 +186,7 @@
                 android:id="@+id/min_radio_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/main_01"
+                android:buttonTint="@color/orange_main_01"
                 android:text="@string/str_daily"
                 android:textColor="@color/second_text_color"
                 android:textSize="14sp" />
@@ -195,7 +195,7 @@
                 android:id="@+id/min_radio_month"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/main_01"
+                android:buttonTint="@color/orange_main_01"
                 android:textColor="@color/second_text_color"
                 android:layout_marginLeft="40dp"
                 android:text="@string/str_monthly"
@@ -272,7 +272,7 @@
                 android:id="@+id/max_radio_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/main_01"
+                android:buttonTint="@color/orange_main_01"
                 android:textColor="@color/second_text_color"
                 android:text="@string/str_daily"
                 android:textSize="14sp" />
@@ -283,7 +283,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:textColor="@color/second_text_color"
-                android:buttonTint="@color/main_01"
+                android:buttonTint="@color/orange_main_01"
                 android:text="@string/str_monthly"
                 android:textSize="14sp" />
 
@@ -354,7 +354,7 @@
             android:text="@string/str_next"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size"
+            android:textSize="@dimen/b_text_20"
             android:textStyle="bold"
             app:backgroundTint="@null"
             app:layout_constraintBottom_toBottomOf="parent" />
