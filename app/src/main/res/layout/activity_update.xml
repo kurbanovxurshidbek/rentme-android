@@ -111,7 +111,7 @@
 
 
             <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
-                app:boxStrokeColor="@color/main_01"
+                app:boxStrokeColor="@color/orange_main_01"
                 app:boxStrokeErrorColor="#ff0000"
                 android:textColorHighlight="#00FF0A"
                 app:counterOverflowTextColor="@color/teal_200"
@@ -173,7 +173,7 @@
 
 <!--            new number 1-->
             <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
-                app:boxStrokeColor="@color/main_01"
+                app:boxStrokeColor="@color/orange_main_01"
                 app:boxStrokeErrorColor="#ff0000"
                 android:textColorHighlight="#00FF0A"
                 app:counterOverflowTextColor="@color/teal_200"

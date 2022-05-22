@@ -13,6 +13,8 @@
     <color name="light_blue">#46D0D9</color>
     <color name="textColorHighlight">#4DD81B60</color>
 
-    <color name="main_01">#F38121</color>
+   <color name="second_text_color">#AD000000</color>
+    <color name="orange_main_01">#F38121</color>
+    <color name="orange_main_02">#C05801</color>
 
 </resources>

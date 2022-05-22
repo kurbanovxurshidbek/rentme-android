@@ -7,32 +7,33 @@
     android:background="#fff"
     tools:context=".ui.home.HomeFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:elevation="0dp">
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/orange_main_01"-->
+<!--        android:elevation="0dp">-->
 
-        <Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+<!--        <Toolbar-->
+<!--            app:layout_scrollFlags="enterAlwaysCollapsed|scroll"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="16dp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginEnd="16dp">-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="Elonlar"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="E'lonlar"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textStyle="bold" />-->
+<!--            </LinearLayout>-->
+<!--        </Toolbar>-->
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -70,15 +71,16 @@
                     <EditText
                         android:id="@+id/edt_search"
                         android:layout_width="0dp"
+                        android:focusable="false"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="30dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_main_white_rounded_color"
                         android:drawableStart="@drawable/ic_search"
-                        android:drawableTint="@color/main_01"
+                        android:drawableTint="@color/orange_main_01"
                         android:drawablePadding="10dp"
                         android:hint="@string/str_search_hint_auto_type"
-                        android:minHeight="48dp"
+                        android:minHeight="44dp"
                         android:paddingHorizontal="15dp"
                         android:singleLine="true"
                         android:textSize="20sp"
@@ -88,7 +90,7 @@
                     <FrameLayout
                         android:background="@drawable/bg_main_white_rounded_color"
                         android:padding="10dp"
-                        android:layout_width="48dp"
+                        android:layout_width="44dp"
                         android:layout_height="match_parent">
 
                         <ImageView
@@ -169,7 +171,6 @@
                     </LinearLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

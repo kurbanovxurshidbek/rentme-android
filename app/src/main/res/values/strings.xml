@@ -37,11 +37,12 @@
     <string name="str_radio">Radio</string>
     <string name="str_conditioners">Conditioners</string>
     <string name="str_cost">Cost</string>
-    <string name="str_color">Colors</string>
-    <string name="str_result">Result</string>
-    <string name="str_clear">Clear</string>
+    <string name="str_colors">Colors</string>
     <string name="str_color">Color</string>
     <string name="str_save">Save</string>
+    <string name="str_result">Result</string>
+    <string name="str_clear">Clear</string>
+
 
     //sherzod
     <string name="str_hello_blank_fragment">Hello blank fragment</string>
@@ -51,6 +52,7 @@
     <string name="str_russian_language">Russian language</string>
     <string name="str_phone_number">PHONE NUMBER</string>
     <string name="str_logIn_update">Log In</string>
+
 
 
     <string-array name="cars_type">
@@ -103,6 +105,5 @@
     <string name="str_email">Email</string>
     <string name="str_skip">Skip?</string>
     <string name="str_optional">(Optional)</string>
-    <string name="str_save">Save</string>
     <string name="str_registration">Registration</string>
 </resources>

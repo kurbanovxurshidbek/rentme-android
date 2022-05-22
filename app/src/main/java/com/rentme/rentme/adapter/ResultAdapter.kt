@@ -29,7 +29,7 @@ class ResultAdapter:RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
                     tvCarsCostWeek.text = result.costWeek
                     tvCarsCostMonth.text = result.costMonth
 
-                    ivCarsImages.setImageResource(result.carImage)
+                    ivCarsImages.setImageResource(result.carImage!!)
 
                     root.setOnClickListener{
                         onClick?.invoke(result)
