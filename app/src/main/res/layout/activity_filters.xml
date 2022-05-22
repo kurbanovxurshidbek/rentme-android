@@ -522,7 +522,7 @@
                 <Button
                     android:id="@+id/btn_result"
                     android:text="@string/str_result"
-                    android:backgroundTint="@color/main_01"
+                    android:backgroundTint="@color/orange_main_01"
                     android:textColor="@color/white"
                     android:textSize="@dimen/b_text_18"
                     android:layout_marginHorizontal="20dp"
