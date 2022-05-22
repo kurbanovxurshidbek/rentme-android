@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.update.UpdateActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.splash.SplashActivity"
@@ -55,6 +55,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+            android:name=".ui.update.UpdateActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
         </activity>
     </application>

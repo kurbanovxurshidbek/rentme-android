@@ -4,14 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardContainer"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <com.google.android.material.imageview.ShapeableImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/bottom_corner_radius"
             android:id="@+id/iv_ads"
             android:layout_width="match_parent"
             android:layout_height="250dp"
@@ -20,9 +17,8 @@
             android:src="@drawable/ic_launcher_background" />
 
         <FrameLayout
-            android:background="#66605F5F"
+            android:background="#33605F5F"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
