@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_background_rounded_border.xml" value="0.121" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_border_radius.xml" value="0.182" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/costs_border_radius.xml" value="0.182" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/edt_corner_rounded.xml" value="0.182" />

@@ -51,7 +51,7 @@
     app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
     android:layout_width="match_parent"
     android:layout_marginHorizontal="16dp"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
 
     <FrameLayout
@@ -111,8 +111,8 @@
 
 
             <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
-                app:boxStrokeColor="@color/button_background"
-                app:hintTextColor="@color/button_background"
+                app:boxStrokeColor="@color/main_01"
+                app:boxStrokeErrorColor="#ff0000"
                 android:textColorHighlight="#00FF0A"
                 app:counterOverflowTextColor="@color/teal_200"
                 android:id="@+id/enter_phone_number_2"
@@ -125,6 +125,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:maxLength="17"
+                    android:textColor="@color/black"
 
                     />
 
@@ -172,8 +173,8 @@
 
 <!--            new number 1-->
             <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
-                app:boxStrokeColor="@color/button_background"
-                app:hintTextColor="@color/button_background"
+                app:boxStrokeColor="@color/main_01"
+                app:boxStrokeErrorColor="#ff0000"
                 android:textColorHighlight="#00FF0A"
                 app:counterOverflowTextColor="@color/teal_200"
                 android:id="@+id/enter_phone_number_1"
@@ -186,6 +187,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:maxLength="17"
+                    android:textColor="@color/black"
+
 
                     />
 
@@ -236,30 +239,30 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
         android:layout_height="match_parent">
         <!--    send sms-->
         <Button
             android:id="@+id/btn_send_sms"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal|bottom"
             android:layout_marginTop="140dp"
             android:background="@drawable/button_background_rounded_border"
             android:text="Send SMS"
             android:textAllCaps="false"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:backgroundTint="@null" />
         <!--    save sms-->
         <Button
             android:id="@+id/btn_save_sms"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginTop="140dp"
             android:background="@drawable/button_background_rounded_border"
             android:text="Save"
             android:textAllCaps="false"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:visibility="gone"
             app:backgroundTint="@null" />
     </FrameLayout>
