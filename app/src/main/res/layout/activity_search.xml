@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/toolbar_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:padding="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/ll_back"
@@ -28,37 +33,53 @@
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/edt_search"
-            android:layout_width="0dp"
-            android:layout_height="44dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape_border_text"
-            android:drawableLeft="@drawable/ic_search"
-            android:drawableRight="@drawable/ic_cancel"
-            android:hint="Search for cars"
-            android:imeOptions="actionSearch"
-            android:textColorHint="#222222"
-            android:inputType="text"
-            android:paddingStart="8dp"
-            android:paddingEnd="6dp"
-            android:textSize="16sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <EditText
+                android:id="@+id/edt_search"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/shape_border_text"
+                android:hint="Search for cars"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingStart="8dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="6dp"
+                android:textColorHint="#222222"
+                android:textSize="16sp" />
 
+            <ImageView
+                android:id="@+id/iv_clean_search_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_cancel"
+                android:visibility="gone"/>
+        </FrameLayout>
 
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:paddingHorizontal="16dp"
-        android:orientation="vertical">
+        app:layout_constraintLeft_toLeftOf="parent
+"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_search">
+
         <TextView
-            android:layout_marginRight="20dp"
-            android:layout_gravity="end"
             android:id="@+id/tv_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="20dp"
             android:text="History"
             android:textColor="@color/black"
             android:textSize="14sp"
@@ -74,7 +95,28 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_search_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent
+"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_search">
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:orientation="vertical" />
 
-</LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
