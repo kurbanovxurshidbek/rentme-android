@@ -34,6 +34,12 @@ class TypesActivity : AppCompatActivity() {
             }
         }
 
+        binding.apply {
+            icBackToHome.setOnClickListener {
+                finish()
+            }
+        }
+
     }
 
     private fun getAllTypes(){
