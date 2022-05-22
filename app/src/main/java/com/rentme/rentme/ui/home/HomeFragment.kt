@@ -74,19 +74,19 @@ class HomeFragment : Fragment() {
         rvMainLatest = binding.rvMainLatest
         rvMainDaily = binding.rvMainDayly
         rvMainWeekly = binding.rvMainWeekly
-        rvMainMonthly = binding.rvMainMonthly
+//        rvMainMonthly = binding.rvMainMonthly
 
         rvMainAds.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         rvMainDaily.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         rvMainLatest.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         rvMainWeekly.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        rvMainMonthly.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+//        rvMainMonthly.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         rvMainAds.adapter = adsAdapter
         rvMainLatest.adapter = subAdapter
         rvMainDaily.adapter = subAdapter
         rvMainWeekly.adapter = subAdapter
-        rvMainMonthly.adapter = subAdapter
+//        rvMainMonthly.adapter = subAdapter
     }
 
     private fun startTypesActivity(){
