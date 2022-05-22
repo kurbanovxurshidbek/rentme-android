@@ -29,7 +29,7 @@
             android:name=".ui.logIn.LogInActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.update.UpdateActivity"
             android:exported="false" />
         <activity
             android:name=".ui.splash.SplashActivity"
@@ -47,9 +47,9 @@
             android:name=".ui.result.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.update.UpdateActivity"
+            android:name=".MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustPan">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

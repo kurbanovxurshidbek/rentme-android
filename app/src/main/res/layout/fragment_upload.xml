@@ -67,21 +67,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.02">
 
-            <TextView
-                android:id="@+id/tv_vehicle_type"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingLeft="5dp"
-                android:text="Light car"
-                android:textColor="#AD000000"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/iv_type_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_home" />
+            <Spinner
+                android:id="@+id/spn_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
@@ -112,7 +101,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_home" />
+                android:src="@drawable/ic_location" />
 
             <TextView
                 android:id="@+id/tv_location"
@@ -121,13 +110,13 @@
                 android:layout_weight="1"
                 android:paddingLeft="5dp"
                 android:text="@string/str_select_location"
-                android:textColor="#AD000000"
-                android:textSize="18sp" />
+                android:textColor="@color/second_text_color"
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_home" />
+                android:src="@drawable/ic_arrow_forward" />
 
         </LinearLayout>
 
@@ -161,14 +150,14 @@
                 android:layout_weight="1"
                 android:paddingLeft="5dp"
                 android:text="17.05.2022"
-                android:textColor="#AD000000"
-                android:textSize="18sp" />
+                android:textColor="@color/second_text_color"
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/iv_calendar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_home" />
+                android:src="@drawable/ic_calendar" />
 
         </LinearLayout>
 
@@ -178,7 +167,7 @@
             android:layout_marginStart="21dp"
             android:text="@string/str_lifetime"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.41" />
@@ -197,15 +186,17 @@
                 android:id="@+id/min_radio_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/light_blue"
+                android:buttonTint="@color/main_01"
                 android:text="@string/str_daily"
+                android:textColor="@color/second_text_color"
                 android:textSize="14sp" />
 
             <RadioButton
                 android:id="@+id/min_radio_month"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/light_blue"
+                android:buttonTint="@color/main_01"
+                android:textColor="@color/second_text_color"
                 android:layout_marginLeft="40dp"
                 android:text="@string/str_monthly"
                 android:textSize="14sp" />
@@ -227,7 +218,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_min"
-                android:textColor="@color/black"
+                android:textColor="@color/second_text_color"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -243,15 +234,14 @@
                     android:id="@+id/min_count_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="1dp"
+                    android:layout_marginEnd="2dp"
                     android:layout_weight="1"
                     android:layout_marginStart="3dp"
                     android:inputType="number"
                     android:background="@color/white"
                     android:gravity="end"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/second_text_color"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/min_type_time"
@@ -260,7 +250,7 @@
                     android:layout_marginStart="1dp"
                     android:layout_weight="1"
                     android:text="@string/str_day"
-                    android:textColor="@color/black"
+                    android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -282,7 +272,8 @@
                 android:id="@+id/max_radio_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/light_blue"
+                android:buttonTint="@color/main_01"
+                android:textColor="@color/second_text_color"
                 android:text="@string/str_daily"
                 android:textSize="14sp" />
 
@@ -291,7 +282,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
-                android:buttonTint="@color/light_blue"
+                android:textColor="@color/second_text_color"
+                android:buttonTint="@color/main_01"
                 android:text="@string/str_monthly"
                 android:textSize="14sp" />
 
@@ -312,7 +304,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_max"
-                android:textColor="@color/black"
+                android:textColor="@color/second_text_color"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -328,15 +320,14 @@
                     android:id="@+id/max_count_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="1dp"
+                    android:layout_marginEnd="2dp"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:gravity="end"
                     android:inputType="number"
                     android:layout_marginStart="3dp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/second_text_color"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/max_type_time"
@@ -345,7 +336,7 @@
                     android:layout_marginStart="1dp"
                     android:layout_weight="1"
                     android:text="@string/str_month"
-                    android:textColor="@color/black"
+                    android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -358,13 +349,12 @@
             android:layout_height="50dp"
             android:layout_gravity="bottom"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="70dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/button_background_rounded_border"
             android:text="@string/str_next"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="@dimen/button_text_size"
             android:textStyle="bold"
             app:backgroundTint="@null"
             app:layout_constraintBottom_toBottomOf="parent" />
