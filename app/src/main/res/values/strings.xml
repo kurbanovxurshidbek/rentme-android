@@ -83,7 +83,12 @@
         <item>2021</item>
         <item>2022</item>
     </string-array>
-    <string name="str_search_hint_auto_type">Search avto type</string>
+
+    <string name="str_search_hint_auto_type">Search auto type</string>
     <string name="str_select_your_location">Select your location</string>
     <string name="str_search_hint_location">Search location</string>
+    <string name="str_show_all">shaw all</string>
+    <string name="str_latest_offers">Latest Offers</string>
+    <string name="str_daily_offers">Daily Offers</string>
+    <string name="str_long_term_offers">Long Term Offers</string>
 </resources>

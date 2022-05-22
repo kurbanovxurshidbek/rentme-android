@@ -21,4 +21,9 @@
     <style name="border_radius">
         <item name="cornerSize">10dp</item>
     </style>
+
+    <style name="bottom_corner_radius">
+        <item name="cornerSizeBottomLeft">40dp</item>
+        <item name="cornerSizeBottomRight">40dp</item>
+    </style>
 </resources>
