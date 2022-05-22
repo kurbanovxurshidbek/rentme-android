@@ -92,6 +92,7 @@
                     android:layout_height="wrap_content"/>
 
                 <LinearLayout
+                    android:paddingVertical="10dp"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -100,13 +101,14 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:background="@drawable/filter_rounded_corner"
-                        android:layout_marginHorizontal="15dp"
-                        android:layout_height="40dp">
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_height="50dp">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:src="@drawable/ic_car"
                             android:scaleType="fitXY"
-                            android:padding="2dp"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="2dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
@@ -116,13 +118,14 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:background="@drawable/filter_rounded_corner"
-                        android:layout_marginHorizontal="15dp"
-                        android:layout_height="40dp">
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_height="50dp">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:src="@drawable/ic_lorry"
                             android:scaleType="fitXY"
-                            android:padding="2dp"
+                            android:paddingVertical="2dp"
+                            android:paddingHorizontal="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
@@ -132,13 +135,14 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:background="@drawable/filter_rounded_corner"
-                        android:layout_marginHorizontal="15dp"
-                        android:layout_height="40dp">
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_height="50dp">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:src="@drawable/ic_bicycle"
                             android:scaleType="fitXY"
-                            android:padding="2dp"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="2dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
@@ -148,13 +152,14 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:background="@drawable/filter_rounded_corner"
-                        android:layout_marginHorizontal="15dp"
-                        android:layout_height="40dp">
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_height="50dp">
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:src="@drawable/ic_motorcycle"
                             android:scaleType="fitXY"
-                            android:padding="2dp"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="2dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
@@ -165,21 +170,22 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="Type"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:text="@string/str_type"
+                    android:textSize="@dimen/text_type_18"
+                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
                 <Spinner
                     android:id="@+id/spn_cars"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/filter_rounded_corner"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"/>
@@ -187,22 +193,22 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="Model"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:text="@string/str_model"
+                    android:textSize="@dimen/text_type_18"
+                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
                 <Spinner
                     android:id="@+id/spn_carModel"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/filter_rounded_corner"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"/>
@@ -211,7 +217,7 @@
 
 
             <LinearLayout
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -236,6 +242,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -289,6 +296,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -324,7 +332,6 @@
 
                     <EditText
                         android:id="@+id/et_minCost"
-                        android:hint="enter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -368,7 +375,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -411,7 +418,7 @@
                 android:layout_height="1dp"/>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -428,7 +435,8 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp">
+                    android:paddingVertical="5dp"
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:gravity="center"
@@ -439,8 +447,8 @@
                         <com.google.android.material.imageview.ShapeableImageView
                             android:background="#F1D30F"
                             app:shapeAppearanceOverlay="@style/circle"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"/>
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -448,14 +456,13 @@
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent">
 
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:background="@color/purple_700"
-                            app:strokeColor="@color/black"
+                            android:background="#3F51B5"
                             app:shapeAppearanceOverlay="@style/circle"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"/>
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -463,14 +470,13 @@
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent">
 
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:background="@color/ll_background"
-                            app:strokeColor="@color/black"
+                            android:background="#F41A0A"
                             app:shapeAppearanceOverlay="@style/circle"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"/>
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -478,14 +484,13 @@
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent">
 
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:background="#E40707"
-                            app:strokeColor="@color/black"
+                            android:background="#000000"
                             app:shapeAppearanceOverlay="@style/circle"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"/>
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -493,16 +498,16 @@
                         android:gravity="center"
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent">
 
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:background="@color/black"
-                            app:strokeColor="@color/black"
+                            android:background="#878683"
                             app:shapeAppearanceOverlay="@style/circle"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"/>
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -517,7 +522,9 @@
                 <Button
                     android:id="@+id/btn_result"
                     android:text="@string/str_result"
-                    android:textColor="@color/black"
+                    android:backgroundTint="@color/main_01"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/b_text_18"
                     android:layout_marginHorizontal="20dp"
                     android:textAllCaps="false"
                     android:background="@drawable/filter_rounded_corner"
@@ -531,7 +538,8 @@
                     android:text="@string/str_clear"
                     android:layout_marginHorizontal="20dp"
                     android:background="@drawable/filter_rounded_corner"
-                    android:textColor="#143656"
+                    android:textColor="#EF8321"
+                    android:textSize="@dimen/b_text_18"
                     android:textAllCaps="false"
                     app:backgroundTint="@null"
                     android:layout_weight="1"
