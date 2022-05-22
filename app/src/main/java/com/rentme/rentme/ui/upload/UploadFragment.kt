@@ -1,5 +1,6 @@
 package com.rentme.rentme.ui.upload
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
+import com.rentme.rentme.ui.features.FeatureActivity
 
 class UploadFragment : Fragment() {
     private var _binding: FragmentUploadBinding? = null
@@ -32,11 +33,19 @@ class UploadFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        clickTypeSpinner()
+        selectTypeSpinner()
+        openFeatureActivity()
 
     }
 
-    private fun clickTypeSpinner(){
+    private fun openFeatureActivity() {
+        binding.btnNext.setOnClickListener {
+            val intent = Intent(requireContext(), FeatureActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun selectTypeSpinner(){
         val types: ArrayList<String> = ArrayList()
         types.add("Yengil moshina")
         types.add("Yuk moshina")
@@ -47,7 +56,6 @@ class UploadFragment : Fragment() {
         binding.spnType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0!!.getItemAtPosition(p2)
-                Toast.makeText(requireContext(), "$selectedItem selected!", Toast.LENGTH_SHORT).show()
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
