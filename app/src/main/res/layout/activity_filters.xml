@@ -1,50 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.filter.FiltersActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:background="@color/white"
+        app:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_back_to_Details"
+                    android:src="@drawable/ic_back_black"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+
+                <TextView
+                    android:text="Filters"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.core.widget.NestedScrollView
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
         <LinearLayout
             android:orientation="vertical"
+            android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/iv_back_to_Details"
-                        android:src="@drawable/ic_back_black"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"/>
-
-                    <TextView
-                        android:text="Filters"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"/>
-
-                </LinearLayout>
-
-            </androidx.appcompat.widget.Toolbar>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,7 +65,7 @@
                     android:layout_width="0dp"
                     android:layout_height="44dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_border_text"
+                    android:background="@drawable/filter_rounded_corner"
                     android:drawableLeft="@drawable/ic_search"
                     android:drawableRight="@drawable/ic_arrow_forward"
                     android:hint="Search address, city, location"
@@ -89,7 +99,7 @@
                     <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:background="@drawable/filter_borders_radius"
+                        android:background="@drawable/filter_rounded_corner"
                         android:layout_marginHorizontal="15dp"
                         android:layout_height="40dp">
 
@@ -105,7 +115,7 @@
                     <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:background="@drawable/filter_borders_radius"
+                        android:background="@drawable/filter_rounded_corner"
                         android:layout_marginHorizontal="15dp"
                         android:layout_height="40dp">
 
@@ -121,7 +131,7 @@
                     <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:background="@drawable/filter_borders_radius"
+                        android:background="@drawable/filter_rounded_corner"
                         android:layout_marginHorizontal="15dp"
                         android:layout_height="40dp">
 
@@ -137,7 +147,7 @@
                     <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:background="@drawable/filter_borders_radius"
+                        android:background="@drawable/filter_rounded_corner"
                         android:layout_marginHorizontal="15dp"
                         android:layout_height="40dp">
 
@@ -170,7 +180,7 @@
 
                 <Spinner
                     android:id="@+id/spn_cars"
-                    android:background="@drawable/filter_borders_radius"
+                    android:background="@drawable/filter_rounded_corner"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"/>
 
@@ -193,7 +203,7 @@
                 <Spinner
                     android:id="@+id/spn_carModel"
                     android:layout_marginVertical="2dp"
-                    android:background="@drawable/shape_border_text"
+                    android:background="@drawable/filter_rounded_corner"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"/>
 
@@ -219,7 +229,7 @@
                     android:id="@+id/spn_year"
                     android:layout_marginVertical="2dp"
                     android:layout_marginHorizontal="10dp"
-                    android:background="@drawable/shape_border_text"
+                    android:background="@drawable/filter_rounded_corner"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"/>
 
@@ -283,70 +293,75 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+
+                <TextView
+                    android:text="@string/str_min"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+<!--                <TextView-->
+<!--                    android:text="($)"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
                 <LinearLayout
                     android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/filter_borders_radius"
+                    android:background="@drawable/filter_rounded_corner"
                     android:layout_width="0dp"
                     android:layout_height="40dp">
 
-                    <TextView
-                        android:text="@string/str_min"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
 
                     <EditText
                         android:id="@+id/et_minCost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:text="$"
-                        android:layout_gravity="center_vertical"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
+                        android:hint="enter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
+                <TextView
+                    android:text="@string/str_max"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
                 <LinearLayout
                     android:layout_weight="1"
                     android:gravity="center"
                     android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/filter_borders_radius"
+                    android:background="@drawable/filter_rounded_corner"
                     android:layout_width="0dp"
                     android:layout_height="40dp">
 
-                    <TextView
-                        android:text="@string/str_max"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+
 
                     <EditText
                         android:id="@+id/et_maxCost"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:text="$"
-                        android:layout_gravity="center_vertical"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+<!--                    <TextView-->
+<!--                        android:text="$"-->
+<!--                        android:layout_gravity="center_vertical"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
 
                 </LinearLayout>
 
@@ -390,7 +405,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:background="#302F2F"
+                android:background="#817F7F"
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
@@ -437,7 +452,6 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:background="@color/purple_700"
-                            app:strokeWidth="1dp"
                             app:strokeColor="@color/black"
                             app:shapeAppearanceOverlay="@style/circle"
                             android:layout_width="20dp"
@@ -453,7 +467,6 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:background="@color/ll_background"
-                            app:strokeWidth="1dp"
                             app:strokeColor="@color/black"
                             app:shapeAppearanceOverlay="@style/circle"
                             android:layout_width="20dp"
@@ -469,7 +482,6 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:background="#E40707"
-                            app:strokeWidth="1dp"
                             app:strokeColor="@color/black"
                             app:shapeAppearanceOverlay="@style/circle"
                             android:layout_width="20dp"
@@ -485,7 +497,6 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:background="@color/black"
-                            app:strokeWidth="1dp"
                             app:strokeColor="@color/black"
                             app:shapeAppearanceOverlay="@style/circle"
                             android:layout_width="20dp"
@@ -506,9 +517,10 @@
                 <Button
                     android:id="@+id/btn_result"
                     android:text="@string/str_result"
+                    android:textColor="@color/black"
                     android:layout_marginHorizontal="20dp"
                     android:textAllCaps="false"
-                    android:background="@drawable/button_border_radius50"
+                    android:background="@drawable/filter_rounded_corner"
                     app:backgroundTint="@null"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -516,9 +528,9 @@
 
                 <Button
                     android:id="@+id/btn_clear"
-                    android:text="@string/str_result"
+                    android:text="@string/str_clear"
                     android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/button_border_radius50_white"
+                    android:background="@drawable/filter_rounded_corner"
                     android:textColor="#143656"
                     android:textAllCaps="false"
                     app:backgroundTint="@null"
@@ -533,4 +545,4 @@
     </androidx.core.widget.NestedScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
