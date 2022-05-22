@@ -54,6 +54,7 @@
     <string name="str_logIn_update">Log In</string>
 
 
+
     <string-array name="cars_type">
         <item>Sedan</item>
         <item>Yuk Mashina</item>

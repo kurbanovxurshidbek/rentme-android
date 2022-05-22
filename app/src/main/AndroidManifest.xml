@@ -29,11 +29,17 @@
             android:name=".ui.logIn.LogInActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.update.UpdateActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.splash.SplashActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.localization.LocalizationActivity"
             android:exported="false" />
@@ -47,16 +53,9 @@
             android:name=".ui.result.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.update.UpdateActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>
