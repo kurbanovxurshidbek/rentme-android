@@ -8,15 +8,17 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.rentme.rentme.R
-import com.rentme.rentme.ui.logIn.LogInActivity
+import com.rentme.rentme.databinding.ActivitySplashBinding
+import com.rentme.rentme.ui.localization.LocalizationActivity
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_SCREEN = 5000
     var bottom: Animation? = null
-    lateinit var image: ImageView
+    private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initView()
     }
 
@@ -24,12 +26,12 @@ class SplashActivity : AppCompatActivity() {
         //Animation
         bottom = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
 
-
         //Hooks
-        image = findViewById(R.id.car_running)
-        image.setAnimation(bottom)
+        binding.carRunning.animation = bottom
+
+
         Handler().postDelayed({
-            val intent = Intent(this, LogInActivity::class.java)
+            val intent = Intent(this, LocalizationActivity::class.java)
             startActivity(intent)
             finish()
         }, SPLASH_SCREEN.toLong())
