@@ -7,6 +7,7 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_background_rounded_border.xml" value="0.171" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/chech_register_background.xml" value="0.201" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/login_border_and_background.xml" value="0.1575" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/ablah.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_details.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_information.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_localization.xml" value="0.2" />
@@ -32,7 +33,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.264" />
+        <option name="scale" value="0.1" />
       </ProjectState>
     </option>
   </component>
