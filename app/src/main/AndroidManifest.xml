@@ -22,7 +22,7 @@
             android:name=".ui.location.SelectLocationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.details.information.InformationActivity"
+            android:name="com.rentme.rentme.ui.information.InformationActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
@@ -30,15 +30,17 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.splash.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true" >
         </activity>
         <activity
             android:name=".ui.localization.LocalizationActivity"

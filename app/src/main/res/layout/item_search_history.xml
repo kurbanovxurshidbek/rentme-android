@@ -8,7 +8,7 @@
     <ImageView
         android:layout_marginHorizontal="15dp"
         android:src="@drawable/ic_location"
-        app:backgroundTint="#cbcbcb"
+        app:tint="@color/orange_main_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
