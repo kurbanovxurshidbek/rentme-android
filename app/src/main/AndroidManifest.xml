@@ -10,10 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rentme">
         <activity
-            android:name=".InformationActivity"
+            android:name=".ui.details.information.InformationActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
-            android:name=".LogInActivity"
+            android:name=".ui.logIn.LogInActivity"
             android:exported="false" />
         <activity
             android:name=".ui.update.UpdateActivity"

@@ -4,56 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
     android:layout_marginHorizontal="16dp"
-    tools:context=".ui.update.UpdateActivity">
+    android:background="#ffffff"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/str_information"
-        android:textColor="#22215B"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".20"
-        android:orientation="vertical">
+        app:layout_constraintVertical_bias=".10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/str_information"
+            android:textColor="#22215B"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_first_name"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:layout_marginLeft="10dp"/>
 
+            android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/first_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="First Name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                app:boxStrokeColor="@color/button_background"
+                app:hintTextColor="@color/button_background"
+                android:textColorHighlight="#00FF0A"
+                app:counterOverflowTextColor="@color/teal_200"
+                app:helperTextTextAppearance="@style/HelperTextAppearance"
+                android:theme="@style/EditTextThemeOverlay"
+                android:hint="First Name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -61,28 +61,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_last_name"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:layout_marginLeft="10dp"/>
-
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/last_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Last Name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                app:boxStrokeColor="@color/button_background"
+                app:hintTextColor="@color/button_background"
+                android:textColorHighlight="#00FF0A"
+                app:counterOverflowTextColor="@color/teal_200"
+                app:helperTextTextAppearance="@style/HelperTextAppearance"
+                android:theme="@style/EditTextThemeOverlay"
+                android:hint="Last Name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/login_border_and_background"
-                    android:inputType="text"/>
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -90,28 +88,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_first_name"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:layout_marginLeft="10dp"/>
-
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/email_information"
+                android:id="@+id/email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                app:boxStrokeColor="@color/button_background"
+                app:hintTextColor="@color/button_background"
+                android:textColorHighlight="#00FF0A"
+                app:counterOverflowTextColor="@color/teal_200"
+                app:helperTextTextAppearance="@style/HelperTextAppearance"
+                android:theme="@style/EditTextThemeOverlay"
+                android:hint="@string/str_email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/login_border_and_background"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    android:textColorHighlight="@color/textColorHighlight"/>
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -122,17 +119,18 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/button_background_rounded_border"
+        app:backgroundTint="@null"
         android:gravity="center"
-        android:text="@string/str_send_sms"
+        android:text="@string/str_registration"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="normal"
-        android:background="@drawable/button_background_rounded_border"
-        android:textAllCaps="false"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

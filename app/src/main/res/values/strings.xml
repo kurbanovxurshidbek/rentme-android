@@ -43,11 +43,15 @@
     <string name="str_english_language">English language</string>
     <string name="str_russian_language">Russian language</string>
     <string name="str_phone_number">PHONE NUMBER</string>
-    <string name="str_logIn_update">Log In</string>
+    <string name="str_logIn_page">Log In</string>
     <string name="str_continue">Continue</string>
     <string name="str_send_sms">Send SmS</string>
     <string name="str_information">Fill information</string>
     <string name="str_first_name">Firstname</string>
     <string name="str_last_name">Lastname</string>
     <string name="str_email">Email</string>
+    <string name="str_skip">Skip?</string>
+    <string name="str_optional">(Optional)</string>
+    <string name="str_save">Save</string>
+    <string name="str_registration">Registration</string>
 </resources>
