@@ -56,6 +56,6 @@ class ResultActivity : AppCompatActivity() {
         items.add(Result(R.drawable.im_malibu,"Damas 2","","50$","",))
         items.add(Result(R.drawable.im_malibu,"Gentra 2","","150$","",))
 
-        adapter.sumbitData(items)
+        adapter.submitData(items)
     }
 }

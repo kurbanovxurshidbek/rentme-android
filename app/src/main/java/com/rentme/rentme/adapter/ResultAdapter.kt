@@ -48,7 +48,7 @@ class ResultAdapter:RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
 
     override fun getItemCount(): Int = dif.currentList.size
 
-    fun sumbitData(list: List<Result>){
+    fun submitData(list: List<Result>){
         dif.submitList(list)
     }
 
