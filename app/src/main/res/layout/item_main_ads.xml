@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_adds"
+            android:id="@+id/iv_ads"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:scaleType="fitXY"

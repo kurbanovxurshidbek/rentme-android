@@ -11,39 +11,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:background="#1A2B49"
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
 
                 <ImageView
                     android:id="@+id/iv_cars_images"
-                    android:src="@drawable/tesla_car"
+                    android:src="@drawable/im_malibu"
                     android:layout_gravity="center"
                     android:scaleType="fitXY"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="220dp"/>
 
-            </LinearLayout>
 
             <LinearLayout
+                android:padding="15dp"
                 android:background="#E4F7FF"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/tv_cars_name"
-                    android:paddingVertical="5dp"
-                    android:paddingStart="5dp"
                     android:text="Tesla Model 3"
                     android:textSize="18sp"
                     android:textStyle="normal"
                     android:textColor="@color/black"
-                    android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="by City Car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
 
             <LinearLayout
@@ -155,7 +153,5 @@
             </LinearLayout>
 
         </LinearLayout>
-
-
 
 </androidx.cardview.widget.CardView>

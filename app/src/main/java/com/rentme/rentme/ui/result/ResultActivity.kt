@@ -9,6 +9,7 @@ import com.rentme.rentme.adapter.ResultAdapter
 import com.rentme.rentme.databinding.ActivityResultBinding
 import com.rentme.rentme.model.Result
 import com.rentme.rentme.ui.details.DetailsActivity
+import com.rentme.rentme.ui.filter.FiltersActivity
 
 class ResultActivity : AppCompatActivity() {
 
@@ -33,6 +34,18 @@ class ResultActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+        binding.apply {
+            llFilter.setOnClickListener {
+                intent = Intent(this@ResultActivity,FiltersActivity::class.java)
+                startActivity(intent)
+            }
+
+
+            icBackToTypes.setOnClickListener {
+                finish()
+            }
+        }
     }
 
     private fun getAllResult() {
@@ -43,6 +56,6 @@ class ResultActivity : AppCompatActivity() {
         items.add(Result(R.drawable.im_malibu,"Damas 2","","50$","",))
         items.add(Result(R.drawable.im_malibu,"Gentra 2","","150$","",))
 
-        adapter.sumbitData(items)
+        adapter.submitData(items)
     }
 }
