@@ -309,7 +309,7 @@
                             android:id="@+id/chb_daily"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/radio_group_selector"
+                            android:buttonTint="@color/light_blue"
                             android:textSize="14sp"
                             android:text="@string/str_daily"/>
 
@@ -337,7 +337,7 @@
                             android:id="@+id/chb_weekly"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/radio_group_selector"
+                            android:buttonTint="@color/light_blue"
                             android:textSize="14sp"
                             android:text="@string/str_weekly"/>
 
@@ -365,7 +365,7 @@
                             android:id="@+id/chb_monthly"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/radio_group_selector"
+                            android:buttonTint="@color/light_blue"
                             android:textSize="14sp"
                             android:text="@string/str_monthly"/>
 
@@ -406,7 +406,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14sp"
-                    android:background="@drawable/radio_group_selector"
+                    android:buttonTint="@color/light_blue"
                     android:textColor="@color/black"
                     android:text="@string/str_mechanical"/>
 
@@ -415,7 +415,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/radio_group_selector"
+                    android:buttonTint="@color/light_blue"
                     android:textSize="14sp"
                     android:textColor="@color/black"
                     android:text="@string/str_automatic"/>
@@ -443,7 +443,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14sp"
-                    android:background="@drawable/radio_group_selector"
+                    android:buttonTint="@color/light_blue"
                     android:textColor="@color/black"
                     android:text="@string/str_gasoline"/>
 
@@ -452,7 +452,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/radio_group_selector"
+                    android:buttonTint="@color/light_blue"
                     android:textSize="14sp"
                     android:textColor="@color/black"
                     android:text="@string/str_gasoline_gas"/>
@@ -478,7 +478,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/radio_group_selector"
+                    android:buttonTint="@color/light_blue"
                     android:textSize="14sp"
                     android:text="@string/str_conditioners"/>
 
@@ -487,7 +487,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/radio_group_selector"
+                    android:buttonTint="@color/light_blue"
                     android:textSize="14sp"
                     android:text="@string/str_radio"/>
 
@@ -500,21 +500,56 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:layout_marginTop="6dp"
-                android:text="Colors"/>
+                android:text="@string/str_color"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
                 android:gravity="center_vertical">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_vehicle_color"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_circle_rounded_border"
+                    android:padding="1dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_car_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:shapeAppearanceOverlay="@style/circle"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_car"
+                        android:background="@color/black"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_colors"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20dp"/>
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/button_background_rounded_border"
+                android:text="@string/str_save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
 
         </LinearLayout>
 

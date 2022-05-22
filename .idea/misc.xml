@@ -10,12 +10,15 @@
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable/ll_background_date_month.xml" value="0.121" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable/ll_background_rounded_border.xml" value="0.121" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable/radio_group_selector.xml" value="0.1265" />
-        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_features.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable/shape_border_icon_background.xml" value="0.1265" />
+        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable/shape_circle_rounded_border.xml" value="0.1265" />
+        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_features.xml" value="0.18" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_types.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/fragment_upload.xml" value="0.22" />
+        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/item_color_view.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/item_types_layout.xml" value="0.20416666666666666" />
       </map>
     </option>
