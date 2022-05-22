@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:menuCategory="secondary"
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/item_selected_bnv_home"
         android:title="@string/str_home" />
     <item android:menuCategory="secondary"
         android:id="@+id/uploadFragment"
@@ -10,7 +10,7 @@
         android:title="@string/str_upload" />
     <item android:menuCategory="secondary"
         android:id="@+id/profileFragment"
-        android:icon="@drawable/ic_profile"
+        android:icon="@drawable/item_selected_bnv_profile"
         android:title="@string/str_profile" />
 
 </menu>
