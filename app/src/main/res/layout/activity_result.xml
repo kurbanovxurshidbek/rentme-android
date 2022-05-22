@@ -23,12 +23,13 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/ic_back_to_Types"
                     android:src="@drawable/ic_back_black"
                     android:layout_width="24dp"
                     android:layout_height="24dp"/>
 
                 <TextView
-                    android:text="Filter"
+                    android:text="Result"
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -51,9 +52,10 @@
         <LinearLayout
             android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="40dp">
 
             <LinearLayout
+                android:id="@+id/ll_filter"
                 android:background="@drawable/filter_borders_radius"
                 android:orientation="horizontal"
                 android:padding="5dp"
@@ -84,7 +86,7 @@
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_filter"
+                android:id="@+id/rv_result"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
