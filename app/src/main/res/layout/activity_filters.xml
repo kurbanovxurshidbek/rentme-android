@@ -424,7 +424,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="@string/str_color"
+                    android:text="@string/str_colors"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
