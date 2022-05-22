@@ -11,6 +11,7 @@
         <ImageView
             android:id="@+id/iv_car_images"
             android:layout_marginHorizontal="1dp"
+            android:scaleType="fitXY"
             android:src="@drawable/im_malibu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
