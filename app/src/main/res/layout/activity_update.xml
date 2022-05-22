@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,56 +7,67 @@
     android:background="#ffffff"
     android:orientation="vertical"
     tools:context=".ui.update.UpdateActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/white"
-        android:elevation="4dp"
-        android:gravity="center"
-        app:buttonGravity="center_vertical"
-        app:titleTextColor="@color/white">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical">
-
-
-            <ImageView
-                android:id="@+id/iv_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
-                android:src="@drawable/ic_back" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Update Phone Number"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-    </androidx.appcompat.widget.Toolbar>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:orientation="vertical">
-    <FrameLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="4dp"
+            android:gravity="center"
+            app:buttonGravity="center_vertical"
+            app:titleTextColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Update Phone Number"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="16dp"
+    android:layout_height="wrap_content">
+
+
+    <FrameLayout
+        android:id="@+id/numbers"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
         <!--current number-->
         <LinearLayout
             android:id="@+id/ll_current_number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="match_parent"
@@ -85,42 +96,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="visible">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="5dp"
-                android:text="New NUmber"
-                android:textAllCaps="true"
-                android:textColor="#8c8c8c"
-                android:textSize="14dp" />
-
-            <EditText
-                android:id="@+id/et_new_number_2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/shape_border_text"
-                android:paddingLeft="10dp"
-                android:text="+998 "
-                android:textColor="#8c8c8c"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <!--mew number  1-->
-        <LinearLayout
-            android:id="@+id/ll_new_number_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:visibility="gone">
 
             <TextView
@@ -129,28 +104,99 @@
                 android:layout_marginTop="30dp"
                 android:gravity="center_vertical"
                 android:paddingLeft="5dp"
+                android:text="New Number"
+                android:textAllCaps="true"
+                android:textColor="#8c8c8c"
+                android:textSize="14dp" />
+
+
+            <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
+                app:boxStrokeColor="@color/button_background"
+                app:hintTextColor="@color/button_background"
+                android:textColorHighlight="#00FF0A"
+                app:counterOverflowTextColor="@color/teal_200"
+                android:id="@+id/enter_phone_number_2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLength="17"
+
+                    />
+
+            </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/et_new_number_2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:background="@drawable/shape_border_text"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:text="+998 "-->
+<!--                android:textColor="#8c8c8c"-->
+<!--                android:textSize="16sp" />-->
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/confirm_smsss"
+        app:layout_constraintTop_toBottomOf="@id/numbers"
+        android:layout_marginTop="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--mew number  1-->
+        <LinearLayout
+            android:id="@+id/ll_new_number_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
                 android:text="New NUmber"
                 android:textAllCaps="true"
                 android:textColor="#8c8c8c"
                 android:textSize="14dp" />
 
-            <EditText
-                android:id="@+id/et_new_number"
+<!--            new number 1-->
+            <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
+                app:boxStrokeColor="@color/button_background"
+                app:hintTextColor="@color/button_background"
+                android:textColorHighlight="#00FF0A"
+                app:counterOverflowTextColor="@color/teal_200"
+                android:id="@+id/enter_phone_number_1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/shape_border_text"
-                android:paddingLeft="10dp"
-                android:text="+998 "
-                android:textColor="#8c8c8c"
-                android:textSize="16sp" />
+                android:layout_height="wrap_content"
+                >
 
+                <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLength="17"
+
+                    />
+
+            </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>
         </LinearLayout>
         <!--sms confirmation-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <com.fraggjkee.smsconfirmationview.SmsConfirmationView
                 android:id="@+id/sms_code_view"
@@ -184,6 +230,10 @@
     </FrameLayout>
 
     <FrameLayout
+        app:layout_constraintTop_toBottomOf="@id/confirm_smsss"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -213,7 +263,8 @@
             android:visibility="gone"
             app:backgroundTint="@null" />
     </FrameLayout>
-    </LinearLayout>
 
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

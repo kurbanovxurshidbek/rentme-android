@@ -30,36 +30,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <!--current number-->
-            <!--        <LinearLayout-->
-            <!--            android:id="@+id/ll_current_number"-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="match_parent"-->
-            <!--            android:orientation="vertical"-->
-            <!--            android:visibility="gone">-->
 
-            <!--            <TextView-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="50dp"-->
-            <!--                android:layout_marginTop="30dp"-->
-            <!--                android:gravity="center_vertical"-->
-            <!--                android:paddingLeft="5dp"-->
-            <!--                android:text="Current NUmber"-->
-            <!--                android:textAllCaps="true"-->
-            <!--                android:textColor="#8c8c8c"-->
-            <!--                android:textSize="14dp" />-->
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/tv_current_phone_number"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="50dp"-->
-            <!--                android:background="@drawable/shape_border_text"-->
-            <!--                android:gravity="center_vertical"-->
-            <!--                android:paddingLeft="10dp"-->
-            <!--                android:text="+998 (93) 759 57 79 "-->
-            <!--                android:textColor="#8c8c8c" />-->
-            <!--        </LinearLayout>-->
-            <!--        new number 2-->
             <LinearLayout
                 android:id="@+id/ll_new_number_2"
                 android:layout_width="match_parent"
@@ -69,21 +40,21 @@
                 android:visibility="visible">
 
 
-                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
-                    android:id="@+id/phone_number"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="phone number"
+<!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout-->
+<!--                    android:id="@+id/phone_number"-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="phone number"-->
 
-                    >
+<!--                    >-->
 
-                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:maxLength="17" />
+<!--                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:maxLength="17" />-->
 
-                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>
+<!--                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>-->
             </LinearLayout>
 
 
