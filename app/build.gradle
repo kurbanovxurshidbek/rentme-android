@@ -51,6 +51,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+//    Google Locations
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+
+//    Google Services
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+
     //phone number
     implementation 'com.fredporciuncula:phonemoji:1.2.0'
 }

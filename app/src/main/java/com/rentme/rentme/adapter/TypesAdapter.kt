@@ -1,51 +1,59 @@
 package com.rentme.rentme.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.rentme.rentme.R
+import com.rentme.rentme.databinding.ItemTypesLayoutBinding
 import com.rentme.rentme.model.Types
 
-class TypesAdapter(var context: Context, var items:ArrayList<Types>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TypesAdapter : RecyclerView.Adapter<TypesAdapter.TypesViewHolder>() {
+    private val dif = AsyncListDiffer(this, ITEM_DIF)
+    var onClick: ((Types) -> Unit)? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_types_layout, parent, false)
-        return TypesViewHolder(view)
-    }
+    inner class TypesViewHolder(private val binding: ItemTypesLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind() {
+            val types = dif.currentList[adapterPosition]
+            binding.apply {
+                tvCarsName.text = types.carName
+                tvCarsCount.text = types.carsNumber
+                ivCarImage.setImageResource(types.carImage)
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val item = items[position]
-
-        if (holder is TypesViewHolder){
-            var tv_carsName = holder.tv_carsName
-            var tv_carNumbers = holder.tv_carNumbers
-            var iv_carsImage = holder.iv_cars
-
-            tv_carsName.text = item.carName
-            tv_carNumbers.text = item.carsNumber
-
-            iv_carsImage.setImageResource(item.carImage)
-
+                root.setOnClickListener {
+                    onClick?.invoke(types)
+                }
+            }
         }
     }
 
-    override fun getItemCount(): Int {
-        return items.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TypesViewHolder {
+        return TypesViewHolder(
+            ItemTypesLayoutBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
-    class TypesViewHolder(view: View):RecyclerView.ViewHolder(view){
-        var iv_cars: ImageView
-        var tv_carsName:TextView
-        var tv_carNumbers:TextView
+    override fun onBindViewHolder(holder: TypesViewHolder, position: Int) = holder.bind()
 
-        init {
-            iv_cars = view.findViewById(R.id.iv_car_image)
-            tv_carsName = view.findViewById(R.id.tv_cars_name)
-            tv_carNumbers = view.findViewById(R.id.tv_cars_count)
+    override fun getItemCount(): Int = dif.currentList.size
+
+    fun submitData(list: List<Types>){
+        dif.submitList(list)
+    }
+
+    companion object {
+        private val ITEM_DIF = object : DiffUtil.ItemCallback<Types>() {
+
+            override fun areItemsTheSame(oldItem: Types, newItem: Types): Boolean =
+                oldItem.carName == newItem.carName && oldItem.carsNumber == newItem.carsNumber
+
+            override fun areContentsTheSame(oldItem: Types, newItem: Types): Boolean =
+                oldItem == newItem
         }
     }
 }

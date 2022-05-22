@@ -5,6 +5,7 @@
     <string name="str_upload">Upload</string>
     <string name="str_profile">Profile</string>
 
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_location">Location</string>
     <string name="str_select_location">Select location</string>
@@ -35,6 +36,9 @@
     <string name="str_additional_features">Additional features</string>
     <string name="str_radio">Radio</string>
     <string name="str_conditioners">Conditioners</string>
+    <string name="str_cost">Cost</string>
+    <string name="str_color">Colors</string>
+    <string name="str_result">Result</string>
 
     //sherzod
     <string name="str_hello_blank_fragment">Hello blank fragment</string>
@@ -43,6 +47,45 @@
     <string name="str_english_language">English language</string>
     <string name="str_russian_language">Russian language</string>
     <string name="str_phone_number">PHONE NUMBER</string>
+    <string name="str_logIn_update">Log In</string>
+
+
+    <string-array name="cars_type">
+        <item>Sedan</item>
+        <item>Yuk Mashina</item>
+        <item>velosiped</item>
+        <item>Mototsikl</item>
+    </string-array>
+
+    <string-array name="cars_model">
+        <item>Malibu</item>
+        <item>Lasetti</item>
+        <item>Damas</item>
+        <item>Matiz</item>
+        <item>Nexia 3</item>
+        <item>Nexia 2</item>
+        <item>Eqvinox</item>
+        <item>Tracker</item>
+    </string-array>
+
+    <string-array name="cars_year">
+        <item>2010</item>
+        <item>2011</item>
+        <item>2012</item>
+        <item>2013</item>
+        <item>2014</item>
+        <item>2015</item>
+        <item>2016</item>
+        <item>2017</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+    </string-array>
+    <string name="str_search_hint_auto_type">Search avto type</string>
+    <string name="str_select_your_location">Select your location</string>
+    <string name="str_search_hint_location">Search location</string>
     <string name="str_logIn_page">Log In</string>
     <string name="str_continue">Continue</string>
     <string name="str_send_sms">Send SmS</string>
