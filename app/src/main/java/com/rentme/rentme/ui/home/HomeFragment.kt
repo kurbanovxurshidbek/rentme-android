@@ -107,9 +107,7 @@ class HomeFragment : Fragment() {
         items.add(Result(R.drawable.im_malibu,"Malibu 2","","200$","",))
         items.add(Result(R.drawable.im_malibu,"Malibu 3","","250$","",))
         items.add(Result(R.drawable.im_malibu,"Nexia 2","","100$","",))
-        items.add(Result(R.drawable.im_malibu,"Damas 2","","50$","",))
-        items.add(Result(R.drawable.im_malibu,"Gentra 2","","150$","",))
-
+        items.add(Result())
         subAdapter.submitData(items)
     }
 }

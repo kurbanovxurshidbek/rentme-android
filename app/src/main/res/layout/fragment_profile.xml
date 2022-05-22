@@ -206,7 +206,7 @@
             app:cardCornerRadius="10dp">
 
           <com.google.android.material.imageview.ShapeableImageView
-              android:layout_width="24dp"
+              android:layout_width="wrap_content"
               android:layout_height="24dp"
               android:layout_gravity="center"
               android:src="@drawable/ic_report" />
