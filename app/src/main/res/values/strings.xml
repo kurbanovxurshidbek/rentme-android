@@ -11,8 +11,9 @@
     <string name="str_select_location">Select location</string>
     <string name="str_since">Since</string>
     <string name="str_lifetime">Lifetime:</string>
-    <string name="str_daily">Daily</string>
-    <string name="str_monthly">Monthly</string>
+    <string name="str_daily">daily</string>
+    <string name="str_weekly">weekly</string>
+    <string name="str_monthly">monthly</string>
     <string name="str_min">min:</string>
     <string name="str_day">day</string>
     <string name="str_max">max:</string>
@@ -25,17 +26,16 @@
     <string name="str_model">Model</string>
     <string name="str_min_pictures">(min 2 pictures)</string>
     <string name="str_year_manufacture">Year of manufacture</string>
-    <string name="str_weekly">Weekly</string>
     <string name="str_management_system">Management system</string>
-    <string name="str_mechanical">Mechanical</string>
-    <string name="str_automatic">Automatic</string>
+    <string name="str_mechanical">mechanical</string>
+    <string name="str_automatic">automatic</string>
     <string name="str_fuel">Fuel</string>
-    <string name="str_gasoline">Gasoline</string>
-    <string name="str_gasoline_gas">Gasoline/Gas</string>
+    <string name="str_gasoline">gasoline</string>
+    <string name="str_gasoline_gas">gasoline/gas</string>
     <string name="str_prices">Prices:</string>
     <string name="str_additional_features">Additional features</string>
-    <string name="str_radio">Radio</string>
-    <string name="str_conditioners">Conditioners</string>
+    <string name="str_radio">radio</string>
+    <string name="str_conditioners">conditioners</string>
     <string name="str_cost">Cost</string>
     <string name="str_colors">Colors</string>
     <string name="str_color">Color</string>
@@ -106,4 +106,5 @@
     <string name="str_skip">Skip?</string>
     <string name="str_optional">(Optional)</string>
     <string name="str_registration">Registration</string>
+    <string name="str_pictures">Pictures</string>
 </resources>

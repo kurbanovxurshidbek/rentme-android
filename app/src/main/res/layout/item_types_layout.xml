@@ -26,12 +26,15 @@
 
             <TextView
                 android:id="@+id/tv_cars_name"
-                android:text="Teslalar"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="25sp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="Teslalar"
+                android:shadowRadius="10"
+                android:shadowColor="@color/orange_main_01"
+                android:outlineSpotShadowColor="@color/orange_main_01"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_cars_count"

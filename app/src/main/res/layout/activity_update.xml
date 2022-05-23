@@ -78,7 +78,7 @@
                 android:text="Current NUmber"
                 android:textAllCaps="true"
                 android:textColor="#8c8c8c"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tv_current_phone_number"
@@ -107,7 +107,7 @@
                 android:text="New Number"
                 android:textAllCaps="true"
                 android:textColor="#8c8c8c"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
 
             <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
@@ -170,7 +170,7 @@
                 android:text="New NUmber"
                 android:textAllCaps="true"
                 android:textColor="#8c8c8c"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
 <!--            new number 1-->
             <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
@@ -190,8 +190,6 @@
                     android:layout_height="match_parent"
                     android:maxLength="17"
                     android:textColor="@color/black"
-
-
                     />
 
             </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>
@@ -269,8 +267,6 @@
             android:visibility="gone"
             app:backgroundTint="@null" />
     </FrameLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -3,8 +3,10 @@ package com.rentme.rentme.ui.details
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
+import com.rentme.rentme.MainActivity
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.DetailPhotoAdapter
 import com.rentme.rentme.databinding.ActivityDetailsBinding
@@ -20,6 +22,8 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN or WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN)
 
         initViews()
         getAllDetailPhoro()
