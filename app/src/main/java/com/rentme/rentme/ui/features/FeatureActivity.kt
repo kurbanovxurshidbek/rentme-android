@@ -5,12 +5,16 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.rentme.rentme.R
+import com.rentme.rentme.adapter.ColorAdapter
+import com.rentme.rentme.adapter.TypesAdapter
 import com.rentme.rentme.databinding.ActivityFeaturesBinding
 
 class FeatureActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFeaturesBinding
+    private val colorAdapter by lazy { ColorAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +28,29 @@ class FeatureActivity : AppCompatActivity() {
     private fun initViews() {
         selectModelSpinner()
         selectYearSpinner()
+        allColorFunction()
+        binding.ivBack.setOnClickListener { finish() }
+    }
+
+    private fun allColorFunction(){
+        val colors: ArrayList<Int> = ArrayList()
+        colors.add(R.color.car_color_1)
+        colors.add(R.color.car_color_2)
+        colors.add(R.color.car_color_3)
+        colors.add(R.color.car_color_4)
+        colors.add(R.color.car_color_5)
+        colors.add(R.color.car_color_6)
+        colors.add(R.color.car_color_7)
+        colors.add(R.color.car_color_8)
+        colors.add(R.color.car_color_9)
+        colors.add(R.color.car_color_10)
+        colorAdapter.submitData(colors)
+
+        binding.rvColors.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvColors.adapter = colorAdapter
+        colorAdapter.onClick = {color ->
+            binding.ivCarColor.setBackgroundResource(color)
+        }
     }
 
     private fun selectModelSpinner(){

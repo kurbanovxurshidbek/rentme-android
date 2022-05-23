@@ -16,4 +16,17 @@
     <color name="orange_main_01">#F38121</color>
     <color name="orange_main_02">#C05801</color>
 
+
+
+    <color name="car_color_1">#000000</color>
+    <color name="car_color_2">#FFFFFF</color>
+    <color name="car_color_3">#FF9800</color>
+    <color name="car_color_4">#E80F0F</color>
+    <color name="car_color_5">#3F51B5</color>
+    <color name="car_color_6">#CE353232</color>
+    <color name="car_color_7">#21D328</color>
+    <color name="car_color_8">#F4DB33</color>
+    <color name="car_color_9">#B318CD</color>
+    <color name="car_color_10">#1BCEE4</color>
+
 </resources>
