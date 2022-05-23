@@ -36,7 +36,6 @@ class SplashActivity : AppCompatActivity() {
         //Hooks
         binding.carRunning.animation = bottom
 
-
         Handler().postDelayed({
             val intent = Intent(this, LocalizationActivity::class.java)
             startActivity(intent)
