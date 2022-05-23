@@ -66,7 +66,6 @@ class SubMainAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 binding.apply {
                     tvCarsName.text = result.carName
                     tvCarsCostDay.text = result.costDay
-                    tvCarsCostWeek.text = result.costWeek
                     tvCarsCostMonth.text = result.costMonth
 
                     ivCarsImages.setImageResource(result.carImage!!)

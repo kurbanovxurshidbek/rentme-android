@@ -25,7 +25,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/iv_notification"
+                    android:id="@+id/iv_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
@@ -340,34 +340,6 @@
                         android:orientation="vertical">
 
                         <CheckBox
-                            android:id="@+id/chb_weekly"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:buttonTint="@color/orange_main_01"
-                            android:text="@string/str_weekly"
-                            android:textColor="@color/second_text_color"
-                            android:textSize="14sp" />
-
-                        <EditText
-                            android:id="@+id/edt_price_weekly"
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:background="@drawable/ll_background_date_month"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:textColor="@color/second_text_color"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <CheckBox
                             android:id="@+id/chb_monthly"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -539,7 +511,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_colors"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:orientation="horizontal" />
 

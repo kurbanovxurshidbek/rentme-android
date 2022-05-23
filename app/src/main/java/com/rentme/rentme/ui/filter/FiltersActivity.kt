@@ -52,21 +52,18 @@ class FiltersActivity : AppCompatActivity() {
     }
 
     private fun initSpinnerModel() {
-        val adapter = ArrayAdapter.createFromResource(this,
-            R.array.cars_model,
-            android.R.layout.simple_spinner_item
-        )
+        val models: ArrayList<String> = ArrayList()
+        models.add("Yengil moshina")
+        models.add("Yuk moshina")
+        models.add("Velesiped")
+        models.add("Skutor")
 
-        binding.spnCarModel.adapter = adapter
-        binding.spnCarModel.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
+        binding.spnCarModel.adapter = ArrayAdapter<String>(this, R.layout.spinner_item_view, models)
+        binding.spnCarModel.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0!!.getItemAtPosition(p2)
-//                Toast.makeText(this@FiltersActivity, "$selectedItem Selected", Toast.LENGTH_SHORT).show()
             }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
     }
 

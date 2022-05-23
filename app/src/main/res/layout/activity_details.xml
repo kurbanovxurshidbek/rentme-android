@@ -30,7 +30,6 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:background="@drawable/ll_details_background"
                     android:layout_height="wrap_content"
                     android:paddingTop="35dp"
                     android:orientation="horizontal">
@@ -126,42 +125,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_marginHorizontal="1dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/costs_border_radius"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tv_cars_cost_week"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:text="680$"
-                        android:textColor="#6C6767"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:textColor="@color/black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="/week"
-                        android:textSize="10sp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="5dp"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginTop="10dp"
-                        android:backgroundTint="#6C6767"
-                        android:background="@drawable/filter_rounded_corner" />
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
