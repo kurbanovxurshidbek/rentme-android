@@ -62,4 +62,5 @@ class ResultAdapter:RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
                 oldItem == newItem
         }
     }
+
 }
