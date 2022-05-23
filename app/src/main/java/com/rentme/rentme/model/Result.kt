@@ -4,6 +4,5 @@ data class Result(
     var carImage: Int? = null,
     var carName:String? = null,
     var costDay:String? = null,
-    var costWeek:String? = null,
     var costMonth:String? = null
 )
