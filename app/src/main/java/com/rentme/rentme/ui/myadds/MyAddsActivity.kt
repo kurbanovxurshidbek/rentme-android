@@ -39,11 +39,11 @@ class MyAddsActivity : AppCompatActivity() {
 
     private fun getAllResult() {
         val items:ArrayList<Result> = ArrayList()
-        items.add(Result(R.drawable.im_malibu,"Malibu 2","","200$","",))
-        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","350$","",))
-        items.add(Result(R.drawable.im_mersades,"AMG","","400$","",))
-        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","300$","",))
-        items.add(Result(R.drawable.im_mersades,"AMG 2","","350$","",))
+        items.add(Result(R.drawable.im_malibu,"Malibu 2","","200$"))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","350$"))
+        items.add(Result(R.drawable.im_mersades,"AMG","","400$"))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","300$"))
+        items.add(Result(R.drawable.im_mersades,"AMG 2","","350$"))
         adapter.submitData(items)
 
         binding.rvMyAdds.layoutManager = GridLayoutManager(this, 1)
