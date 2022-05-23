@@ -169,11 +169,11 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_marginTop="15dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+<!--            <LinearLayout-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
 
                 <TextView
                     android:text="@string/str_type"
@@ -183,12 +183,30 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
+<!--                <Spinner-->
+<!--                    android:id="@+id/spn_cars"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:background="@drawable/filter_rounded_corner"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="40dp"/>-->
+
+<!--            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ll_background_rounded_border"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.02">
+
                 <Spinner
                     android:id="@+id/spn_cars"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/filter_rounded_corner"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"/>
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
@@ -206,12 +224,30 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
-                <Spinner
-                    android:id="@+id/spn_carModel"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/filter_rounded_corner"
+<!--                <Spinner-->
+<!--                    android:id="@+id/spn_carModel"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:background="@drawable/filter_rounded_corner"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="40dp"/>-->
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"/>
+                    android:layout_height="50dp"
+                    android:background="@drawable/ll_background_rounded_border"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.02">
+
+                    <Spinner
+                        android:id="@+id/spn_carModel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
