@@ -56,6 +56,9 @@
             android:name=".ui.features.FeatureActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.myadds.MyAddsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan"/>

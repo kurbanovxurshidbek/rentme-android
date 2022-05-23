@@ -1,5 +1,6 @@
 package com.rentme.rentme.ui.features
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -10,6 +11,8 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ColorAdapter
 import com.rentme.rentme.adapter.TypesAdapter
 import com.rentme.rentme.databinding.ActivityFeaturesBinding
+import com.rentme.rentme.ui.location.SelectLocationActivity
+import com.rentme.rentme.ui.myadds.MyAddsActivity
 
 class FeatureActivity : AppCompatActivity() {
 
@@ -30,6 +33,12 @@ class FeatureActivity : AppCompatActivity() {
         selectYearSpinner()
         allColorFunction()
         binding.ivBack.setOnClickListener { finish() }
+
+        binding.btnSave.setOnClickListener {
+            val intent = Intent(this, MyAddsActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun allColorFunction(){

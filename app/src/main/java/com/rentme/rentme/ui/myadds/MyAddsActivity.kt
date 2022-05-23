@@ -1,51 +1,40 @@
-package com.rentme.rentme.ui.result
+package com.rentme.rentme.ui.myadds
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rentme.rentme.R
-import com.rentme.rentme.adapter.ResultAdapter
-import com.rentme.rentme.databinding.ActivityResultBinding
+import com.rentme.rentme.adapter.MyAddAdapter
+import com.rentme.rentme.databinding.ActivityMyAddsBinding
 import com.rentme.rentme.model.Result
 import com.rentme.rentme.ui.details.DetailsActivity
-import com.rentme.rentme.ui.filter.FiltersActivity
 
-class ResultActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityResultBinding
-    private val adapter by lazy { ResultAdapter() }
+class MyAddsActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMyAddsBinding
+    private val adapter by lazy { MyAddAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityResultBinding.inflate(layoutInflater)
+        binding = ActivityMyAddsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initViews()
-        getAllResult()
+
     }
 
     private fun initViews() {
-        binding.rvResult.layoutManager = GridLayoutManager(this,1)
-        binding.rvResult.adapter = adapter
+        binding.ivBack.setOnClickListener { finish() }
+        getAllResult()
+
         adapter.onClick = {result ->
-            Intent(this,DetailsActivity::class.java).also {
+            Intent(this, DetailsActivity::class.java).also {
                 it.putExtra("carName", result.carName)
                 startActivity(it)
             }
         }
 
-        binding.apply {
-            llFilter.setOnClickListener {
-                intent = Intent(this@ResultActivity,FiltersActivity::class.java)
-                startActivity(intent)
-            }
-
-
-            icBackToTypes.setOnClickListener {
-                finish()
-            }
-        }
     }
 
     private fun getAllResult() {
@@ -55,8 +44,10 @@ class ResultActivity : AppCompatActivity() {
         items.add(Result(R.drawable.im_mersades,"AMG","","400$","",))
         items.add(Result(R.drawable.im_tesla_model3,"Model 3","","300$","",))
         items.add(Result(R.drawable.im_mersades,"AMG 2","","350$","",))
-
         adapter.submitData(items)
+
+        binding.rvMyAdds.layoutManager = GridLayoutManager(this, 1)
+        binding.rvMyAdds.adapter = adapter
     }
 
 }

@@ -107,4 +107,5 @@
     <string name="str_optional">(Optional)</string>
     <string name="str_registration">Registration</string>
     <string name="str_pictures">Pictures</string>
+    <string name="str_my_adds">My adds</string>
 </resources>
