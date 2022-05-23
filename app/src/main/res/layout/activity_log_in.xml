@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="16dp"
+    android:paddingHorizontal="16dp"
     android:background="#ffffff"
     tools:context=".ui.logIn.LogInActivity">
 
@@ -64,6 +64,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/ll_sms_and_sms_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -78,9 +79,9 @@
                     app:scv_codeLength="6"
                     app:scv_showCursor="false"
                     app:scv_symbolBorderActiveColor="@color/ll_background"
-                    app:scv_symbolBorderColor="#2E2D2D"
+                    app:scv_symbolBorderColor="#D0020202"
                     app:scv_symbolBorderCornerRadius="10dp"
-                    app:scv_symbolTextColor="@color/black"
+                    app:scv_symbolTextColor="#D0020202"
                     app:scv_symbolsSpacing="15dp" />
 
                 <TextView
