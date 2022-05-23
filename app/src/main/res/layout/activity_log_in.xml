@@ -59,6 +59,19 @@
 
         </FrameLayout>
 
+        <TextView
+            android:id="@+id/skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="right"
+            android:text="@string/str_skip"
+            android:textColor="#8c8c8c"
+            android:textSize="16sp"
+            android:textStyle="bold|normal"
+            android:visibility="visible" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -106,7 +119,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -118,44 +131,33 @@
             <!--    send sms-->
             <Button
                 android:id="@+id/btn_send_sms"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="140dp"
                 android:background="@drawable/button_background_rounded_border"
                 android:text="Send SMS"
                 android:textAllCaps="false"
-                android:textSize="24sp"
+                android:textSize="@dimen/b_text_20"
                 android:visibility="visible"
                 app:backgroundTint="@null" />
             <!--    save sms-->
             <Button
                 android:id="@+id/btn_continue_sms"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="140dp"
                 android:background="@drawable/button_background_rounded_border"
                 android:text="@string/str_continue"
                 android:textAllCaps="false"
-                android:textSize="24sp"
+                android:textSize="@dimen/b_text_20"
                 android:visibility="gone"
                 app:backgroundTint="@null" />
 
         </FrameLayout>
 
-        <TextView
-            android:id="@+id/skip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:gravity="right"
-            android:text="@string/str_skip"
-            android:textColor="#8c8c8c"
-            android:textSize="16sp"
-            android:textStyle="bold|normal"
-            android:visibility="visible" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
