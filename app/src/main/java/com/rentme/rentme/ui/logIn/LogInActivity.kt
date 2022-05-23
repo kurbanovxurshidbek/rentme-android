@@ -3,13 +3,8 @@ package com.rentme.rentme.ui.logIn
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.rentme.rentme.MainActivity
-import com.rentme.rentme.R
-import com.rentme.rentme.databinding.ActivityInformationBinding
-import com.rentme.rentme.databinding.ActivityLocalizationBinding
 import com.rentme.rentme.databinding.ActivityLogInBinding
-import com.rentme.rentme.ui.details.information.InformationActivity
+import com.rentme.rentme.ui.information.InformationActivity
 
 class LogInActivity : AppCompatActivity() {
 
@@ -47,9 +42,7 @@ class LogInActivity : AppCompatActivity() {
     }
 
     private fun startInformationActivity() {
-
-        val intent = Intent(this, InformationActivity::class.java)
+        val intent = Intent(this,InformationActivity::class.java)
         startActivity(intent)
     }
-
 }

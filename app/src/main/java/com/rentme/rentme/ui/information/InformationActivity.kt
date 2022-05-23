@@ -1,4 +1,4 @@
-package com.rentme.rentme.ui.details.information
+package com.rentme.rentme.ui.information
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

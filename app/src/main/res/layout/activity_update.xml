@@ -55,7 +55,7 @@
 
 
     <FrameLayout
-        android:id="@+id/numbers"
+        android:id="@+id/fl_numbers"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_width="match_parent"
@@ -78,13 +78,13 @@
                 android:text="Current NUmber"
                 android:textAllCaps="true"
                 android:textColor="#8c8c8c"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tv_current_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/shape_border_text"
+                android:background="@drawable/ll_background_date_month"
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"
                 android:text="+998 (93) 759 57 79 "
@@ -107,10 +107,11 @@
                 android:text="New Number"
                 android:textAllCaps="true"
                 android:textColor="#8c8c8c"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
 
             <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
+                android:outlineAmbientShadowColor="@color/orange_main_01"
                 app:boxStrokeColor="@color/orange_main_01"
                 app:boxStrokeErrorColor="#ff0000"
                 android:textColorHighlight="#00FF0A"
@@ -146,7 +147,7 @@
 
     <FrameLayout
         android:id="@+id/confirm_smsss"
-        app:layout_constraintTop_toBottomOf="@id/numbers"
+        app:layout_constraintTop_toBottomOf="@id/fl_numbers"
         android:layout_marginTop="20dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -169,10 +170,11 @@
                 android:text="New NUmber"
                 android:textAllCaps="true"
                 android:textColor="#8c8c8c"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
 
 <!--            new number 1-->
             <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
+                android:outlineAmbientShadowColor="@color/orange_main_01"
                 app:boxStrokeColor="@color/orange_main_01"
                 app:boxStrokeErrorColor="#ff0000"
                 android:textColorHighlight="#00FF0A"
@@ -188,14 +190,13 @@
                     android:layout_height="match_parent"
                     android:maxLength="17"
                     android:textColor="@color/black"
-
-
                     />
 
             </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>
         </LinearLayout>
         <!--sms confirmation-->
         <LinearLayout
+            android:id="@+id/ll_sms_consfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -207,7 +208,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="80dp"
-                app:scv_codeLength="5"
+                app:scv_codeLength="6"
                 app:scv_showCursor="false"
                 app:scv_symbolBorderActiveColor="@color/black"
                 app:scv_symbolBorderColor="#8c8c8c"
@@ -266,8 +267,6 @@
             android:visibility="gone"
             app:backgroundTint="@null" />
     </FrameLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -53,7 +53,7 @@
             android:background="@drawable/edt_corner_rounded"
             android:drawableStart="@drawable/ic_search"
             android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"
-            android:drawableTint="@color/black"
+            android:drawableTint="@color/orange_main_01"
             android:layout_marginTop="15dp"
             android:drawablePadding="10dp"
             android:hint="@string/str_search_hint_location"
@@ -75,6 +75,7 @@
             <ImageView
                 android:layout_marginHorizontal="15dp"
                 android:src="@drawable/ic_my_location"
+                app:tint="@color/orange_main_01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
