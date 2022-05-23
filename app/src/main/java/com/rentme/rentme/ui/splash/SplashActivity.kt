@@ -12,7 +12,7 @@ import com.rentme.rentme.databinding.ActivitySplashBinding
 import com.rentme.rentme.ui.localization.LocalizationActivity
 
 class SplashActivity : AppCompatActivity() {
-    private val SPLASH_SCREEN = 5000
+    private val SPLASH_SCREEN = 500
     var bottom: Animation? = null
     private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
