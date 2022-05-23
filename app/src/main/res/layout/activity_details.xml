@@ -150,7 +150,7 @@
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="/day"
+                        android:text="/week"
                         android:textSize="10sp" />
 
                     <LinearLayout
@@ -187,7 +187,7 @@
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="/day"
+                        android:text="/month"
                         android:textSize="10sp" />
 
                     <LinearLayout
@@ -414,12 +414,12 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@drawable/ic_color_lens" />
+                                android:src="@drawable/ic_petrol" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Color"
+                                android:text="Petrol"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -438,12 +438,12 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@drawable/ic_color_lens" />
+                                android:src="@drawable/ic_snow" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Color"
+                                android:text="Conditioners"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -492,47 +492,46 @@
                 android:layout_marginHorizontal="16dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Additional opportunity"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Additional opportunity"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="18sp" />-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="horizontal">-->
 
-                    <CheckBox
-                        android:id="@+id/cb_conditioner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:text="Konditioner"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+<!--                    <CheckBox-->
+<!--                        android:id="@+id/cb_conditioner"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:text="Konditioner"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="18sp" />-->
 
-                    <CheckBox
-                        android:id="@+id/cb_radio"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:text="Radio"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+<!--                    <CheckBox-->
+<!--                        android:id="@+id/cb_radio"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:text="Radio"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="18sp" />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
                 <Button
                     android:id="@+id/b_callToUser"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="50dp"
                     android:background="@drawable/button_border_radius"
-                    android:drawableStart="@drawable/ic_call"
                     android:text="Call"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
