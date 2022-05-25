@@ -12,9 +12,7 @@ import androidx.appcompat.app.AlertDialog
 
 import com.rentme.rentme.databinding.FragmentProfileBinding
 import com.rentme.rentme.ui.details.information.InformationActivity
-import com.rentme.rentme.ui.favourite.FavouriteActivity
 import com.rentme.rentme.ui.localization.LocalizationActivity
-import com.rentme.rentme.ui.update.UpdateActivity
 
 class ProfileFragment : Fragment() {
     private lateinit var binding : FragmentProfileBinding

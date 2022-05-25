@@ -12,12 +12,8 @@
         <activity
             android:name=".ui.filter.FiltersActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.search.SearchActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.favourite.FavouriteActivity"
-            android:exported="false" />
+
+
         <activity
             android:name=".ui.location.SelectLocationActivity"
             android:exported="false" />
@@ -28,10 +24,7 @@
         <activity
             android:name=".ui.logIn.LogInActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.update.UpdateActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true" >
