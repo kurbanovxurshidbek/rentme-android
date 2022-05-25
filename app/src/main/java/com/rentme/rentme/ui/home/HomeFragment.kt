@@ -10,11 +10,14 @@ import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.rentme.rentme.MainActivity
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.HomeAdsAdapter
 import com.rentme.rentme.adapter.SubMainAdapter
 import com.rentme.rentme.databinding.FragmentHomeBinding
 import com.rentme.rentme.model.Result
+import com.rentme.rentme.ui.details.DetailsActivity
+import com.rentme.rentme.ui.filter.FiltersActivity
 import com.rentme.rentme.ui.types.TypesActivity
 
 class HomeFragment : Fragment() {
@@ -48,6 +51,17 @@ class HomeFragment : Fragment() {
         setUpRecyclers()
         getAds()
         getAllResult()
+
+        subAdapter.onClick = {result ->
+            Intent(requireContext(), DetailsActivity::class.java).also {
+                it.putExtra("carName", result.carName)
+                startActivity(it)
+            }
+        }
+
+        binding.fToFilter.setOnClickListener {
+            startFilterActivity()
+        }
 
         binding.llCategory1.setOnClickListener {
             startTypesActivity()
@@ -93,6 +107,10 @@ class HomeFragment : Fragment() {
         requireActivity().startActivity(Intent(requireContext(), TypesActivity::class.java))
     }
 
+    private fun startFilterActivity(){
+        requireActivity().startActivity(Intent(requireContext(), FiltersActivity::class.java))
+    }
+
     private fun getAds(){
         val ads = ArrayList<Int>()
         ads.add(R.drawable.im_malibu)
@@ -104,9 +122,9 @@ class HomeFragment : Fragment() {
 
     private fun getAllResult() {
         val items:ArrayList<Result> = ArrayList()
-        items.add(Result(R.drawable.im_malibu,"Malibu 2","","200$","",))
-        items.add(Result(R.drawable.im_malibu,"Malibu 3","","250$","",))
-        items.add(Result(R.drawable.im_malibu,"Nexia 2","","100$","",))
+        items.add(Result(R.drawable.im_malibu,"Malibu 2","","200$",))
+        items.add(Result(R.drawable.im_malibu,"Malibu 3","","250$",))
+        items.add(Result(R.drawable.im_malibu,"Nexia 2","","100$",))
         items.add(Result())
         subAdapter.submitData(items)
     }

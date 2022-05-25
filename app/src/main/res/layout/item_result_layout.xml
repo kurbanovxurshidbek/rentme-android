@@ -2,12 +2,12 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="15dp"
-    android:layout_marginTop="4dp"
-    android:background="@drawable/bg_main_white_rounded_color"
+    android:layout_marginTop="6dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
         <LinearLayout
+            android:background="@drawable/filter_borders_radius"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -78,7 +78,8 @@
                         android:layout_height="wrap_content"/>
 
                     <LinearLayout
-                        android:background="#FF5722"
+                        android:background="@drawable/filter_rounded_corner"
+                        android:backgroundTint="@color/orange_main_01"
                         android:layout_width="match_parent"
                         android:layout_marginHorizontal="10dp"
                         android:layout_height="5dp"/>
@@ -104,14 +105,15 @@
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:text="/day"
+                        android:text="/week"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <LinearLayout
-                        android:background="#6C6767"
+                        android:background="@drawable/filter_rounded_corner"
+                        android:backgroundTint="#6C6767"
                         android:layout_marginHorizontal="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="5dp"/>
@@ -137,14 +139,15 @@
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:text="/day"
+                        android:text="/month"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <LinearLayout
-                        android:background="#6C6767"
+                        android:background="@drawable/filter_rounded_corner"
+                        android:backgroundTint="#6C6767"
                         android:layout_marginHorizontal="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="5dp"/>

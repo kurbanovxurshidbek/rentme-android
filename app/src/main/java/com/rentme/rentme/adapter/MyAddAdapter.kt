@@ -15,11 +15,11 @@ import com.rentme.rentme.databinding.ItemResultLayoutBinding
 import com.rentme.rentme.model.Result
 import com.rentme.rentme.model.Types
 
-class ResultAdapter:RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
+class MyAddAdapter:RecyclerView.Adapter<MyAddAdapter.MyAddViewHolder>() {
     private val dif = AsyncListDiffer(this,ITEM_DIF)
     var onClick:((Result) -> Unit)? = null
 
-    inner class ResultViewHolder(private val binding:ItemResultLayoutBinding):
+    inner class MyAddViewHolder(private val binding:ItemResultLayoutBinding):
         RecyclerView.ViewHolder(binding.root){
             fun bind(){
                 val result = dif.currentList[adapterPosition]
@@ -37,13 +37,13 @@ class ResultAdapter:RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
             }
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):ResultViewHolder{
-        return ResultViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):MyAddViewHolder{
+        return MyAddViewHolder(
             ItemResultLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         )
     }
 
-    override fun onBindViewHolder(holder: ResultViewHolder, position: Int) = holder.bind()
+    override fun onBindViewHolder(holder: MyAddViewHolder, position: Int) = holder.bind()
 
     override fun getItemCount(): Int = dif.currentList.size
 
