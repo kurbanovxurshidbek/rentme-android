@@ -6,20 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.rentme.rentme.MainActivity
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.HomeAdsAdapter
 import com.rentme.rentme.adapter.SubMainAdapter
 import com.rentme.rentme.databinding.FragmentHomeBinding
 import com.rentme.rentme.model.Result
-import com.rentme.rentme.ui.details.DetailsActivity
-import com.rentme.rentme.ui.filter.FiltersActivity
-import com.rentme.rentme.ui.types.TypesActivity
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
@@ -53,28 +48,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         getAllResult()
 
         subAdapter.onClick = {result ->
-            Intent(requireContext(), DetailsActivity::class.java).also {
-                it.putExtra("carName", result.carName)
-                startActivity(it)
-            }
+            findNavController().navigate(R.id.detailsFragment)
         }
 
         binding.fToFilter.setOnClickListener {
-            startFilterActivity()
+            findNavController().navigate(R.id.filterFragment)
         }
 
         binding.llCategory1.setOnClickListener {
-            startTypesActivity()
+            findNavController().navigate(R.id.typesFragment)
         }
-//        binding.llCategory2.setOnClickListener {
-//            startTypesActivity()
-//        }
-//        binding.llCategory3.setOnClickListener {
-//            startTypesActivity()
-//        }
-//        binding.llCategory4.setOnClickListener {
-//            startTypesActivity()
-//        }
 
     }
 
@@ -103,13 +86,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 //        rvMainMonthly.adapter = subAdapter
     }
 
-    private fun startTypesActivity(){
-        requireActivity().startActivity(Intent(requireContext(), TypesActivity::class.java))
-    }
-
-    private fun startFilterActivity(){
-        requireActivity().startActivity(Intent(requireContext(), FiltersActivity::class.java))
-    }
 
     private fun getAds(){
         val ads = ArrayList<Int>()

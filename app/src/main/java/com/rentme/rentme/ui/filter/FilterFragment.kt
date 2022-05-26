@@ -1,6 +1,5 @@
 package com.rentme.rentme.ui.filter
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,8 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ColorFilterAdapter
 import com.rentme.rentme.databinding.FragmentFilterBinding
-import com.rentme.rentme.databinding.FragmentHomeBinding
-import com.rentme.rentme.ui.result.ResultActivity
 
 class FilterFragment : Fragment() {
 

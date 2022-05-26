@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_information.xml" value="0.1" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_select_location.xml" value="0.2" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_home.xml" value="0.10597826086956522" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_maps.xml" value="0.2" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_select_location.xml" value="0.2" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_main_ads.xml" value="0.184375" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_sub_main_footer.xml" value="0.75" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_types_layout.xml" value="0.10099637681159421" />

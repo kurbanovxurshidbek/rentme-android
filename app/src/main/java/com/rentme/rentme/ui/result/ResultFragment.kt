@@ -1,6 +1,5 @@
 package com.rentme.rentme.ui.result
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,11 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ResultAdapter
-import com.rentme.rentme.databinding.FragmentFilterBinding
 import com.rentme.rentme.databinding.FragmentResultBinding
 import com.rentme.rentme.model.Result
-import com.rentme.rentme.ui.details.DetailsActivity
-import com.rentme.rentme.ui.filter.FiltersActivity
 
 
 class ResultFragment : Fragment() {

@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
+import com.rentme.rentme.R
 
 import com.rentme.rentme.databinding.FragmentProfileBinding
 import com.rentme.rentme.ui.information.InformationActivity
@@ -54,16 +56,14 @@ class ProfileFragment : Fragment() {
         startActivity(intent)
     }
     fun startUpdateActivity(){
-        val intent = Intent(requireActivity(),UpdateActivity::class.java)
-        startActivity(intent)
+        findNavController().navigate(R.id.updateFragment)
     }
     fun startLocazilationActivity(){
         val intent = Intent(requireActivity(),LocalizationActivity::class.java)
         startActivity(intent)
     }
     fun startFavouriteActivity(){
-        val intent = Intent(requireActivity(),FavouriteActivity::class.java)
-        startActivity(intent)
+        findNavController().navigate(R.id.favouriteFragment)
     }
     private fun showLogOutDialog(){
         val dialogBuilder = AlertDialog.Builder(requireContext())

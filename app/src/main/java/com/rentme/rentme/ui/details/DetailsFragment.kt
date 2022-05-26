@@ -1,6 +1,5 @@
 package com.rentme.rentme.ui.details
 
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -18,7 +17,6 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.DetailPhotoAdapter
 import com.rentme.rentme.databinding.FragmentDetailsBinding
 import com.rentme.rentme.model.DetailPhoto
-import com.rentme.rentme.ui.location.SelectLocationActivity
 
 class DetailsFragment : Fragment() {
 

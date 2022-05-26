@@ -1,6 +1,5 @@
 package com.rentme.rentme.ui.types
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,10 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.TypesAdapter
-import com.rentme.rentme.databinding.FragmentFilterBinding
 import com.rentme.rentme.databinding.FragmentTypesBinding
 import com.rentme.rentme.model.Types
-import com.rentme.rentme.ui.result.ResultActivity
 
 
 class TypesFragment : Fragment() {
@@ -26,7 +23,7 @@ class TypesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentTypesBinding.inflate(inflater, container, false)
         return binding.root

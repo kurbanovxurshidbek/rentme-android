@@ -8,7 +8,6 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.MyAddAdapter
 import com.rentme.rentme.databinding.ActivityMyAddsBinding
 import com.rentme.rentme.model.Result
-import com.rentme.rentme.ui.details.DetailsActivity
 
 
 class MyAddsActivity : AppCompatActivity() {
@@ -29,10 +28,10 @@ class MyAddsActivity : AppCompatActivity() {
         getAllResult()
 
         adapter.onClick = {result ->
-            Intent(this, DetailsActivity::class.java).also {
-                it.putExtra("carName", result.carName)
-                startActivity(it)
-            }
+//            Intent(this, DetailsActivity::class.java).also {
+//                it.putExtra("carName", result.carName)
+//                startActivity(it)
+//            }
         }
 
     }
