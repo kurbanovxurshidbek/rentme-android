@@ -1,39 +1,43 @@
 package com.rentme.rentme.ui.myadds
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.MyAddAdapter
-import com.rentme.rentme.databinding.ActivityMyAddsBinding
+import com.rentme.rentme.databinding.FragmentMyAddsBinding
 import com.rentme.rentme.model.Result
-import com.rentme.rentme.ui.details.DetailsActivity
 
 
-class MyAddsActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMyAddsBinding
+class MyAddsFragment : Fragment() {
     private val adapter by lazy { MyAddAdapter() }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMyAddsBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    private var _binding: FragmentMyAddsBinding? = null
+    private val binding get() = _binding!!
 
-        initViews()
-
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        // Inflate the layout for this fragment
+        _binding = FragmentMyAddsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    private fun initViews() {
-        binding.ivBack.setOnClickListener { finish() }
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         getAllResult()
 
-        adapter.onClick = {result ->
-            Intent(this, DetailsActivity::class.java).also {
-                it.putExtra("carName", result.carName)
-                startActivity(it)
-            }
-        }
+        adapter.onClick = {result -> }
 
     }
 
@@ -51,7 +55,7 @@ class MyAddsActivity : AppCompatActivity() {
         items.add(Result(R.drawable.im_mersades,"AMG 2","","350$"))
         adapter.submitData(items)
 
-        binding.rvMyAdds.layoutManager = GridLayoutManager(this, 1)
+        binding.rvMyAdds.layoutManager = GridLayoutManager(requireContext(), 1)
         binding.rvMyAdds.adapter = adapter
     }
 
