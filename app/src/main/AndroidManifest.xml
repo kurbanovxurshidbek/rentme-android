@@ -54,9 +54,6 @@
             android:name=".ui.result.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.features.FeatureActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.myadds.MyAddsActivity"
             android:exported="false" />
         <activity

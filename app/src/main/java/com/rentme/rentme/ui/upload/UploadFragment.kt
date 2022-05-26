@@ -10,7 +10,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
-import com.rentme.rentme.ui.features.FeatureActivity
+import com.rentme.rentme.ui.features.FeatureFragment
 import com.rentme.rentme.ui.location.SelectLocationActivity
 
 class UploadFragment : Fragment() {
@@ -46,7 +46,7 @@ class UploadFragment : Fragment() {
 
     private fun openFeatureActivity() {
         binding.btnNext.setOnClickListener {
-            val intent = Intent(requireContext(), FeatureActivity::class.java)
+            val intent = Intent(requireContext(), FeatureFragment::class.java)
             startActivity(intent)
         }
     }
