@@ -113,9 +113,9 @@ class HomeFragment : Fragment() {
 
     private fun getAds(){
         val ads = ArrayList<Int>()
-        ads.add(R.drawable.im_malibu)
-        ads.add(R.drawable.im_malibu)
-        ads.add(R.drawable.im_malibu)
+        ads.add(R.drawable.im_tesla_model3)
+        ads.add(R.drawable.im_tesla_model3)
+        ads.add(R.drawable.im_tesla_model3)
 
         adsAdapter.submitData(ads)
     }

@@ -12,18 +12,10 @@
         <activity
             android:name=".ui.filter.FiltersActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.search.SearchActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.favourite.FavouriteActivity"
-            android:exported="false" />
+
+
         <activity
             android:name=".ui.location.SelectLocationActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.rentme.rentme.ui.information.InformationActivity"
-            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".ui.logIn.LogInActivity"
@@ -52,9 +44,6 @@
             android:exported="false" />
         <activity
             android:name=".ui.result.ResultActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.features.FeatureActivity"
             android:exported="false" />
         <activity
             android:name=".ui.myadds.MyAddsActivity"
