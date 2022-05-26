@@ -108,4 +108,5 @@
     <string name="str_registration">Registration</string>
     <string name="str_pictures">Pictures</string>
     <string name="str_my_adds">My adds</string>
+    <string name="str_view_all">View all</string>
 </resources>
