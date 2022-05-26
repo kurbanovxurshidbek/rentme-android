@@ -182,8 +182,7 @@
                 android:id="@+id/enter_phone_number_1"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
 
                 <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText
                     android:layout_width="match_parent"

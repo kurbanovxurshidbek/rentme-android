@@ -2,39 +2,48 @@ package com.rentme.rentme.ui.details
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.WindowManager
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.ahmadhamwi.tabsync.TabbedListMediator
 import com.google.android.material.tabs.TabLayout
-import com.rentme.rentme.MainActivity
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.DetailPhotoAdapter
-import com.rentme.rentme.databinding.ActivityDetailsBinding
+import com.rentme.rentme.databinding.FragmentDetailsBinding
 import com.rentme.rentme.model.DetailPhoto
 import com.rentme.rentme.ui.location.SelectLocationActivity
 
-class DetailsActivity : AppCompatActivity() {
+class DetailsFragment : Fragment() {
 
-    private lateinit var binding: ActivityDetailsBinding
+    private var _binding: FragmentDetailsBinding? = null
     private val adapter by lazy { DetailPhotoAdapter() }
     private var photoList = ArrayList<DetailPhoto>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityDetailsBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    private val binding get() = _binding!!
 
-        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN or WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        _binding = FragmentDetailsBinding.inflate(inflater, container,false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         initViews()
         getAllDetailPhoro()
         tabLayoutManager()
+
     }
 
     private fun initViews() {
@@ -44,13 +53,13 @@ class DetailsActivity : AppCompatActivity() {
 
 
         binding.ivBackToDetails.setOnClickListener {
-            finish()
+            requireActivity().onBackPressed()
         }
 
-        binding.llLocationDetails.setOnClickListener {
-            intent = Intent(this, SelectLocationActivity::class.java)
-            startActivity(intent)
-        }
+//        binding.llLocationDetails.setOnClickListener {
+//            intent = Intent(this, SelectLocationActivity::class.java)
+//            startActivity(intent)
+//        }
 
 
     }
@@ -125,4 +134,5 @@ class DetailsActivity : AppCompatActivity() {
         photoList.addAll(items)
         adapter.sumbitData(photoList)
     }
+
 }

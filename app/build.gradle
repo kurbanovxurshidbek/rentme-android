@@ -58,8 +58,11 @@ dependencies {
     // Google Services
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
-    // phone number
+    //phone number
     implementation 'com.fredporciuncula:phonemoji:1.2.0'
+
+    //tab-layout
+    implementation 'io.github.ahmad-hamwi:tabsync:1.0.1'
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

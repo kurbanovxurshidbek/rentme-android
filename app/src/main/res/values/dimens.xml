@@ -2,6 +2,6 @@
 <resources>
     <dimen name="side_40">40dp</dimen>
     <dimen name="b_text_18">18sp</dimen>
-    <dimen name="b_text_20">20sp</dimen>
-    <dimen name="text_type_18">18sp</dimen>
+    <dimen name="b_text_16">16sp</dimen>
+    <dimen name="text_type_18">20sp</dimen>
 </resources>
