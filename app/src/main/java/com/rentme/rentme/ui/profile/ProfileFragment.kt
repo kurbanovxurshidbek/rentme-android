@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 import com.rentme.rentme.databinding.FragmentProfileBinding
-import com.rentme.rentme.ui.details.information.InformationActivity
+import com.rentme.rentme.ui.information.InformationActivity
 import com.rentme.rentme.ui.localization.LocalizationActivity
 
 class ProfileFragment : Fragment() {
@@ -50,7 +50,7 @@ class ProfileFragment : Fragment() {
         }
         }
     fun startInformationActivity(){
-        val intent = Intent(requireActivity(),InformationActivity::class.java)
+        val intent = Intent(requireActivity(), InformationActivity::class.java)
         startActivity(intent)
     }
     fun startUpdateActivity(){

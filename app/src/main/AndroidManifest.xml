@@ -28,16 +28,13 @@
             android:name=".ui.location.SelectLocationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.details.information.InformationActivity"
+            android:name=".ui.information.InformationActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".ui.logIn.LogInActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ui.update.UpdateActivity"
-            android:exported="false" />
 
         <activity
             android:name=".ui.splash.SplashActivity"
