@@ -6,8 +6,6 @@ import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
 import android.location.Location
-import androidx.fragment.app.Fragment
-
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,8 +14,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.google.android.gms.location.FusedLocationProviderClient
-
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -40,9 +39,13 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+//        val sydney = LatLng(-34.0, 151.0)
+//        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+//        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+        mMap = googleMap
+        updateLocationUI()
+        getDeviceLocation()
     }
 
 
@@ -55,6 +58,13 @@ class MapsFragment : Fragment() {
     var lastKnownLocation: Location? = null
 
     private val TAG = "MapsFragment"
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        fusedLocationProviderClient =
+            LocationServices.getFusedLocationProviderClient(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -112,6 +122,7 @@ class MapsFragment : Fragment() {
             else -> super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
         updateLocationUI()
+        getDeviceLocation()
     }
 
     @SuppressLint("MissingPermission")
@@ -148,6 +159,14 @@ class MapsFragment : Fragment() {
                         // Set the map's camera position to the current location of the device.
                         lastKnownLocation = task.result
                         if (lastKnownLocation != null) {
+                            mMap.addMarker(
+                                MarkerOptions().position(
+                                    LatLng(
+                                        lastKnownLocation!!.latitude,
+                                        lastKnownLocation!!.longitude
+                                    )
+                                )
+                            )
                             mMap.animateCamera(
                                 CameraUpdateFactory.newLatLngZoom(
                                     LatLng(
@@ -202,7 +221,7 @@ class MapsFragment : Fragment() {
             Toast.makeText(
                 requireContext(), "Address=>$add",
                 Toast.LENGTH_SHORT
-            ).show();
+            ).show()
 
             // TennisAppActivity.showDialog(add);
         } catch (e: IOException) {
