@@ -60,4 +60,7 @@ dependencies {
     //phone number
     implementation 'com.fredporciuncula:phonemoji:1.2.0'
 
+    //tab-layout
+    implementation 'io.github.ahmad-hamwi:tabsync:1.0.1'
+
 }
