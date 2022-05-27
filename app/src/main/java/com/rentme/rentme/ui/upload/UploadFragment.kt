@@ -19,7 +19,6 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.setFragmentResult
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
-import com.rentme.rentme.ui.features.FeatureActivity
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
