@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.details.DetailsActivity">
+    tools:context=".ui.details.DetailsFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -25,13 +25,18 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_detailImages"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="35dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ll_details_background"
+                    android:paddingTop="5dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -54,6 +59,22 @@
                         android:src="@drawable/ic_favorite" />
 
                 </LinearLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:paddingHorizontal="6dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:tabGravity="center"
+                    app:tabIndicatorAnimationMode="elastic"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabMode="fixed"
+                    app:tabRippleColor="@null"
+                    app:tabSelectedTextColor="@color/white"
+                    app:tabTextColor="@color/white" />
 
             </FrameLayout>
 
@@ -455,38 +476,38 @@
                 android:layout_marginHorizontal="16dp"
                 android:orientation="vertical">
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Additional opportunity"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="18sp" />-->
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="Additional opportunity"-->
+                <!--                    android:textColor="@color/black"-->
+                <!--                    android:textSize="18sp" />-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="horizontal">-->
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:orientation="horizontal">-->
 
-<!--                    <CheckBox-->
-<!--                        android:id="@+id/cb_conditioner"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:text="Konditioner"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        android:textSize="18sp" />-->
+                <!--                    <CheckBox-->
+                <!--                        android:id="@+id/cb_conditioner"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginHorizontal="10dp"-->
+                <!--                        android:text="Konditioner"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textSize="18sp" />-->
 
-<!--                    <CheckBox-->
-<!--                        android:id="@+id/cb_radio"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:text="Radio"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        android:textSize="18sp" />-->
+                <!--                    <CheckBox-->
+                <!--                        android:id="@+id/cb_radio"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginHorizontal="10dp"-->
+                <!--                        android:text="Radio"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textSize="18sp" />-->
 
-<!--                </LinearLayout>-->
+                <!--                </LinearLayout>-->
 
                 <Button
                     android:id="@+id/b_callToUser"

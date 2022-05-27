@@ -1,7 +1,28 @@
 package com.rentme.rentme.ui.home
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.rentme.rentme.data.remote.ApiService
+import com.rentme.rentme.model.MainPage
+import com.rentme.rentme.repository.MainRepository
+import com.rentme.rentme.utils.UiStateObject
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel: ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(private val mainRepository: MainRepository): ViewModel() {
+    private val _homeState = MutableStateFlow<UiStateObject<MainPage>>(UiStateObject.EMPTY)
+    val homeState = _homeState
 
+    fun getMainData() = viewModelScope.launch {
+        _homeState.value = UiStateObject.LOADING
+        try {
+            val mainData = mainRepository.getMainData()
+            _homeState.value = UiStateObject.SUCCESS(mainData)
+        } catch (e: Exception){
+            _homeState.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
+        }
+    }
 }

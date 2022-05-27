@@ -18,10 +18,10 @@
             android:id="@+id/nav_host_fragment_container"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/bottom_nav_graph" />
+            app:navGraph="@navigation/main_nav_graph" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"

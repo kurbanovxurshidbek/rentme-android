@@ -378,8 +378,7 @@
             android:text="@string/str_next"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/b_text_20"
-            android:textStyle="bold"
+            android:textSize="16sp"
             app:backgroundTint="@null"
             app:layout_constraintBottom_toBottomOf="parent" />
 

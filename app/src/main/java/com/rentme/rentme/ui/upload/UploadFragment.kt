@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 import android.widget.*
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.setFragmentResult
@@ -38,10 +41,7 @@ class UploadFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentUploadBinding.inflate(inflater, container, false)
         return binding.root
-
-
     }
-
 
     override fun onDestroy() {
         super.onDestroy()
@@ -54,6 +54,10 @@ class UploadFragment : Fragment() {
         selectTypeSpinner()
         openFeatureActivity()
         calendarView()
+
+        binding.llLocation.setOnClickListener {
+            findNavController().navigate(R.id.selectLocationFragment)
+        }
 
     }
 
@@ -82,16 +86,16 @@ class UploadFragment : Fragment() {
     }
 
 
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
-
     private fun openFeatureActivity() {
         binding.btnNext.setOnClickListener {
-            val intent = Intent(requireContext(), FeatureActivity::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.featureFragment)
         }
     }
 
@@ -109,7 +113,6 @@ class UploadFragment : Fragment() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0!!.getItemAtPosition(p2)
             }
-
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
@@ -117,4 +120,3 @@ class UploadFragment : Fragment() {
 
 
 }
-

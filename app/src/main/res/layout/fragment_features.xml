@@ -527,8 +527,7 @@
                 android:text="@string/str_save"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:textSize="@dimen/b_text_16"
                 app:backgroundTint="@null" />
 
         </LinearLayout>

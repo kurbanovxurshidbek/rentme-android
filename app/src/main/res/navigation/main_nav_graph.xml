@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.rentme.rentme.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_typesFragment"
+            app:destination="@id/typesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadFragment"
+        android:name="com.rentme.rentme.ui.upload.UploadFragment"
+        android:label="fragment_upload"
+        tools:layout="@layout/fragment_upload" >
+        <action
+            android:id="@+id/action_uploadFragment_to_featureFragment"
+            app:destination="@id/featureFragment" />
+        <action
+            android:id="@+id/action_uploadFragment_to_selectLocationFragment"
+            app:destination="@id/selectLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.rentme.rentme.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_favouriteFragment"
+            app:destination="@id/favouriteFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_myAddsFragment"
+            app:destination="@id/myAddsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.rentme.rentme.ui.location.mylocation.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/typesFragment"
+        android:name="com.rentme.rentme.ui.types.TypesFragment"
+        android:label="fragment_types"
+        tools:layout="@layout/fragment_types" >
+        <action
+            android:id="@+id/action_typesFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.rentme.rentme.ui.search.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.rentme.rentme.ui.result.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.rentme.rentme.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
+    <fragment
+        android:id="@+id/featureFragment"
+        android:name="com.rentme.rentme.ui.features.FeatureFragment"
+        android:label="FeatureFragment" />
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.rentme.rentme.ui.filter.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" >
+        <action
+            android:id="@+id/action_filterFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_filterFragment_to_detailsFragment2"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_filterFragment_to_selectLocationFragment"
+            app:destination="@id/selectLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectLocationFragment"
+        android:name="com.rentme.rentme.ui.location.SelectLocationFragment"
+        android:label="fragment_select_location"
+        tools:layout="@layout/fragment_select_location" >
+        <action
+            android:id="@+id/action_selectLocationFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.rentme.rentme.ui.update.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" />
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.rentme.rentme.ui.favourite.FavouriteFragment"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_favourite" />
+    <fragment
+        android:id="@+id/myAddsFragment"
+        android:name="com.rentme.rentme.ui.myadds.MyAddsFragment"
+        android:label="MyAddsFragment" />
+</navigation>

@@ -44,7 +44,6 @@
     <string name="str_clear">Clear</string>
     <string name="str_discription">Discription</string>
 
-
     //sherzod
     <string name="str_hello_blank_fragment">Hello blank fragment</string>
     <string name="str_choose_language">Choose language</string>
@@ -107,4 +106,6 @@
     <string name="str_optional">(Optional)</string>
     <string name="str_registration">Registration</string>
     <string name="str_pictures">Pictures</string>
+    <string name="str_my_adds">My adds</string>
+    <string name="str_view_all">View all</string>
 </resources>

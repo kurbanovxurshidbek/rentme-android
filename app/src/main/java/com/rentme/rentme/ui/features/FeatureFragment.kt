@@ -1,35 +1,50 @@
 package com.rentme.rentme.ui.features
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ColorAdapter
-import com.rentme.rentme.adapter.TypesAdapter
-import com.rentme.rentme.databinding.ActivityFeaturesBinding
+import com.rentme.rentme.databinding.FragmentFeaturesBinding
 
-class FeatureActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityFeaturesBinding
+class FeatureFragment : Fragment() {
+
     private val colorAdapter by lazy { ColorAdapter() }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityFeaturesBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    private var _binding: FragmentFeaturesBinding? = null
+    private val binding get() = _binding!!
 
-        initViews()
-
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        // Inflate the layout for this fragment
+        _binding = FragmentFeaturesBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    private fun initViews() {
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         selectModelSpinner()
         selectYearSpinner()
         allColorFunction()
-        binding.ivBack.setOnClickListener { finish() }
+
+        binding.btnSave.setOnClickListener {
+            findNavController().navigate(R.id.myAddsFragment)
+        }
+
     }
 
     private fun allColorFunction(){
@@ -46,7 +61,7 @@ class FeatureActivity : AppCompatActivity() {
         colors.add(R.color.car_color_10)
         colorAdapter.submitData(colors)
 
-        binding.rvColors.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvColors.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvColors.adapter = colorAdapter
         colorAdapter.onClick = {color ->
             binding.ivCarColor.setBackgroundResource(color)
@@ -62,7 +77,7 @@ class FeatureActivity : AppCompatActivity() {
         models.add("Matiz")
         models.add("Damas")
 
-        binding.spnModels.adapter = ArrayAdapter<String>(this, R.layout.spinner_item_view, models)
+        binding.spnModels.adapter = ArrayAdapter<String>(requireContext(), R.layout.spinner_item_view, models)
         binding.spnModels.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0!!.getItemAtPosition(p2)
@@ -88,7 +103,7 @@ class FeatureActivity : AppCompatActivity() {
         years.add("2021")
         years.add("2022")
 
-        binding.spnYear.adapter = ArrayAdapter<String>(this, R.layout.spinner_item_view, years)
+        binding.spnYear.adapter = ArrayAdapter<String>(requireContext(), R.layout.spinner_item_view, years)
         binding.spnYear.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0!!.getItemAtPosition(p2)
