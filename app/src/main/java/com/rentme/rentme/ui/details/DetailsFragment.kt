@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -54,10 +55,9 @@ class DetailsFragment : Fragment() {
             requireActivity().onBackPressed()
         }
 
-//        binding.llLocationDetails.setOnClickListener {
-//            intent = Intent(this, SelectLocationActivity::class.java)
-//            startActivity(intent)
-//        }
+        binding.llLocationDetails.setOnClickListener {
+            findNavController().navigate(R.id.selectLocationFragment)
+        }
 
 
     }

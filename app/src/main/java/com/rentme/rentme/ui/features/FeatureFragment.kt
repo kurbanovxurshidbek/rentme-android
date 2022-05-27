@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ColorAdapter
@@ -40,7 +41,9 @@ class FeatureFragment : Fragment() {
         selectYearSpinner()
         allColorFunction()
 
-        binding.btnSave.setOnClickListener {}
+        binding.btnSave.setOnClickListener {
+            findNavController().navigate(R.id.myAddsFragment)
+        }
 
     }
 

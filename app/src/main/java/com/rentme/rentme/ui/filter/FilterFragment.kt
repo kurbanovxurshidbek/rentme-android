@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ColorFilterAdapter
@@ -38,13 +39,9 @@ class FilterFragment : Fragment() {
 
         initView()
 
-
-//        binding.btnResult.setOnClickListener{
-//            Intent(this, ResultActivity::class.java).also {
-//                it.putExtra("color",color)
-//                startActivity(it)
-//            }
-//        }
+        binding.btnResult.setOnClickListener{
+            findNavController().navigate(R.id.filterFragment)
+        }
     }
 
     private fun initView() {

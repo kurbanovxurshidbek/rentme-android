@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.TypesAdapter
@@ -42,10 +43,7 @@ class TypesFragment : Fragment() {
         binding.rvTypes.layoutManager = GridLayoutManager(requireContext(),1)
         binding.rvTypes.adapter = adapter
         adapter.onClick = { types ->
-//            Intent(this, ResultActivity::class.java).also {
-//                it.putExtra("carName",types.carName)
-//                startActivity(it)
-//            }
+            findNavController().navigate(R.id.resultFragment)
         }
 
         binding.apply {

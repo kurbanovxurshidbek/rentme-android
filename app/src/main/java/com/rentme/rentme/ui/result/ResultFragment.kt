@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ResultAdapter
@@ -39,14 +40,13 @@ class ResultFragment : Fragment() {
         binding.rvResult.layoutManager = GridLayoutManager(requireContext(),1)
         binding.rvResult.adapter = adapter
         adapter.onClick = {result ->
-
+            findNavController().navigate(R.id.detailsFragment)
         }
 
         binding.apply {
             llFilter.setOnClickListener {
-
+                findNavController().navigate(R.id.filterFragment)
             }
-
 
             icBackToTypes.setOnClickListener {
                 requireActivity().onBackPressed()

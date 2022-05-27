@@ -45,8 +45,7 @@ class UploadFragment : Fragment() {
 
     private fun openFeatureActivity() {
         binding.btnNext.setOnClickListener {
-            val intent = Intent(requireContext(), FeatureFragment::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.featureFragment)
         }
     }
 
