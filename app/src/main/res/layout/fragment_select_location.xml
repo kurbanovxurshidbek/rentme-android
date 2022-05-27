@@ -68,6 +68,7 @@
             android:background="#888888"/>
 
         <LinearLayout
+            android:id="@+id/ll_current_location"
             android:gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="50dp">
