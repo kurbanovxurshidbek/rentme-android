@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable-anydpi/ic_vector.xml" value="0.1265" />
+        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable-anydpi/ll_background_red_rounded.xml" value="0.1375" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable/button_background_rounded_border.xml" value="0.121" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable/img_colors.xml" value="0.1265" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable/item_selected_bnv_home.xml" value="0.146" />
@@ -17,15 +18,18 @@
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_features.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_filters.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_information.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_localization.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_my_adds.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_select_location.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_types.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/activity_update.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/fragment_features.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/fragment_update.xml" value="0.20416666666666666" />
-        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/fragment_upload.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/fragment_upload.xml" value="0.22" />
+        <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/item_car_image_view.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/item_color_view.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/item_result_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/item_types_layout.xml" value="0.20416666666666666" />
@@ -58,7 +62,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.33" />
+        <option name="scale" value="0.9" />
       </ProjectState>
     </option>
   </component>

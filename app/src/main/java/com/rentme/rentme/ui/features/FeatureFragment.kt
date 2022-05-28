@@ -1,21 +1,31 @@
 package com.rentme.rentme.ui.features
 
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rentme.rentme.R
+import com.rentme.rentme.adapter.CarImageAdapter
 import com.rentme.rentme.adapter.ColorAdapter
 import com.rentme.rentme.databinding.FragmentFeaturesBinding
+import com.sangcomz.fishbun.FishBun
+import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter
 
 
 class FeatureFragment : Fragment() {
 
     private val colorAdapter by lazy { ColorAdapter() }
+    private var allPhotos: ArrayList<Uri> = ArrayList()
+    private var carImages: ArrayList<String> = ArrayList()
+    private val carImageAdapter by lazy { CarImageAdapter(allPhotos) }
 
     private var _binding: FragmentFeaturesBinding? = null
     private val binding get() = _binding!!
@@ -40,8 +50,32 @@ class FeatureFragment : Fragment() {
         selectYearSpinner()
         allColorFunction()
 
+        binding.ivAddPhoto.setOnClickListener { pickFishBunCarImages() }
         binding.btnSave.setOnClickListener {}
 
+    }
+
+    /**
+     * Pick photo using FishBun library
+     */
+    private fun pickFishBunCarImages(){
+        allPhotos.clear()
+        FishBun.with(this)
+            .setImageAdapter(GlideAdapter())
+            .setMaxCount(10)
+            .setMinCount(1)
+            .setCamera(true)
+            .setSelectedImages(allPhotos)
+            .startAlbumWithActivityResultCallback(photoLauncher)
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private val photoLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+        if (it.resultCode == Activity.RESULT_OK){
+            allPhotos = it.data?.getParcelableArrayListExtra(FishBun.INTENT_PATH) ?: arrayListOf()
+            carImageAdapter.items.addAll(allPhotos)
+            carImageAdapter.notifyDataSetChanged()
+        }
     }
 
     private fun allColorFunction(){

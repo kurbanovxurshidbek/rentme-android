@@ -63,4 +63,7 @@ dependencies {
     //tab-layout
     implementation 'io.github.ahmad-hamwi:tabsync:1.0.1'
 
+    // FishBun for get photos in Gallery and Camera
+    implementation 'io.github.sangcomz:fishbun:1.0.0-beta01'
+
 }
