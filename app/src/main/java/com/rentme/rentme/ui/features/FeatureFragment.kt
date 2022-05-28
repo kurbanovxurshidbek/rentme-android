@@ -11,6 +11,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.CarImageAdapter
@@ -50,8 +51,10 @@ class FeatureFragment : Fragment() {
         selectYearSpinner()
         allColorFunction()
 
+        binding.btnSave.setOnClickListener {
+            findNavController().navigate(R.id.myAddsFragment)
+        }
         binding.ivAddPhoto.setOnClickListener { pickFishBunCarImages() }
-        binding.btnSave.setOnClickListener {}
 
     }
 

@@ -1,5 +1,7 @@
 package com.rentme.rentme.ui.profile
 
+
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,9 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
+import com.rentme.rentme.R
 
 import com.rentme.rentme.databinding.FragmentProfileBinding
-
+import com.rentme.rentme.ui.information.InformationActivity
+import com.rentme.rentme.ui.localization.LocalizationActivity
 
 class ProfileFragment : Fragment() {
     private lateinit var binding : FragmentProfileBinding
@@ -27,15 +32,39 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.llMyData.setOnClickListener {
+            startInformationActivity()
+        }
+        binding.llLanguage.setOnClickListener {
+            startLocazilationActivity()
+        }
+        binding.llChangePhoneNumber.setOnClickListener {
+            startUpdateActivity()
+        }
+        binding.llMyFavourite.setOnClickListener {
+            startFavouriteActivity()
+        }
         binding.llLogOut.setOnClickListener {
             showLogOutDialog()
         }
         binding.llAboutUs.setOnClickListener {
             showInfoAboutAppDialog()
         }
+        }
+    fun startInformationActivity(){
+        val intent = Intent(requireActivity(), InformationActivity::class.java)
+        startActivity(intent)
     }
-
+    fun startUpdateActivity(){
+        findNavController().navigate(R.id.updateFragment)
+    }
+    fun startLocazilationActivity(){
+        val intent = Intent(requireActivity(),LocalizationActivity::class.java)
+        startActivity(intent)
+    }
+    fun startFavouriteActivity(){
+        findNavController().navigate(R.id.favouriteFragment)
+    }
     private fun showLogOutDialog(){
         val dialogBuilder = AlertDialog.Builder(requireContext())
         dialogBuilder.setMessage("Do you want to Log out")
@@ -53,7 +82,6 @@ class ProfileFragment : Fragment() {
         alert.setTitle("Log out")
         alert.show()
     }
-
     private fun showInfoAboutAppDialog(){
         val dialogBuilder = AlertDialog.Builder(requireContext())
         dialogBuilder.setMessage("This is a test application for renting cars, and help people to reach their destination with the help of others. ")

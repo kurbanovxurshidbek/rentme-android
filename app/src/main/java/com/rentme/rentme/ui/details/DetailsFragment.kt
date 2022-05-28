@@ -1,6 +1,5 @@
 package com.rentme.rentme.ui.details
 
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +18,6 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.DetailPhotoAdapter
 import com.rentme.rentme.databinding.FragmentDetailsBinding
 import com.rentme.rentme.model.DetailPhoto
-import com.rentme.rentme.ui.location.SelectLocationActivity
 
 class DetailsFragment : Fragment() {
 
@@ -56,10 +55,9 @@ class DetailsFragment : Fragment() {
             requireActivity().onBackPressed()
         }
 
-//        binding.llLocationDetails.setOnClickListener {
-//            intent = Intent(this, SelectLocationActivity::class.java)
-//            startActivity(intent)
-//        }
+        binding.llLocationDetails.setOnClickListener {
+            findNavController().navigate(R.id.selectLocationFragment)
+        }
 
 
     }

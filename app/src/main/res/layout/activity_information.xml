@@ -8,8 +8,6 @@
     android:background="#ffffff"
     tools:context=".MainActivity">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -128,7 +126,7 @@
         android:text="@string/str_registration"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="@dimen/b_text_20"
+        android:textSize="@dimen/b_text_18"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

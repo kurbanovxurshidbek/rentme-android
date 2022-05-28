@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
 import com.rentme.rentme.ui.features.FeatureFragment
-import com.rentme.rentme.ui.location.SelectLocationActivity
 
 class UploadFragment : Fragment() {
     private var _binding: FragmentUploadBinding? = null
@@ -38,16 +38,14 @@ class UploadFragment : Fragment() {
         openFeatureActivity()
 
         binding.llLocation.setOnClickListener {
-            val intent = Intent(requireContext(), SelectLocationActivity::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.selectLocationFragment)
         }
 
     }
 
     private fun openFeatureActivity() {
         binding.btnNext.setOnClickListener {
-            val intent = Intent(requireContext(), FeatureFragment::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.featureFragment)
         }
     }
 
