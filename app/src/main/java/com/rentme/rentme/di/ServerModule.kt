@@ -9,7 +9,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 object ServerModule {
@@ -22,7 +21,7 @@ object ServerModule {
 
     @Provides
     @Singleton
-    fun retrofitClient() = Retrofit.Builder().baseUrl(server())
+    fun retrofitClient(): Retrofit = Retrofit.Builder().baseUrl(server())
         .addConverterFactory(GsonConverterFactory.create()).build()
 
     @Provides

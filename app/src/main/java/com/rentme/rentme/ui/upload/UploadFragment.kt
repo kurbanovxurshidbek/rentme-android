@@ -2,6 +2,7 @@ package com.rentme.rentme.ui.upload
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,12 @@ class UploadFragment : Fragment() {
             findNavController().navigate(R.id.selectLocationFragment)
         }
 
+//        Log.d("args", arguments?.getString("location", "")!!)
+        if (!arguments?.getString("location", "").isNullOrEmpty()) {
+            Log.d("args", "--" + arguments?.getString("location", "")!!)
+            binding.tvLocation.text = arguments?.getString("location", "")
+            findNavController().clearBackStack(R.id.mapsFragment)
+        }
     }
 
     private fun openFeatureActivity() {

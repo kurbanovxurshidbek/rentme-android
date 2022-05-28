@@ -108,4 +108,6 @@
     <string name="str_pictures">Pictures</string>
     <string name="str_my_adds">My adds</string>
     <string name="str_view_all">View all</string>
+    <string name="str_current_location">Current Location</string>
+    <string name="str_history">History</string>
 </resources>

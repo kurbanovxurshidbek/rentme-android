@@ -7,33 +7,33 @@
     android:background="#fff"
     tools:context=".ui.home.HomeFragment">
 
-<!--    <com.google.android.material.appbar.AppBarLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@color/orange_main_01"-->
-<!--        android:elevation="0dp">-->
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/orange_main_01"-->
+    <!--        android:elevation="0dp">-->
 
-<!--        <Toolbar-->
-<!--            app:layout_scrollFlags="enterAlwaysCollapsed|scroll"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?attr/actionBarSize">-->
+    <!--        <Toolbar-->
+    <!--            app:layout_scrollFlags="enterAlwaysCollapsed|scroll"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="?attr/actionBarSize">-->
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_marginEnd="16dp">-->
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_marginEnd="16dp">-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:gravity="center_vertical"-->
-<!--                    android:text="E'lonlar"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    android:textSize="20sp"-->
-<!--                    android:textStyle="bold" />-->
-<!--            </LinearLayout>-->
-<!--        </Toolbar>-->
-<!--    </com.google.android.material.appbar.AppBarLayout>-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="E'lonlar"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="20sp"-->
+    <!--                    android:textStyle="bold" />-->
+    <!--            </LinearLayout>-->
+    <!--        </Toolbar>-->
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -41,10 +41,10 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
-            android:paddingBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -59,6 +59,36 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:listitem="@layout/item_main_ads" />
 
+<!--                <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator-->
+<!--                    android:id="@+id/dots_indicator"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    app:dotsColor="@color/white"-->
+<!--                    app:dotsCornerRadius="5dp"-->
+<!--                    app:dotsSize="8dp"-->
+<!--                    app:dotsSpacing="4dp"-->
+<!--                    app:dotsStrokeColor="#B3C5C5C5"-->
+<!--                    app:dotsStrokeWidth="4dp"-->
+<!--                    app:dotsWidthFactor="2.5"-->
+<!--                    app:layout_constraintBottom_toTopOf="@id/cl_categories"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="parent" />-->
+
+                <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/cl_categories"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginBottom="5dp"
+                    app:spi_dotSize="6dp"
+                    app:spi_dotColor="#B3C5C5C5"
+                    app:spi_dotSelectedColor="@color/white"
+                    app:spi_dotSelectedSize="8dp"
+                    app:spi_dotSpacing="6dp"
+                    android:id="@+id/dots_indicator"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -71,15 +101,15 @@
                     <EditText
                         android:id="@+id/edt_search"
                         android:layout_width="0dp"
-                        android:focusable="false"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:layout_weight="1"
                         android:alpha="0.8"
                         android:background="@drawable/bg_main_white_rounded_color"
                         android:drawableStart="@drawable/ic_search"
-                        android:drawableTint="@color/orange_main_01"
                         android:drawablePadding="10dp"
+                        android:drawableTint="@color/orange_main_01"
+                        android:focusable="false"
                         android:hint="@string/str_search_hint_auto_type"
                         android:minHeight="44dp"
                         android:paddingHorizontal="15dp"
@@ -90,10 +120,10 @@
 
                     <FrameLayout
                         android:id="@+id/f_to_filter"
-                        android:background="@drawable/bg_main_white_rounded_color"
-                        android:padding="10dp"
                         android:layout_width="44dp"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_main_white_rounded_color"
+                        android:padding="10dp">
 
                         <ImageView
                             android:layout_width="16dp"
@@ -107,6 +137,7 @@
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_categories"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="@id/rv_main_ads"
@@ -195,8 +226,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/str_show_all"
                     android:fontFamily="@font/allerta"
+                    android:text="@string/str_show_all"
                     android:textColor="#00ffff" />
             </LinearLayout>
 
@@ -228,13 +259,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/str_show_all"
                     android:fontFamily="@font/allerta"
+                    android:text="@string/str_show_all"
                     android:textColor="#00ffff" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_main_dayly"
+                android:id="@+id/rv_main_daily"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -261,13 +292,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/str_show_all"
                     android:fontFamily="@font/allerta"
+                    android:text="@string/str_show_all"
                     android:textColor="#00ffff" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_main_weekly"
+                android:id="@+id/rv_main_long_term"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -275,38 +306,38 @@
                 tools:itemCount="3"
                 tools:listitem="@layout/item_sub_main_vehicles" />
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginVertical="10dp"-->
-<!--                android:orientation="horizontal"-->
-<!--                android:paddingHorizontal="16dp">-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginVertical="10dp"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:paddingHorizontal="16dp">-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:text="Oylik elonlar"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold" />-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:text="Oylik elonlar"-->
+            <!--                    android:textColor="@color/black"-->
+            <!--                    android:textSize="18sp"-->
+            <!--                    android:textStyle="bold" />-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/str_show_all"-->
-<!--                    android:fontFamily="@font/allerta"-->
-<!--                    android:textColor="#00ffff" />-->
-<!--            </LinearLayout>-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="@string/str_show_all"-->
+            <!--                    android:fontFamily="@font/allerta"-->
+            <!--                    android:textColor="#00ffff" />-->
+            <!--            </LinearLayout>-->
 
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/rv_main_monthly"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal"-->
-<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--                tools:itemCount="3"-->
-<!--                tools:listitem="@layout/item_sub_main_vehicles" />-->
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/rv_main_monthly"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+            <!--                tools:itemCount="3"-->
+            <!--                tools:listitem="@layout/item_sub_main_vehicles" />-->
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
