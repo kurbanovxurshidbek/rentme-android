@@ -1,10 +1,5 @@
 package com.rentme.rentme.ui.upload
 
-
-import android.app.DatePickerDialog
-import android.app.Dialog
-import android.app.TimePickerDialog
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.text.format.DateFormat
@@ -16,11 +11,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import android.widget.*
-import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.setFragmentResult
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
-import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
