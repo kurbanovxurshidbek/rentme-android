@@ -13,8 +13,6 @@ import androidx.navigation.fragment.findNavController
 import com.rentme.rentme.R
 
 import com.rentme.rentme.databinding.FragmentProfileBinding
-import com.rentme.rentme.ui.information.InformationActivity
-import com.rentme.rentme.ui.localization.LocalizationActivity
 
 class ProfileFragment : Fragment() {
     private lateinit var binding : FragmentProfileBinding
@@ -52,15 +50,17 @@ class ProfileFragment : Fragment() {
         }
         }
     fun startInformationActivity(){
-        val intent = Intent(requireActivity(), InformationActivity::class.java)
-        startActivity(intent)
+//        val intent = Intent(requireActivity(), InformationActivity::class.java)
+//        startActivity(intent)
+        findNavController().navigate(R.id.informationFragment)
     }
     fun startUpdateActivity(){
         findNavController().navigate(R.id.updateFragment)
     }
     fun startLocazilationActivity(){
-        val intent = Intent(requireActivity(),LocalizationActivity::class.java)
-        startActivity(intent)
+//        val intent = Intent(requireActivity(),LocalizationActivity::class.java)
+//        startActivity(intent)
+        findNavController().navigate(R.id.localizationFragment)
     }
     fun startFavouriteActivity(){
         findNavController().navigate(R.id.favouriteFragment)

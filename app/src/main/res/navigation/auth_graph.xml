@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/auth_graph">
+    android:id="@+id/auth_graph"
+    app:startDestination="@id/logInFragment">
 
+    <fragment
+        android:id="@+id/localizationFragment"
+        android:name="com.rentme.rentme.ui.auth.localization.LocalizationFragment"
+        android:label="LocalizationFragment" />
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.rentme.rentme.ui.auth.information.InformationFragment"
+        android:label="InformationFragment" />
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.rentme.rentme.ui.auth.logIn.LogInFragment"
+        android:label="LogInFragment" />
 </navigation>
