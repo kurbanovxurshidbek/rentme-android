@@ -14,7 +14,7 @@ import javax.inject.Singleton
 object ServerModule {
     var IS_TESTER = true
     private const val SERVER_DEVELOPMENT = "http://198.58.123.235:8080/"
-    private const val SERVER_PRODUCTION = "https://jsonplaceholder.typicode.com/"
+    private const val SERVER_PRODUCTION = "http://198.58.123.235:8080/"
 
     @Provides
     fun server() = if (IS_TESTER) SERVER_DEVELOPMENT else SERVER_PRODUCTION
