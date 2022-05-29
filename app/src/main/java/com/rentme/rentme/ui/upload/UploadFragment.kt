@@ -64,6 +64,8 @@ class UploadFragment : Fragment() {
             Log.d("args", "--" + arguments?.getString("location", "")!!)
             binding.tvLocation.text = arguments?.getString("location", "")
             findNavController().clearBackStack(R.id.mapsFragment)
+
+            findNavController().navigateUp()
         }
     }
 
