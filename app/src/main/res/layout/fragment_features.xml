@@ -37,7 +37,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/b_text_20"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:text="@string/str_features"/>
@@ -69,7 +69,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/str_location"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/b_text_16" />
 
             <LinearLayout
                 android:id="@+id/ll_location"
@@ -94,7 +94,7 @@
                     android:paddingLeft="5dp"
                     android:text="Toshkent"
                     android:textColor="@color/second_text_color"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/b_text_16" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/str_start_date"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/b_text_16" />
 
                 <TextView
                     android:id="@+id/tv_start_date"
@@ -128,7 +128,7 @@
                     android:gravity="center"
                     android:text="17.05.2022"
                     android:textColor="@color/second_text_color"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/b_text_16" />
 
             </LinearLayout>
 
@@ -145,7 +145,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/str_lifetime_min"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/b_text_16" />
 
                 <EditText
                     android:id="@+id/min_day_count"
@@ -156,7 +156,7 @@
                     android:gravity="center"
                     android:text="1"
                     android:textColor="@color/second_text_color"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/b_text_16" />
 
                 <TextView
                     android:id="@+id/min_time_type"
@@ -176,7 +176,7 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/str_model"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/b_text_16" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -206,7 +206,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/str_pictures"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/b_text_16" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -243,8 +243,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_car_photos"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="8dp" />
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -261,7 +260,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/str_year_manufacture"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/b_text_16" />
 
                 <LinearLayout
                     android:id="@+id/tv_year"
@@ -296,7 +295,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/str_prices"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/b_text_16" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -370,7 +369,7 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/str_management_system"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/b_text_16" />
 
             <RadioGroup
                 android:id="@+id/system_radio_group"
@@ -407,7 +406,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/str_fuel"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/b_text_16" />
 
             <RadioGroup
                 android:id="@+id/fuel_radio_group"
@@ -444,7 +443,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/str_additional_features"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/b_text_16" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -480,7 +479,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/str_color"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/b_text_16" />
 
             <LinearLayout
                 android:layout_width="match_parent"
