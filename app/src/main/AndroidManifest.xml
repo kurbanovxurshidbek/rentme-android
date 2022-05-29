@@ -4,7 +4,8 @@
     package="com.rentme.rentme"
     tools:ignore="CoarseFineLocation">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
         tools:ignore="CoarseFineLocation" />
 
     <application
@@ -14,23 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rentme">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDh8sW4xizVRFWrj6E2KcMsoZyUMF2hTxQ" />
 
         <activity
-            android:name=".ui.information.InformationActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false" />
-        <activity
-            android:name=".ui.logIn.LogInActivity"
+            android:name="com.rentme.rentme.ui.auth.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.splash.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,12 +33,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.localization.LocalizationActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

@@ -11,9 +11,10 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.ActivitySplashBinding
-import com.rentme.rentme.ui.localization.LocalizationActivity
+import com.rentme.rentme.ui.auth.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_SCREEN = 1500
@@ -37,7 +38,7 @@ class SplashActivity : AppCompatActivity() {
         binding.carRunning.animation = bottom
 
         Handler().postDelayed({
-            val intent = Intent(this, LocalizationActivity::class.java)
+        val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, SPLASH_SCREEN.toLong())
