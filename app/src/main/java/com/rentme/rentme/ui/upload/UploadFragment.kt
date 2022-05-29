@@ -1,6 +1,5 @@
 package com.rentme.rentme.ui.upload
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +10,7 @@ import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
-import com.rentme.rentme.ui.features.FeatureFragment
+
 
 class UploadFragment : Fragment() {
     private var _binding: FragmentUploadBinding? = null

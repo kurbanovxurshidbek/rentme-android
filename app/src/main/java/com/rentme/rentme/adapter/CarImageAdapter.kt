@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rentme.rentme.databinding.ItemCarImageViewBinding
 
-class CarImageAdapter(var items: ArrayList<Uri>) : RecyclerView.Adapter<CarImageAdapter.CarImageViewHolder>() {
+class CarImageAdapter() : RecyclerView.Adapter<CarImageAdapter.CarImageViewHolder>() {
 
+    var items: ArrayList<Uri> = ArrayList()
     private var state: Boolean = false
 
     inner class CarImageViewHolder(private val binding: ItemCarImageViewBinding) : RecyclerView.ViewHolder(binding.root){
@@ -28,8 +29,10 @@ class CarImageAdapter(var items: ArrayList<Uri>) : RecyclerView.Adapter<CarImage
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun saveCarImageStorage(){
+    fun saveCarImageStorage(carImages: ArrayList<Uri>){
         state = true
+        items.clear()
+        items.addAll(carImages)
         notifyDataSetChanged()
     }
 
@@ -39,6 +42,6 @@ class CarImageAdapter(var items: ArrayList<Uri>) : RecyclerView.Adapter<CarImage
 
     override fun onBindViewHolder(holder: CarImageViewHolder, position: Int) = if(items.isNotEmpty())holder.bind(items[position]) else holder.bind(null)
 
-    override fun getItemCount(): Int = if (items.isEmpty()) 2 else items.size
+    override fun getItemCount(): Int = if (items.isNotEmpty()) items.size else 2
 
 }

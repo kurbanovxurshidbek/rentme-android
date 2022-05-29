@@ -25,8 +25,8 @@ class FeatureFragment : Fragment() {
 
     private val colorAdapter by lazy { ColorAdapter() }
     private var allPhotos: ArrayList<Uri> = ArrayList()
-    private var carImages: ArrayList<String> = ArrayList()
-    private val carImageAdapter by lazy { CarImageAdapter(allPhotos) }
+    private var carImages: ArrayList<Uri> = ArrayList()
+    private lateinit var carImageAdapter: CarImageAdapter
 
     private var _binding: FragmentFeaturesBinding? = null
     private val binding get() = _binding!!
@@ -52,8 +52,12 @@ class FeatureFragment : Fragment() {
         allColorFunction()
 
         binding.btnSave.setOnClickListener {
-            findNavController().navigate(R.id.myAddsFragment)
+            //findNavController().navigate(R.id.myAddsFragment)
+            carImageAdapter.saveCarImageStorage(carImages)
         }
+        carImageAdapter = CarImageAdapter()
+        binding.rvCarPhotos.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
+        binding.rvCarPhotos.adapter = carImageAdapter
         binding.ivAddPhoto.setOnClickListener { pickFishBunCarImages() }
 
     }
@@ -62,7 +66,6 @@ class FeatureFragment : Fragment() {
      * Pick photo using FishBun library
      */
     private fun pickFishBunCarImages(){
-        allPhotos.clear()
         FishBun.with(this)
             .setImageAdapter(GlideAdapter())
             .setMaxCount(10)
@@ -77,6 +80,8 @@ class FeatureFragment : Fragment() {
         if (it.resultCode == Activity.RESULT_OK){
             allPhotos = it.data?.getParcelableArrayListExtra(FishBun.INTENT_PATH) ?: arrayListOf()
             carImageAdapter.items.addAll(allPhotos)
+            carImages.addAll(allPhotos)
+            allPhotos.clear()
             carImageAdapter.notifyDataSetChanged()
         }
     }
