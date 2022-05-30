@@ -29,7 +29,7 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,7 +41,7 @@
             android:name=".ui.localization.LocalizationActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan"/>
     </application>

@@ -19,6 +19,7 @@ class FilterFragment : Fragment() {
     private val adapter by lazy { ColorFilterAdapter() }
     private var color = 0
 
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -40,7 +41,7 @@ class FilterFragment : Fragment() {
         initView()
 
         binding.btnResult.setOnClickListener{
-            findNavController().navigate(R.id.filterFragment)
+            findNavController().navigate(R.id.resultFragment)
         }
     }
 

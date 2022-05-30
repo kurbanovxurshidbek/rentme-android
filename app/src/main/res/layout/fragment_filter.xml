@@ -353,15 +353,17 @@
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/filter_rounded_corner"
+                    android:background="@drawable/filter_items_borders"
                     android:layout_width="0dp"
                     android:layout_height="40dp">
 
 
                     <EditText
                         android:id="@+id/et_minCost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/filter_items_borders"
+                        android:gravity="center" />
 
                 </LinearLayout>
 
