@@ -1,6 +1,12 @@
 package com.rentme.rentme.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "mainData")
 data class MainPage(
+    @PrimaryKey
+    val id: Long? = null,
     val data: WelcomeData? = null,
     val status: Long? = null
 )

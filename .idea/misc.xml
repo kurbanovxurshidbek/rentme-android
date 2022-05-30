@@ -4,11 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/bg_main_white_rounded_color.xml" value="0.1" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/edt_corner_rounded.xml" value="0.1265" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/ic_back.xml" value="0.132" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/ic_back_black.xml" value="0.132" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/ic_back_white.xml" value="0.132" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/ll_background_rounded_border.xml" value="0.1265" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/ll_details_background.xml" value="0.1265" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/shape_border_icon_background.xml" value="0.1265" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/types_borders_radius.xml" value="0.1265" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_information.xml" value="0.1" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_main.xml" value="0.12092391304347826" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_result.xml" value="0.1296875" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_select_location.xml" value="0.2" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/activity_types.xml" value="0.1296875" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_filter.xml" value="0.25" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_localization.xml" value="0.2" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_maps.xml" value="0.1" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_result.xml" value="0.33" />
@@ -16,6 +28,7 @@
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_upload.xml" value="0.2" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_main_ads.xml" value="0.184375" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_sub_main_footer.xml" value="0.75" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_sub_main_vehicles.xml" value="0.2" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/item_types_layout.xml" value="0.10099637681159421" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable-anydpi/ic_vector.xml" value="0.1265" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/drawable/button_background_rounded_border.xml" value="0.121" />

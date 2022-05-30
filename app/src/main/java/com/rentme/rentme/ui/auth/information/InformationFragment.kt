@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.rentme.rentme.MainActivity
+import com.rentme.rentme.ui.main.MainActivity
 import com.rentme.rentme.databinding.FragmentInformationBinding
 
 class InformationFragment: Fragment() {
@@ -34,7 +34,7 @@ class InformationFragment: Fragment() {
     }
 
     private fun startMainActivity() {
-        val intent = Intent(requireContext(),MainActivity::class.java)
+        val intent = Intent(requireContext(), MainActivity::class.java)
         startActivity(intent)
     }
 

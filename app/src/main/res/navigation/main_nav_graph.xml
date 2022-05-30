@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.rentme.rentme.ui.home.HomeFragment"
+        android:name="com.rentme.rentme.ui.main.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/uploadFragment"
-        android:name="com.rentme.rentme.ui.upload.UploadFragment"
+        android:name="com.rentme.rentme.ui.main.upload.UploadFragment"
         android:label="fragment_upload"
         tools:layout="@layout/fragment_upload" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.rentme.rentme.ui.profile.ProfileFragment"
+        android:name="com.rentme.rentme.ui.main.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.rentme.rentme.ui.location.mylocation.MapsFragment"
+        android:name="com.rentme.rentme.ui.main.location.mylocation.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" >
         <action
@@ -63,10 +63,13 @@
             app:popUpTo="@id/mapsFragment"
             app:popUpToInclusive="true"
             app:destination="@id/uploadFragment" />
+        <action
+            android:id="@+id/action_mapsFragment_to_selectLocationFragment"
+            app:destination="@id/selectLocationFragment" />
     </fragment>
     <fragment
         android:id="@+id/typesFragment"
-        android:name="com.rentme.rentme.ui.types.TypesFragment"
+        android:name="com.rentme.rentme.ui.main.filter.TypesFragment"
         android:label="fragment_types"
         tools:layout="@layout/fragment_types" >
         <action
@@ -75,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.rentme.rentme.ui.search.SearchFragment"
+        android:name="com.rentme.rentme.ui.main.home.SearchFragment"
         android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_resultFragment"
@@ -83,7 +86,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.rentme.rentme.ui.result.ResultFragment"
+        android:name="com.rentme.rentme.ui.main.filter.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <action
@@ -92,16 +95,16 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.rentme.rentme.ui.details.DetailsFragment"
+        android:name="com.rentme.rentme.ui.main.details.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" />
     <fragment
         android:id="@+id/featureFragment"
-        android:name="com.rentme.rentme.ui.features.FeatureFragment"
+        android:name="com.rentme.rentme.ui.main.upload.FeatureFragment"
         android:label="FeatureFragment" />
     <fragment
         android:id="@+id/filterFragment"
-        android:name="com.rentme.rentme.ui.filter.FilterFragment"
+        android:name="com.rentme.rentme.ui.main.filter.FilterFragment"
         android:label="fragment_filter"
         tools:layout="@layout/fragment_filter" >
         <action
@@ -116,25 +119,28 @@
     </fragment>
     <fragment
         android:id="@+id/selectLocationFragment"
-        android:name="com.rentme.rentme.ui.location.SelectLocationFragment"
+        android:name="com.rentme.rentme.ui.main.location.SelectLocationFragment"
         android:label="fragment_select_location"
         tools:layout="@layout/fragment_select_location" >
         <action
             android:id="@+id/action_selectLocationFragment_to_mapsFragment"
             app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_selectLocationFragment_to_uploadFragment"
+            app:destination="@id/uploadFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.rentme.rentme.ui.update.UpdateFragment"
+        android:name="com.rentme.rentme.ui.main.profile.UpdateFragment"
         android:label="fragment_update"
         tools:layout="@layout/fragment_update" />
     <fragment
         android:id="@+id/favouriteFragment"
-        android:name="com.rentme.rentme.ui.favourite.FavouriteFragment"
+        android:name="com.rentme.rentme.ui.main.profile.FavouriteFragment"
         android:label="fragment_favourite"
         tools:layout="@layout/fragment_favourite" />
     <fragment
         android:id="@+id/myAddsFragment"
-        android:name="com.rentme.rentme.ui.myadds.MyAddsFragment"
+        android:name="com.rentme.rentme.ui.main.profile.MyAddsFragment"
         android:label="MyAddsFragment" />
 </navigation>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.details.DetailsFragment">
+    tools:context=".ui.main.details.DetailsFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
