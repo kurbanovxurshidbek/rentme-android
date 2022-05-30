@@ -14,7 +14,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -24,6 +27,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.rentme.rentme.R
+import com.rentme.rentme.databinding.FragmentMapsBinding
+import com.rentme.rentme.managers.PrefsManager
+import com.rentme.rentme.ui.LocationViewModel
 import java.io.IOException
 import java.util.*
 
@@ -49,8 +55,8 @@ class MapsFragment : Fragment() {
     }
 
 
-    var locationPermissionGranted = false
-    var PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
+    private var locationPermissionGranted = false
+    private var PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
     private lateinit var mMap: GoogleMap
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
@@ -58,6 +64,11 @@ class MapsFragment : Fragment() {
     var lastKnownLocation: Location? = null
 
     private val TAG = "MapsFragment"
+//    private val locationViewModel: LocationViewModel by viewModels()
+    private var _binding: FragmentMapsBinding? = null
+    private val binding get() = _binding!!
+
+    private var myAddress = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,13 +82,24 @@ class MapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_maps, container, false)
+        _binding = FragmentMapsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+
+        binding.bOk.setOnClickListener {
+//            locationViewModel.setLocalHistory(myAddress)
+            findNavController().navigate(R.id.action_mapsFragment_to_uploadFragment, bundleOf("location" to myAddress))
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 
@@ -195,7 +217,7 @@ class MapsFragment : Fragment() {
         }
     }
 
-    fun getAddress(lat: Double, lng: Double) {
+    private fun getAddress(lat: Double, lng: Double) {
         val geocoder = Geocoder(requireContext(), Locale.getDefault())
         try {
             val addresses: List<Address> = geocoder.getFromLocation(lat, lng, 1)
@@ -223,7 +245,9 @@ class MapsFragment : Fragment() {
                 Toast.LENGTH_SHORT
             ).show()
 
-            // TennisAppActivity.showDialog(add);
+            myAddress = "${obj.locality}, ${obj.countryName}"
+            binding.tvLocationName.text = myAddress
+
         } catch (e: IOException) {
             e.printStackTrace()
             Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()

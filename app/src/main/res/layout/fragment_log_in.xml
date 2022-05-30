@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="16dp"
-    android:background="#ffffff"
-    tools:context=".ui.logIn.LogInActivity">
+    android:background="#ffffff">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
             android:gravity="right"
             android:text="@string/str_skip"
             android:textColor="#8c8c8c"
@@ -102,12 +101,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center_vertical|right"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="55dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="55dp"
                     android:text="SMS enter code"
                     android:textAllCaps="false"
                     android:textColor="#8c8c8c"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
 

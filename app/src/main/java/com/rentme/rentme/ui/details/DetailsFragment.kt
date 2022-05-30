@@ -59,7 +59,6 @@ class DetailsFragment : Fragment() {
             findNavController().navigate(R.id.selectLocationFragment)
         }
 
-
     }
 
     private fun tabLayoutManager() {

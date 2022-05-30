@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="70dp"
+    android:layout_marginHorizontal="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/ll_background_date_month"
+    android:padding="1dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_car_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/border_radius_8"
+        android:background="@drawable/ll_background_rounded_border"/>
+
+    <ImageView
+        android:id="@+id/iv_clear"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:visibility="gone"
+        android:layout_gravity="top|end"
+        android:src="@drawable/ic_cancel"
+        app:tint="@color/orange_main_01"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ll_save_storage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:shapeAppearanceOverlay="@style/border_radius_8"
+        android:orientation="horizontal"
+        android:background="#4D000000"/>
+
+</FrameLayout>
