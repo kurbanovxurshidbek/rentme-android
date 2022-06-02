@@ -38,10 +38,6 @@ android {
 }
 
 dependencies {
-    //sms verification layout gradle
-    implementation "com.github.fraggjkee:sms-confirmation-view:1.6.0" //
-
-    //
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.0'
@@ -57,6 +53,9 @@ dependencies {
 
     // Google Services
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
+
+    //sms verification layout gradle
+    implementation "com.github.fraggjkee:sms-confirmation-view:1.6.0" //
 
     //phone number
     implementation 'com.fredporciuncula:phonemoji:1.2.0'
@@ -80,6 +79,10 @@ dependencies {
     // Kotlinx Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
+
+    //Pager Indicator
+    implementation "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:1.2.1"
+
 
     // FishBun for get photos in Gallery and Camera
     implementation 'io.github.sangcomz:fishbun:1.0.0-beta01'
