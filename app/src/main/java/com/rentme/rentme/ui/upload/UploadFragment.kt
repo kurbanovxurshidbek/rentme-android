@@ -10,15 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import android.widget.*
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
 import com.rentme.rentme.model.UploadAdvertisement
-import java.text.SimpleDateFormat
 import kotlin.collections.ArrayList
 
 class UploadFragment : Fragment() {
@@ -52,7 +49,6 @@ class UploadFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         selectTypeSpinner()
-        openFeatureActivity()
         calendarView()
         selectLifeTimeChanged()
 
@@ -89,14 +85,113 @@ class UploadFragment : Fragment() {
         findNavController().navigate(R.id.selectLocationFragment)
     }
 
-//        Log.d("args", arguments?.getString("location", "")!!)
-        if (!arguments?.getString("location", "").isNullOrEmpty()) {
-            Log.d("args", "--" + arguments?.getString("location", "")!!)
-            binding.tvLocation.text = arguments?.getString("location", "")
-            findNavController().clearBackStack(R.id.mapsFragment)
-
-            findNavController().navigateUp()
+    private fun selectLifeTimeChanged() {
+        binding.maxRadioGroup.setOnCheckedChangeListener { p0, checkedId ->
+            binding.maxCountTime.isClickable = true
+            binding.maxCountTime.isCursorVisible = true
+            when (checkedId) {
+                R.id.max_radio_day -> {
+                    binding.maxTypeTime.text = getString(R.string.str_day)
+                    if (binding.maxCountTime.text.isNotEmpty()) maxTimeHelper =
+                        binding.maxCountTime.text.toString().toInt()
+                    if (maxTimeHelper < minTimeHelper){
+                        binding.llMaxLifetime.setBackgroundResource(R.drawable.ll_background_red_rounded)
+                        binding.maxCountTime.setTextColor(resources.getColor(R.color.error_text_color))
+                    }
+                }
+                else -> {
+                    binding.maxTypeTime.text = getString(R.string.str_month)
+                    if (binding.maxCountTime.text.isNotEmpty()) maxTimeHelper =
+                        binding.maxCountTime.text.toString().toInt() * 30
+                }
+            }
+            if (maxTimeHelper > minTimeHelper) {
+                binding.llMaxLifetime.setBackgroundResource(R.drawable.ll_background_date_month)
+                binding.llMinLifetime.setBackgroundResource(R.drawable.ll_background_date_month)
+                binding.maxCountTime.setTextColor(resources.getColor(R.color.second_text_color))
+                binding.minCountTime.setTextColor(resources.getColor(R.color.second_text_color))
+            }
         }
+
+        binding.minRadioGroup.setOnCheckedChangeListener { p0, checkedId ->
+            binding.minCountTime.isClickable = true
+            binding.minCountTime.isCursorVisible = true
+            when (checkedId) {
+                R.id.min_radio_day -> {
+                    binding.minTypeTime.text = getString(R.string.str_day)
+                    binding.maxRadioDay.isClickable = true
+                    if (binding.minCountTime.text.isNotEmpty()) minTimeHelper =
+                        binding.minCountTime.text.toString().toInt()
+                }
+                else -> {
+                    binding.minTypeTime.text = getString(R.string.str_month)
+                    binding.maxRadioMonth.isChecked = true
+                    binding.maxRadioDay.isClickable = false
+                    if (binding.minCountTime.text.isNotEmpty()) minTimeHelper =
+                        binding.minCountTime.text.toString().toInt() * 30
+                    if (maxTimeHelper < minTimeHelper){
+                        binding.llMinLifetime.setBackgroundResource(R.drawable.ll_background_red_rounded)
+                        binding.minCountTime.setTextColor(resources.getColor(R.color.error_text_color))
+                    }
+                }
+
+            }
+            if (maxTimeHelper > minTimeHelper) {
+                binding.llMinLifetime.setBackgroundResource(R.drawable.ll_background_date_month)
+                binding.llMaxLifetime.setBackgroundResource(R.drawable.ll_background_date_month)
+                binding.maxCountTime.setTextColor(resources.getColor(R.color.second_text_color))
+                binding.minCountTime.setTextColor(resources.getColor(R.color.second_text_color))
+            }
+        }
+
+        binding.minCountTime.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (p0.toString().isNotEmpty()) {
+                    minTimeHelper =
+                        if (binding.minTypeTime.text.toString() == getString(R.string.str_day)
+                        ) p0.toString().toInt()
+                        else (p0.toString().toInt() * 30)
+                    if (maxTimeHelper < minTimeHelper){
+                        binding.llMinLifetime.setBackgroundResource(R.drawable.ll_background_red_rounded)
+                        binding.minCountTime.setTextColor(resources.getColor(R.color.error_text_color))
+                    }
+                    else {
+                        binding.llMinLifetime.setBackgroundResource(R.drawable.ll_background_date_month)
+                        binding.llMaxLifetime.setBackgroundResource(R.drawable.ll_background_date_month)
+                        binding.maxCountTime.setTextColor(resources.getColor(R.color.second_text_color))
+                        binding.minCountTime.setTextColor(resources.getColor(R.color.second_text_color))
+                    }
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
+        binding.maxCountTime.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (p0.toString().isNotEmpty()) {
+                    maxTimeHelper =
+                        if (binding.maxTypeTime.text.toString() == getString(R.string.str_day)
+                        ) p0.toString().toInt()
+                        else (p0.toString().toInt() * 30)
+                    if (maxTimeHelper < minTimeHelper){
+                        binding.llMaxLifetime.setBackgroundResource(R.drawable.ll_background_red_rounded)
+                        binding.minCountTime.setTextColor(resources.getColor(R.color.error_text_color))
+                    }
+                    else {
+                        binding.llMinLifetime.setBackgroundResource(R.drawable.ll_background_date_month)
+                        binding.llMaxLifetime.setBackgroundResource(R.drawable.ll_background_date_month)
+                        binding.maxCountTime.setTextColor(resources.getColor(R.color.second_text_color))
+                        binding.minCountTime.setTextColor(resources.getColor(R.color.second_text_color))
+                    }
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
     }
 
     private fun calendarView() {
@@ -134,6 +229,7 @@ class UploadFragment : Fragment() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 carCategory = p0!!.getItemAtPosition(p2).toString()
             }
+
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
