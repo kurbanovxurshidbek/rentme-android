@@ -108,4 +108,10 @@
     <string name="str_pictures">Pictures</string>
     <string name="str_my_adds">My adds</string>
     <string name="str_view_all">View all</string>
+    <string name="str_select_start_date">Select start date</string>
+    <string name="str_enter_year">enter year</string>
+    <string name="str_som">som</string>
+    <string name="str_fill_all_fields">Please, fill in all the Fields</string>
+    <string name="str_days">days</string>
+
 </resources>

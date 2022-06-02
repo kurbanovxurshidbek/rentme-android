@@ -14,21 +14,21 @@ data class WelcomeData(
 
 data class DataData(
     val picturePathList: List<String>? = null,
-    val lastAdvertisements: List<Advertisement>? = null,
-    val dailyAdvertisements: List<Advertisement>? = null,
-    val weeklyAdvertisements: List<Advertisement>? = null
+    val lastAdvertisements: List<UploadAdvertisement>? = null,
+    val dailyAdvertisements: List<UploadAdvertisement>? = null,
+    val weeklyAdvertisements: List<UploadAdvertisement>? = null
 )
 
 data class Advertisement(
     val id: Long? = null,
     val description: String? = null,
-    val prices: List<Price>? = null,
+    val prices: List<PriceDTO>? = null,
     val picture: String? = null,
     val category: String? = null,
     val transportDTO: TransportDTO? = null
 )
 
-data class Price(
+data class PriceDTO(
     val id: Long? = null,
     val quantity: Long? = null,
     val type: String? = null
