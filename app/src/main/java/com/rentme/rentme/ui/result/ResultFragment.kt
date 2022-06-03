@@ -56,11 +56,11 @@ class ResultFragment : Fragment() {
 
     private fun getAllResult() {
         val items:ArrayList<Result> = ArrayList()
-        items.add(Result(R.drawable.im_malibu,"Malibu 2","","200$",))
-        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","350$",))
-        items.add(Result(R.drawable.im_mersades,"AMG","","400$",))
-        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","300$",))
-        items.add(Result(R.drawable.im_mersades,"AMG 2","","350$",))
+        items.add(Result(R.drawable.im_malibu,"Malibu 2","50$","200$",))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","10","350$",))
+        items.add(Result(R.drawable.im_mersades,"AMG","30","400$",))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","25","300$",))
+        items.add(Result(R.drawable.im_mersades,"AMG 2","40$","350$",))
 
         adapter.submitData(items)
     }

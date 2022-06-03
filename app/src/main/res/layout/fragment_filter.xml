@@ -78,96 +78,96 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+<!--            <LinearLayout-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
 
-                <TextView
-                    android:text="Category"
-                    android:textSize="18sp"
-                    android:textColor="@color/black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+<!--                <TextView-->
+<!--                    android:text="Category"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
 
-                <LinearLayout
-                    android:paddingVertical="10dp"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+<!--                <LinearLayout-->
+<!--                    android:paddingVertical="10dp"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
 
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:background="@drawable/filter_borders_radius"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_height="50dp">
+<!--                    <LinearLayout-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:background="@drawable/filter_borders_radius"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:layout_height="50dp">-->
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:src="@drawable/ic_car"
-                            android:scaleType="fitXY"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="2dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+<!--                        <com.google.android.material.imageview.ShapeableImageView-->
+<!--                            android:src="@drawable/ic_car"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:paddingHorizontal="10dp"-->
+<!--                            android:paddingVertical="2dp"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"/>-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:background="@drawable/filter_borders_radius"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_height="50dp">
+<!--                    <LinearLayout-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:background="@drawable/filter_borders_radius"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:layout_height="50dp">-->
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:src="@drawable/ic_lorry"
-                            android:scaleType="fitXY"
-                            android:paddingVertical="2dp"
-                            android:paddingHorizontal="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+<!--                        <com.google.android.material.imageview.ShapeableImageView-->
+<!--                            android:src="@drawable/ic_lorry"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:paddingVertical="2dp"-->
+<!--                            android:paddingHorizontal="10dp"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"/>-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:background="@drawable/filter_borders_radius"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_height="50dp">
+<!--                    <LinearLayout-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:background="@drawable/filter_borders_radius"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:layout_height="50dp">-->
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:src="@drawable/ic_bicycle"
-                            android:scaleType="fitXY"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="2dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+<!--                        <com.google.android.material.imageview.ShapeableImageView-->
+<!--                            android:src="@drawable/ic_bicycle"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:paddingHorizontal="10dp"-->
+<!--                            android:paddingVertical="2dp"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"/>-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:background="@drawable/filter_borders_radius"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_height="50dp">
+<!--                    <LinearLayout-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:background="@drawable/filter_borders_radius"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:layout_height="50dp">-->
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:src="@drawable/ic_motorcycle"
-                            android:scaleType="fitXY"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="2dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+<!--                        <com.google.android.material.imageview.ShapeableImageView-->
+<!--                            android:src="@drawable/ic_motorcycle"-->
+<!--                            android:scaleType="fitXY"-->
+<!--                            android:paddingHorizontal="10dp"-->
+<!--                            android:paddingVertical="2dp"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"/>-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
             <!--            <LinearLayout-->
             <!--                android:layout_marginTop="15dp"-->
@@ -183,14 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <!--                <Spinner-->
-            <!--                    android:id="@+id/spn_cars"-->
-            <!--                    android:layout_marginTop="5dp"-->
-            <!--                    android:background="@drawable/filter_rounded_corner"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="40dp"/>-->
 
-            <!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -224,12 +217,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
-                <!--                <Spinner-->
-                <!--                    android:id="@+id/spn_carModel"-->
-                <!--                    android:layout_marginTop="5dp"-->
-                <!--                    android:background="@drawable/filter_rounded_corner"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="40dp"/>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -251,31 +238,45 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_marginTop="15dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="Ishlab chiqarilgan yili"
-                    android:layout_gravity="center_vertical"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:text="@string/str_modelYear"
+                    android:textSize="@dimen/text_type_18"
+                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
-                <Spinner
-                    android:id="@+id/spn_year"
-                    android:layout_marginVertical="2dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@drawable/filter_rounded_corner"
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"/>
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.02">
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/rv_model_year"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+                </LinearLayout>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:background="#cbcbcb"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
 
             <LinearLayout
                 android:layout_marginTop="15dp"
@@ -288,8 +289,8 @@
                     android:text="@string/str_cost"
                     android:paddingRight="20dp"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
+                    android:textSize="@dimen/text_type_18"
+                    android:textStyle="normal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -297,6 +298,7 @@
                 <RadioGroup
                     android:id="@+id/cost_radio_group"
                     android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
@@ -324,85 +326,145 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
+                android:background="@drawable/filter_rounded_corner"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-
-                <TextView
-                    android:text="@string/str_min"
-                    android:textSize="18sp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <!--                <TextView-->
-                <!--                    android:text="($)"-->
-                <!--                    android:layout_gravity="center_vertical"-->
-                <!--                    android:textStyle="bold"-->
-                <!--                    android:textSize="18sp"-->
-                <!--                    android:textColor="@color/black"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"/>-->
-
                 <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/filter_items_borders"
-                    android:layout_width="0dp"
                     android:layout_height="40dp">
-
-
-                    <EditText
-                        android:id="@+id/et_minCost"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/filter_items_borders"
-                        android:gravity="center" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:text="@string/str_max"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginHorizontal="20dp"
-                    android:background="@drawable/filter_rounded_corner"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp">
-
-
-
-                    <EditText
-                        android:id="@+id/et_maxCost"
+                    <TextView
+                        android:id="@+id/tv_cost_min"
+                        android:textSize="@dimen/text_type_18"
+                        android:text="$"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
+                </LinearLayout>
 
-                    <!--                    <TextView-->
-                    <!--                        android:text="$"-->
-                    <!--                        android:layout_gravity="center_vertical"-->
-                    <!--                        android:textStyle="bold"-->
-                    <!--                        android:textSize="18sp"-->
-                    <!--                        android:textColor="@color/black"-->
-                    <!--                        android:layout_width="wrap_content"-->
-                    <!--                        android:layout_height="wrap_content"/>-->
+                <LinearLayout
+                    android:background="#cbcbcb"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"/>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:id="@+id/tv_cost_max"
+                        android:textSize="@dimen/text_type_18"
+                        android:text="$"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.slider.RangeSlider
+                    android:id="@+id/sld_cost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTintMode="multiply"
+                    android:valueFrom="10"
+                    android:valueTo="100"
+                    app:trackColorActive="@color/orange_main_04"
+                    app:trackColorInactive="@color/orange_main_03"
+                    app:thumbColor="@color/orange_main_01"
+                    app:values="@array/initial_slider_values" />
+
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+
+<!--                <TextView-->
+<!--                    android:text="@string/str_min"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                &lt;!&ndash;                <TextView&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:text="($)"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:textStyle="bold"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:textSize="18sp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:textColor="@color/black"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_height="wrap_content"/>&ndash;&gt;-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_marginHorizontal="20dp"-->
+<!--                    android:background="@drawable/filter_items_borders"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="40dp">-->
+
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/et_minCost"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:background="@drawable/filter_items_borders"-->
+<!--                        android:gravity="center" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <TextView-->
+<!--                    android:text="@string/str_max"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_marginHorizontal="20dp"-->
+<!--                    android:background="@drawable/filter_rounded_corner"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="40dp">-->
+
+
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/et_maxCost"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+<!--                    &lt;!&ndash;                    <TextView&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:text="$"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:textStyle="bold"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:textSize="18sp"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:textColor="@color/black"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:layout_height="wrap_content"/>&ndash;&gt;-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_marginTop="20dp"
@@ -412,13 +474,14 @@
 
                 <TextView
                     android:text="Muddat"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textSize="@dimen/text_type_18"
+                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
                 <LinearLayout
+                    android:id="@+id/ll_filter_calendar"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -426,10 +489,12 @@
 
                     <ImageView
                         android:src="@drawable/ic_calendar"
+                        app:tint="@color/orange_main_01"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
+                        android:id="@+id/tv_start_date"
                         android:text="@string/str_start_date"
                         android:textColor="@color/black"
                         android:textSize="18sp"

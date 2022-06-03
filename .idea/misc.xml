@@ -30,6 +30,7 @@
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/item_upload_color_view.xml" value="0.203125" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/spinner_item_view.xml" value="0.203125" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/menu/bnv_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/bg_main_white_rounded_color.xml" value="0.147" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_border_radius.xml" value="0.114" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/filter_items_borders.xml" value="0.1605" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/filter_rounded_corner.xml" value="0.1605" />
@@ -38,14 +39,20 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_filters.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_result.xml" value="0.16973065412569474" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_types.xml" value="0.12466001813236627" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_details.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_filter.xml" value="0.36793327154772937" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_home.xml" value="0.16973065412569474" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_data_range_picker.xml" value="0.16973065412569474" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_data_range_picker2.xml" value="0.16973065412569474" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_details.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_filter.xml" value="0.30991412958626074" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_result.xml" value="0.16973065412569474" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_types.xml" value="0.16973065412569474" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_upload.xml" value="0.18" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/ic_circle_select.xml" value="0.16973065412569474" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_calendar_view.xml" value="0.168875587858059" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_detail_images.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_filter_car_colors.xml" value="0.168875587858059" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_filter_model_year.xml" value="0.5" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_result_layout.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_sub_main_vehicles.xml" value="0.3732394366197183" />
       </map>
     </option>
