@@ -60,21 +60,20 @@
 
                 </LinearLayout>
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tabLayout"
-                    android:layout_width="match_parent"
+                <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:paddingHorizontal="6dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    app:layout_constraintBottom_toTopOf="@id/cl_categories"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:tabGravity="center"
-                    app:tabIndicatorAnimationMode="elastic"
-                    app:tabIndicatorHeight="0dp"
-                    app:tabMode="fixed"
-                    app:tabRippleColor="@null"
-                    app:tabSelectedTextColor="@color/white"
-                    app:tabTextColor="@color/white" />
+                    android:layout_marginBottom="10dp"
+                    app:spi_dotSize="6dp"
+                    app:spi_dotColor="#B3C5C5C5"
+                    app:spi_dotSelectedColor="@color/white"
+                    app:spi_dotSelectedSize="8dp"
+                    app:spi_dotSpacing="6dp"
+                    android:id="@+id/dots_indicator_details"/>
 
             </FrameLayout>
 
@@ -104,7 +103,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:background="@color/white"
                 android:orientation="horizontal">
@@ -123,10 +122,9 @@
                         android:id="@+id/tv_cars_cost_day"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
                         android:text="280$"
                         android:textColor="@color/orange_main_01"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/text_type_18"
                         android:textStyle="bold" />
 
                     <TextView
@@ -139,13 +137,12 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="5dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginHorizontal="5dp"
-                        android:layout_marginTop="10dp"
                         android:backgroundTint="@color/orange_main_01"
                         android:background="@drawable/filter_rounded_corner" />
 
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -161,10 +158,9 @@
                         android:id="@+id/tv_cars_cost_month"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
                         android:text="980$"
-                        android:textColor="#6C6767"
-                        android:textSize="20sp"
+                        android:textColor="@color/orange_main_01"
+                        android:textSize="@dimen/text_type_18"
                         android:textStyle="bold" />
 
                     <TextView
@@ -177,12 +173,13 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="5dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginHorizontal="5dp"
-                        android:layout_marginTop="10dp"
-                        android:backgroundTint="#6C6767"
+                        android:backgroundTint="@color/orange_main_01"
                         android:background="@drawable/filter_rounded_corner" />
 
                 </LinearLayout>
+
 
             </LinearLayout>
 

@@ -13,8 +13,10 @@
     <color name="textColorHighlight">#4DD81B60</color>
 
    <color name="second_text_color">#AD000000</color>
-    <color name="orange_main_01">#F38121</color>
+    <color name="orange_main_01">#1B75E1</color>
     <color name="orange_main_02">#C05801</color>
+    <color name="orange_main_03">#B3CEDF</color>
+    <color name="orange_main_04">#FF74A1D6</color>
 
 
     <color name="error_text_color">#E10D0D</color>

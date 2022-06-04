@@ -25,6 +25,7 @@
     <string name="str_lifetime_min">Lifetime(min)</string>
     <string name="str_type">Type</string>
     <string name="str_model">Model</string>
+    <string name="str_modelYear">Model Year</string>
     <string name="str_min_pictures">(min 2 pictures)</string>
     <string name="str_year_manufacture">Year of manufacture</string>
     <string name="str_management_system">Management system</string>
