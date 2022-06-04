@@ -1,19 +1,12 @@
 package com.rentme.rentme.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.imageview.ShapeableImageView
-import com.rentme.rentme.R
 import com.rentme.rentme.databinding.ItemResultLayoutBinding
 import com.rentme.rentme.model.Result
-import com.rentme.rentme.model.Types
 
 class ResultAdapter:RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
     private val dif = AsyncListDiffer(this,ITEM_DIF)

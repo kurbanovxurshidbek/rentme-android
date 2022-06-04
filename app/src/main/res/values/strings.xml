@@ -18,6 +18,7 @@
     <string name="str_day">day</string>
     <string name="str_max">max:</string>
     <string name="str_month">month</string>
+    <string name="str_months">months</string>
     <string name="str_next">Next</string>
     <string name="str_features">Features</string>
     <string name="str_start_date">Start date</string>
@@ -115,5 +116,7 @@
     <string name="str_som">som</string>
     <string name="str_fill_all_fields">Please, fill in all the Fields</string>
     <string name="str_days">days</string>
+    <string name="str_price_day">/day</string>
+    <string name="str_price_month">/month</string>
 
 </resources>
