@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.rentme.rentme.databinding.ItemResultLayoutBinding
+import com.rentme.rentme.databinding.ItemMyUploadViewBinding
 import com.rentme.rentme.model.Result
 
 
@@ -13,7 +13,7 @@ class MyAddAdapter:RecyclerView.Adapter<MyAddAdapter.MyAddViewHolder>() {
     private val dif = AsyncListDiffer(this,ITEM_DIF)
     var onClick:((Result) -> Unit)? = null
 
-    inner class MyAddViewHolder(private val binding:ItemResultLayoutBinding):
+    inner class MyAddViewHolder(private val binding:ItemMyUploadViewBinding):
         RecyclerView.ViewHolder(binding.root){
             fun bind(){
                 val result = dif.currentList[adapterPosition]
@@ -33,7 +33,7 @@ class MyAddAdapter:RecyclerView.Adapter<MyAddAdapter.MyAddViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):MyAddViewHolder{
         return MyAddViewHolder(
-            ItemResultLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            ItemMyUploadViewBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         )
     }
 

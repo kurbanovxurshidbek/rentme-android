@@ -18,12 +18,14 @@
     <string name="str_day">day</string>
     <string name="str_max">max:</string>
     <string name="str_month">month</string>
+    <string name="str_months">months</string>
     <string name="str_next">Next</string>
     <string name="str_features">Features</string>
     <string name="str_start_date">Start date</string>
     <string name="str_lifetime_min">Lifetime(min)</string>
     <string name="str_type">Type</string>
     <string name="str_model">Model</string>
+    <string name="str_modelYear">Model Year</string>
     <string name="str_min_pictures">(min 2 pictures)</string>
     <string name="str_year_manufacture">Year of manufacture</string>
     <string name="str_management_system">Management system</string>
@@ -110,4 +112,12 @@
     <string name="str_view_all">View all</string>
     <string name="str_current_location">Current Location</string>
     <string name="str_history">History</string>
+    <string name="str_select_start_date">Select start date</string>
+    <string name="str_enter_year">enter year</string>
+    <string name="str_som">som</string>
+    <string name="str_fill_all_fields">Please, fill in all the Fields</string>
+    <string name="str_days">days</string>
+    <string name="str_price_day">/day</string>
+    <string name="str_price_month">/month</string>
+
 </resources>
