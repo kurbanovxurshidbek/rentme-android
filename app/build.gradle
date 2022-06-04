@@ -90,5 +90,7 @@ dependencies {
     // Glide for load image that it`s url
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+//bottom sheet material component
+    implementation 'com.google.android.material:material:1.7.0-alpha02'
 
 }
