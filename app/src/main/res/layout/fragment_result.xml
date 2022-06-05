@@ -29,11 +29,11 @@
                     android:layout_height="24dp"/>
 
                 <TextView
-                    android:text="Result"
-                    android:textSize="20sp"
+                    android:text="Result (12 Cars)"
+                    android:textSize="@dimen/text_type_18"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"/>
@@ -64,14 +64,14 @@
 
                 <ImageView
                     android:src="@drawable/ic_filter"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"/>
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
 
                 <TextView
                     android:text="Filter"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -91,7 +91,6 @@
                 android:layout_height="match_parent"/>
 
         </LinearLayout>
-
 
     </LinearLayout>
 

@@ -1,19 +1,25 @@
 package com.rentme.rentme
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.rentme.rentme.databinding.ActivityMainBinding
+import com.rentme.rentme.ui.profile.BottomSheetFragment
+import com.rentme.rentme.ui.profile.BottomSheetFragmentLogOut
 
 class MainActivity : AppCompatActivity() {
     private var isLightStatusBar: Boolean = false
-
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
 
@@ -30,6 +36,14 @@ class MainActivity : AppCompatActivity() {
         navController =findNavController(R.id.nav_host_fragment_container)
 
         bnv.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            when (destination.id) {
+                R.id.homeFragment, R.id.uploadFragment, R.id.profileFragment -> showBottomNavigation()
+                else -> hideBottomNavigation()
+            }
+            //                Log.d("@@@", "${controller.currentDestination!!.displayName} -- ${destination.displayName}")
+        }
     }
 
     override fun onBackPressed() {
@@ -63,4 +77,32 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+    fun showBottomNavigation() {
+        binding.bnvMain.visibility = View.VISIBLE
+    }
+
+    fun hideBottomNavigation() {
+        binding.bnvMain.visibility = View.GONE
+    }
+
+
+    @SuppressLint("ServiceCast")
+    fun closeKeyBoard() {
+        val view = this.currentFocus
+        if (view != null) {
+            val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
+
+    fun showBottomSHeetFragment(){
+        val bottomSheetFragment = BottomSheetFragment()
+        bottomSheetFragment.show(supportFragmentManager,"BottomSheetDialog")
+    }
+    fun showLogOutBottomSheet(){
+        val bottomSheetFragmentLogOut = BottomSheetFragmentLogOut()
+        bottomSheetFragmentLogOut.show(supportFragmentManager,"BottomSheetfragmentLogOut")
+    }
+
 }
