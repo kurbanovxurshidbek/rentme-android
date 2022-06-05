@@ -47,7 +47,6 @@ class FilterFragment : Fragment() {
         initSpinnerModel()
 
         initView()
-        //calendarView()
         dataRangePickerView()
 
         binding.btnResult.setOnClickListener{
@@ -78,28 +77,6 @@ class FilterFragment : Fragment() {
         }
     }
 
-//    private fun calendarView(){
-//        binding.apply {
-//            llFilterCalendar.setOnClickListener {
-//                val datePickerFragment = DatePickerFragment()
-//                val supportFragmentManager = requireActivity().supportFragmentManager
-//
-//                supportFragmentManager.setFragmentResultListener(
-//                    "REQUEST_KEY",
-//                    viewLifecycleOwner
-//                )
-//                { resultKey, bundle ->
-//                    if (resultKey == "REQUEST_KEY") {
-//                        val date = bundle.getString("SELECTED_DATE")
-//                        tvStartDate.text = date
-//                    }
-//                }
-//
-//                // show
-//                datePickerFragment.show(supportFragmentManager, "DatePickerFragment")
-//            }
-//        }
-//    }
 
     private fun dataRangePickerView(){
         binding.apply {
@@ -129,14 +106,20 @@ class FilterFragment : Fragment() {
     }
 
     private fun getAllColors() {
-        val items:ArrayList<String> = ArrayList()
-        items.add(String())
-        items.add(String())
-        items.add(String())
-        items.add(String())
-        items.add(String())
+        val colors: ArrayList<Int> = ArrayList()
+        colors.add(R.color.car_black)
+        colors.add(R.color.car_meteor_grey)
+        colors.add(R.color.car_bright_white)
+        colors.add(R.color.car_candy_white)
+        colors.add(R.color.car_brilliant_silver)
+        colors.add(R.color.car_energy_blue)
+        colors.add(R.color.car_race_blue)
+        colors.add(R.color.car_velvet_red)
+        colors.add(R.color.car_corrida_red)
+        colors.add(R.color.car_yellow)
+        colors.add(R.color.car_orange)
 
-        adapter.submitData(items)
+        adapter.submitData(colors)
     }
 
     private fun getAllModelYear(){
