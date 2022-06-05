@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable-v24/button_background_not_click.xml" value="0.186" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/bg_rounded_border_category.xml" value="0.186" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/border_language_localization.xml" value="0.171" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_background_rounded_border.xml" value="0.171" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/chech_register_background.xml" value="0.201" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/ll_background_date_month.xml" value="0.152" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/ll_background_rounded_border.xml" value="0.186" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/login_border_and_background.xml" value="0.1575" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/splash_gradient.xml" value="0.1815" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/ablah.xml" value="0.25416666666666665" />
@@ -16,12 +19,13 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_localization.xml" value="0.2" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_log_in.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_splash.xml" value="0.264" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_splash.xml" value="0.176" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_update.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/check_login.xml" value="0.2" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_home.xml" value="0.18020833333333333" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_information.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_information.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_localization.xml" value="0.25025641025641027" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_log_in.xml" value="0.1" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_upload.xml" value="0.125" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_main_adds.xml" value="0.18020833333333333" />
@@ -84,7 +88,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.2" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>

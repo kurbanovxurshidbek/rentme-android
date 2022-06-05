@@ -84,4 +84,7 @@ dependencies {
     // FishBun for get photos in Gallery and Camera
     implementation 'io.github.sangcomz:fishbun:1.0.0-beta01'
 
+    //Lottie Animation
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
 }

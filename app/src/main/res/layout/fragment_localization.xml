@@ -7,21 +7,51 @@
     android:background="#ffffff"
     android:paddingHorizontal="16dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
         android:gravity="center"
-        android:text="RentMe"
-        android:textColor="#22215B"
-        android:textSize="60sp"
-        android:textStyle="bold"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".35" />
+        app:layout_constraintVertical_bias=".35" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rent"
+            android:textColor="@color/orange_main_01"
+            android:textSize="60sp"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Me"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </LinearLayout>
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:text="RentMe"-->
+<!--        android:textColor="#22215B"-->
+<!--        android:textSize="40dp"-->
+<!--        android:textStyle="normal"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias=".35" />-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +68,6 @@
             android:text="@string/str_choose_language"
             android:textColor="#22215B"
             android:textSize="25sp"
-            android:fontFamily="cursive"
             android:textStyle="bold"
             />
 

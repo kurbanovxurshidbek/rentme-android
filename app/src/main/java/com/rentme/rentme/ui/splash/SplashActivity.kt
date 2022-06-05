@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
+import com.airbnb.lottie.LottieAnimationView
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.ActivitySplashBinding
 import com.rentme.rentme.ui.auth.LoginActivity
@@ -35,8 +36,9 @@ class SplashActivity : AppCompatActivity() {
         bottom = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
 
         //Hooks
-        binding.carRunning.animation = bottom
-
+//        binding.carRunning.animation = bottom
+        binding.lottieAnimatsiya.animate().setDuration(2000).setStartDelay(1000)
+        binding.llRentme.animate().translationY(-1400F).setDuration(2700).setStartDelay(0)
         Handler().postDelayed({
         val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)

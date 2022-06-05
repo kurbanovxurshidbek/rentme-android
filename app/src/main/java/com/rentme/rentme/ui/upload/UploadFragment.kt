@@ -26,11 +26,7 @@ import kotlin.collections.ArrayList
 class UploadFragment : Fragment() {
     private var _binding: FragmentUploadBinding? = null
     private val binding get() = _binding!!
-
-    //sherzod
-    lateinit var tv_date: TextView
-    lateinit var iv_calendar: ImageView
-
+    
     private val calendar = Calendar.getInstance()
 
     override fun onCreateView(
