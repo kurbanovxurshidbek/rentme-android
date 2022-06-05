@@ -14,7 +14,8 @@
 
    <color name="second_text_color">#AD000000</color>
     <color name="orange_main_01">#1B75E1</color>
-    <color name="orange_main_02">#C05801</color>
+    <color name="orange_main_02">#113FC8</color>
+<!--    <color name="orange_main_02">#C05801</color>-->
     <color name="orange_main_03">#B3CEDF</color>
     <color name="orange_main_04">#FF74A1D6</color>
 
