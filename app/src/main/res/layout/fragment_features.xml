@@ -512,7 +512,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:buttonTint="@color/orange_main_01"
-                    android:text="@string/str_conditioners"
+                    android:text="@string/str_conditioner"
                     android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 
