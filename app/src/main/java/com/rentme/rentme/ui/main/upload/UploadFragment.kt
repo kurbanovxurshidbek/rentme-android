@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
 import com.rentme.rentme.model.UploadAdvertisement
+import java.util.*
 import kotlin.collections.ArrayList
 
 class UploadFragment : Fragment() {
@@ -24,8 +25,6 @@ class UploadFragment : Fragment() {
     private var minTimeHelper = 0
     private var maxTimeHelper = 0
     private var carCategory = ""
-
-    private val calendar = Calendar.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -239,6 +238,4 @@ class UploadFragment : Fragment() {
         }
 
     }
-
-
 }

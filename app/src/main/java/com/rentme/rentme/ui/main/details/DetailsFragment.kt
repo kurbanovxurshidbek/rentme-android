@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +12,7 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.DetailPhotoAdapter
 import com.rentme.rentme.databinding.FragmentDetailsBinding
 import com.rentme.rentme.model.DetailPhoto
-import com.rentme.rentme.ui.home.HomeFragment
+import com.rentme.rentme.ui.main.home.HomeFragment
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -64,7 +63,7 @@ class DetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initViews()
-        getAllDetailPhoro()
+        getAllDetailPhoto()
 
     }
 
@@ -124,7 +123,7 @@ class DetailsFragment : Fragment() {
         }
     }
 
-    private fun getAllDetailPhoro(){
+    private fun getAllDetailPhoto(){
         val items:ArrayList<DetailPhoto> = ArrayList()
         items.add(DetailPhoto(R.drawable.im_tesla_model3))
         items.add(DetailPhoto(R.drawable.im_mersades))
