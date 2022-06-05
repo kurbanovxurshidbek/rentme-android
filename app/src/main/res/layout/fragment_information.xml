@@ -35,7 +35,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/first_name"
+                android:id="@+id/edt_first_name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,11 +45,14 @@
                 app:counterOverflowTextColor="@color/teal_200"
                 app:helperTextTextAppearance="@style/HelperTextAppearance"
                 android:theme="@style/EditTextThemeOverlay"
-                android:hint="First Name">
+                android:hint="First Name"
+                android:minEms="3">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_first_name_child"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLength="17"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -62,7 +65,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/last_name"
+                android:id="@+id/edt_last_name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,8 +78,10 @@
                 android:hint="Last Name">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_last_name_child"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLength="17"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -89,7 +94,7 @@
             android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/email"
+                android:id="@+id/edt_email"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,13 +124,15 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="5dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/button_background_rounded_border"
+        android:background="@drawable/button_background_not_click"
         app:backgroundTint="@null"
         android:gravity="center"
         android:text="@string/str_registration"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/b_text_18"
+        android:clickable="false"
+        android:enabled="false"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

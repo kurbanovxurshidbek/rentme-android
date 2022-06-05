@@ -107,4 +107,7 @@ dependencies {
     implementation "androidx.room:room-ktx:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
 
+    //Lottie Animation
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
 }
