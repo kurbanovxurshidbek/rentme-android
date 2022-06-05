@@ -22,4 +22,8 @@ class DatabaseModule {
     @Provides
     @Singleton
     fun getMainPageDao(database: MainPageDatabase) = database.getMainPageDao()
+
+    @Provides
+    @Singleton
+    fun getHistoryDao(database: MainPageDatabase) = database.getHistoryDao()
 }
