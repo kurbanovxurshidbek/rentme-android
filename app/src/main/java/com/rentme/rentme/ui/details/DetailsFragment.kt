@@ -110,7 +110,7 @@ class DetailsFragment : Fragment() {
                     }
                 }
             }
-            timer!!.schedule(timerTask, HomeFragment.DELAY_MS, HomeFragment.PERIOD_MS)
+            timer!!.schedule(timerTask, DELAY_MS, PERIOD_MS)
         }
     }
 
