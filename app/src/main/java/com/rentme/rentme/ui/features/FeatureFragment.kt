@@ -75,8 +75,14 @@ class FeatureFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.tvStartDate.text = uploadAdvertisement?.startDate.toString()
-        if (uploadAdvertisement?.minDuration!! < 30) binding.minDayCount.text = uploadAdvertisement?.minDuration.toString()
-        else binding.minDayCount.text = (uploadAdvertisement?.minDuration!! / 30).toString()
+        if (uploadAdvertisement?.minDuration!! < 30){
+            binding.minDayCount.text = uploadAdvertisement?.minDuration.toString()
+            binding.minTypeTime.text = getString(R.string.str_days)
+        }
+        else{
+            binding.minDayCount.text = (uploadAdvertisement?.minDuration!! / 30).toString()
+            binding.minTypeTime.text = getString(R.string.str_months)
+        }
 
         selectModelSpinner()
         selectYearSpinner()

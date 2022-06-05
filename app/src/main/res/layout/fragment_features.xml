@@ -93,6 +93,7 @@
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
                     android:text="Toshkent"
+                    android:singleLine="true"
                     android:textColor="@color/second_text_color"
                     android:textSize="@dimen/b_text_16" />
 
@@ -344,7 +345,7 @@
                                 android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="7"
-                                android:minWidth="50dp"
+                                android:minWidth="60dp"
                                 android:textColor="@color/second_text_color"
                                 android:textSize="@dimen/b_text_16" />
 
@@ -395,7 +396,7 @@
                                 android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="7"
-                                android:minWidth="50dp"
+                                android:minWidth="60dp"
                                 android:textColor="@color/second_text_color"
                                 android:textSize="@dimen/b_text_16" />
 

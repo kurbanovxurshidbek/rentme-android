@@ -32,5 +32,6 @@
     <color name="car_corrida_red">#b0151d</color>
     <color name="car_yellow">#fdcc0d</color>
     <color name="car_orange">#da680f</color>
+    <color name="not_cost_color">#6C6767</color>
 
 </resources>
