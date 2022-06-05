@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.rentme.rentme.MainActivity
+import com.rentme.rentme.ui.main.MainActivity
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentLogInBinding
 

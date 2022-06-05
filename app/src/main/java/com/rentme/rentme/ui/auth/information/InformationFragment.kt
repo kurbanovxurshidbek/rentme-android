@@ -1,18 +1,14 @@
 package com.rentme.rentme.ui.auth.information
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
-import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.view.children
 import androidx.fragment.app.Fragment
-import com.rentme.rentme.MainActivity
+import com.rentme.rentme.ui.main.MainActivity
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentInformationBinding
 

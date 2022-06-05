@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.main.home.HomeFragment">
 
     <!--    <com.google.android.material.appbar.AppBarLayout-->
     <!--        android:layout_width="match_parent"-->
@@ -103,6 +103,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
+                        android:textColorHint="#656464"
                         android:layout_weight="1"
                         android:alpha="0.8"
                         android:background="@drawable/bg_main_white_rounded_color"

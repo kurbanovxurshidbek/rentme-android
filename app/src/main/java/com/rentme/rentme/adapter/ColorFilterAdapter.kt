@@ -30,18 +30,16 @@ class ColorFilterAdapter:RecyclerView.Adapter<ColorFilterAdapter.ColorFilterView
 
     override fun getItemCount(): Int = dif.currentList.size
 
-    fun submitData(list: List<String>){
+    fun submitData(list: List<Int>){
         dif.submitList(list)
     }
 
     companion object {
-        private val ITEM_DIF = object : DiffUtil.ItemCallback<String>() {
+        private val ITEM_DIF = object : DiffUtil.ItemCallback<Int>() {
 
-            override fun areItemsTheSame(oldItem: String, newItem: String): Boolean =
-                oldItem == newItem
+            override fun areItemsTheSame(oldItem: Int, newItem: Int): Boolean = true
 
-            override fun areContentsTheSame(oldItem: String, newItem: String): Boolean =
-                oldItem == newItem
+            override fun areContentsTheSame(oldItem: Int, newItem: Int): Boolean = true
         }
     }
 }

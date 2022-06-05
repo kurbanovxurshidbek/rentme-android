@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.location.mylocation.MapsFragment">
+    tools:context=".ui.main.location.mylocation.MapsFragment">
 
     <TextView
         android:textSize="@dimen/b_text_16"
