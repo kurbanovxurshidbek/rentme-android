@@ -15,10 +15,11 @@ import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.rentme.rentme.databinding.ActivityMainBinding
+import com.rentme.rentme.ui.profile.BottomSheetFragment
+import com.rentme.rentme.ui.profile.BottomSheetFragmentLogOut
 
 class MainActivity : AppCompatActivity() {
     private var isLightStatusBar: Boolean = false
-
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
 
@@ -93,6 +94,15 @@ class MainActivity : AppCompatActivity() {
             val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
+    }
+
+    fun showBottomSHeetFragment(){
+        val bottomSheetFragment = BottomSheetFragment()
+        bottomSheetFragment.show(supportFragmentManager,"BottomSheetDialog")
+    }
+    fun showLogOutBottomSheet(){
+        val bottomSheetFragmentLogOut = BottomSheetFragmentLogOut()
+        bottomSheetFragmentLogOut.show(supportFragmentManager,"BottomSheetfragmentLogOut")
     }
 
 }

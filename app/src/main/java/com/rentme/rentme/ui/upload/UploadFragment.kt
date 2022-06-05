@@ -25,6 +25,8 @@ class UploadFragment : Fragment() {
     private var maxTimeHelper = 0
     private var carCategory = ""
 
+    private val calendar = Calendar.getInstance()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
