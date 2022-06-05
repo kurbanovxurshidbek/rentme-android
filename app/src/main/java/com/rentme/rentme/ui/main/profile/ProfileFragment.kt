@@ -1,21 +1,26 @@
 package com.rentme.rentme.ui.main.profile
 
 
+import android.app.Application
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.rentme.rentme.MainActivity
 import com.rentme.rentme.R
 
 import com.rentme.rentme.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
     private lateinit var binding : FragmentProfileBinding
-
 
 
     override fun onCreateView(
@@ -33,7 +38,8 @@ class ProfileFragment : Fragment() {
             startInformationActivity()
         }
         binding.llLanguage.setOnClickListener {
-            startLocazilationActivity()
+            (requireActivity() as MainActivity).showBottomSHeetFragment()
+
         }
         binding.llChangePhoneNumber.setOnClickListener {
             startUpdateActivity()
@@ -42,7 +48,7 @@ class ProfileFragment : Fragment() {
             startFavouriteActivity()
         }
         binding.llLogOut.setOnClickListener {
-            showLogOutDialog()
+            (requireActivity() as MainActivity).showLogOutBottomSheet()
         }
         binding.llAboutUs.setOnClickListener {
             showInfoAboutAppDialog()
@@ -63,23 +69,6 @@ class ProfileFragment : Fragment() {
     }
     fun startFavouriteActivity(){
         findNavController().navigate(R.id.favouriteFragment)
-    }
-    private fun showLogOutDialog(){
-        val dialogBuilder = AlertDialog.Builder(requireContext())
-        dialogBuilder.setMessage("Do you want to Log out")
-            // if the dialog is cancelable
-            .setCancelable(false)
-            .setPositiveButton("Yes") { dialog, id ->
-                Toast.makeText(requireContext(), "Logged out", Toast.LENGTH_SHORT).show()
-                activity?.finish()
-            }
-            .setNegativeButton("No") { dialog, id ->
-                dialog.dismiss()
-            }
-
-        val alert = dialogBuilder.create()
-        alert.setTitle("Log out")
-        alert.show()
     }
     private fun showInfoAboutAppDialog(){
         val dialogBuilder = AlertDialog.Builder(requireContext())

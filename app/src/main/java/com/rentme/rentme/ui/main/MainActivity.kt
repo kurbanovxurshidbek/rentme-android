@@ -6,15 +6,19 @@ import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import com.rentme.rentme.ui.profile.BottomSheetFragment
+import com.rentme.rentme.ui.profile.BottomSheetFragmentLogOut
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -94,6 +98,15 @@ class MainActivity : AppCompatActivity() {
             val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
+    }
+
+    fun showBottomSHeetFragment(){
+        val bottomSheetFragment = BottomSheetFragment()
+        bottomSheetFragment.show(supportFragmentManager,"BottomSheetDialog")
+    }
+    fun showLogOutBottomSheet(){
+        val bottomSheetFragmentLogOut = BottomSheetFragmentLogOut()
+        bottomSheetFragmentLogOut.show(supportFragmentManager,"BottomSheetfragmentLogOut")
     }
 
 }

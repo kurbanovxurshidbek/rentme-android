@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical"
     tools:context=".ui.main.upload.UploadFragment">
@@ -28,19 +28,19 @@
                     android:id="@+id/iv_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="15dp"
                     android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="15dp"
                     android:src="@drawable/ic_back"
-                    app:tint="@color/orange_main_01"/>
+                    app:tint="@color/orange_main_01" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="@dimen/b_text_20"
+                    android:text="@string/str_features"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:text="@string/str_features"/>
+                    android:textSize="@dimen/b_text_20"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -52,8 +52,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:background="@color/white">
+        android:background="@color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_location"
-                    app:tint="@color/orange_main_01"/>
+                    app:tint="@color/orange_main_01" />
 
                 <TextView
                     android:id="@+id/tv_location"
@@ -93,14 +93,9 @@
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
                     android:text="Toshkent"
+                    android:singleLine="true"
                     android:textColor="@color/second_text_color"
                     android:textSize="@dimen/b_text_16" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_next"
-                    app:tint="@color/orange_main_01"/>
 
             </LinearLayout>
 
@@ -126,7 +121,6 @@
                     android:layout_marginStart="10dp"
                     android:background="@drawable/ll_background_rounded_border"
                     android:gravity="center"
-                    android:text="17.05.2022"
                     android:textColor="@color/second_text_color"
                     android:textSize="@dimen/b_text_16" />
 
@@ -147,23 +141,23 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/b_text_16" />
 
-                <EditText
+                <TextView
                     android:id="@+id/min_day_count"
-                    android:layout_width="40dp"
-                    android:layout_height="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
                     android:layout_marginStart="5dp"
                     android:background="@drawable/ll_background_rounded_border"
                     android:gravity="center"
-                    android:text="1"
+                    android:paddingHorizontal="12dp"
                     android:textColor="@color/second_text_color"
                     android:textSize="@dimen/b_text_16" />
 
                 <TextView
-                    android:id="@+id/min_time_type"
+                    android:id="@+id/min_type_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:text="@string/str_day"
+                    android:text="@string/str_days"
                     android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 
@@ -190,16 +184,16 @@
                     android:id="@+id/spn_models"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/orange_main_01"/>
+                    android:backgroundTint="@color/orange_main_01" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -225,18 +219,25 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:background="@drawable/ll_background_date_month"
                     android:padding="1dp">
 
-                    <ImageView
-                        android:id="@+id/iv_add_photo"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/ll_background_rounded_border"
-                        android:src="@drawable/ic_add_not_rounded"
-                        app:tint="@color/orange_main_01"/>
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/iv_add_photo"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_camera_add_svgrepo_com"
+                            app:tint="@color/orange_main_01" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -244,7 +245,7 @@
                     android:id="@+id/rv_car_photos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"/>
+                    android:layout_marginStart="8dp" />
 
             </LinearLayout>
 
@@ -264,20 +265,19 @@
                     android:textSize="@dimen/b_text_16" />
 
                 <LinearLayout
-                    android:id="@+id/tv_year"
-                    android:layout_width="120dp"
+                    android:layout_width="130dp"
                     android:layout_height="36dp"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="10dp"
-                    android:gravity="center_vertical"
                     android:background="@drawable/ll_background_rounded_border"
-                    android:paddingStart="8dp">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="5dp"
+                    android:layout_marginStart="10dp">
 
                     <Spinner
                         android:id="@+id/spn_year"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/orange_main_01"/>
+                        android:backgroundTint="@color/orange_main_01" />
 
                 </LinearLayout>
 
@@ -291,20 +291,28 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/str_prices"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/b_text_16" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_prices"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/b_text_16" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="16dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/ll_daily_price"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -312,26 +320,49 @@
                         android:orientation="vertical">
 
                         <CheckBox
-                            android:id="@+id/chb_daily"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/orange_main_01"
+                            android:checked="true"
+                            android:clickable="false"
                             android:text="@string/str_daily"
                             android:textColor="@color/second_text_color"
                             android:textSize="14sp" />
 
-                        <EditText
-                            android:id="@+id/edt_price_daily"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
                             android:background="@drawable/ll_background_date_month"
                             android:gravity="center_horizontal|center_vertical"
-                            android:textColor="@color/second_text_color"
-                            android:textSize="14sp" />
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/edt_price_daily"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="3dp"
+                                android:background="@color/white"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="7"
+                                android:minWidth="60dp"
+                                android:textColor="@color/second_text_color"
+                                android:textSize="@dimen/b_text_16" />
+
+                            <TextView
+                                android:id="@+id/tv_price_daily"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_som"
+                                android:textColor="@color/second_text_color"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_monthly_price"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -340,22 +371,44 @@
                         android:orientation="vertical">
 
                         <CheckBox
-                            android:id="@+id/chb_monthly"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/orange_main_01"
+                            android:checked="true"
+                            android:clickable="false"
                             android:text="@string/str_monthly"
                             android:textColor="@color/second_text_color"
                             android:textSize="14sp" />
 
-                        <EditText
-                            android:id="@+id/edt_price_monthly"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
                             android:background="@drawable/ll_background_date_month"
                             android:gravity="center_horizontal|center_vertical"
-                            android:textColor="@color/second_text_color"
-                            android:textSize="14sp" />
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/edt_price_monthly"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="2dp"
+                                android:background="@color/white"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="7"
+                                android:minWidth="60dp"
+                                android:textColor="@color/second_text_color"
+                                android:textSize="@dimen/b_text_16" />
+
+                            <TextView
+                                android:id="@+id/tv_price_monthly"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_som"
+                                android:textColor="@color/second_text_color"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -385,6 +438,7 @@
                     android:layout_weight="1"
                     android:buttonTint="@color/orange_main_01"
                     android:text="@string/str_mechanical"
+                    android:checked="true"
                     android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 
@@ -420,6 +474,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checked="true"
                     android:buttonTint="@color/orange_main_01"
                     android:text="@string/str_gasoline"
                     android:textColor="@color/second_text_color"
@@ -458,8 +513,8 @@
                     android:layout_weight="1"
                     android:buttonTint="@color/orange_main_01"
                     android:text="@string/str_conditioners"
-                    android:textSize="14sp"
-                    android:textColor="@color/second_text_color"/>
+                    android:textColor="@color/second_text_color"
+                    android:textSize="14sp" />
 
                 <CheckBox
                     android:id="@+id/chb_radio"
@@ -474,6 +529,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tv_color_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -482,40 +538,13 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16" />
 
-            <LinearLayout
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_colors"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:layout_marginTop="2dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:background="@drawable/shape_circle_rounded_border"
-                    android:orientation="horizontal"
-                    android:padding="2dp">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/iv_car_color"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:background="@color/white"
-                        android:src="@drawable/car_image_for_color"
-                        app:shapeAppearanceOverlay="@style/circle" />
-
-                </LinearLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_colors"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:orientation="horizontal" />
-
-            </LinearLayout>
+                android:orientation="horizontal" />
 
             <Button
                 android:id="@+id/btn_save"

@@ -171,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingLeft="5dp"
-                android:text="17.05.2022"
+                android:text="@string/str_select_start_date"
                 android:textColor="@color/second_text_color"
                 android:textSize="@dimen/b_text_16" />
 
@@ -248,8 +248,9 @@
                 android:textSize="@dimen/b_text_16" />
 
             <LinearLayout
+                android:id="@+id/ll_min_lifetime"
                 android:layout_width="140dp"
-                android:layout_height="34dp"
+                android:layout_height="36dp"
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/ll_background_date_month"
                 android:gravity="center_vertical"
@@ -259,12 +260,16 @@
                     android:id="@+id/min_count_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
                     android:layout_marginEnd="2dp"
                     android:layout_weight="1"
-                    android:layout_marginStart="3dp"
-                    android:inputType="number"
                     android:background="@color/white"
-                    android:gravity="end"
+                    android:gravity="center"
+                    android:clickable="false"
+                    android:inputType="number"
+                    android:editable="false"
+                    android:maxLength="2"
+                    android:cursorVisible="false"
                     android:textColor="@color/second_text_color"
                     android:textSize="@dimen/b_text_16" />
 
@@ -274,7 +279,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="1dp"
                     android:layout_weight="1"
-                    android:text="@string/str_day"
                     android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 
@@ -333,8 +337,9 @@
                 android:textSize="@dimen/b_text_16" />
 
             <LinearLayout
+                android:id="@+id/ll_max_lifetime"
                 android:layout_width="140dp"
-                android:layout_height="34dp"
+                android:layout_height="36dp"
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/ll_background_date_month"
                 android:gravity="center_vertical"
@@ -347,8 +352,12 @@
                     android:layout_marginEnd="2dp"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    android:gravity="end"
+                    android:gravity="center"
+                    android:clickable="false"
                     android:inputType="number"
+                    android:editable="false"
+                    android:maxLength="2"
+                    android:cursorVisible="false"
                     android:layout_marginStart="3dp"
                     android:textColor="@color/second_text_color"
                     android:textSize="@dimen/b_text_16" />
@@ -359,7 +368,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="1dp"
                     android:layout_weight="1"
-                    android:text="@string/str_month"
                     android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 

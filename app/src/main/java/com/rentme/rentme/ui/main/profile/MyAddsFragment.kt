@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.MyAddAdapter
@@ -37,22 +38,24 @@ class MyAddsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getAllResult()
 
-        adapter.onClick = {result -> }
+        adapter.onClick = {result ->
+            findNavController().navigate(R.id.detailsFragment)
+        }
 
     }
 
     private fun getAllResult() {
         val items:ArrayList<Result> = ArrayList()
-        items.add(Result(R.drawable.im_malibu,"Malibu 2","","200$",))
-        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","350$",))
-        items.add(Result(R.drawable.im_mersades,"AMG","","400$",))
-        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","300$",))
-        items.add(Result(R.drawable.im_mersades,"AMG 2","","350$",))
-        items.add(Result(R.drawable.im_malibu,"Malibu 2","","200$"))
-        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","350$"))
-        items.add(Result(R.drawable.im_mersades,"AMG","","400$"))
-        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","300$"))
-        items.add(Result(R.drawable.im_mersades,"AMG 2","","350$"))
+        items.add(Result(R.drawable.im_malibu,"Malibu 2","","200000",))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","500000","",))
+        items.add(Result(R.drawable.im_mersades,"AMG","250000","4000000",))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","350000","3000000",))
+        items.add(Result(R.drawable.im_mersades,"AMG 2","","3500000",))
+        items.add(Result(R.drawable.im_malibu,"Malibu 2","600000","2000000"))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","3200000"))
+        items.add(Result(R.drawable.im_mersades,"AMG","480000","4500000"))
+        items.add(Result(R.drawable.im_tesla_model3,"Model 3","","3000000"))
+        items.add(Result(R.drawable.im_mersades,"AMG 2","250000",""))
         adapter.submitData(items)
 
         binding.rvMyAdds.layoutManager = GridLayoutManager(requireContext(), 1)
