@@ -36,9 +36,8 @@ class SplashActivity : AppCompatActivity() {
         bottom = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
 
         //Hooks
-//        binding.carRunning.animation = bottom
-        binding.lottieAnimatsiya.animate().setDuration(2000).setStartDelay(1000)
-        binding.llRentme.animate().translationY(-1400F).setDuration(2700).setStartDelay(0)
+
+     //   binding.llRentme.animate().translationY(-1400F).setDuration(2700).setStartDelay(0)
         Handler().postDelayed({
         val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)

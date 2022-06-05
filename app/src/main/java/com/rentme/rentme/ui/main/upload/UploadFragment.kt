@@ -16,7 +16,6 @@ import androidx.navigation.fragment.findNavController
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
 import com.rentme.rentme.model.UploadAdvertisement
-import java.util.*
 import kotlin.collections.ArrayList
 
 class UploadFragment : Fragment() {
@@ -238,4 +237,6 @@ class UploadFragment : Fragment() {
         }
 
     }
+
+
 }

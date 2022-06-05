@@ -40,20 +40,20 @@
                 android:visibility="visible">
 
 
-                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
-                    android:id="@+id/phone_number"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="phone number">
+<!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout-->
+<!--                    android:id="@+id/phone_number"-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="phone number">-->
 
-                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText
-                        android:id="@+id/phone_number_"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:maxLength="17" />
+<!--                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
+<!--                        android:id="@+id/phone_number_"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:maxLength="17" />-->
 
-                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>
+<!--                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>-->
             </LinearLayout>
 
 
