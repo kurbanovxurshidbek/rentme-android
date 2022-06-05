@@ -1,4 +1,4 @@
-package com.rentme.rentme.ui.upload
+package com.rentme.rentme.ui.main.upload
 
 import android.annotation.SuppressLint
 import android.os.Bundle

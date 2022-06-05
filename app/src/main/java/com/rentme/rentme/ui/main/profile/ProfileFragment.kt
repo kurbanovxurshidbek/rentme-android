@@ -1,23 +1,17 @@
 package com.rentme.rentme.ui.main.profile
 
 
-import android.app.Application
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.rentme.rentme.MainActivity
 import com.rentme.rentme.R
 
 import com.rentme.rentme.databinding.FragmentProfileBinding
+import com.rentme.rentme.ui.main.MainActivity
 
 class ProfileFragment : Fragment() {
     private lateinit var binding : FragmentProfileBinding

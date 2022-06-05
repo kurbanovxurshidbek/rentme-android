@@ -19,7 +19,7 @@ import com.rentme.rentme.adapter.ColorFilterAdapter
 import com.rentme.rentme.adapter.FilterModelYearAdapter
 import com.rentme.rentme.databinding.FragmentFilterBinding
 import com.rentme.rentme.model.Car
-import com.rentme.rentme.ui.upload.DatePickerFragment
+import com.rentme.rentme.ui.filter.DataRangePickerFragment
 
 class FilterFragment : Fragment() {
 
