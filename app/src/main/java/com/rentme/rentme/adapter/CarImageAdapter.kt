@@ -10,7 +10,7 @@ import com.rentme.rentme.databinding.ItemCarImageViewBinding
 
 class CarImageAdapter() : RecyclerView.Adapter<CarImageAdapter.CarImageViewHolder>() {
 
-    var items: ArrayList<Uri> = ArrayList()
+    var items: ArrayList<Uri?> = ArrayList()
     private var state: Boolean = false
 
     inner class CarImageViewHolder(private val binding: ItemCarImageViewBinding) : RecyclerView.ViewHolder(binding.root){
