@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/bg_main_white_rounded_color.xml" value="0.1" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/edt_corner_rounded.xml" value="0.1265" />
+        <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/fg_gradient.xml" value="0.119" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/ic_back.xml" value="0.132" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/ic_back_black.xml" value="0.132" />
         <entry key="..\:/Android Development/RealProjects/RentMe/app/src/main/res/drawable/ic_back_white.xml" value="0.132" />
@@ -57,13 +58,6 @@
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/item_upload_color_view.xml" value="0.203125" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/layout/spinner_item_view.xml" value="0.203125" />
         <entry key="..\:/AndroidProjects/PDPAndroidProjects/AndroidBeginner/Lesson06/rentme-androids/app/src/main/res/menu/bnv_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/bottom_sheet_background.xml" value="0.127" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_border_radius.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/bottom_sheet_localiztion.xml" value="0.264" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/bottom_sheet_log_out.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_localization.xml" value="0.15185185185185185" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_profile.xml" value="0.1925925925925926" />
       </map>
     </option>
   </component>
