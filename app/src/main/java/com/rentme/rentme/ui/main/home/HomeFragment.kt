@@ -97,9 +97,9 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.filterFragment)
         }
 
-        binding.llCategory1.setOnClickListener {
-            findNavController().navigate(R.id.typesFragment)
-        }
+//        binding.llCategory1.setOnClickListener {
+//            findNavController().navigate(R.id.typesFragment)
+//        }
     }
 
     private fun setUpRecyclers() {

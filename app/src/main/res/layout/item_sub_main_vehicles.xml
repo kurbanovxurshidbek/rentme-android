@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="220dp"
+    android:layout_width="200dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="15dp"
     android:background="@drawable/bg_main_white_rounded_color">
 
     <com.google.android.material.card.MaterialCardView
         app:strokeWidth="1dp"
-        app:strokeColor="#6C6C6C"
+        app:strokeColor="#D96C6C6C"
         android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             <ImageView
                 android:id="@+id/iv_cars_images"
                 android:layout_width="match_parent"
-                android:layout_height="125dp"
+                android:layout_height="110dp"
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
                 android:src="@drawable/im_malibu" />
@@ -43,14 +43,14 @@
                     android:layout_height="wrap_content"
                     android:text="Tesla Model 3"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="15sp"
                     android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/tv_car_host_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:text="by City Car"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -89,7 +89,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_height="2dp"
                         android:layout_marginHorizontal="10dp"
                         android:background="#6C6767" />
 
@@ -122,7 +122,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_height="2dp"
                         android:layout_marginHorizontal="10dp"
                         android:background="#6C6767" />
 

@@ -52,7 +52,8 @@
         <LinearLayout
             android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:paddingVertical="8dp"
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/ll_filter"
@@ -64,8 +65,8 @@
 
                 <ImageView
                     android:src="@drawable/ic_filter"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"/>
 
                 <TextView
                     android:text="Filter"

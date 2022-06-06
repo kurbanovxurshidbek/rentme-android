@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="15dp"
-    android:layout_marginTop="6dp"
+    app:strokeColor="#70222222"
+    app:strokeWidth="1dp"
+    android:layout_marginBottom="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
         <LinearLayout
-            android:background="@drawable/filter_borders_radius"
             android:orientation="vertical"
+            android:padding="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -23,8 +25,7 @@
 
 
             <LinearLayout
-                android:padding="15dp"
-                android:background="#E4F7FF"
+                android:padding="10dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -39,7 +40,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:text="by City Car"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -66,7 +67,7 @@
                         android:text="280$"
                         android:textColor="@color/orange_main_01"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/text_type_16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -82,7 +83,7 @@
                         android:backgroundTint="@color/orange_main_01"
                         android:layout_width="match_parent"
                         android:layout_marginHorizontal="10dp"
-                        android:layout_height="5dp"/>
+                        android:layout_height="3dp"/>
 
                 </LinearLayout>
 
@@ -101,7 +102,7 @@
                         android:text="280$"
                         android:textColor="@color/orange_main_01"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/text_type_16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -117,7 +118,7 @@
                         android:backgroundTint="@color/orange_main_01"
                         android:layout_marginHorizontal="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"/>
+                        android:layout_height="3dp"/>
 
                 </LinearLayout>
 
@@ -125,4 +126,4 @@
 
         </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
