@@ -66,8 +66,8 @@ class UploadFragment : Fragment() {
 
     @SuppressLint("SimpleDateFormat")
     private fun openFeatureFragment() {
-        // !binding.tvLocation.text.equals(getString(R.string.str_select_location))
         if (!binding.tvDate.text.equals(getString(R.string.str_select_start_date))
+            && !binding.tvLocation.text.equals(getString(R.string.str_select_location))
             && binding.minCountTime.text.isNotEmpty()
             && binding.maxCountTime.text.isNotEmpty()
         ) {
