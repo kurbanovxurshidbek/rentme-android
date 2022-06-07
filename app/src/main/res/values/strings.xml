@@ -32,8 +32,8 @@
     <string name="str_mechanical">mechanical</string>
     <string name="str_automatic">automatic</string>
     <string name="str_fuel">Fuel</string>
-    <string name="str_gasoline">gasoline</string>
-    <string name="str_gasoline_gas">gasoline/gas</string>
+    <string name="str_petrol">petrol</string>
+    <string name="str_petrol_gas">petrol/gas</string>
     <string name="str_prices">Prices:</string>
     <string name="str_additional_features">Additional features</string>
     <string name="str_radio">radio</string>
@@ -120,5 +120,6 @@
     <string name="str_price_day">/day</string>
     <string name="str_price_month">/month</string>
     <string name="str_call">Call</string>
+    <string name="str_enter_description">Enter description</string>
 
 </resources>
