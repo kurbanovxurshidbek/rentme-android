@@ -69,9 +69,9 @@ class LogInFragment : Fragment() {
 
     val textWatchersendsms = object : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            if (p0!!.length == 3) {
-                p0!!.
-            }
+//            if (p0!!.length == 3) {
+//                p0!!.
+//            }
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
