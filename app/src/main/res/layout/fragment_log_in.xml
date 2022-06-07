@@ -4,8 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="16dp"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    android:paddingHorizontal="16dp">
+    <LinearLayout
+        android:id="@+id/ll_rentme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Rent"
+            android:textColor="#E1FC52"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Me"
+            android:textColor="#6FCF97"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,63 +44,76 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".030">
+        app:layout_constraintTop_toTopOf="@id/ll_rentme"
+        app:layout_constraintVertical_bias=".20">
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="start"
             android:text="@string/str_logIn_page"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
-
+            android:textStyle="normal|bold" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone number"
+                android:layout_marginTop="23dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/black"/>
 
             <LinearLayout
                 android:id="@+id/ll_new_number_2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="40dp"
-                android:orientation="vertical"
+                android:background="@drawable/bg_for_login_border"
+                android:orientation="horizontal"
+                android:padding="15dp"
                 android:visibility="visible">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-<!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout-->
-<!--                    android:id="@+id/phone_number"-->
-<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:hint="phone number">-->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/uzb_flag" />
 
-<!--                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
-<!--                        android:id="@+id/phone_number_"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:maxLength="17" />-->
+                    <TextView
+                        android:id="@+id/tv_phone_num_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="+998"
+                        android:textColor="@color/black" />
+                </LinearLayout>
 
-<!--                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>-->
+                <EditText
+                    android:id="@+id/edt_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
             </LinearLayout>
 
 
         </FrameLayout>
-
-        <TextView
-            android:id="@+id/skip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:gravity="right"
-            android:text="@string/str_skip"
-            android:textColor="#8c8c8c"
-            android:textSize="16sp"
-            android:textStyle="bold|normal"
-            android:visibility="visible" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -88,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginTop="50dp"
                     app:scv_codeLength="6"
                     app:scv_showCursor="false"
                     app:scv_symbolBorderActiveColor="@color/ll_background"
@@ -103,7 +146,7 @@
                     android:layout_marginTop="5dp"
                     android:gravity="center_vertical|right"
                     android:paddingStart="5dp"
-                    android:paddingEnd="55dp"
+                    android:paddingEnd="30dp"
                     android:text="SMS enter code"
                     android:textAllCaps="false"
                     android:textColor="#8c8c8c"
@@ -125,39 +168,82 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
-        <FrameLayout
+        <Button
+            android:id="@+id/btn_skip"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <!--    send sms-->
-            <Button
-                android:id="@+id/btn_send_sms"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="140dp"
-                android:background="@drawable/button_background_rounded_border"
-                android:text="Send SMS"
-                android:textAllCaps="false"
-                android:textSize="@dimen/b_text_18"
-                android:visibility="visible"
-                app:backgroundTint="@null" />
-            <!--    save sms-->
-            <Button
-                android:id="@+id/btn_continue_sms"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="140dp"
-                android:background="@drawable/button_background_rounded_border"
-                android:text="@string/str_continue"
-                android:textAllCaps="false"
-                android:textSize="@dimen/b_text_18"
-                android:visibility="gone"
-                app:backgroundTint="@null" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_for_login_white_rounded_color"
+            android:text="Skip"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/b_text_18"
+            android:visibility="visible"
+            app:backgroundTint="@null" />
 
-        </FrameLayout>
-
+        <Button
+            android:id="@+id/btn_send_sms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button_background_not_click"
+            android:text="Send SMS"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/b_text_18"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            android:clickable="false"
+            android:enabled="false"
+            app:backgroundTint="@null" />
+        <!--    save sms-->
+        <Button
+            android:id="@+id/btn_continue_sms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_background_not_click"
+            android:text="@string/str_continue"
+            android:textAllCaps="false"
+            android:textSize="@dimen/b_text_18"
+            android:visibility="gone"
+            android:clickable="false"
+            android:enabled="false"
+            android:textColor="@color/white"
+            app:backgroundTint="@null" />
 
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--                <com.fredporciuncula.phonemoji.PhonemojiFlagTextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:textSize="16sp"-->
+    <!--                    app:phonemoji_flagFor="@id/phonemojiTextInputEditText"-->
+    <!--                    />-->
+
+    <!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
+    <!--                    android:id="@+id/phonemojiTextInputEditText"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    app:phonemoji_initialRegionCode="Uz"-->
+    <!--                    />-->
+
+    <!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout-->
+    <!--                    android:id="@+id/phone_number"-->
+    <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:hint="phone number">-->
+
+    <!--                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
+    <!--                        android:id="@+id/phone_number_"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:maxLength="17" />-->
+
+    <!--                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>-->
