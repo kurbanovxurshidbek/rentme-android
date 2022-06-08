@@ -17,6 +17,7 @@ import com.rentme.rentme.adapter.HomeAdsAdapter
 import com.rentme.rentme.adapter.SubMainAdapter
 import com.rentme.rentme.databinding.FragmentHomeBinding
 import com.rentme.rentme.model.Result
+import com.rentme.rentme.ui.main.MainActivity
 import com.rentme.rentme.utils.UiStateObject
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
@@ -72,6 +73,7 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         runAutoScrollBanner()
+        (requireActivity() as MainActivity).closeKeyBoard()
     }
 
     override fun onPause() {
