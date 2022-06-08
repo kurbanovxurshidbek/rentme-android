@@ -13,8 +13,11 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.google.gson.Gson
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
+import com.rentme.rentme.model.Location
+import com.rentme.rentme.model.Price
 import com.rentme.rentme.model.UploadAdvertisement
 import kotlin.collections.ArrayList
 
@@ -24,6 +27,7 @@ class UploadFragment : Fragment() {
     private var minTimeHelper = 0
     private var maxTimeHelper = 0
     private var carCategory = ""
+    private lateinit var location: Location
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,6 +63,7 @@ class UploadFragment : Fragment() {
         }
         fragmentManager?.setFragmentResultListener("locationResult", viewLifecycleOwner) { requestKey, result ->
             binding.tvLocation.text = result.getString("location", "Select Location")
+            location = Location(binding.tvLocation.text.toString(), 0.0, 0.0)
         }
 
     }
@@ -73,11 +78,11 @@ class UploadFragment : Fragment() {
         ) {
             if (minTimeHelper < maxTimeHelper){
                 val uploadAdvertisement = UploadAdvertisement(
-                    null, null, carCategory, null, binding.tvDate.text.toString(),
+                    null, null, carCategory, location, binding.tvDate.text.toString(),
                     minTimeHelper.toLong(), maxTimeHelper.toLong(), null
                 )
-                findNavController().navigate(R.id.action_uploadFragment_to_featureFragment,
-                    bundleOf("uploadAdvertisement" to uploadAdvertisement))
+                findNavController().navigate(R.id.featureFragment,
+                    bundleOf("uploadAdvertisement" to Gson().toJson(uploadAdvertisement)))
             }
         }else{
             Toast.makeText(requireContext(), getString(R.string.str_fill_all_fields), Toast.LENGTH_SHORT).show()

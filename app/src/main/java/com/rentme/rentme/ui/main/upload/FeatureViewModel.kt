@@ -10,6 +10,7 @@ import com.rentme.rentme.utils.UiStateObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import okhttp3.MultipartBody
 import java.io.File
 import javax.inject.Inject
 
@@ -34,7 +35,7 @@ class FeatureViewModel @Inject constructor(
     private val _fileState = MutableStateFlow<UiStateList<String>>(UiStateList.EMPTY)
     val fileState = _fileState
 
-    fun createFile(files: List<File>) = viewModelScope.launch {
+    fun createFile(files: List<MultipartBody.Part>) = viewModelScope.launch {
         _fileState.value = UiStateList.LOADING
         try {
             val fileResp = featureRepository.createFile(files)

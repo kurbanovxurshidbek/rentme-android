@@ -12,9 +12,10 @@ class CarImageAdapter() : RecyclerView.Adapter<CarImageAdapter.CarImageViewHolde
 
     var items: ArrayList<Uri?> = ArrayList()
     private var state: Boolean = false
+    var clickClear: ((Int) -> Unit)? = null
 
     inner class CarImageViewHolder(private val binding: ItemCarImageViewBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(item: Uri?){
+        fun bind(item: Uri?, position: Int){
             if (items.isNotEmpty()){
                 binding.ivCarPhoto.setImageURI(item)
                 if (state){
@@ -23,6 +24,10 @@ class CarImageAdapter() : RecyclerView.Adapter<CarImageAdapter.CarImageViewHolde
                 }else{
                     binding.ivClear.visibility = View.GONE
                     binding.llSaveStorage.visibility = View.VISIBLE
+                }
+                binding.ivClear.setOnClickListener {
+                    items.remove(item)
+                    clickClear?.invoke(position)
                 }
             }
         }
@@ -40,7 +45,7 @@ class CarImageAdapter() : RecyclerView.Adapter<CarImageAdapter.CarImageViewHolde
         return CarImageViewHolder(ItemCarImageViewBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
-    override fun onBindViewHolder(holder: CarImageViewHolder, position: Int) = if(items.isNotEmpty())holder.bind(items[position]) else holder.bind(null)
+    override fun onBindViewHolder(holder: CarImageViewHolder, position: Int) = if(items.isNotEmpty())holder.bind(items[position], position) else holder.bind(null, position)
 
     override fun getItemCount(): Int = if (items.isNotEmpty()) items.size else 2
 
