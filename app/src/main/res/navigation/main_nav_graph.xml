@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_uploadFragment_to_selectLocationFragment"
             app:destination="@id/selectLocationFragment" />
+        <action
+            android:id="@+id/action_uploadFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -143,4 +146,9 @@
         android:id="@+id/myAddsFragment"
         android:name="com.rentme.rentme.ui.main.profile.MyAddsFragment"
         android:label="MyAddsFragment" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.rentme.rentme.ui.main.location.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
 </navigation>

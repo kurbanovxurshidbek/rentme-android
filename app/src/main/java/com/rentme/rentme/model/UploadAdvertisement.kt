@@ -11,19 +11,28 @@ data class UploadAdvertisement(
     val minDuration: Long? = null,
     val maxDuration: Long? = null,
     val transport: Transport? = null
-): Serializable
+) : Serializable
 
-data class Location (
+data class UploadAdvertisementResp(
+    val accessTokenExpiry: Long,
+    val refreshTokenExpiry: Long,
+    val issuedAt: Long,
+    val accessToken: String,
+    val refreshToken: String,
+    val first: Boolean
+)
+
+data class Location(
     val x: Long? = null,
     val y: Long? = null
 )
 
-data class Price (
+data class Price(
     val quantity: Long? = null,
     val type: String? = null
 )
 
-data class Transport (
+data class Transport(
     val transportType: String? = null,
     val model: String? = null,
     val year: Long? = null,
