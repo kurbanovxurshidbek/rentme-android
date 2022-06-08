@@ -125,13 +125,13 @@ class FeatureFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.fileState.collect{
                 when(it){
-                    is UiStateList.LOADING -> {}
-                    is UiStateList.SUCCESS -> {
-                        carImageUrls.addAll(it.data)
+                    is UiStateObject.LOADING -> {}
+                    is UiStateObject.SUCCESS -> {
+                        carImageUrls.addAll(it.data.fileUrl?.urls!!)
                         carImageAdapter.items.clear()
                         carImageAdapter.saveCarImageStorage(carImages)
                     }
-                    is UiStateList.ERROR ->{
+                    is UiStateObject.ERROR ->{
                         Log.d(TAG, "Error:" + it.message) }
                     else -> Unit
                 }

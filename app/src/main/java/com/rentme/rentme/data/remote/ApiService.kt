@@ -1,8 +1,10 @@
 package com.rentme.rentme.data.remote
 
+import com.rentme.rentme.model.FileResponse
 import com.rentme.rentme.model.MainPage
 import com.rentme.rentme.model.UploadAdvertisement
 import com.rentme.rentme.model.UploadAdvertisementResp
+import okhttp3.MultipartBody
 import retrofit2.http.*
 import java.io.File
 
@@ -23,6 +25,6 @@ interface ApiService {
     @Headers("$key: $Access_key")
     @Multipart
     @POST("/file")
-    suspend fun createFile(@Part("file") files: List<MultipartBody.Part>) : List<String>
+    suspend fun createFile(@Part("file") files: List<MultipartBody.Part>) : FileResponse
 
 }

@@ -1,6 +1,10 @@
 package com.rentme.rentme.ui.main.upload
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -15,17 +19,16 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.google.gson.Gson
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
-import com.google.gson.Gson
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
 import com.rentme.rentme.model.Location
-import com.rentme.rentme.model.Price
 import com.rentme.rentme.model.UploadAdvertisement
 import kotlin.collections.ArrayList
 
@@ -96,21 +99,12 @@ class UploadFragment : Fragment() {
         }
     }
 
-    private fun checkPermission() {
-        if (ContextCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-            findNavController().navigate(R.id.mapFragment)
-        }
-    }
 
     private fun selectLocationFragment() {
 //        checkPermission()
         Dexter.withContext(requireContext())
             .withPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-            .withListener(object : PermissionListener{
+            .withListener(object : PermissionListener {
                 override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
                     findNavController().navigate(R.id.mapFragment)
                 }
@@ -124,10 +118,10 @@ class UploadFragment : Fragment() {
                             setPositiveButton(
                                 "Ok"
                             ) { dialog, which ->
-                                val intent = Intent().apply {
-                                    action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-                                    data = Uri.fromParts("package", requireActivity().packageName, null)
-                                }
+//                                val intent = Intent().apply {
+//                                    action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+//                                    data = Uri.fromParts("package", requireActivity().packageName, null)
+//                                }
                             }
                         }
                         dialog.create().show()

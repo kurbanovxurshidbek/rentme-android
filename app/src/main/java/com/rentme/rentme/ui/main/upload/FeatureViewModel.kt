@@ -2,6 +2,7 @@ package com.rentme.rentme.ui.main.upload
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.rentme.rentme.model.FileResponse
 import com.rentme.rentme.model.UploadAdvertisement
 import com.rentme.rentme.model.UploadAdvertisementResp
 import com.rentme.rentme.repository.FeatureRepository
@@ -32,16 +33,16 @@ class FeatureViewModel @Inject constructor(
         }
     }
 
-    private val _fileState = MutableStateFlow<UiStateList<String>>(UiStateList.EMPTY)
+    private val _fileState = MutableStateFlow<UiStateObject<FileResponse>>(UiStateObject.EMPTY)
     val fileState = _fileState
 
     fun createFile(files: List<MultipartBody.Part>) = viewModelScope.launch {
-        _fileState.value = UiStateList.LOADING
+        _fileState.value = UiStateObject.LOADING
         try {
             val fileResp = featureRepository.createFile(files)
-            _fileState.value = UiStateList.SUCCESS(fileResp)
+            _fileState.value = UiStateObject.SUCCESS(fileResp)
         }catch (e: Exception){
-            _fileState.value = UiStateList.ERROR(e.localizedMessage ?: "No Connection")
+            _fileState.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
         }
     }
 
