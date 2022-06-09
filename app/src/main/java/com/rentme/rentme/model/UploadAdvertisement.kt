@@ -22,11 +22,6 @@ data class UploadAdvertisementResp(
     val first: Boolean
 )
 
-data class Location(
-    val x: Long? = null,
-    val y: Long? = null
-)
-
 data class Price(
     val quantity: Long? = null,
     val type: String? = null

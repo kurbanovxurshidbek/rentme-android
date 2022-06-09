@@ -11,7 +11,6 @@ import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +19,7 @@ import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.common.api.ApiException
@@ -45,12 +45,13 @@ import com.mancj.materialsearchbar.MaterialSearchBar
 import com.mancj.materialsearchbar.adapter.SuggestionsAdapter
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentMapBinding
+import com.skyfishjy.library.RippleBackground
 import java.util.*
 
 class MapFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
-    private val callback = OnMapReadyCallback{ googleMap ->
+    private val callback = OnMapReadyCallback { googleMap ->
         mMap = googleMap
         mMap.isMyLocationEnabled = true
         mMap.uiSettings.isMyLocationButtonEnabled = true
@@ -113,8 +114,10 @@ class MapFragment : Fragment() {
     private lateinit var materialSearchBar: MaterialSearchBar
     private lateinit var mapView: View
     private lateinit var bFind: Button
+    private lateinit var rippleBg: RippleBackground
 
     private lateinit var myAddress: String
+    private var myLocation: com.rentme.rentme.model.Location? = null
 
     private val DEFAULT_ZOOM = 15f
 
@@ -138,15 +141,16 @@ class MapFragment : Fragment() {
     }
 
     private fun initViews() {
+        rippleBg = binding.layoutMap.ripple
         bFind = binding.layoutMap.bFind
         materialSearchBar = binding.layoutMap.searchBar
 
-//        val mapFragment = fragmentManager?.findFragmentById(R.id.f_map) as SupportMapFragment
         val mapFragment = childFragmentManager.findFragmentById(R.id.f_map) as SupportMapFragment
         mapFragment.getMapAsync(callback)
         mapView = mapFragment.requireView()
 
-        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireActivity())
+        mFusedLocationProviderClient =
+            LocationServices.getFusedLocationProviderClient(requireActivity())
         Places.initialize(requireContext(), "AIzaSyDh8sW4xizVRFWrj6E2KcMsoZyUMF2hTxQ")
         placesClient = Places.createClient(requireContext())
         val token = AutocompleteSessionToken.newInstance()
@@ -170,6 +174,7 @@ class MapFragment : Fragment() {
             }
 
         })
+
         materialSearchBar.addTextChangeListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
@@ -225,16 +230,24 @@ class MapFragment : Fragment() {
                     InputMethodManager.HIDE_IMPLICIT_ONLY
                 )
                 val placeId = selectedPrediction.placeId
-                val placeFields: List<Place.Field> = listOf(Place.Field.LAT_LNG, Place.Field.NAME, Place.Field.ADDRESS)
+                val placeFields: List<Place.Field> =
+                    listOf(Place.Field.LAT_LNG, Place.Field.NAME, Place.Field.ADDRESS)
                 val fetchPlaceRequest = FetchPlaceRequest.builder(placeId, placeFields).build()
                 placesClient.fetchPlace(fetchPlaceRequest)
                     .addOnSuccessListener { fetchPlaceResponse ->
                         val place = fetchPlaceResponse.place
                         Log.i("mytag", "Place found: " + place.address)
                         myAddress = place.address ?: "Can't find your location"
+                        myLocation = place.latLng?.let {
+                            com.rentme.rentme.model.Location(
+                                name = myAddress,
+                                longitude = it.longitude,
+                                latitude = it.latitude,
+                            )
+                        }
                         val latLngOfPlace = place.latLng
                         if (latLngOfPlace != null) {
-                            mMap.moveCamera(
+                            mMap.animateCamera(
                                 CameraUpdateFactory.newLatLngZoom(
                                     latLngOfPlace,
                                     DEFAULT_ZOOM
@@ -255,44 +268,31 @@ class MapFragment : Fragment() {
             override fun OnItemDeleteListener(position: Int, v: View) {}
         })
 
+        binding.layoutMap.ivGetMarkerPosition.setOnClickListener {
+            getCurrentMarkerPosition()
+            rippleBg.startRippleAnimation()
+            Handler().postDelayed({
+                rippleBg.stopRippleAnimation()
+            }, 3000)
+        }
+
         bFind.setOnClickListener(View.OnClickListener {
-            val currentMarkerLocation = mMap.cameraPosition.target
 
-            val addresses: List<Address>
-            val geocoder: Geocoder = Geocoder(requireContext(), Locale.getDefault())
-
-            addresses = geocoder.getFromLocation(
-                currentMarkerLocation.latitude,
-                currentMarkerLocation.longitude,
-                1
-            ) // Here 1 represent max location result to returned, by documents it recommended 1 to 5
-
-
-            val address: String =
-                addresses[0].getAddressLine(0) // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-
-//            val city: String = addresses[0].locality!!
-//            val state: String = addresses[0].adminArea!!
-//            val country: String = addresses[0].countryName!!
-//            val postalCode: String = addresses[0].postalCode!!
-//            val knownName: String =
-//                addresses[0].featureName!! // Only if available else return NULL
-
-            Log.i("mytag", "Address is : $address ${addresses[0].locality}, ${addresses[0].countryName}")
-            myAddress = address
-
-//            rippleBg.startRippleAnimation()
-//            Handler().postDelayed({
-//                rippleBg.stopRippleAnimation()
-//                startActivity(Intent(this@MapActivity, MainActivity::class.java))
-//                finish()
-//            }, 3000)
-
+            if (myLocation == null) {
+                getCurrentMarkerPosition()
+            }
             val result = Bundle().apply {
-                putString("location", myAddress)
+                putSerializable("mLocation", myLocation)
+                putString("location", myLocation?.name)
             }
             setFragmentResult("locationResult", result)
-            findNavController().navigateUp()
+
+            rippleBg.startRippleAnimation()
+            Handler().postDelayed({
+                rippleBg.stopRippleAnimation()
+                findNavController().navigateUp()
+            }, 1500)
+
         })
     }
 
@@ -305,6 +305,40 @@ class MapFragment : Fragment() {
         }
     }
 
+    private fun getCurrentMarkerPosition() {
+        var mLocation: com.rentme.rentme.model.Location? = null
+        val currentMarkerLocation = mMap.cameraPosition.target
+
+        val addresses: List<Address>
+        val geocoder: Geocoder = Geocoder(requireContext(), Locale.getDefault())
+
+        addresses = geocoder.getFromLocation(
+            currentMarkerLocation.latitude,
+            currentMarkerLocation.longitude,
+            1
+        ) // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+
+        val address: String =
+            addresses[0].getAddressLine(0) // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+
+        val city: String = addresses[0].locality!!
+        val country: String = addresses[0].countryName!!
+//            val postalCode: String = addresses[0].postalCode!!
+
+        Log.i(
+            "mytag",
+            "Address is : $address \n$${addresses[0].adminArea}, \n${addresses[0].countryName}"
+        )
+        myAddress = address
+        mLocation = com.rentme.rentme.model.Location(
+            name = address,
+            longitude = currentMarkerLocation.longitude,
+            latitude = currentMarkerLocation.latitude
+        )
+        myLocation = mLocation
+
+    }
+
     @SuppressLint("MissingPermission")
     private fun getDeviceLocation() {
         mFusedLocationProviderClient.lastLocation
@@ -312,7 +346,7 @@ class MapFragment : Fragment() {
                 if (it.isSuccessful) {
                     mLastKnownLocation = it.result
                     if (mLastKnownLocation != null) {
-                        mMap.moveCamera(
+                        mMap.animateCamera(
                             CameraUpdateFactory.newLatLngZoom(
                                 LatLng(
                                     mLastKnownLocation.latitude,
@@ -329,7 +363,7 @@ class MapFragment : Fragment() {
                             override fun onLocationResult(locationResult: LocationResult) {
                                 super.onLocationResult(locationResult)
                                 mLastKnownLocation = locationResult.lastLocation
-                                mMap.moveCamera(
+                                mMap.animateCamera(
                                     CameraUpdateFactory.newLatLngZoom(
                                         LatLng(
                                             mLastKnownLocation.latitude,
@@ -344,7 +378,8 @@ class MapFragment : Fragment() {
 
                     }
                 } else {
-                    Toast.makeText(requireContext(), "unable to get location", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "unable to get location", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
     }

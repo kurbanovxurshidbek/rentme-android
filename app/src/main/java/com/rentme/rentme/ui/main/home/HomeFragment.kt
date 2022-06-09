@@ -13,28 +13,37 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.rentme.rentme.R
+import com.rentme.rentme.adapter.BrandsAdapter
 import com.rentme.rentme.adapter.HomeAdsAdapter
+import com.rentme.rentme.adapter.ResultAdapter
 import com.rentme.rentme.adapter.SubMainAdapter
 import com.rentme.rentme.databinding.FragmentHomeBinding
+import com.rentme.rentme.databinding.FragmentHomeDemoBinding
+import com.rentme.rentme.model.Brands
+import com.rentme.rentme.model.Model
 import com.rentme.rentme.model.Result
 import com.rentme.rentme.ui.main.MainActivity
 import com.rentme.rentme.utils.UiStateObject
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
+import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentHomeDemoBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var rvMainAds: RecyclerView
+    private lateinit var rvMainBrands: RecyclerView
     private lateinit var rvMainLatest: RecyclerView
     private lateinit var rvMainDaily: RecyclerView
     private lateinit var rvMainLongTerm: RecyclerView
     private val adsAdapter by lazy { HomeAdsAdapter() }
     private val subAdapter by lazy { SubMainAdapter() }
+    private val resultAdapter by lazy { ResultAdapter() }
+    private val brandsAdapter by lazy { BrandsAdapter() }
 
 
     private var timer: Timer? = null
@@ -52,7 +61,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeDemoBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -63,6 +72,7 @@ class HomeFragment : Fragment() {
         setUpRecyclers()
         getBanners()
         getAllResult()
+        getAllBrands()
 
         initViews()
         homeViewModel.getMainData()
@@ -99,9 +109,6 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.filterFragment)
         }
 
-//        binding.llCategory1.setOnClickListener {
-//            findNavController().navigate(R.id.typesFragment)
-//        }
     }
 
     private fun setUpRecyclers() {
@@ -112,13 +119,21 @@ class HomeFragment : Fragment() {
 
         rvMainDaily = binding.rvMainDaily
         rvMainDaily.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        rvMainDaily.adapter = subAdapter
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        rvMainDaily.adapter = resultAdapter
+        rvMainDaily.addItemDecoration(SpacesItemDecoration(16))
 
         rvMainLongTerm = binding.rvMainLongTerm
         rvMainLongTerm.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         rvMainLongTerm.adapter = subAdapter
+
+        rvMainBrands = binding.rvBrands
+        rvMainBrands.apply {
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = brandsAdapter
+//            addItemDecoration(SpacesItemDecoration(16))
+        }
     }
 
     private fun setUpBanner(){
@@ -205,7 +220,21 @@ class HomeFragment : Fragment() {
         items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
         items.add(Result(R.drawable.im_malibu, "Malibu 3", "", "250$"))
         items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
-        items.add(Result())
+        resultAdapter.submitData(items)
+//        items.add(Result())
         subAdapter.submitData(items)
+    }
+
+    private fun getAllBrands(){
+        val brands = ArrayList<Brands>()
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/tesla-logo.png", name = "Tesla", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/bmw-logo.png", name = "BMW", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/ferrari-logo.png", name = "Ferrari", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/ford-logo.png", name = "Ford", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/porsche-logo.png", name = "Porsche", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/lamborghini-logo.png", name = "Lamborghini", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/toyota-logo.png", name = "toyota", models = arrayListOf(Model())))
+
+        brandsAdapter.submitData(brands)
     }
 }
