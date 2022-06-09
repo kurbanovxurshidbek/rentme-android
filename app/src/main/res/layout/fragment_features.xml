@@ -212,40 +212,81 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/ll_background_date_month"
-                    android:padding="1dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/ll_background_rounded_border"
-                        android:gravity="center">
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/ll_background_date_month"
+                        android:padding="1dp">
 
-                        <ImageView
-                            android:id="@+id/iv_add_photo"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_camera_add_svgrepo_com"
-                            app:tint="@color/orange_main_01" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ll_background_rounded_border"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/iv_add_photo"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_camera_add_svgrepo_com"
+                                app:tint="@color/orange_main_01" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_car_photos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp" />
+
                 </LinearLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_car_photos"
+            </androidx.core.widget.NestedScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_description"
+                android:textColor="@color/black"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="@dimen/b_text_16" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/ll_background_date_month"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp" />
+                    android:layout_height="match_parent"
+                    android:focusable="true">
+
+                    <EditText
+                        android:id="@+id/edt_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/second_text_color"
+                        android:hint="@string/str_enter_description"
+                        android:background="@color/white"
+                        android:textSize="@dimen/b_text_16" />
+
+                </androidx.core.widget.NestedScrollView>
 
             </LinearLayout>
 
@@ -470,13 +511,13 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/fuel_radio_gasoline"
+                    android:id="@+id/fuel_radio_petrol"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:checked="true"
                     android:buttonTint="@color/orange_main_01"
-                    android:text="@string/str_gasoline"
+                    android:text="@string/str_petrol"
                     android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 
@@ -486,7 +527,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:buttonTint="@color/orange_main_01"
-                    android:text="@string/str_gasoline_gas"
+                    android:text="@string/str_petrol_gas"
                     android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 

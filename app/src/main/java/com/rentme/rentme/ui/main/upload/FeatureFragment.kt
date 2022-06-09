@@ -5,6 +5,8 @@ import android.app.Activity
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,25 +16,45 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.CarImageAdapter
 import com.rentme.rentme.adapter.ColorAdapter
 import com.rentme.rentme.databinding.FragmentFeaturesBinding
+import com.rentme.rentme.model.Picture
+import com.rentme.rentme.model.Price
+import com.rentme.rentme.model.Transport
 import com.rentme.rentme.model.UploadAdvertisement
 import com.rentme.rentme.utils.SelectColor
+import com.rentme.rentme.utils.UiStateList
+import com.rentme.rentme.utils.UiStateObject
 import com.sangcomz.fishbun.FishBun
 import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import java.io.File
+import java.io.FileOutputStream
 import java.time.Year
 
 
 // val date = SimpleDateFormat("dd-MM-yyyy").parse(binding.tvDate.text.toString())
 
+@AndroidEntryPoint
 class FeatureFragment : Fragment() {
+    private val viewModel: FeatureViewModel by viewModels()
 
     private val colorAdapter by lazy { ColorAdapter() }
     private lateinit var carImageAdapter: CarImageAdapter
+    private val TAG = this::class.java.simpleName
 
     private var _binding: FragmentFeaturesBinding? = null
     private val binding get() = _binding!!
@@ -41,14 +63,16 @@ class FeatureFragment : Fragment() {
     private var allPhotos: ArrayList<Uri> = ArrayList()
     private var carImages: ArrayList<Uri> = ArrayList()
     private var carImageUrls: ArrayList<String> = ArrayList()
-    private var selectColorCode: Int = 0
+    private var selectModelName: String = ""
+    private var selectColorName: String = ""
     private var selectYear: String = ""
+    private val prices: ArrayList<Price> = ArrayList()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            uploadAdvertisement = it.getSerializable("uploadAdvertisement") as UploadAdvertisement
+            uploadAdvertisement = Gson().fromJson(it.getString("uploadAdvertisement"), UploadAdvertisement::class.java)
         }
     }
 
@@ -69,6 +93,7 @@ class FeatureFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvLocation.text = uploadAdvertisement?.location?.name
         binding.tvStartDate.text = uploadAdvertisement?.startDate.toString()
         if (uploadAdvertisement?.minDuration!! < 30){
             binding.minDayCount.text = uploadAdvertisement?.minDuration.toString()
@@ -92,16 +117,64 @@ class FeatureFragment : Fragment() {
         binding.rvCarPhotos.adapter = carImageAdapter
         binding.ivAddPhoto.setOnClickListener { pickFishBunCarImages() }
 
+        setupObservers()
+
+    }
+
+    private fun setupObservers(){
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.fileState.collect{
+                when(it){
+                    is UiStateObject.LOADING -> {}
+                    is UiStateObject.SUCCESS -> {
+                        carImageUrls.addAll(it.data.fileUrl?.urls!!)
+                        carImageAdapter.items.clear()
+                        carImageAdapter.saveCarImageStorage(carImages)
+                    }
+                    is UiStateObject.ERROR ->{
+                        Log.d(TAG, "Error:" + it.message) }
+                    else -> Unit
+                }
+            }
+        }
+
+        // The best Launch launchWhenStarted in (launchWhenCreated, launchWhenStarted, launchWhenResumed)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
+                viewModel.featureState.collect{
+                    when(it){
+                        is UiStateObject.LOADING -> {}
+                        is UiStateObject.SUCCESS -> {
+                            Toast.makeText(requireContext(), "This Advertisement is Created", Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.myAddsFragment)
+                        }
+                        is UiStateObject.ERROR -> {
+                            Log.d(TAG, it.message)
+                        }
+                        else -> Unit
+                    }
+                }
+            }
+        }
+
     }
 
     private fun openMyAddsFragment(){
-        var prices = false
-        prices = ((binding.llDailyPrice.visibility == View.VISIBLE && binding.edtPriceDaily.text.isNotEmpty())
+        val checkPrice = ((binding.llDailyPrice.visibility == View.VISIBLE && binding.edtPriceDaily.text.isNotEmpty())
                 || binding.llDailyPrice.visibility == View.GONE)
                 && ((binding.llMonthlyPrice.visibility == View.VISIBLE && binding.edtPriceMonthly.text.isNotEmpty())
                 || binding.llMonthlyPrice.visibility == View.GONE)
-        if (prices){
-            findNavController().navigate(R.id.myAddsFragment)
+        if (checkPrice && carImageUrls.isNotEmpty() && carImageUrls.size > 1){
+            if (binding.llDailyPrice.visibility == View.VISIBLE)
+                prices.add(Price(binding.edtPriceDaily.text.toString().toInt(), "DAILY"))
+            if (binding.llMonthlyPrice.visibility == View.VISIBLE)
+                prices.add(Price(binding.edtPriceMonthly.text.toString().toInt(), "MONTHLY"))
+            val transport = Transport(null, selectModelName, selectYear.toLong()
+            ,selectManagementSystem(), selectFuelType(), selectColorName, selectAllImageUrls(carImageUrls), checkAdditional())
+            uploadAdvertisement?.description = binding.edtDescription.text.toString()
+            uploadAdvertisement?.prices = prices
+            uploadAdvertisement?.transport = transport
+            viewModel.createAdvertisement(uploadAdvertisement!!)
         }else{
             Toast.makeText(requireContext(), getString(R.string.str_fill_all_fields), Toast.LENGTH_SHORT).show()
         }
@@ -126,6 +199,10 @@ class FeatureFragment : Fragment() {
             allPhotos = it.data?.getParcelableArrayListExtra(FishBun.INTENT_PATH) ?: arrayListOf()
             carImageAdapter.items.addAll(allPhotos)
             carImages.addAll(allPhotos)
+
+            val imageFiles = getFileList(allPhotos)
+            viewModel.createFile(imageFiles)
+
             allPhotos.clear()
             carImageAdapter.notifyDataSetChanged()
         }
@@ -157,9 +234,8 @@ class FeatureFragment : Fragment() {
         binding.rvColors.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvColors.adapter = colorAdapter
         colorAdapter.onClick = {color ->
-            selectColorCode = color
-            val colorName = SelectColor.codeToName(color)
-            binding.tvColorName.text = colorName
+            selectColorName = SelectColor.codeToName(color)
+            binding.tvColorName.text = selectColorName
         }
     }
 
@@ -175,7 +251,7 @@ class FeatureFragment : Fragment() {
         binding.spnModels.adapter = ArrayAdapter<String>(requireContext(), R.layout.spinner_item_view, models)
         binding.spnModels.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                val selectedItem = p0!!.getItemAtPosition(p2)
+                selectModelName = p0!!.getItemAtPosition(p2).toString()
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
@@ -196,6 +272,54 @@ class FeatureFragment : Fragment() {
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
+    }
+
+    private fun selectManagementSystem(): String{
+        val selectedId: Int = binding.systemRadioGroup.checkedRadioButtonId
+        if (selectedId == R.id.system_radio_mechanical) return "MECHANICAL"
+        return "AUTOMATIC"
+    }
+
+    private fun selectFuelType(): String{
+        val selectedId: Int = binding.fuelRadioGroup.checkedRadioButtonId
+        if (selectedId == R.id.fuel_radio_petrol) return "PETROL"
+        return "PETROL/GAS"
+    }
+
+    private fun selectAllImageUrls(images: ArrayList<String>) : ArrayList<Picture>{
+        val imageUrls: ArrayList<Picture> = ArrayList()
+        for (image in images){
+            imageUrls.add(Picture(image, true))
+        }
+        return imageUrls
+    }
+
+    private fun checkAdditional() : Boolean{
+        return (binding.chbConditioners.isChecked || binding.chbRadio.isChecked)
+    }
+
+    private fun getFileList(uris: ArrayList<Uri>) : ArrayList<MultipartBody.Part>{
+        val files: ArrayList<MultipartBody.Part> = ArrayList()
+        for (uri in uris){
+            files.add(getFile(uri))
+        }
+        return files
+    }
+
+    private fun getFile(uri: Uri): MultipartBody.Part {
+        val ins = requireContext().contentResolver.openInputStream(uri)
+
+        val file = File.createTempFile("file", ".jpg",
+            requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        )
+
+        val fileOutputStream = FileOutputStream(file)
+        ins?.copyTo(fileOutputStream)
+        ins?.close()
+        fileOutputStream.close()
+        val reqFile = RequestBody.create(MediaType.parse("image/jpg"), file)
+        val body = MultipartBody.Part.createFormData("file", file.name, reqFile)
+        return body
     }
 
 }

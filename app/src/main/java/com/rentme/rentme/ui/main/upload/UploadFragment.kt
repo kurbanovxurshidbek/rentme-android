@@ -1,6 +1,10 @@
 package com.rentme.rentme.ui.main.upload
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,10 +15,20 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.google.gson.Gson
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
+import com.rentme.rentme.model.Location
 import com.rentme.rentme.model.UploadAdvertisement
 import kotlin.collections.ArrayList
 
@@ -24,6 +38,7 @@ class UploadFragment : Fragment() {
     private var minTimeHelper = 0
     private var maxTimeHelper = 0
     private var carCategory = ""
+    private lateinit var location: Location
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,26 +81,67 @@ class UploadFragment : Fragment() {
 
     @SuppressLint("SimpleDateFormat")
     private fun openFeatureFragment() {
-        // !binding.tvLocation.text.equals(getString(R.string.str_select_location))
         if (!binding.tvDate.text.equals(getString(R.string.str_select_start_date))
+            && !binding.tvLocation.text.equals(getString(R.string.str_select_location))
             && binding.minCountTime.text.isNotEmpty()
             && binding.maxCountTime.text.isNotEmpty()
         ) {
             if (minTimeHelper < maxTimeHelper){
                 val uploadAdvertisement = UploadAdvertisement(
-                    null, null, carCategory, null, binding.tvDate.text.toString(),
+                    null, null, carCategory, location, binding.tvDate.text.toString(),
                     minTimeHelper.toLong(), maxTimeHelper.toLong(), null
                 )
-                findNavController().navigate(R.id.action_uploadFragment_to_featureFragment,
-                    bundleOf("uploadAdvertisement" to uploadAdvertisement))
+                findNavController().navigate(R.id.featureFragment,
+                    bundleOf("uploadAdvertisement" to Gson().toJson(uploadAdvertisement)))
             }
         }else{
             Toast.makeText(requireContext(), getString(R.string.str_fill_all_fields), Toast.LENGTH_SHORT).show()
         }
     }
 
+
     private fun selectLocationFragment() {
-        findNavController().navigate(R.id.selectLocationFragment)
+//        checkPermission()
+        Dexter.withContext(requireContext())
+            .withPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+            .withListener(object : PermissionListener {
+                override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                    findNavController().navigate(R.id.mapFragment)
+                }
+
+                override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                    if (p0!!.isPermanentlyDenied) {
+                        val dialog = AlertDialog.Builder(requireActivity()).apply {
+                            setTitle("Permission Denied")
+                            setMessage("Permission to access device location is permanently denied. You need to go to setting to allow to the permission.")
+                            setNegativeButton("Cancel", null)
+                            setPositiveButton(
+                                "Ok"
+                            ) { dialog, which ->
+//                                val intent = Intent().apply {
+//                                    action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+//                                    data = Uri.fromParts("package", requireActivity().packageName, null)
+//                                }
+                            }
+                        }
+                        dialog.create().show()
+                    } else {
+                        Toast.makeText(
+                            requireContext(),
+                            "Permission denied",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+                override fun onPermissionRationaleShouldBeShown(
+                    p0: PermissionRequest?,
+                    p1: PermissionToken?
+                ) {
+                    p1!!.continuePermissionRequest()
+                }
+
+            }).check()
     }
 
     private fun selectLifeTimeChanged() {

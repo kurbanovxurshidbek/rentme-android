@@ -16,11 +16,9 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.HomeAdsAdapter
 import com.rentme.rentme.adapter.SubMainAdapter
 import com.rentme.rentme.databinding.FragmentHomeBinding
-import com.rentme.rentme.model.MainPage
 import com.rentme.rentme.model.Result
 import com.rentme.rentme.utils.UiStateObject
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import java.util.*
 
 @AndroidEntryPoint
@@ -62,7 +60,7 @@ class HomeFragment : Fragment() {
 
         setUpBanner()
         setUpRecyclers()
-        getAds()
+        getBanners()
         getAllResult()
 
         initViews()
@@ -99,9 +97,9 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.filterFragment)
         }
 
-        binding.llCategory1.setOnClickListener {
-            findNavController().navigate(R.id.typesFragment)
-        }
+//        binding.llCategory1.setOnClickListener {
+//            findNavController().navigate(R.id.typesFragment)
+//        }
     }
 
     private fun setUpRecyclers() {
@@ -186,11 +184,14 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun getAds() {
+    private fun getBanners() {
         val ads = ArrayList<Int>()
-        ads.add(R.drawable.im_tesla_model3)
-        ads.add(R.drawable.im_tesla_model3)
-        ads.add(R.drawable.im_tesla_model3)
+        ads.add(R.drawable.im_banner_2)
+        ads.add(R.drawable.im_banner_1)
+        ads.add(R.drawable.im_banner_4)
+//        ads.add(R.drawable.im_banner_5)
+//        ads.add(R.drawable.im_banner_6_0)
+        ads.add(R.drawable.im_banner_7)
 
         adsAdapter.submitData(ads)
     }
@@ -198,6 +199,8 @@ class HomeFragment : Fragment() {
     private fun getAllResult() {
         val items: ArrayList<Result> = ArrayList()
         items.add(Result(R.drawable.im_malibu, "Malibu 2", "", "200$"))
+        items.add(Result(R.drawable.im_malibu, "Malibu 3", "", "250$"))
+        items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
         items.add(Result(R.drawable.im_malibu, "Malibu 3", "", "250$"))
         items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
         items.add(Result())

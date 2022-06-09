@@ -3,27 +3,37 @@ package com.rentme.rentme.model
 import java.io.Serializable
 
 data class UploadAdvertisement(
-    val description: String? = null,
-    val prices: List<Price>? = null,
+    var description: String? = null,
+    var prices: List<Price>? = null,
     val category: String? = null,
     val location: Location? = null,
     val startDate: String? = null,
     val minDuration: Long? = null,
     val maxDuration: Long? = null,
-    val transport: Transport? = null
-): Serializable
-
-data class Location (
-    val x: Long? = null,
-    val y: Long? = null
+    var transport: Transport? = null
 )
 
-data class Price (
-    val quantity: Long? = null,
+data class UploadAdvertisementResp(
+    val accessTokenExpiry: Long,
+    val refreshTokenExpiry: Long,
+    val issuedAt: Long,
+    val accessToken: String,
+    val refreshToken: String,
+    val first: Boolean
+)
+
+data class Location(
+    val name: String? = null,
+    val longitude: Double? = null,
+    val latitude: Double? = null
+)
+
+data class Price(
+    val quantity: Int? = null,
     val type: String? = null
 )
 
-data class Transport (
+data class Transport(
     val transportType: String? = null,
     val model: String? = null,
     val year: Long? = null,
