@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.provider.Settings
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.fragment.app.Fragment
@@ -20,6 +19,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.google.gson.Gson
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
@@ -28,6 +28,7 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
+import com.rentme.rentme.model.Location
 import com.rentme.rentme.model.UploadAdvertisement
 import kotlin.collections.ArrayList
 
@@ -37,6 +38,7 @@ class UploadFragment : Fragment() {
     private var minTimeHelper = 0
     private var maxTimeHelper = 0
     private var carCategory = ""
+    private lateinit var location: Location
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -86,32 +88,23 @@ class UploadFragment : Fragment() {
         ) {
             if (minTimeHelper < maxTimeHelper){
                 val uploadAdvertisement = UploadAdvertisement(
-                    null, null, carCategory, null, binding.tvDate.text.toString(),
+                    null, null, carCategory, location, binding.tvDate.text.toString(),
                     minTimeHelper.toLong(), maxTimeHelper.toLong(), null
                 )
-                findNavController().navigate(R.id.action_uploadFragment_to_featureFragment,
-                    bundleOf("uploadAdvertisement" to uploadAdvertisement))
+                findNavController().navigate(R.id.featureFragment,
+                    bundleOf("uploadAdvertisement" to Gson().toJson(uploadAdvertisement)))
             }
         }else{
             Toast.makeText(requireContext(), getString(R.string.str_fill_all_fields), Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun checkPermission() {
-        if (ContextCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-            findNavController().navigate(R.id.mapFragment)
-        }
-    }
 
     private fun selectLocationFragment() {
 //        checkPermission()
         Dexter.withContext(requireContext())
             .withPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-            .withListener(object : PermissionListener{
+            .withListener(object : PermissionListener {
                 override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
                     findNavController().navigate(R.id.mapFragment)
                 }
@@ -125,10 +118,10 @@ class UploadFragment : Fragment() {
                             setPositiveButton(
                                 "Ok"
                             ) { dialog, which ->
-                                val intent = Intent().apply {
-                                    action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-                                    data = Uri.fromParts("package", requireActivity().packageName, null)
-                                }
+//                                val intent = Intent().apply {
+//                                    action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+//                                    data = Uri.fromParts("package", requireActivity().packageName, null)
+//                                }
                             }
                         }
                         dialog.create().show()
