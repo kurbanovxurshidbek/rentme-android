@@ -1,7 +1,6 @@
 package com.rentme.rentme.ui.main.filter
 
 import android.os.Bundle
-import android.view.DragEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,24 +8,34 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.slider.RangeSlider
-import com.google.android.material.slider.Slider
+import com.google.gson.Gson
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ColorFilterAdapter
 import com.rentme.rentme.adapter.FilterModelYearAdapter
 import com.rentme.rentme.databinding.FragmentFilterBinding
 import com.rentme.rentme.model.Car
-import com.rentme.rentme.ui.filter.DataRangePickerFragment
+import com.rentme.rentme.model.FilterPage
+import com.rentme.rentme.utils.UiStateObject
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class FilterFragment : Fragment() {
 
     private var _binding: FragmentFilterBinding? = null
     private val adapter by lazy { ColorFilterAdapter() }
     private val adapter_cy by lazy { FilterModelYearAdapter() }
+    private val viewModel: FilterViewModel by viewModels()
     private var color = 0
+
+    private var filterPage = FilterPage()
 
 
     private val binding get() = _binding!!
@@ -43,14 +52,34 @@ class FilterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initSpinnerType()
+
         initSpinnerModel()
 
         initView()
         dataRangePickerView()
+        setupObservers()
 
         binding.btnResult.setOnClickListener{
-            findNavController().navigate(R.id.resultFragment)
+            viewModel.getFilterResult(filterPage)
+
+        }
+    }
+
+    private fun setupObservers() {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.filterState.collect{
+                when(it){
+                    is UiStateObject.LOADING -> {
+                        //show progress
+                    }
+                    is UiStateObject.SUCCESS -> {
+                        findNavController().navigate(R.id.resultFragment, bundleOf("data" to Gson().toJson(it.data)))
+                    }
+                    is UiStateObject.ERROR -> {
+                        //show error
+                    }else -> Unit
+                }
+            }
         }
     }
 
@@ -89,6 +118,7 @@ class FilterFragment : Fragment() {
 
                 // Setting up the event for when ok is clicked
                 datePicker.addOnPositiveButtonClickListener {
+                    binding.tvStartDate.text = datePicker.headerText
                     Toast.makeText(context, "${datePicker.headerText} is selected", Toast.LENGTH_LONG).show()
                 }
 
@@ -107,19 +137,21 @@ class FilterFragment : Fragment() {
 
     private fun getAllColors() {
         val colors: ArrayList<Int> = ArrayList()
+        colors.add(R.color.car_race_blue)
+        colors.add(R.color.car_velvet_red)
+        colors.add(R.color.car_corrida_red)
+        colors.add(R.color.car_yellow)
+        colors.add(R.color.car_orange)
         colors.add(R.color.car_black)
         colors.add(R.color.car_meteor_grey)
         colors.add(R.color.car_bright_white)
         colors.add(R.color.car_candy_white)
         colors.add(R.color.car_brilliant_silver)
         colors.add(R.color.car_energy_blue)
-        colors.add(R.color.car_race_blue)
-        colors.add(R.color.car_velvet_red)
-        colors.add(R.color.car_corrida_red)
-        colors.add(R.color.car_yellow)
-        colors.add(R.color.car_orange)
+
 
         adapter.submitData(colors)
+
     }
 
     private fun getAllModelYear(){
@@ -138,30 +170,10 @@ class FilterFragment : Fragment() {
         adapter_cy.submitData(items)
     }
 
-    private fun initSpinnerType() {
-        val adapter = ArrayAdapter.createFromResource(requireContext(),
-            R.array.cars_type,
-            android.R.layout.simple_spinner_item
-        )
-
-        binding.spnCars.adapter = adapter
-        binding.spnCars.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                val selectedItem = p0!!.getItemAtPosition(p2)
-//                Toast.makeText(this@FiltersActivity, "$selectedItem Selected", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
-        }
-
-    }
-
     private fun initSpinnerModel() {
         val models: ArrayList<String> = ArrayList()
-        models.add("Yengil moshina")
-        models.add("Yuk moshina")
+        models.add("Nexia")
+        models.add("Malibu")
         models.add("Velesiped")
         models.add("Skutor")
 
@@ -169,9 +181,14 @@ class FilterFragment : Fragment() {
         binding.spnCarModel.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 val selectedItem = p0!!.getItemAtPosition(p2)
+                filterPage.model = selectedItem.toString()
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
+    }
+
+    private fun getResult(){
+
     }
 
 
