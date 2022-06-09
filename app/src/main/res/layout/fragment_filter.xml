@@ -422,7 +422,6 @@
 
             <LinearLayout
                 android:layout_marginTop="50dp"
-                android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 android:elevation="0dp"
                 android:layout_marginVertical="20dp"
@@ -449,8 +448,6 @@
                     android:layout_marginHorizontal="20dp"
                     android:background="@drawable/filter_rounded_corner"
                     android:textColor="@color/orange_main_01"
-                    android:textSize="@dimen/b_text_18"
-                    android:textColor="#EF8321"
                     android:textSize="@dimen/text_type_16"
                     android:textAllCaps="false"
                     app:backgroundTint="@null"
