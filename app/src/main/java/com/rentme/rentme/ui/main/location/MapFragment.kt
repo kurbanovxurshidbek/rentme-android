@@ -321,14 +321,14 @@ class MapFragment : Fragment() {
         val address: String =
             addresses[0].getAddressLine(0) // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
 
-        val city: String = addresses[0].locality!!
-        val country: String = addresses[0].countryName!!
+//        val city: String = addresses[0].locality!!
+//        val country: String = addresses[0].countryName!!
 //            val postalCode: String = addresses[0].postalCode!!
 
-        Log.i(
-            "mytag",
-            "Address is : $address \n$${addresses[0].adminArea}, \n${addresses[0].countryName}"
-        )
+//        Log.i(
+//            "mytag",
+//            "Address is : $address \n$${addresses[0].adminArea}, \n${addresses[0].countryName}"
+//        )
         myAddress = address
         mLocation = com.rentme.rentme.model.Location(
             name = address,
