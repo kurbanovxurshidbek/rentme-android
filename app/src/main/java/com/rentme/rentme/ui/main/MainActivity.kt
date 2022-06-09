@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
@@ -19,6 +20,7 @@ import com.rentme.rentme.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import com.rentme.rentme.ui.profile.BottomSheetFragment
 import com.rentme.rentme.ui.profile.BottomSheetFragmentLogOut
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -33,6 +35,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initViews()
+        closeKeyBoard()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        closeKeyBoard()
     }
 
     private fun initViews(){
@@ -48,6 +56,7 @@ class MainActivity : AppCompatActivity() {
             }
             //                Log.d("@@@", "${controller.currentDestination!!.displayName} -- ${destination.displayName}")
         }
+
     }
 
     override fun onBackPressed() {
@@ -89,7 +98,6 @@ class MainActivity : AppCompatActivity() {
     fun hideBottomNavigation() {
         binding.bnvMain.visibility = View.GONE
     }
-
 
     @SuppressLint("ServiceCast")
     fun closeKeyBoard() {
