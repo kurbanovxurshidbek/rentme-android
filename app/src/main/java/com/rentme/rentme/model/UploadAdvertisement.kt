@@ -1,7 +1,5 @@
 package com.rentme.rentme.model
 
-import com.rentme.rentme.model.base.Error
-
 data class UploadAdvertisement(
     var description: String? = null,
     var prices: List<Price>? = null,
@@ -22,7 +20,6 @@ data class UploadARespHelper(
     val data: Int? = null,
     val success: Boolean? = null,
     val totalCount: Int? = null,
-    val error: Error? = null
 )
 
 data class Price(

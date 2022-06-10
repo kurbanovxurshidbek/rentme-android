@@ -2,9 +2,6 @@ package com.rentme.rentme.ui.main.upload
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -16,7 +13,6 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.google.gson.Gson
@@ -87,7 +83,7 @@ class UploadFragment : Fragment() {
             && binding.maxCountTime.text.isNotEmpty()
         ) {
             if (minTimeHelper < maxTimeHelper){
-                location = Location(binding.tvLocation.text.toString(), null, null)
+                location = Location(binding.tvLocation.text.toString(), 0.0, 0.0, null)
                 val uploadAdvertisement = UploadAdvertisement(
                     null, null, carCategory, location, binding.tvDate.text.toString(),
                     minTimeHelper.toLong(), maxTimeHelper.toLong(), null
