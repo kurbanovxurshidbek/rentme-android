@@ -23,11 +23,11 @@ interface ApiService {
     @POST("advertisement/search")
     suspend fun getFilterResult(@Body filterPage: FilterPage): BaseResponseList<Advertisement>
 
-    @POST("/advertisement/create")
+    @POST("advertisement/create")
     suspend fun createAdvertisement(@Body advertisement: UploadAdvertisement) : UploadAdvertisementResp
 
     @Multipart
-    @POST("/file")
-    suspend fun createFile(@Part("file") files: List<MultipartBody.Part>) : FileResponse
+    @POST("file")
+    suspend fun createFile(@Part file: List<MultipartBody.Part>) : FileResponse
 
 }

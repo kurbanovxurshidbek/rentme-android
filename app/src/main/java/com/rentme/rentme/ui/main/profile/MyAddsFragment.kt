@@ -42,6 +42,10 @@ class MyAddsFragment : Fragment() {
             findNavController().navigate(R.id.detailsFragment)
         }
 
+        binding.ivBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
     }
 
     private fun getAllResult() {
@@ -61,5 +65,7 @@ class MyAddsFragment : Fragment() {
         binding.rvMyAdds.layoutManager = GridLayoutManager(requireContext(), 1)
         binding.rvMyAdds.adapter = adapter
     }
+
+
 
 }
