@@ -19,7 +19,7 @@ import retrofit2.http.*
 interface ApiService {
 
     @GET("main-page")
-    suspend fun getMainDetails(): MainPage
+    suspend fun getMainDetails(count: Int): BaseResponse<BaseResponseObject<MainPage>>
 
     @POST("advertisement/search")
     suspend fun getFilterResult(@Body filterPage: FilterPage): BaseResponseList<Filter>
