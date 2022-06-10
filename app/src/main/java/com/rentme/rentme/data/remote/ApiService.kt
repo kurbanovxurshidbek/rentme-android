@@ -1,10 +1,9 @@
 package com.rentme.rentme.data.remote
 
-import com.rentme.rentme.model.Car
 import com.rentme.rentme.model.FilterPage
 import com.rentme.rentme.model.FileResponse
 import com.rentme.rentme.model.MainPage
-import com.rentme.rentme.model.filtermodel.Filter
+import com.rentme.rentme.model.filtermodel.Advertisement
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -22,7 +21,7 @@ interface ApiService {
     suspend fun getMainDetails(count: Int): BaseResponse<BaseResponseObject<MainPage>>
 
     @POST("advertisement/search")
-    suspend fun getFilterResult(@Body filterPage: FilterPage): BaseResponseList<Filter>
+    suspend fun getFilterResult(@Body filterPage: FilterPage): BaseResponseList<Advertisement>
 
 
     @POST("/advertisement/create")

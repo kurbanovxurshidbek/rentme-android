@@ -14,7 +14,7 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ResultAdapter
 import com.rentme.rentme.databinding.FragmentResultBinding
 import com.rentme.rentme.model.Result
-import com.rentme.rentme.model.filtermodel.Filter
+import com.rentme.rentme.model.filtermodel.Advertisement
 
 
 class ResultFragment : Fragment() {
@@ -23,12 +23,12 @@ class ResultFragment : Fragment() {
     private val adapter by lazy { ResultAdapter() }
 
     private val binding get() = _binding!!
-    private var list = ArrayList<Filter>()
+    private var list = ArrayList<Advertisement>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val arg = arguments?.getString("data") ?: ""
-        list = arrayListOf(Gson().fromJson(arg,Filter::class.java))
+        list = arrayListOf(Gson().fromJson(arg,Advertisement::class.java))
     }
 
     override fun onCreateView(
