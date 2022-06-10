@@ -4,6 +4,8 @@ import com.rentme.rentme.model.FileResponse
 import com.rentme.rentme.model.MainPage
 import com.rentme.rentme.model.UploadAdvertisement
 import com.rentme.rentme.model.UploadAdvertisementResp
+import com.rentme.rentme.model.base.BaseResponse
+import com.rentme.rentme.model.base.BaseResponseObject
 import okhttp3.MultipartBody
 import retrofit2.http.*
 import java.io.File
@@ -15,8 +17,8 @@ interface ApiService {
         const val key: String = "Authorization"
     }
 
-    @GET("main-page")
-    suspend fun getMainDetails(): MainPage
+    @POST("main-page")
+    suspend fun getMainDetails(@Body count: Int): BaseResponse<BaseResponseObject<MainPage>>
 
     @Headers("$key: $Access_key")
     @POST("/advertisement/create")
