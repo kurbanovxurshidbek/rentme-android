@@ -1,10 +1,12 @@
 package com.rentme.rentme.ui.main.details
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -12,9 +14,8 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.DetailPhotoAdapter
 import com.rentme.rentme.databinding.FragmentDetailsBinding
 import com.rentme.rentme.model.DetailPhoto
-import com.rentme.rentme.ui.main.home.HomeFragment
 import java.util.*
-import kotlin.collections.ArrayList
+
 
 class DetailsFragment : Fragment() {
 
@@ -76,6 +77,10 @@ class DetailsFragment : Fragment() {
         }
 
         setUpBanner()
+
+        binding.bCallToUser.setOnClickListener {
+            callToOwner("990362607")
+        }
     }
 
     private fun setUpBanner(){
@@ -121,6 +126,13 @@ class DetailsFragment : Fragment() {
             timerTask = null
             position = layoutManagerBanner.findFirstCompletelyVisibleItemPosition()
         }
+    }
+
+    private fun callToOwner(phone: String){
+        val callIntent = Intent(Intent.ACTION_CALL)
+        callIntent.data = Uri.parse("tel:$phone") //change the number
+
+        startActivity(callIntent)
     }
 
     private fun getAllDetailPhoto(){
