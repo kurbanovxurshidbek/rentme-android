@@ -25,6 +25,7 @@ import com.rentme.rentme.model.Brands
 import com.rentme.rentme.model.Car
 import com.rentme.rentme.model.FilterPage
 import com.rentme.rentme.model.Model
+import com.rentme.rentme.utils.SelectColor
 import com.rentme.rentme.utils.UiStateObject
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -42,7 +43,8 @@ class FilterFragment : Fragment() {
     private lateinit var rvMainBrands: RecyclerView
 
     private var filterPage = FilterPage()
-
+    private var carColors: ArrayList<String>? = null
+    private var modelYear: Int = 0
 
     private val binding get() = _binding!!
 
@@ -73,7 +75,9 @@ class FilterFragment : Fragment() {
     }
 
     private fun openResultPage() {
+        var filterPage = FilterPage(colors = carColors, year = modelYear)
         viewModel.getFilterResult(filterPage)
+
     }
 
     private fun setupObservers() {
@@ -84,7 +88,7 @@ class FilterFragment : Fragment() {
                         //show progress
                     }
                     is UiStateObject.SUCCESS -> {
-                        findNavController().navigate(R.id.resultFragment, bundleOf("data" to Gson().toJson(it.data)))
+                        findNavController().navigate(R.id.resultFragment, bundleOf("data" to Gson().toJson(it.data.data)))
 
                     }
                     is UiStateObject.ERROR -> {
@@ -96,14 +100,22 @@ class FilterFragment : Fragment() {
     }
 
     private fun initView() {
+        carColors = ArrayList<String>()
+
         binding.rvColors.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvColors.adapter = adapter
+        adapter.onClick = {
+            carColors!!.add(SelectColor.codeToName(it))
+        }
         getAllColors()
 
         binding.rvModelYear.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvModelYear.adapter = adapter_cy
+        adapter_cy.onClick = {
+            modelYear = it.modelYera
+        }
         getAllModelYear()
 
         rvMainBrands = binding.rvBrands
