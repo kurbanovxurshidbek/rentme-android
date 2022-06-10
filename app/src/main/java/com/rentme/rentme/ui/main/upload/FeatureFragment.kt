@@ -32,7 +32,6 @@ import com.rentme.rentme.model.Price
 import com.rentme.rentme.model.Transport
 import com.rentme.rentme.model.UploadAdvertisement
 import com.rentme.rentme.utils.SelectColor
-import com.rentme.rentme.utils.UiStateList
 import com.rentme.rentme.utils.UiStateObject
 import com.sangcomz.fishbun.FishBun
 import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter
@@ -113,9 +112,17 @@ class FeatureFragment : Fragment() {
             openMyAddsFragment()
         }
         carImageAdapter = CarImageAdapter()
+        carImageAdapter.items.add(null)
         binding.rvCarPhotos.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
         binding.rvCarPhotos.adapter = carImageAdapter
-        binding.ivAddPhoto.setOnClickListener { pickFishBunCarImages() }
+        carImages.add(Uri.EMPTY)
+        carImageAdapter.clickAddCarImage = {
+            if (carImages.size < 9) pickFishBunCarImages()
+        }
+        carImageAdapter.clickClear = { position ->
+            carImageUrls.removeAt(position)
+            carImages.removeAt(position)
+        }
 
         setupObservers()
 
@@ -127,7 +134,7 @@ class FeatureFragment : Fragment() {
                 when(it){
                     is UiStateObject.LOADING -> {}
                     is UiStateObject.SUCCESS -> {
-                        carImageUrls.addAll(it.data.fileUrl?.urls!!)
+                        carImageUrls.addAll(it.data.data.data)
                         carImageAdapter.items.clear()
                         carImageAdapter.saveCarImageStorage(carImages)
                     }
@@ -149,7 +156,7 @@ class FeatureFragment : Fragment() {
                             findNavController().navigate(R.id.myAddsFragment)
                         }
                         is UiStateObject.ERROR -> {
-                            Log.d(TAG, it.message)
+                            Log.d(TAG, "Error:" + it.message)
                         }
                         else -> Unit
                     }
@@ -169,7 +176,7 @@ class FeatureFragment : Fragment() {
                 prices.add(Price(binding.edtPriceDaily.text.toString().toInt(), "DAILY"))
             if (binding.llMonthlyPrice.visibility == View.VISIBLE)
                 prices.add(Price(binding.edtPriceMonthly.text.toString().toInt(), "MONTHLY"))
-            val transport = Transport(null, selectModelName, selectYear.toLong()
+            val transport = Transport( selectModelName, selectYear.toLong()
             ,selectManagementSystem(), selectFuelType(), selectColorName, selectAllImageUrls(carImageUrls), checkAdditional())
             uploadAdvertisement?.description = binding.edtDescription.text.toString()
             uploadAdvertisement?.prices = prices
@@ -197,8 +204,10 @@ class FeatureFragment : Fragment() {
     private val photoLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         if (it.resultCode == Activity.RESULT_OK){
             allPhotos = it.data?.getParcelableArrayListExtra(FishBun.INTENT_PATH) ?: arrayListOf()
-            carImageAdapter.items.addAll(allPhotos)
             carImages.addAll(allPhotos)
+            carImageAdapter.items.clear()
+            carImageAdapter.state = false
+            carImageAdapter.items.addAll(carImages)
 
             val imageFiles = getFileList(allPhotos)
             viewModel.createFile(imageFiles)
@@ -241,12 +250,8 @@ class FeatureFragment : Fragment() {
 
     private fun selectModelSpinner(){
         val models: ArrayList<String> = ArrayList()
-        models.add("Malibu")
-        models.add("Captiva")
-        models.add("Nexia")
-        models.add("Spark")
-        models.add("Matiz")
-        models.add("Damas")
+        models.add("Subaru Outback")
+        models.add("Suzuki Ciaz")
 
         binding.spnModels.adapter = ArrayAdapter<String>(requireContext(), R.layout.spinner_item_view, models)
         binding.spnModels.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -309,7 +314,8 @@ class FeatureFragment : Fragment() {
     private fun getFile(uri: Uri): MultipartBody.Part {
         val ins = requireContext().contentResolver.openInputStream(uri)
 
-        val file = File.createTempFile("file", ".jpg",
+        val file = File.createTempFile(
+            "file", ".jpg",
             requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         )
 
@@ -318,8 +324,7 @@ class FeatureFragment : Fragment() {
         ins?.close()
         fileOutputStream.close()
         val reqFile = RequestBody.create(MediaType.parse("image/jpg"), file)
-        val body = MultipartBody.Part.createFormData("file", file.name, reqFile)
-        return body
+        return MultipartBody.Part.createFormData("file", file.name, reqFile)
     }
 
 }

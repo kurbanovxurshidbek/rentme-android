@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.rentme.rentme.R
 import com.rentme.rentme.databinding.ItemFilterModelYearBinding
 import com.rentme.rentme.databinding.ItemResultLayoutBinding
 import com.rentme.rentme.model.Car
@@ -12,6 +13,7 @@ import com.rentme.rentme.model.Result
 
 class FilterModelYearAdapter:RecyclerView.Adapter<FilterModelYearAdapter.FilterModelYearViewHolder>() {
     private val dif = AsyncListDiffer(this,ITEM_DIF)
+    private var clickedPosition: Int = -1
     var onClick:((Car) -> Unit)? = null
 
     inner class FilterModelYearViewHolder(private val binding:ItemFilterModelYearBinding):
@@ -20,6 +22,13 @@ class FilterModelYearAdapter:RecyclerView.Adapter<FilterModelYearAdapter.FilterM
                 val car = dif.currentList[adapterPosition]
                 binding.apply {
                     tvModelYear.text = car.modelYera.toString()
+                    if (adapterPosition == clickedPosition) root.setBackgroundResource(R.drawable.filter_rounded_chacked_corner)
+                    else root.setBackgroundResource(R.drawable.filter_rounded_corner)
+                    root.setOnClickListener {
+                        onClick?.invoke(car)
+                        clickedPosition = adapterPosition
+                        notifyDataSetChanged()
+                    }
                 }
             }
         }

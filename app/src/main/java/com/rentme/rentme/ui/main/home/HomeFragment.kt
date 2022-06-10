@@ -220,7 +220,7 @@ class HomeFragment : Fragment() {
         items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
         items.add(Result(R.drawable.im_malibu, "Malibu 3", "", "250$"))
         items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
-        resultAdapter.submitData(items)
+        //resultAdapter.submitData(items)
 //        items.add(Result())
 //        longTermAdapter.submitData(items)
     }
