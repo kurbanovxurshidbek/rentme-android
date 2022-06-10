@@ -1,11 +1,11 @@
 package com.rentme.rentme.model.filtermodel
 
 data class Transport(
-    val color: String,
-    val fuelType: String,
-    val model: Model,
-    val pictures: List<Picture>,
-    val transmission: String,
-    val wellEquipped: Boolean,
-    val year: Int
+    val model: Model? = null,
+    val year: Long? = null,
+    val transmission: String? = null,
+    val fuelType: String? = null,
+    val color: String? = null,
+    val pictures: List<Picture>? = null,
+    val wellEquipped: Boolean? = null
 )

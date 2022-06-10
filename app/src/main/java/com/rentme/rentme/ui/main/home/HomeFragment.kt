@@ -192,6 +192,9 @@ class HomeFragment : Fragment() {
                     }
                     is UiStateObject.SUCCESS -> {
                         latestAdapter.submitData(it.data.data.lastAdvertisements!!)
+                        resultAdapter.submitData(it.data.data.dailyAdvertisements!!)
+                        longTermAdapter.submitData(it.data.data.monthlyAdvertisements!!)
+                        brandsAdapter.submitData(it.data.data.brands!!)
                         Log.d("Network", "SUCCESS -- ${it.data.data.lastAdvertisements!!.size}")
                     }
                     is UiStateObject.ERROR -> {
@@ -235,6 +238,6 @@ class HomeFragment : Fragment() {
         brands.add(Brands(image = "https://www.carlogos.org/car-logos/lamborghini-logo.png", name = "Lamborghini", models = arrayListOf(Model())))
         brands.add(Brands(image = "https://www.carlogos.org/car-logos/toyota-logo.png", name = "toyota", models = arrayListOf(Model())))
 
-        brandsAdapter.submitData(brands)
+//        brandsAdapter.submitData(brands)
     }
 }

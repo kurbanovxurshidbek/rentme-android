@@ -23,7 +23,7 @@ data class UploadARespHelper(
 )
 
 data class Price (
-    val quantity: Long? = null,
+    val quantity: Int? = null,
     val type: Type? = null
 )
 

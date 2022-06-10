@@ -27,10 +27,7 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.CarImageAdapter
 import com.rentme.rentme.adapter.ColorAdapter
 import com.rentme.rentme.databinding.FragmentFeaturesBinding
-import com.rentme.rentme.model.Picture
-import com.rentme.rentme.model.Price
-import com.rentme.rentme.model.Transport
-import com.rentme.rentme.model.UploadAdvertisement
+import com.rentme.rentme.model.*
 import com.rentme.rentme.utils.SelectColor
 import com.rentme.rentme.utils.UiStateObject
 import com.sangcomz.fishbun.FishBun
@@ -173,9 +170,9 @@ class FeatureFragment : Fragment() {
                 || binding.llMonthlyPrice.visibility == View.GONE)
         if (checkPrice && carImageUrls.isNotEmpty() && carImageUrls.size > 1){
             if (binding.llDailyPrice.visibility == View.VISIBLE)
-                prices.add(Price(binding.edtPriceDaily.text.toString().toInt(), "DAILY"))
+                prices.add(Price(binding.edtPriceDaily.text.toString().toInt(), Type.Daily))
             if (binding.llMonthlyPrice.visibility == View.VISIBLE)
-                prices.add(Price(binding.edtPriceMonthly.text.toString().toInt(), "MONTHLY"))
+                prices.add(Price(binding.edtPriceMonthly.text.toString().toInt(), Type.Monthly))
             val transport = Transport( selectModelName, selectYear.toLong()
             ,selectManagementSystem(), selectFuelType(), selectColorName, selectAllImageUrls(carImageUrls), checkAdditional())
             uploadAdvertisement?.description = binding.edtDescription.text.toString()

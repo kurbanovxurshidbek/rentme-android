@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rentme.rentme.databinding.ItemSubMainFooterBinding
 import com.rentme.rentme.databinding.ItemSubMainVehiclesBinding
-import com.rentme.rentme.model.Advertisement
 import com.rentme.rentme.model.Result
+import com.rentme.rentme.model.filtermodel.Advertisement
 
 class SubMainAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val ITEM_VIEW = 0

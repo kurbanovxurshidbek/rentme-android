@@ -18,12 +18,12 @@ class ResultAdapter:RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
             fun bind(){
                 val result = dif.currentList[adapterPosition]
                 binding.apply {
-                    tvCarsName.text = result.transport.model.name
+                    tvCarsName.text = result.transport.model!!.name
                     tvCarsCostDay.text = result.prices[0].quantity.toString()
                     tvCarsCostMonth.text = if (result.prices.size > 1) result.prices[1].quantity.toString() else ""
 
                     Glide.with(binding.root)
-                        .load(result.transport.pictures[0].path)
+                        .load(result.transport.pictures?.get(0)!!.path)
                         .into(ivCarsImages)
 
                     root.setOnClickListener{
