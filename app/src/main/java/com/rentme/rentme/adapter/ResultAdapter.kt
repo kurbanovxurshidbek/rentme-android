@@ -7,12 +7,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rentme.rentme.databinding.ItemResultLayoutBinding
-import com.rentme.rentme.model.Result
-import com.rentme.rentme.model.filtermodel.Filter
+import com.rentme.rentme.model.filtermodel.Advertisement
 
 class ResultAdapter:RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
     private val dif = AsyncListDiffer(this,ITEM_DIF)
-    var onClick:((Filter) -> Unit)? = null
+    var onClick:((Advertisement) -> Unit)? = null
 
     inner class ResultViewHolder(private val binding:ItemResultLayoutBinding):
         RecyclerView.ViewHolder(binding.root){
@@ -44,17 +43,17 @@ class ResultAdapter:RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
 
     override fun getItemCount(): Int = dif.currentList.size
 
-    fun submitData(list: List<Filter>){
+    fun submitData(list: List<Advertisement>){
         dif.submitList(list)
     }
 
     companion object {
-        private val ITEM_DIF = object : DiffUtil.ItemCallback<Filter>() {
+        private val ITEM_DIF = object : DiffUtil.ItemCallback<Advertisement>() {
 
-            override fun areItemsTheSame(oldItem: Filter, newItem: Filter): Boolean =
+            override fun areItemsTheSame(oldItem: Advertisement, newItem: Advertisement): Boolean =
                 oldItem == newItem
 
-            override fun areContentsTheSame(oldItem: Filter, newItem: Filter): Boolean =
+            override fun areContentsTheSame(oldItem: Advertisement, newItem: Advertisement): Boolean =
                 oldItem == newItem
         }
     }
