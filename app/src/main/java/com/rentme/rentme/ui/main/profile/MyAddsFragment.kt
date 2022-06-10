@@ -42,7 +42,9 @@ class MyAddsFragment : Fragment() {
             findNavController().navigate(R.id.detailsFragment)
         }
 
-
+        binding.ivBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
     }
 
