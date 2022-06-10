@@ -3,6 +3,7 @@ package com.rentme.rentme.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.rentme.rentme.model.base.Error
+import com.rentme.rentme.model.filtermodel.Advertisement
 
 //data class MainPage(
 //    val data: WelcomeData? = null,
@@ -27,12 +28,12 @@ data class MainPage(
     val weeklyAdvertisements: List<Advertisement>? = null
 )
 
-data class Advertisement (
-    val description: String? = null,
-    val prices: List<PriceDTO>? = null,
-    val category: String? = null,
-    val transport: TransportDTO? = null
-)
+//data class Advertisement (
+//    val description: String? = null,
+//    val prices: List<PriceDTO>? = null,
+//    val category: String? = null,
+//    val transport: TransportDTO? = null
+//)
 
 data class PriceDTO (
     val quantity: Long? = null,

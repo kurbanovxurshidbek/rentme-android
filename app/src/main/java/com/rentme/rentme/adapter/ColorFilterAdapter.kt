@@ -25,6 +25,7 @@ class ColorFilterAdapter:RecyclerView.Adapter<ColorFilterAdapter.ColorFilterView
                     onClick?.invoke(colorCars)
                     clickedPosition = adapterPosition
                     notifyDataSetChanged()
+
                 }
 
             }

@@ -5,12 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.gson.Gson
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ResultAdapter
 import com.rentme.rentme.databinding.FragmentResultBinding
 import com.rentme.rentme.model.Result
+import com.rentme.rentme.model.filtermodel.Advertisement
 
 
 class ResultFragment : Fragment() {
@@ -19,6 +22,13 @@ class ResultFragment : Fragment() {
     private val adapter by lazy { ResultAdapter() }
 
     private val binding get() = _binding!!
+    private var list = ArrayList<Advertisement>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val arg = arguments?.getString("data") ?: ""
+        list = arrayListOf(Gson().fromJson(arg,Advertisement::class.java))
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +42,7 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Toast.makeText(requireContext(), list.toString(), Toast.LENGTH_SHORT).show()
         initViews()
         getAllResult()
     }
@@ -52,6 +63,7 @@ class ResultFragment : Fragment() {
                 requireActivity().onBackPressed()
             }
         }
+
     }
 
     private fun getAllResult() {
@@ -62,7 +74,6 @@ class ResultFragment : Fragment() {
         items.add(Result(R.drawable.im_tesla_model3,"Model 3","25","300$",))
         items.add(Result(R.drawable.im_mersades,"AMG 2","40$","350$",))
 
-        //adapter.submitData()
     }
 
 }
