@@ -1,4 +1,4 @@
-package com.rentme.rentme.ui.filter
+package com.rentme.rentme.ui.main.filter
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -35,6 +35,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initViews()
+        closeKeyBoard()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        closeKeyBoard()
     }
 
     private fun initViews(){
@@ -92,7 +98,6 @@ class MainActivity : AppCompatActivity() {
     fun hideBottomNavigation() {
         binding.bnvMain.visibility = View.GONE
     }
-
 
     @SuppressLint("ServiceCast")
     fun closeKeyBoard() {

@@ -25,12 +25,6 @@ data class UploadARespHelper(
     val error: Error? = null
 )
 
-data class Location(
-    val name: String? = null,
-    val longitude: Double? = null,
-    val latitude: Double? = null
-)
-
 data class Price(
     val quantity: Int? = null,
     val type: String? = null

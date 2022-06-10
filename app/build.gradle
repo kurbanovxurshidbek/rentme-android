@@ -46,6 +46,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
+    implementation 'androidx.room:room-common:2.3.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -55,6 +56,8 @@ dependencies {
 
     // Google Services
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    // Google maps
+    implementation 'com.google.android.libraries.places:places:2.6.0'
 
     // Google maps
     implementation 'com.google.android.libraries.places:places:2.6.0'
@@ -121,5 +124,7 @@ dependencies {
 
     // MaterialSearchBar
     implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
+
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
 
 }
