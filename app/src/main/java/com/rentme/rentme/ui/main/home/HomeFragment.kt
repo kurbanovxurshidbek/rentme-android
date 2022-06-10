@@ -121,7 +121,7 @@ class HomeFragment : Fragment() {
         rvMainDaily.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         rvMainDaily.adapter = resultAdapter
-        rvMainDaily.addItemDecoration(SpacesItemDecoration(16))
+        rvMainDaily.addItemDecoration(SpacesItemDecoration(30))
 
         rvMainLongTerm = binding.rvMainLongTerm
         rvMainLongTerm.layoutManager =
@@ -205,10 +205,8 @@ class HomeFragment : Fragment() {
         val ads = ArrayList<Int>()
         ads.add(R.drawable.im_banner_2)
         ads.add(R.drawable.im_banner_1)
-        ads.add(R.drawable.im_banner_4)
-//        ads.add(R.drawable.im_banner_5)
-//        ads.add(R.drawable.im_banner_6_0)
-        ads.add(R.drawable.im_banner_7)
+        ads.add(R.drawable.im_banner_3)
+        ads.add(R.drawable.im_banner_5)
 
         adsAdapter.submitData(ads)
     }
