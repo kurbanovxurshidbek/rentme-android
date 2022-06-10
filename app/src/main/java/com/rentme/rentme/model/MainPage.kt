@@ -21,22 +21,18 @@ data class WelcomeData(
 )
 
 data class MainPage(
-    val picturePathList: List<String>? = null,
+    val pictures: List<String>? = null,
+    val brands: List<Brands>? = null,
     val lastAdvertisements: List<Advertisement>? = null,
     val dailyAdvertisements: List<Advertisement>? = null,
-    val weeklyAdvertisements: List<Advertisement>? = null
+    val monthlyAdvertisements: List<Advertisement>? = null
 )
 
 data class Advertisement (
     val description: String? = null,
-    val prices: List<PriceDTO>? = null,
+    val prices: List<Price>? = null,
     val category: String? = null,
     val transport: TransportDTO? = null
-)
-
-data class PriceDTO (
-    val quantity: Long? = null,
-    val type: String? = null
 )
 
 data class TransportDTO (

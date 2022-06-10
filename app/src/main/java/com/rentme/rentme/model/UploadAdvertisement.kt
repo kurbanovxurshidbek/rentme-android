@@ -22,10 +22,15 @@ data class UploadARespHelper(
     val totalCount: Int? = null,
 )
 
-data class Price(
-    val quantity: Int? = null,
-    val type: String? = null
+data class Price (
+    val quantity: Long? = null,
+    val type: Type? = null
 )
+
+enum class Type {
+    Daily,
+    Monthly
+}
 
 data class Transport(
     val model: String? = null,

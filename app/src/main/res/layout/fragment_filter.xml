@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/edt_search"
+                    android:id="@+id/tv_location"
                     android:layout_width="0dp"
                     android:layout_height="44dp"
                     android:gravity="center_vertical"
