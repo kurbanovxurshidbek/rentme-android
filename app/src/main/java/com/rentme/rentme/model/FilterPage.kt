@@ -6,7 +6,7 @@ data class FilterPage (
     var location: Location? = null,
     var category: String? = null,
     var model: String? = null,
-    var year: Long? = null,
+    var year: Int? = null,
     var price: PriceFilter? = null,
     var date: Date? = null,
     var colors: List<String>? = null
