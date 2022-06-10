@@ -1,11 +1,15 @@
 package com.rentme.rentme.model
 
 data class FilterPage (
-    var color :List<String>? = null,
-    var model : String? = null,
-    var price : PriceFilter? = null,
+    var size: Long? = null,
+    var page: Long? = null,
+    var location: Location? = null,
+    var category: String? = null,
+    var model: String? = null,
+    var year: Long? = null,
+    var price: PriceFilter? = null,
     var date: Date? = null,
-    var year : Int? = null
+    var colors: List<String>? = null
 )
 
 data class PriceFilter(

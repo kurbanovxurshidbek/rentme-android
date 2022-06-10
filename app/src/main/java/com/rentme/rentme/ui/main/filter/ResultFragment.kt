@@ -62,7 +62,7 @@ class ResultFragment : Fragment() {
         items.add(Result(R.drawable.im_tesla_model3,"Model 3","25","300$",))
         items.add(Result(R.drawable.im_mersades,"AMG 2","40$","350$",))
 
-        adapter.submitData(items)
+        adapter.submitData()
     }
 
 }

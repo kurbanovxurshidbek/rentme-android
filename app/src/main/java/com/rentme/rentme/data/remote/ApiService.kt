@@ -10,6 +10,8 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import com.rentme.rentme.model.UploadAdvertisement
 import com.rentme.rentme.model.UploadAdvertisementResp
+import com.rentme.rentme.model.base.BaseResponse
+import com.rentme.rentme.model.base.BaseResponseList
 import okhttp3.MultipartBody
 import retrofit2.http.*
 import java.io.File
@@ -25,7 +27,7 @@ interface ApiService {
     suspend fun getMainDetails(): MainPage
 
     @POST("advertisement/search")
-    suspend fun getFilterResult(@Body filterPage: FilterPage): Filter
+    suspend fun getFilterResult(@Body filterPage: FilterPage): BaseResponseList<Filter>
 
 
     @Headers("$key: $Access_key")

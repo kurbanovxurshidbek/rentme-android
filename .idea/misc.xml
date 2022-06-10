@@ -63,9 +63,14 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/shape_circle_rounded_border.xml" value="0.1295" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_features.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_filter.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_home_demo.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/fragment_result.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_car_image_view.xml" value="0.16673792218896966" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_filter_car_colors.xml" value="0.67" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_filter_model_year.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_main_ads.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_main_brands.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_result_layout.xml" value="0.16673792218896966" />
         <entry key="..\:/Users/User/AndroidStudioProjects/rentme-android/app/src/main/res/layout/item_upload_color_view.xml" value="0.1631912964641886" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/bottom_sheet_background.xml" value="0.127" />
         <entry key="..\:/Users/user/AndroidStudioProjects/rentme-android/app/src/main/res/drawable/button_border_radius.xml" value="0.1" />

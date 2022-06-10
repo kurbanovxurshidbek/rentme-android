@@ -13,14 +13,18 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.gson.Gson
 import com.rentme.rentme.R
+import com.rentme.rentme.adapter.BrandsAdapter
 import com.rentme.rentme.adapter.ColorFilterAdapter
 import com.rentme.rentme.adapter.FilterModelYearAdapter
 import com.rentme.rentme.databinding.FragmentFilterBinding
+import com.rentme.rentme.model.Brands
 import com.rentme.rentme.model.Car
 import com.rentme.rentme.model.FilterPage
+import com.rentme.rentme.model.Model
 import com.rentme.rentme.utils.UiStateObject
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -32,8 +36,10 @@ class FilterFragment : Fragment() {
     private var _binding: FragmentFilterBinding? = null
     private val adapter by lazy { ColorFilterAdapter() }
     private val adapter_cy by lazy { FilterModelYearAdapter() }
+    private val brandsAdapter by lazy { BrandsAdapter() }
     private val viewModel: FilterViewModel by viewModels()
-    private var color = 0
+
+    private lateinit var rvMainBrands: RecyclerView
 
     private var filterPage = FilterPage()
 
@@ -55,14 +61,19 @@ class FilterFragment : Fragment() {
 
         initSpinnerModel()
 
+        getAllBrands()
+
         initView()
         dataRangePickerView()
         setupObservers()
 
         binding.btnResult.setOnClickListener{
-            viewModel.getFilterResult(filterPage)
-
+            openResultPage()
         }
+    }
+
+    private fun openResultPage() {
+        viewModel.getFilterResult(filterPage)
     }
 
     private fun setupObservers() {
@@ -74,6 +85,7 @@ class FilterFragment : Fragment() {
                     }
                     is UiStateObject.SUCCESS -> {
                         findNavController().navigate(R.id.resultFragment, bundleOf("data" to Gson().toJson(it.data)))
+
                     }
                     is UiStateObject.ERROR -> {
                         //show error
@@ -93,6 +105,12 @@ class FilterFragment : Fragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvModelYear.adapter = adapter_cy
         getAllModelYear()
+
+        rvMainBrands = binding.rvBrands
+        rvMainBrands.apply {
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = brandsAdapter
+        }
 
         binding.ivBackToDetails.setOnClickListener {
             requireActivity().onBackPressed()
@@ -133,6 +151,21 @@ class FilterFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun getAllBrands(){
+        val brands = ArrayList<Brands>()
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/tesla-logo.png", name = "Tesla", models = arrayListOf(
+            Model()
+        )))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/bmw-logo.png", name = "BMW", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/ferrari-logo.png", name = "Ferrari", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/ford-logo.png", name = "Ford", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/porsche-logo.png", name = "Porsche", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/lamborghini-logo.png", name = "Lamborghini", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/toyota-logo.png", name = "toyota", models = arrayListOf(Model())))
+
+        brandsAdapter.submitData(brands)
     }
 
     private fun getAllColors() {

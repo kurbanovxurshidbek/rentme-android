@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rentme.rentme.model.FilterPage
 import com.rentme.rentme.model.MainPage
+import com.rentme.rentme.model.base.BaseResponseList
 import com.rentme.rentme.model.filtermodel.Filter
 import com.rentme.rentme.repository.FilterRepository
 import com.rentme.rentme.repository.MainRepository
@@ -23,7 +24,7 @@ class FilterViewModel @Inject constructor(
 //        getMainData()
 //    }
 
-    private val _filterState = MutableStateFlow<UiStateObject<Filter>>(UiStateObject.EMPTY)
+    private val _filterState = MutableStateFlow<UiStateObject<BaseResponseList<Filter>>>(UiStateObject.EMPTY)
     val filterState = _filterState
 
     fun getFilterResult(filterPage: FilterPage) = viewModelScope.launch {

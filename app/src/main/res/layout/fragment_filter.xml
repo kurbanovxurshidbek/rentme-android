@@ -79,9 +79,22 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_brands"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_main_brands" />
+
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -262,86 +275,6 @@
 
             </LinearLayout>
 
-<!--            <LinearLayout-->
-<!--                android:layout_marginTop="15dp"-->
-<!--                android:orientation="horizontal"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-
-
-<!--                <TextView-->
-<!--                    android:text="@string/str_min"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_gravity="center_vertical"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-
-<!--                &lt;!&ndash;                <TextView&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:text="($)"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:layout_gravity="center_vertical"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:textStyle="bold"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:textSize="18sp"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:textColor="@color/black"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:layout_height="wrap_content"/>&ndash;&gt;-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:layout_marginHorizontal="20dp"-->
-<!--                    android:background="@drawable/filter_items_borders"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="40dp">-->
-
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/et_minCost"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:background="@drawable/filter_items_borders"-->
-<!--                        android:gravity="center" />-->
-
-<!--                </LinearLayout>-->
-
-<!--                <TextView-->
-<!--                    android:text="@string/str_max"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:layout_gravity="center_vertical"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:gravity="center"-->
-<!--                    android:layout_marginHorizontal="20dp"-->
-<!--                    android:background="@drawable/filter_rounded_corner"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="40dp">-->
-
-
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/et_maxCost"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"/>-->
-
-<!--                    &lt;!&ndash;                    <TextView&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:text="$"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:textStyle="bold"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:textSize="18sp"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:textColor="@color/black"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:layout_height="wrap_content"/>&ndash;&gt;-->
-
-<!--                </LinearLayout>-->
-
-<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_marginTop="20dp"
