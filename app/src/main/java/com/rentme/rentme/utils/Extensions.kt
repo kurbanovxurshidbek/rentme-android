@@ -14,7 +14,7 @@ object Extensions {
 
     @SuppressLint("SimpleDateFormat")
     fun toDateFromTimestamp(timestamp: Long): String{
-        val mFormat = SimpleDateFormat("yyyy-MM-DD hh:mm:ss", Locale.ENGLISH)
+        val mFormat = SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSS'Z'", Locale.ENGLISH)
         return mFormat.format(Date(timestamp))
     }
 }
