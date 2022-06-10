@@ -47,7 +47,7 @@ object ServerModule {
             val builder = chain.request().newBuilder()
             builder.header("Content-Type", "application/json")
 //            builder.header("Accept", "application/json")
-            builder.header("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIrOTk4OTkwMzYyNjA5Iiwicm9sZXMiOlsiVVNFUiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU2NjM4MDQxfQ.vVDsHDdkf46RTk_Miy6yFu27wfQfMhqxXAMj78qNrOU")
+            builder.header("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIrOTk4OTkwMzYyNjA5Iiwicm9sZXMiOlsiVVNFUiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU2NjY1OTQ5fQ.NFslDj4K4BwZ6m_fbebezuvUY6YPSxFVcZkPpHHQJ8w")
             //   if (sharedPref.user != ""){
             //     builder.header("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIrOTk4OTQxMTEwNzE3Iiwicm9sZXMiOlsiQ0xJRU5UIl0sImV4cCI6MTY1NTA0OTkyMn0.jmnpKdM0Dub-ylE_LesdGWXpmzhHGGr5DcrZj7bRYJI")
             //  }
