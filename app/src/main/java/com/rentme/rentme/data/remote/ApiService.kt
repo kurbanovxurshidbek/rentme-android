@@ -1,6 +1,5 @@
 package com.rentme.rentme.data.remote
 
-import com.rentme.rentme.model.Car
 import com.rentme.rentme.model.FilterPage
 import com.rentme.rentme.model.FileResponse
 import com.rentme.rentme.model.MainPage
@@ -23,11 +22,11 @@ interface ApiService {
     suspend fun getFilterResult(@Body filterPage: FilterPage): BaseResponseList<Filter>
 
 
-    @POST("/advertisement/create")
+    @POST("advertisement/create")
     suspend fun createAdvertisement(@Body advertisement: UploadAdvertisement) : UploadAdvertisementResp
 
     @Multipart
-    @POST("/file")
+    @POST("file")
     suspend fun createFile(@Part file: List<MultipartBody.Part>) : FileResponse
 
 }

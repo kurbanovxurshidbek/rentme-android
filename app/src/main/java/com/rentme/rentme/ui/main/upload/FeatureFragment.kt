@@ -42,10 +42,10 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.File
 import java.io.FileOutputStream
+import java.text.SimpleDateFormat
 import java.time.Year
+import java.time.format.DateTimeFormatter
 
-
-// val date = SimpleDateFormat("dd-MM-yyyy").parse(binding.tvDate.text.toString())
 
 @AndroidEntryPoint
 class FeatureFragment : Fragment() {
@@ -135,6 +135,9 @@ class FeatureFragment : Fragment() {
                     is UiStateObject.LOADING -> {}
                     is UiStateObject.SUCCESS -> {
                         carImageUrls.addAll(it.data.data.data)
+                        for (s in carImageUrls){
+                            Log.d("TAGurl", "URL: $s")
+                        }
                         carImageAdapter.items.clear()
                         carImageAdapter.saveCarImageStorage(carImages)
                     }
@@ -166,26 +169,34 @@ class FeatureFragment : Fragment() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    @SuppressLint("SimpleDateFormat")
     private fun openMyAddsFragment(){
         val checkPrice = ((binding.llDailyPrice.visibility == View.VISIBLE && binding.edtPriceDaily.text.isNotEmpty())
                 || binding.llDailyPrice.visibility == View.GONE)
                 && ((binding.llMonthlyPrice.visibility == View.VISIBLE && binding.edtPriceMonthly.text.isNotEmpty())
                 || binding.llMonthlyPrice.visibility == View.GONE)
-        if (checkPrice && carImageUrls.isNotEmpty() && carImageUrls.size > 1){
+        if (checkPrice && carImageUrls.isNotEmpty() && carImageUrls.size > 1 && carImageUrls.size == carImages.size - 1){
             if (binding.llDailyPrice.visibility == View.VISIBLE)
                 prices.add(Price(binding.edtPriceDaily.text.toString().toInt(), "DAILY"))
             if (binding.llMonthlyPrice.visibility == View.VISIBLE)
                 prices.add(Price(binding.edtPriceMonthly.text.toString().toInt(), "MONTHLY"))
-            val transport = Transport( selectModelName, selectYear.toLong()
+            val transport = Transport( selectModelName, selectYear.toInt()
             ,selectManagementSystem(), selectFuelType(), selectColorName, selectAllImageUrls(carImageUrls), checkAdditional())
             uploadAdvertisement?.description = binding.edtDescription.text.toString()
             uploadAdvertisement?.prices = prices
             uploadAdvertisement?.transport = transport
             viewModel.createAdvertisement(uploadAdvertisement!!)
+            val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+            val consultationDate = sdf.format(binding.tvStartDate.text.toString())
+            uploadAdvertisement?.startDate = consultationDate
+            Log.d(TAG, "openMyAddsFragment: $uploadAdvertisement")
         }else{
             Toast.makeText(requireContext(), getString(R.string.str_fill_all_fields), Toast.LENGTH_SHORT).show()
         }
     }
+
+
 
     /**
      * Pick photo using FishBun library

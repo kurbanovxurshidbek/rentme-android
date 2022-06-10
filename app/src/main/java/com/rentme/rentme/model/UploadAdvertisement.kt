@@ -5,7 +5,7 @@ data class UploadAdvertisement(
     var prices: List<Price>? = null,
     val category: String? = null,
     val location: Location? = null,
-    val startDate: String? = null,
+    var startDate: String? = null,
     val minDuration: Long? = null,
     val maxDuration: Long? = null,
     var transport: Transport? = null
@@ -29,7 +29,7 @@ data class Price(
 
 data class Transport(
     val model: String? = null,
-    val year: Long? = null,
+    val year: Int? = null,
     val transmission: String? = null,
     val fuelType: String? = null,
     val color: String? = null,
