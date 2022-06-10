@@ -1,6 +1,6 @@
 package com.rentme.rentme.model
 
-import java.io.Serializable
+import com.rentme.rentme.model.base.Error
 
 data class UploadAdvertisement(
     var description: String? = null,
@@ -14,12 +14,15 @@ data class UploadAdvertisement(
 )
 
 data class UploadAdvertisementResp(
-    val accessTokenExpiry: Long,
-    val refreshTokenExpiry: Long,
-    val issuedAt: Long,
-    val accessToken: String,
-    val refreshToken: String,
-    val first: Boolean
+    val data: UploadARespHelper? = null,
+    val status: Int? = null
+)
+
+data class UploadARespHelper(
+    val data: Int? = null,
+    val success: Boolean? = null,
+    val totalCount: Int? = null,
+    val error: Error? = null
 )
 
 data class Location(
@@ -34,7 +37,6 @@ data class Price(
 )
 
 data class Transport(
-    val transportType: String? = null,
     val model: String? = null,
     val year: Long? = null,
     val transmission: String? = null,

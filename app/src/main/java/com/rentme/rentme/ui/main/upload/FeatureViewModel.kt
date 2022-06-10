@@ -1,5 +1,6 @@
 package com.rentme.rentme.ui.main.upload
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rentme.rentme.model.FileResponse
@@ -40,6 +41,7 @@ class FeatureViewModel @Inject constructor(
         _fileState.value = UiStateObject.LOADING
         try {
             val fileResp = featureRepository.createFile(files)
+            Log.d("TAG@@@", "createFile: $fileResp")
             _fileState.value = UiStateObject.SUCCESS(fileResp)
         }catch (e: Exception){
             _fileState.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")

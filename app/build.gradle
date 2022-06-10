@@ -56,6 +56,9 @@ dependencies {
     // Google Services
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
+    // Google maps
+    implementation 'com.google.android.libraries.places:places:2.6.0'
+
     //sms verification layout gradle
     implementation "com.github.fraggjkee:sms-confirmation-view:1.6.0"
 

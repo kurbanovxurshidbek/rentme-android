@@ -87,6 +87,7 @@ class UploadFragment : Fragment() {
             && binding.maxCountTime.text.isNotEmpty()
         ) {
             if (minTimeHelper < maxTimeHelper){
+                location = Location(binding.tvLocation.text.toString(), null, null)
                 val uploadAdvertisement = UploadAdvertisement(
                     null, null, carCategory, location, binding.tvDate.text.toString(),
                     minTimeHelper.toLong(), maxTimeHelper.toLong(), null
