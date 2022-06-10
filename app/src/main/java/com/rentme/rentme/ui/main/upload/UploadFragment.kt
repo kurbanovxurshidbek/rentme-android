@@ -24,6 +24,7 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
+import com.rentme.rentme.model.Category
 import com.rentme.rentme.model.Location
 import com.rentme.rentme.model.UploadAdvertisement
 import java.text.SimpleDateFormat
@@ -86,8 +87,8 @@ class UploadFragment : Fragment() {
         ) {
             if (minTimeHelper < maxTimeHelper){
                 val uploadAdvertisement = UploadAdvertisement(
-                    null, null, carCategory, location, binding.tvDate.text.toString(),
-                    minTimeHelper.toLong(), maxTimeHelper.toLong(), null
+                    null, null, Category.CAR, location, binding.tvDate.text.toString(),
+                    minTimeHelper.toInt(), maxTimeHelper.toInt(), null
                 )
                 findNavController().navigate(R.id.featureFragment,
                     bundleOf("uploadAdvertisement" to Gson().toJson(uploadAdvertisement)))
@@ -277,7 +278,7 @@ class UploadFragment : Fragment() {
 
     private fun selectTypeSpinner() {
         val types: ArrayList<String> = ArrayList()
-        types.add("CAR")
+        types.add(Category.CAR.toString())
 
         binding.spnType.adapter =
             ArrayAdapter<String>(requireContext(), R.layout.spinner_item_view, types)
