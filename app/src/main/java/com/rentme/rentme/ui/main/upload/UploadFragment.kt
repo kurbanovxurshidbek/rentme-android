@@ -2,9 +2,6 @@ package com.rentme.rentme.ui.main.upload
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -16,7 +13,6 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.google.gson.Gson
@@ -28,8 +24,10 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentUploadBinding
+import com.rentme.rentme.model.Category
 import com.rentme.rentme.model.Location
 import com.rentme.rentme.model.UploadAdvertisement
+import java.text.SimpleDateFormat
 import kotlin.collections.ArrayList
 
 class UploadFragment : Fragment() {
@@ -74,6 +72,7 @@ class UploadFragment : Fragment() {
         }
         fragmentManager?.setFragmentResultListener("locationResult", viewLifecycleOwner) { requestKey, result ->
             binding.tvLocation.text = result.getString("location", "Select Location")
+            location = result.getSerializable("mLocation") as Location
         }
 
     }
@@ -88,8 +87,8 @@ class UploadFragment : Fragment() {
         ) {
             if (minTimeHelper < maxTimeHelper){
                 val uploadAdvertisement = UploadAdvertisement(
-                    null, null, carCategory, location, binding.tvDate.text.toString(),
-                    minTimeHelper.toLong(), maxTimeHelper.toLong(), null
+                    null, null, Category.CAR, location, binding.tvDate.text.toString(),
+                    minTimeHelper.toInt(), maxTimeHelper.toInt(), null
                 )
                 findNavController().navigate(R.id.featureFragment,
                     bundleOf("uploadAdvertisement" to Gson().toJson(uploadAdvertisement)))
@@ -279,8 +278,7 @@ class UploadFragment : Fragment() {
 
     private fun selectTypeSpinner() {
         val types: ArrayList<String> = ArrayList()
-        types.add("Sedan")
-        types.add("Truck")
+        types.add(Category.CAR.toString())
 
         binding.spnType.adapter =
             ArrayAdapter<String>(requireContext(), R.layout.spinner_item_view, types)

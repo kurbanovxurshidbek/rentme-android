@@ -41,7 +41,8 @@ class HomeFragment : Fragment() {
     private lateinit var rvMainDaily: RecyclerView
     private lateinit var rvMainLongTerm: RecyclerView
     private val adsAdapter by lazy { HomeAdsAdapter() }
-    private val subAdapter by lazy { SubMainAdapter() }
+    private val latestAdapter by lazy { SubMainAdapter() }
+    private val longTermAdapter by lazy { SubMainAdapter() }
     private val resultAdapter by lazy { ResultAdapter() }
     private val brandsAdapter by lazy { BrandsAdapter() }
 
@@ -97,7 +98,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initViews() {
-        subAdapter.onClick = { result ->
+        latestAdapter.onClick = { result ->
             findNavController().navigate(R.id.detailsFragment)
         }
 
@@ -115,18 +116,18 @@ class HomeFragment : Fragment() {
         rvMainLatest = binding.rvMainLatest
         rvMainLatest.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        rvMainLatest.adapter = subAdapter
+        rvMainLatest.adapter = latestAdapter
 
         rvMainDaily = binding.rvMainDaily
         rvMainDaily.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         rvMainDaily.adapter = resultAdapter
-        rvMainDaily.addItemDecoration(SpacesItemDecoration(16))
+        rvMainDaily.addItemDecoration(SpacesItemDecoration(30))
 
         rvMainLongTerm = binding.rvMainLongTerm
         rvMainLongTerm.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        rvMainLongTerm.adapter = subAdapter
+        rvMainLongTerm.adapter = longTermAdapter
 
         rvMainBrands = binding.rvBrands
         rvMainBrands.apply {
@@ -190,7 +191,8 @@ class HomeFragment : Fragment() {
 
                     }
                     is UiStateObject.SUCCESS -> {
-//                        Log.d("Network", "SUCCESS -- ${it.data}")
+                        latestAdapter.submitData(it.data.data.lastAdvertisements!!)
+                        Log.d("Network", "SUCCESS -- ${it.data.data.lastAdvertisements!!.size}")
                     }
                     is UiStateObject.ERROR -> {
                         Log.d("Network", it.message)
@@ -205,10 +207,8 @@ class HomeFragment : Fragment() {
         val ads = ArrayList<Int>()
         ads.add(R.drawable.im_banner_2)
         ads.add(R.drawable.im_banner_1)
-        ads.add(R.drawable.im_banner_4)
-//        ads.add(R.drawable.im_banner_5)
-//        ads.add(R.drawable.im_banner_6_0)
-        ads.add(R.drawable.im_banner_7)
+        ads.add(R.drawable.im_banner_3)
+        ads.add(R.drawable.im_banner_5)
 
         adsAdapter.submitData(ads)
     }
@@ -220,9 +220,9 @@ class HomeFragment : Fragment() {
         items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
         items.add(Result(R.drawable.im_malibu, "Malibu 3", "", "250$"))
         items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
-        resultAdapter.submitData(items)
+        //resultAdapter.submitData(items)
 //        items.add(Result())
-        subAdapter.submitData(items)
+//        longTermAdapter.submitData(items)
     }
 
     private fun getAllBrands(){

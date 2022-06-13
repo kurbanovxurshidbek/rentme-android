@@ -27,12 +27,9 @@ import com.rentme.rentme.R
 import com.rentme.rentme.adapter.CarImageAdapter
 import com.rentme.rentme.adapter.ColorAdapter
 import com.rentme.rentme.databinding.FragmentFeaturesBinding
-import com.rentme.rentme.model.Picture
-import com.rentme.rentme.model.Price
-import com.rentme.rentme.model.Transport
-import com.rentme.rentme.model.UploadAdvertisement
+import com.rentme.rentme.model.*
+import com.rentme.rentme.utils.Extensions
 import com.rentme.rentme.utils.SelectColor
-import com.rentme.rentme.utils.UiStateList
 import com.rentme.rentme.utils.UiStateObject
 import com.sangcomz.fishbun.FishBun
 import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter
@@ -45,8 +42,6 @@ import java.io.File
 import java.io.FileOutputStream
 import java.time.Year
 
-
-// val date = SimpleDateFormat("dd-MM-yyyy").parse(binding.tvDate.text.toString())
 
 @AndroidEntryPoint
 class FeatureFragment : Fragment() {
@@ -113,9 +108,17 @@ class FeatureFragment : Fragment() {
             openMyAddsFragment()
         }
         carImageAdapter = CarImageAdapter()
+        carImageAdapter.items.add(null)
         binding.rvCarPhotos.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL, false)
         binding.rvCarPhotos.adapter = carImageAdapter
-        binding.ivAddPhoto.setOnClickListener { pickFishBunCarImages() }
+        carImages.add(Uri.EMPTY)
+        carImageAdapter.clickAddCarImage = {
+            if (carImages.size < 9) pickFishBunCarImages()
+        }
+        carImageAdapter.clickClear = { position ->
+            carImageUrls.removeAt(position)
+            carImages.removeAt(position)
+        }
 
         setupObservers()
 
@@ -127,7 +130,10 @@ class FeatureFragment : Fragment() {
                 when(it){
                     is UiStateObject.LOADING -> {}
                     is UiStateObject.SUCCESS -> {
-                        carImageUrls.addAll(it.data.fileUrl?.urls!!)
+                        carImageUrls.addAll(it.data.data.data)
+                        for (s in carImageUrls){
+                            Log.d("TAGurl", "URL: $s")
+                        }
                         carImageAdapter.items.clear()
                         carImageAdapter.saveCarImageStorage(carImages)
                     }
@@ -146,10 +152,12 @@ class FeatureFragment : Fragment() {
                         is UiStateObject.LOADING -> {}
                         is UiStateObject.SUCCESS -> {
                             Toast.makeText(requireContext(), "This Advertisement is Created", Toast.LENGTH_SHORT).show()
+                            findNavController().navigateUp()
+                            findNavController().navigateUp()
                             findNavController().navigate(R.id.myAddsFragment)
                         }
                         is UiStateObject.ERROR -> {
-                            Log.d(TAG, it.message)
+                            Log.d(TAG, "Error:" + it.message)
                         }
                         else -> Unit
                     }
@@ -159,26 +167,34 @@ class FeatureFragment : Fragment() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    @SuppressLint("SimpleDateFormat")
     private fun openMyAddsFragment(){
         val checkPrice = ((binding.llDailyPrice.visibility == View.VISIBLE && binding.edtPriceDaily.text.isNotEmpty())
                 || binding.llDailyPrice.visibility == View.GONE)
                 && ((binding.llMonthlyPrice.visibility == View.VISIBLE && binding.edtPriceMonthly.text.isNotEmpty())
                 || binding.llMonthlyPrice.visibility == View.GONE)
-        if (checkPrice && carImageUrls.isNotEmpty() && carImageUrls.size > 1){
+        if (checkPrice && carImageUrls.isNotEmpty() && carImageUrls.size > 1 && carImageUrls.size == carImages.size - 1){
+            prices.clear()
             if (binding.llDailyPrice.visibility == View.VISIBLE)
-                prices.add(Price(binding.edtPriceDaily.text.toString().toInt(), "DAILY"))
+                prices.add(Price(binding.edtPriceDaily.text.toString().toInt(), Type.DAILY))
             if (binding.llMonthlyPrice.visibility == View.VISIBLE)
-                prices.add(Price(binding.edtPriceMonthly.text.toString().toInt(), "MONTHLY"))
-            val transport = Transport(null, selectModelName, selectYear.toLong()
+                prices.add(Price(binding.edtPriceMonthly.text.toString().toInt(), Type.MONTHLY))
+            val transport = Transport( selectModelName, selectYear.toInt()
             ,selectManagementSystem(), selectFuelType(), selectColorName, selectAllImageUrls(carImageUrls), checkAdditional())
             uploadAdvertisement?.description = binding.edtDescription.text.toString()
             uploadAdvertisement?.prices = prices
             uploadAdvertisement?.transport = transport
             viewModel.createAdvertisement(uploadAdvertisement!!)
+            val timeStamp = Extensions.toTimestamp(binding.tvStartDate.text.toString(), "dd-MM-yyyy")
+            uploadAdvertisement?.startDate = Extensions.toDateFromTimestamp(timeStamp, "yyyy-MM-dd'T'hh:mm:ss.SSS'Z'")
+            Log.d(TAG, "openMyAddsFragment: $uploadAdvertisement")
         }else{
             Toast.makeText(requireContext(), getString(R.string.str_fill_all_fields), Toast.LENGTH_SHORT).show()
         }
     }
+
+
 
     /**
      * Pick photo using FishBun library
@@ -197,8 +213,10 @@ class FeatureFragment : Fragment() {
     private val photoLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         if (it.resultCode == Activity.RESULT_OK){
             allPhotos = it.data?.getParcelableArrayListExtra(FishBun.INTENT_PATH) ?: arrayListOf()
-            carImageAdapter.items.addAll(allPhotos)
             carImages.addAll(allPhotos)
+            carImageAdapter.items.clear()
+            carImageAdapter.state = false
+            carImageAdapter.items.addAll(carImages)
 
             val imageFiles = getFileList(allPhotos)
             viewModel.createFile(imageFiles)
@@ -241,12 +259,21 @@ class FeatureFragment : Fragment() {
 
     private fun selectModelSpinner(){
         val models: ArrayList<String> = ArrayList()
+        models.add("Subaru Outback")
+        models.add("Suzuki Ciaz")
         models.add("Malibu")
         models.add("Captiva")
-        models.add("Nexia")
+        models.add("Gentra")
+        models.add("Lacetti")
         models.add("Spark")
+        models.add("Camaro")
+        models.add("Blazer")
+        models.add("Tahoe")
+        models.add("Tracker")
+        models.add("Trailblazer")
         models.add("Matiz")
-        models.add("Damas")
+        models.add("Vintage")
+        models.add("Tico")
 
         binding.spnModels.adapter = ArrayAdapter<String>(requireContext(), R.layout.spinner_item_view, models)
         binding.spnModels.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -274,16 +301,16 @@ class FeatureFragment : Fragment() {
         }
     }
 
-    private fun selectManagementSystem(): String{
+    private fun selectManagementSystem(): Transmission{
         val selectedId: Int = binding.systemRadioGroup.checkedRadioButtonId
-        if (selectedId == R.id.system_radio_mechanical) return "MECHANICAL"
-        return "AUTOMATIC"
+        if (selectedId == R.id.system_radio_mechanical) return Transmission.MANUAL
+        return Transmission.AUTOMATIC
     }
 
-    private fun selectFuelType(): String{
+    private fun selectFuelType(): FuelType{
         val selectedId: Int = binding.fuelRadioGroup.checkedRadioButtonId
-        if (selectedId == R.id.fuel_radio_petrol) return "PETROL"
-        return "PETROL/GAS"
+        if (selectedId == R.id.fuel_radio_petrol) return FuelType.PETROL
+        return FuelType.GAS
     }
 
     private fun selectAllImageUrls(images: ArrayList<String>) : ArrayList<Picture>{
@@ -309,7 +336,8 @@ class FeatureFragment : Fragment() {
     private fun getFile(uri: Uri): MultipartBody.Part {
         val ins = requireContext().contentResolver.openInputStream(uri)
 
-        val file = File.createTempFile("file", ".jpg",
+        val file = File.createTempFile(
+            "file", ".jpg",
             requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         )
 
@@ -318,8 +346,7 @@ class FeatureFragment : Fragment() {
         ins?.close()
         fileOutputStream.close()
         val reqFile = RequestBody.create(MediaType.parse("image/jpg"), file)
-        val body = MultipartBody.Part.createFormData("file", file.name, reqFile)
-        return body
+        return MultipartBody.Part.createFormData("file", file.name, reqFile)
     }
 
 }

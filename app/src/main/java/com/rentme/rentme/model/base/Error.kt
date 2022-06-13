@@ -1,6 +1,9 @@
 package com.rentme.rentme.model.base
 
 data class Error(
-    val error: String,
-    val message: String
+    val timestamp: String? = null,
+    val status: Long? = null,
+    val error: String? = null,
+    val message: String? = null,
+    val path: String? = null
 )

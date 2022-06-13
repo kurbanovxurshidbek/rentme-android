@@ -92,8 +92,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
-                    android:text="Toshkent"
                     android:singleLine="true"
+                    android:text="Toshkent"
                     android:textColor="@color/second_text_color"
                     android:textSize="@dimen/b_text_16" />
 
@@ -212,58 +212,28 @@
 
             </LinearLayout>
 
-            <androidx.core.widget.NestedScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_car_photos"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content" />
 
-                    <LinearLayout
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/ll_background_date_month"
-                        android:padding="1dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/ll_background_rounded_border"
-                            android:gravity="center">
-
-                            <ImageView
-                                android:id="@+id/iv_add_photo"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_camera_add_svgrepo_com"
-                                app:tint="@color/orange_main_01" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_car_photos"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp" />
-
-                </LinearLayout>
-
-            </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/str_description"
-                android:textColor="@color/black"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:textSize="@dimen/b_text_16" />
+                android:text="@string/str_description"
+                android:textColor="@color/black"
+                android:textSize="@dimen/b_text_16"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -281,9 +251,9 @@
                         android:id="@+id/edt_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/second_text_color"
-                        android:hint="@string/str_enter_description"
                         android:background="@color/white"
+                        android:hint="@string/str_enter_description"
+                        android:textColor="@color/second_text_color"
                         android:textSize="@dimen/b_text_16" />
 
                 </androidx.core.widget.NestedScrollView>
@@ -308,11 +278,11 @@
                 <LinearLayout
                     android:layout_width="130dp"
                     android:layout_height="36dp"
+                    android:layout_marginStart="10dp"
                     android:background="@drawable/ll_background_rounded_border"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingStart="5dp"
-                    android:layout_marginStart="10dp">
+                    android:paddingStart="5dp">
 
                     <Spinner
                         android:id="@+id/spn_year"
@@ -385,7 +355,7 @@
                                 android:background="@color/white"
                                 android:gravity="center"
                                 android:inputType="number"
-                                android:maxLength="7"
+                                android:maxLength="6"
                                 android:minWidth="60dp"
                                 android:textColor="@color/second_text_color"
                                 android:textSize="@dimen/b_text_16" />
@@ -478,8 +448,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:buttonTint="@color/orange_main_01"
-                    android:text="@string/str_mechanical"
                     android:checked="true"
+                    android:text="@string/str_mechanical"
                     android:textColor="@color/second_text_color"
                     android:textSize="14sp" />
 
@@ -515,8 +485,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:checked="true"
                     android:buttonTint="@color/orange_main_01"
+                    android:checked="true"
                     android:text="@string/str_petrol"
                     android:textColor="@color/second_text_color"
                     android:textSize="14sp" />

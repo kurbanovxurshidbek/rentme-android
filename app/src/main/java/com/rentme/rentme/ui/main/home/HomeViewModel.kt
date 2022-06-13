@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rentme.rentme.model.MainPage
+import com.rentme.rentme.model.base.BaseResponse
+import com.rentme.rentme.model.base.BaseResponseObject
 import com.rentme.rentme.repository.MainRepository
 import com.rentme.rentme.utils.NetworkHelper
 import com.rentme.rentme.utils.UiStateObject
@@ -21,7 +23,7 @@ class HomeViewModel @Inject constructor(
 //        getMainData()
 //    }
 
-    private val _homeState = MutableStateFlow<UiStateObject<MainPage>>(UiStateObject.EMPTY)
+    private val _homeState = MutableStateFlow<UiStateObject<BaseResponseObject<MainPage>>>(UiStateObject.EMPTY)
     val homeState = _homeState
 
     fun getMainData() = viewModelScope.launch {
@@ -29,19 +31,20 @@ class HomeViewModel @Inject constructor(
         if (networkHelper.isNetWorkConnected()) {
             Log.d("Network", "Online")
             try {
-                val mainData = mainRepository.getMainData()
-                _homeState.value = UiStateObject.SUCCESS(mainData)
+                val mainData = mainRepository.getMainData(5)
+                Log.d("Network", "ERROR - ${mainData.data.data.lastAdvertisements!!.size.toString()}")
+                _homeState.value = UiStateObject.SUCCESS(mainData.data)
             } catch (e: Exception) {
                 _homeState.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
             }
         }else{
             Log.d("Network", "Offline")
-            try {
-                val mainData = mainRepository.getMainDateFromLocal()
-                _homeState.value = UiStateObject.SUCCESS(mainData)
-            }catch (e: Exception){
-                _homeState.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
-            }
+//            try {
+//                val mainData = mainRepository.getMainDateFromLocal()
+//                _homeState.value = UiStateObject.SUCCESS(mainData)
+//            }catch (e: Exception){
+//                _homeState.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
+//            }
 
         }
     }
