@@ -10,7 +10,7 @@ class SplashRepository @Inject constructor(
     private val modelsListDao: ModelsListDao
 ){
 
-//    suspend fun getModelsList() = apiService.getModelLists()
+    suspend fun getModelsList() = apiService.getModelLists()
 
     suspend fun saveModelsListToLocal(modelsListEntity: ModelsListEntity) = modelsListDao.saveModelsListData(modelsListEntity)
 

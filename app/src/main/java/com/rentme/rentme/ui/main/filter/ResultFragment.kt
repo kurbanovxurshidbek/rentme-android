@@ -1,10 +1,12 @@
 package com.rentme.rentme.ui.main.filter
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rentme.rentme.R
@@ -20,6 +22,17 @@ class ResultFragment : Fragment() {
 
     private val binding get() = _binding!!
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        setFragmentResultListener("model_name"){key,bundle->
+            val result = bundle.getString("data")
+            //result is the modelname of the car from SearchFragment
+            Log.d("OnRsultFragment", "onCreate: $result")
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -10,9 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.rentme.rentme.R
 import com.rentme.rentme.adapter.ResultAdapter
 import com.rentme.rentme.adapter.SearchAdapter
 import com.rentme.rentme.data.local.entity.ModelsListEntity
@@ -32,11 +37,6 @@ class SearchFragment : Fragment() {
     private val adapter by lazy { SearchAdapter() }
 
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,23 +52,50 @@ class SearchFragment : Fragment() {
 
         setUpObservers()
         initViews()
-//        getAllSearchList()
+
 
 
     }
+
+
+    //carModels  ni olib beradi
+    private fun setUpObservers() {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            searchViewModel.carModels.collect {
+                when (it) {
+                    is UiStateList.LOADING -> {}
+                    is UiStateList.SUCCESS -> {
+
+                        adapter.setData(it.data)
+
+                    }
+                    is UiStateList.ERROR -> {
+                        Log.d("SearchFragment", "Error:" + it.message)
+                    }
+                    else -> Unit
+                }
+            }
+        }
+    }
+
 
     private fun initViews() {
 
         setUpRecyclerView()
         setupUI()
+        onItemClicked()
+    }
 
-
-
-
+    private fun setUpRecyclerView() {
+        binding.rvSearch.adapter = adapter
     }
 
     private fun setupUI() {
-        binding.edtSearch.addTextChangedListener(object :TextWatcher{
+        binding.ivBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
+        binding.edtSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 //
             }
@@ -84,43 +111,12 @@ class SearchFragment : Fragment() {
     }
 
 
-    private fun setUpRecyclerView() {
-        binding.rvSearchHistory.adapter = adapter
-    }
 
-    private fun getAllSearchList() :ArrayList<ModelsListEntity>{
-        var items: ArrayList<ModelsListEntity> = ArrayList()
-        items.add(ModelsListEntity(1L,"Malibu"))
-        items.add(ModelsListEntity(2L,"Mabibu"))
-        items.add(ModelsListEntity(3L,"Masibu"))
-        items.add(ModelsListEntity(4L,"Maedibu"))
-        items.add(ModelsListEntity(5L,"Majibu"))
-        items.add(ModelsListEntity(6L,"Maribu"))
-        items.add(ModelsListEntity(7L,"Mauibu"))
-        adapter.setData(items)
-        return items
-    }
 
-    //carModels  ni olib beradi
-    private fun setUpObservers() {
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            searchViewModel.carModels.collect {
-                when (it) {
-                    is UiStateList.LOADING -> {}
-                    is UiStateList.SUCCESS -> {
-
-                        adapter.setData(getAllSearchList())
-                    }
-                    is UiStateList.ERROR -> {
-                        Log.d("SearchFragment", "Error:" + it.message)
-                    }
-                    else -> Unit
-                }
-            }
+    private fun onItemClicked() {
+        adapter.onClick = { modelsListEntity ->
+            setFragmentResult("model_name", bundleOf("data" to modelsListEntity.modelName))
+            findNavController().navigate(R.id.resultFragment)
         }
     }
-
-
-
-
-    }
+}
