@@ -73,11 +73,12 @@ class FavouriteFragment : Fragment() {
                     is UiStateObject.LOADING -> {}
                     is UiStateObject.SUCCESS -> {
 
-                        adapter.submitData(it.data.data.data)
+                        Log.d("FavouriteFragment", "Size:" + it.data.data.size.toString())
+//                        adapter.submitData(it.data.data)
 
                     }
                     is UiStateObject.ERROR -> {
-                        Log.d("SearchFragment", "Error:" + it.message)
+                        Log.d("FavouriteFragment", "Error:" + it.message)
                     }
                     else -> Unit
                 }
