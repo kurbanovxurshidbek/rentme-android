@@ -40,7 +40,7 @@ enum class Type{
 
 
 data class Transport(
-    val model: String? = null,
+    val model: Model? = null,
     val year: Int? = null,
     val transmission: Transmission? = null,
     val fuelType: FuelType? = null,
