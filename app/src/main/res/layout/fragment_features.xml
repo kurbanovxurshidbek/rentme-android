@@ -355,7 +355,7 @@
                                 android:background="@color/white"
                                 android:gravity="center"
                                 android:inputType="number"
-                                android:maxLength="7"
+                                android:maxLength="6"
                                 android:minWidth="60dp"
                                 android:textColor="@color/second_text_color"
                                 android:textSize="@dimen/b_text_16" />

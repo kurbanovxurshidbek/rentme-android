@@ -1,4 +1,4 @@
-package com.rentme.rentme.ui.main.profile
+package com.rentme.rentme.ui.main.profile.update
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

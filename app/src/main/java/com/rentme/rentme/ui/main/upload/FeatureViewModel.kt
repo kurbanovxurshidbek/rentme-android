@@ -28,7 +28,7 @@ class FeatureViewModel @Inject constructor(
             val advertisementResp = featureRepository.createAdvertisement(uploadAdvertisement)
             _featureState.value = UiStateObject.SUCCESS(advertisementResp)
         }catch (e: Exception){
-            _featureState.value = UiStateObject.ERROR(e.message ?: "No Connection")
+            _featureState.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
         }
     }
 

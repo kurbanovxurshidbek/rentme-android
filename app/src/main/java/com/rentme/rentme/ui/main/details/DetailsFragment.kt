@@ -1,10 +1,13 @@
 package com.rentme.rentme.ui.main.details
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -34,6 +37,12 @@ class DetailsFragment : Fragment() {
         const val DELAY_MS: Long = 2500 //delay in milliseconds before task is to be executed
         const val PERIOD_MS: Long = 5000 // time in milliseconds between successive task executions.
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        getModelID()
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -132,6 +141,16 @@ class DetailsFragment : Fragment() {
 
         photoList.addAll(items)
         adapter.sumbitData(photoList)
+    }
+
+
+    private fun getModelID() {
+        setFragmentResultListener("from_favourites"){key,bundle->
+            val result = bundle.getString("data")
+            //result is the modelname of the car from SearchFragment
+            Log.d("OnRsultFragment", "onCreate: $result")
+            Toast.makeText(requireContext(), "$result", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }
