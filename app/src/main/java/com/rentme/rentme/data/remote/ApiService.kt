@@ -1,14 +1,10 @@
 package com.rentme.rentme.data.remote
 
-import com.rentme.rentme.model.FilterPage
-import com.rentme.rentme.model.FileResponse
-import com.rentme.rentme.model.MainPage
+import com.rentme.rentme.model.*
 import com.rentme.rentme.model.filtermodel.Advertisement
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
-import com.rentme.rentme.model.UploadAdvertisement
-import com.rentme.rentme.model.UploadAdvertisementResp
 import com.rentme.rentme.model.base.BaseResponse
 import com.rentme.rentme.model.base.BaseResponseObject
 import com.rentme.rentme.model.base.BaseResponseList
@@ -33,6 +29,11 @@ interface ApiService {
 
     @GET("transport-model/list")
     suspend fun getModelLists(): BaseResponse<BaseResponseList<String>>
+
+    @GET("advertisement/list-saved")
+    suspend fun getFavouriteModels(): BaseResponse<BaseResponseList<FavouriteModel>>
+
+
 
 
 

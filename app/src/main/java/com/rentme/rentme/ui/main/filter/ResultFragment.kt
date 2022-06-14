@@ -28,13 +28,13 @@ class ResultFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val arg = arguments?.getString("data") ?: ""
-        list = arrayListOf(Gson().fromJson(arg,Advertisement::class.java))
+
 
         setFragmentResultListener("model_name"){key,bundle->
             val result = bundle.getString("data")
             //result is the modelname of the car from SearchFragment
             Log.d("OnRsultFragment", "onCreate: $result")
+            Toast.makeText(requireContext(), "$result", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -50,7 +50,7 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Toast.makeText(requireContext(), list.toString(), Toast.LENGTH_SHORT).show()
+//        Toast.makeText(requireContext(), list.toString(), Toast.LENGTH_SHORT).show()
         initViews()
         getAllResult()
     }
