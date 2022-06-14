@@ -49,17 +49,17 @@ class InformationFragment : Fragment() {
     }
 
     private fun initView() {
-         binding.registration.setOnClickListener {
         binding.registration.setOnClickListener {
+            binding.registration.setOnClickListener {
 //            if (binding.edtFirstNameChild.text.toString().) {
 //
 //            }
-            startMainActivity()
+                startMainActivity()
+            }
+            binding.edtFirstNameChild.addTextChangedListener(textWatcher)
+            binding.edtLastNameChild.addTextChangedListener(textWatcher)
         }
-        binding.edtFirstNameChild.addTextChangedListener(textWatcher)
-        binding.edtLastNameChild.addTextChangedListener(textWatcher)
     }
-
     private val textWatcher = object : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
         }
