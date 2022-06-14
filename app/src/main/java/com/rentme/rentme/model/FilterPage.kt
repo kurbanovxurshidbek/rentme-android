@@ -19,6 +19,6 @@ data class PriceFilter(
 )
 
 data class Date(
-    var startData : Int? = null,
-    var endData : Int? = null
+    var startData : Long? = null,
+    var endData : Long? = null
 )

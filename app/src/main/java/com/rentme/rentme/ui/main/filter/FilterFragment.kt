@@ -1,6 +1,7 @@
 package com.rentme.rentme.ui.main.filter
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,6 +27,7 @@ import com.rentme.rentme.model.Car
 import com.rentme.rentme.model.FilterPage
 import com.rentme.rentme.model.Model
 import com.rentme.rentme.utils.SelectColor
+import com.rentme.rentme.utils.UiStateList
 import com.rentme.rentme.utils.UiStateObject
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -70,6 +72,7 @@ class FilterFragment : Fragment() {
         setupObservers()
 
         binding.btnResult.setOnClickListener{
+            Log.d("TAG", "onViewCreated: sadd")
             openResultPage()
         }
     }
@@ -77,22 +80,22 @@ class FilterFragment : Fragment() {
     private fun openResultPage() {
         var filterPage = FilterPage(colors = carColors, year = modelYear)
         viewModel.getFilterResult(filterPage)
-
     }
 
     private fun setupObservers() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.filterState.collect{
                 when(it){
-                    is UiStateObject.LOADING -> {
+                    is UiStateList.LOADING -> {
                         //show progress
                     }
-                    is UiStateObject.SUCCESS -> {
-                        findNavController().navigate(R.id.resultFragment, bundleOf("data" to Gson().toJson(it.data.data)))
-
+                    is UiStateList.SUCCESS -> {
+                        findNavController().navigate(R.id.resultFragment, bundleOf("data" to Gson().toJson(it.data)))
                     }
-                    is UiStateObject.ERROR -> {
-                        //show error
+                    is UiStateList.ERROR -> {
+                        //show errorr
+                        Log.d("TAG", "setupObservers: ${it.message}")
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }else -> Unit
                 }
             }
@@ -148,7 +151,7 @@ class FilterFragment : Fragment() {
 
                 // Setting up the event for when ok is clicked
                 datePicker.addOnPositiveButtonClickListener {
-                    binding.tvStartDate.text = datePicker.headerText
+                    binding.tvEndDate.text = datePicker.headerText
                     Toast.makeText(context, "${datePicker.headerText} is selected", Toast.LENGTH_LONG).show()
                 }
 

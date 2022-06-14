@@ -38,6 +38,7 @@ import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.File
@@ -323,7 +324,7 @@ class FeatureFragment : Fragment() {
         ins?.copyTo(fileOutputStream)
         ins?.close()
         fileOutputStream.close()
-        val reqFile = RequestBody.create(MediaType.parse("image/jpg"), file)
+        val reqFile = RequestBody.create("image/jpg".toMediaTypeOrNull(), file)
         return MultipartBody.Part.createFormData("file", file.name, reqFile)
     }
 
