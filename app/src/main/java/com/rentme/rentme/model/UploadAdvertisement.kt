@@ -8,7 +8,7 @@ data class UploadAdvertisement(
     var startDate: String? = null,
     val minDuration: Int? = null,
     val maxDuration: Int? = null,
-    var transport: Transport? = null
+    var transport: TransportUpload? = null
 )
 
 enum class Category{
@@ -39,7 +39,7 @@ enum class Type{
 }
 
 
-data class Transport(
+data class TransportUpload(
     val model: String? = null,
     val year: Int? = null,
     val transmission: Transmission? = null,

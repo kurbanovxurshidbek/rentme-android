@@ -180,7 +180,7 @@ class FeatureFragment : Fragment() {
                 prices.add(Price(binding.edtPriceDaily.text.toString().toInt(), Type.DAILY))
             if (binding.llMonthlyPrice.visibility == View.VISIBLE)
                 prices.add(Price(binding.edtPriceMonthly.text.toString().toInt(), Type.MONTHLY))
-            val transport = Transport( selectModelName, selectYear.toInt()
+            val transport = TransportUpload( selectModelName, selectYear.toInt()
             ,selectManagementSystem(), selectFuelType(), selectColorName, selectAllImageUrls(carImageUrls), checkAdditional())
             uploadAdvertisement?.description = binding.edtDescription.text.toString()
             uploadAdvertisement?.prices = prices
