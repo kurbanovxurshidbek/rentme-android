@@ -58,14 +58,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="16dp"
             android:background="@color/white"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
                 android:text="@string/str_location"
                 android:textColor="@color/black"
@@ -75,6 +75,7 @@
                 android:id="@+id/ll_location"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginHorizontal="@dimen/side_16"
                 android:background="@drawable/ll_background_rounded_border"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -102,8 +103,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -129,7 +131,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="16dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
@@ -166,8 +169,27 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="16dp"
+                android:text="@string/str_brands"
+                android:textColor="@color/black"
+                android:textSize="@dimen/b_text_16" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_brands"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_main_brands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
+                android:layout_marginTop="6dp"
                 android:text="@string/str_model"
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16" />
@@ -178,6 +200,7 @@
                 android:background="@drawable/ll_background_rounded_border"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
+                android:layout_marginHorizontal="@dimen/side_16"
                 android:paddingStart="10dp">
 
                 <Spinner
@@ -191,7 +214,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
@@ -228,7 +252,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="10dp"
                 android:text="@string/str_description"
                 android:textColor="@color/black"
@@ -240,6 +265,7 @@
                 android:layout_height="200dp"
                 android:background="@drawable/ll_background_date_month"
                 android:orientation="vertical"
+                android:layout_marginHorizontal="@dimen/side_16"
                 android:padding="5dp">
 
                 <androidx.core.widget.NestedScrollView
@@ -263,7 +289,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="16dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
@@ -297,7 +324,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
@@ -430,8 +458,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:text="@string/str_management_system"
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16" />
@@ -440,6 +469,7 @@
                 android:id="@+id/system_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/side_16"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -468,7 +498,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
                 android:text="@string/str_fuel"
                 android:textColor="@color/black"
@@ -478,6 +509,7 @@
                 android:id="@+id/fuel_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/side_16"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -506,7 +538,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
                 android:text="@string/str_additional_features"
                 android:textColor="@color/black"
@@ -515,6 +548,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/side_16"
                 android:orientation="horizontal">
 
                 <CheckBox
@@ -543,7 +577,8 @@
                 android:id="@+id/tv_color_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
                 android:text="@string/str_color"
                 android:textColor="@color/black"
@@ -555,6 +590,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
+                android:layout_marginHorizontal="5dp"
                 android:orientation="horizontal" />
 
             <Button
@@ -562,6 +598,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
+                android:layout_marginHorizontal="@dimen/side_16"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/button_background_rounded_border"
                 android:text="@string/str_save"

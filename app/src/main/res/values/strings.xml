@@ -122,5 +122,6 @@
     <string name="str_price_month">/month</string>
     <string name="str_call">Call</string>
     <string name="str_enter_description">Enter description</string>
+    <string name="str_brands">Brands</string>
 
 </resources>
