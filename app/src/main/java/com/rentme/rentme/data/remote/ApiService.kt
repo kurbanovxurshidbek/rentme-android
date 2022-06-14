@@ -17,7 +17,7 @@ interface ApiService {
     suspend fun getMainDetails(count: Int): BaseResponse<BaseResponseObject<MainPage>>
 
     @POST("advertisement/search")
-    suspend fun getFilterResult(@Body filterPage: FilterPage): BaseResponseList<Advertisement>
+    suspend fun getFilterResult(@Body filterPage: FilterPage): BaseResponse<BaseResponseList<Advertisement>>
 
 
     @POST("advertisement/create")
