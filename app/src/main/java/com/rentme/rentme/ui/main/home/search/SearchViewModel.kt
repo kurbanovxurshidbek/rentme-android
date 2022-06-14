@@ -1,4 +1,4 @@
-package com.rentme.rentme.ui.main.home
+package com.rentme.rentme.ui.main.home.search
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
