@@ -2,14 +2,15 @@ package com.rentme.rentme.ui.main.profile
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.rentme.rentme.R
-
 import com.rentme.rentme.databinding.FragmentProfileBinding
 import com.rentme.rentme.ui.main.MainActivity
 
@@ -29,17 +30,19 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.llMyData.setOnClickListener {
-            startInformationActivity()
+            setFragmentResult("from_profile_page", bundleOf("data" to "from_profile_page"))
+//            val intent = Intent(activity,LoginActivity::class.java)
+//            startActivity(intent)
         }
         binding.llLanguage.setOnClickListener {
             (requireActivity() as MainActivity).showBottomSHeetFragment()
 
         }
         binding.llChangePhoneNumber.setOnClickListener {
-            startUpdateActivity()
+            findNavController().navigate(R.id.updateFragment)
         }
         binding.llMyFavourite.setOnClickListener {
-            startFavouriteActivity()
+            findNavController().navigate(R.id.favouriteFragment)
         }
         binding.llLogOut.setOnClickListener {
             (requireActivity() as MainActivity).showLogOutBottomSheet()
@@ -48,22 +51,7 @@ class ProfileFragment : Fragment() {
             showInfoAboutAppDialog()
         }
         }
-    fun startInformationActivity(){
-//        val intent = Intent(requireActivity(), InformationActivity::class.java)
-//        startActivity(intent)
-        findNavController().navigate(R.id.informationFragment)
-    }
-    fun startUpdateActivity(){
-        findNavController().navigate(R.id.updateFragment)
-    }
-    fun startLocazilationActivity(){
-//        val intent = Intent(requireActivity(),LocalizationActivity::class.java)
-//        startActivity(intent)
-        findNavController().navigate(R.id.localizationFragment)
-    }
-    fun startFavouriteActivity(){
-        findNavController().navigate(R.id.favouriteFragment)
-    }
+
     private fun showInfoAboutAppDialog(){
         val dialogBuilder = AlertDialog.Builder(requireContext())
         dialogBuilder.setMessage("This is a test application for renting cars, and help people to reach their destination with the help of others. ")

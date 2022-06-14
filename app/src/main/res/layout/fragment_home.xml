@@ -78,10 +78,10 @@
                 <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@id/cl_categories"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="10dp"
                     app:spi_dotSize="6dp"
                     app:spi_dotColor="#B3C5C5C5"
                     app:spi_dotSelectedColor="@color/white"
@@ -103,13 +103,13 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
-                        android:textColorHint="#656464"
+                        android:textColorHint="#595858"
                         android:layout_weight="1"
                         android:alpha="0.8"
                         android:background="@drawable/bg_main_white_rounded_color"
                         android:drawableStart="@drawable/ic_search"
                         android:drawablePadding="10dp"
-                        android:drawableTint="@color/orange_main_01"
+                        android:drawableTint="@color/orange_main_02"
                         android:focusable="false"
                         android:hint="@string/str_search_hint_auto_type"
                         android:minHeight="44dp"
@@ -123,6 +123,7 @@
                         android:id="@+id/f_to_filter"
                         android:layout_width="44dp"
                         android:layout_height="match_parent"
+                        android:alpha="0.8"
                         android:background="@drawable/bg_main_white_rounded_color"
                         android:padding="10dp">
 
@@ -137,76 +138,94 @@
 
                 </LinearLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cl_categories"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="@id/rv_main_ads"
-                    app:layout_constraintTop_toBottomOf="@id/rv_main_ads">
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:id="@+id/cl_categories"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/rv_main_ads"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/rv_main_ads">-->
 
-                    <LinearLayout
-                        android:id="@+id/ll_category_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_rounded_border_category"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/ll_category_2">
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/ll_category_1"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:background="@drawable/bg_rounded_border_category"-->
+<!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                        app:layout_constraintRight_toLeftOf="@id/ll_category_2">-->
 
-                        <ImageView
-                            android:layout_width="@dimen/side_40"
-                            android:layout_height="@dimen/side_40"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/ic_car" />
-                    </LinearLayout>
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/side_40"-->
+<!--                            android:layout_height="@dimen/side_40"-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:src="@drawable/ic_car" />-->
+<!--                    </LinearLayout>-->
 
-                    <LinearLayout
-                        android:id="@+id/ll_category_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_rounded_border_category"
-                        app:layout_constraintLeft_toRightOf="@id/ll_category_1"
-                        app:layout_constraintRight_toLeftOf="@id/ll_category_3">
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/ll_category_2"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:background="@drawable/bg_rounded_border_category"-->
+<!--                        app:layout_constraintLeft_toRightOf="@id/ll_category_1"-->
+<!--                        app:layout_constraintRight_toLeftOf="@id/ll_category_3">-->
 
-                        <ImageView
-                            android:layout_width="@dimen/side_40"
-                            android:layout_height="@dimen/side_40"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/ic_lorry" />
-                    </LinearLayout>
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/side_40"-->
+<!--                            android:layout_height="@dimen/side_40"-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:src="@drawable/ic_lorry" />-->
+<!--                    </LinearLayout>-->
 
-                    <LinearLayout
-                        android:id="@+id/ll_category_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_rounded_border_category"
-                        app:layout_constraintLeft_toRightOf="@id/ll_category_2"
-                        app:layout_constraintRight_toLeftOf="@id/ll_category_4">
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/ll_category_3"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:background="@drawable/bg_rounded_border_category"-->
+<!--                        app:layout_constraintLeft_toRightOf="@id/ll_category_2"-->
+<!--                        app:layout_constraintRight_toLeftOf="@id/ll_category_4">-->
 
-                        <ImageView
-                            android:layout_width="@dimen/side_40"
-                            android:layout_height="@dimen/side_40"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/ic_bicycle" />
-                    </LinearLayout>
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/side_40"-->
+<!--                            android:layout_height="@dimen/side_40"-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:src="@drawable/ic_bicycle" />-->
+<!--                    </LinearLayout>-->
 
-                    <LinearLayout
-                        android:id="@+id/ll_category_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_rounded_border_category"
-                        app:layout_constraintLeft_toRightOf="@id/ll_category_3"
-                        app:layout_constraintRight_toRightOf="parent">
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/ll_category_4"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:background="@drawable/bg_rounded_border_category"-->
+<!--                        app:layout_constraintLeft_toRightOf="@id/ll_category_3"-->
+<!--                        app:layout_constraintRight_toRightOf="parent">-->
 
-                        <ImageView
-                            android:layout_width="@dimen/side_40"
-                            android:layout_height="@dimen/side_40"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/ic_motorcycle" />
-                    </LinearLayout>
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/side_40"-->
+<!--                            android:layout_height="@dimen/side_40"-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:src="@drawable/ic_motorcycle" />-->
+<!--                    </LinearLayout>-->
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_margin="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/allerta"
+                android:text="Browse By Brands"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_brands"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_main_brands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -219,9 +238,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/allerta"
                     android:text="@string/str_latest_offers"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -229,7 +249,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/allerta"
                     android:text="@string/str_show_all"
-                    android:textColor="#00ffff" />
+                    android:textColor="@color/orange_main_02" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -254,7 +274,7 @@
                     android:layout_weight="1"
                     android:text="@string/str_daily_offers"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -262,7 +282,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/allerta"
                     android:text="@string/str_show_all"
-                    android:textColor="#00ffff" />
+                    android:textColor="@color/orange_main_02" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -272,7 +292,7 @@
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="3"
-                tools:listitem="@layout/item_sub_main_vehicles" />
+                tools:listitem="@layout/item_result_layout" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -287,7 +307,7 @@
                     android:layout_weight="1"
                     android:text="@string/str_long_term_offers"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -295,7 +315,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/allerta"
                     android:text="@string/str_show_all"
-                    android:textColor="#00ffff" />
+                    android:textColor="@color/orange_main_02" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -320,7 +340,7 @@
             <!--                    android:layout_weight="1"-->
             <!--                    android:text="Oylik elonlar"-->
             <!--                    android:textColor="@color/black"-->
-            <!--                    android:textSize="18sp"-->
+            <!--                    android:textSize="16sp"-->
             <!--                    android:textStyle="bold" />-->
 
             <!--                <TextView-->

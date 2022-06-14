@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_uploadFragment_to_selectLocationFragment"
             app:destination="@id/selectLocationFragment" />
+        <action
+            android:id="@+id/action_uploadFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -78,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.rentme.rentme.ui.main.home.SearchFragment"
+        android:name="com.rentme.rentme.ui.main.home.search.SearchFragment"
         android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_resultFragment"
@@ -131,16 +134,21 @@
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.rentme.rentme.ui.main.profile.UpdateFragment"
+        android:name="com.rentme.rentme.ui.main.profile.update.UpdateFragment"
         android:label="fragment_update"
         tools:layout="@layout/fragment_update" />
     <fragment
         android:id="@+id/favouriteFragment"
-        android:name="com.rentme.rentme.ui.main.profile.FavouriteFragment"
+        android:name="com.rentme.rentme.ui.main.profile.favourite.FavouriteFragment"
         android:label="fragment_favourite"
         tools:layout="@layout/fragment_favourite" />
     <fragment
         android:id="@+id/myAddsFragment"
         android:name="com.rentme.rentme.ui.main.profile.MyAddsFragment"
         android:label="MyAddsFragment" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.rentme.rentme.ui.main.location.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
 </navigation>

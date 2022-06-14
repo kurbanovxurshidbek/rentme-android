@@ -13,29 +13,38 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.rentme.rentme.R
+import com.rentme.rentme.adapter.BrandsAdapter
 import com.rentme.rentme.adapter.HomeAdsAdapter
+import com.rentme.rentme.adapter.ResultAdapter
 import com.rentme.rentme.adapter.SubMainAdapter
 import com.rentme.rentme.databinding.FragmentHomeBinding
-import com.rentme.rentme.model.MainPage
+import com.rentme.rentme.databinding.FragmentHomeDemoBinding
+import com.rentme.rentme.model.Brands
+import com.rentme.rentme.model.Model
 import com.rentme.rentme.model.Result
+import com.rentme.rentme.ui.main.MainActivity
 import com.rentme.rentme.utils.UiStateObject
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import java.util.*
+import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentHomeDemoBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var rvMainAds: RecyclerView
+    private lateinit var rvMainBrands: RecyclerView
     private lateinit var rvMainLatest: RecyclerView
     private lateinit var rvMainDaily: RecyclerView
     private lateinit var rvMainLongTerm: RecyclerView
     private val adsAdapter by lazy { HomeAdsAdapter() }
-    private val subAdapter by lazy { SubMainAdapter() }
+    private val latestAdapter by lazy { SubMainAdapter() }
+    private val longTermAdapter by lazy { SubMainAdapter() }
+    private val resultAdapter by lazy { ResultAdapter() }
+    private val brandsAdapter by lazy { BrandsAdapter() }
 
 
     private var timer: Timer? = null
@@ -53,7 +62,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeDemoBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -62,8 +71,9 @@ class HomeFragment : Fragment() {
 
         setUpBanner()
         setUpRecyclers()
-        getAds()
+        getBanners()
         getAllResult()
+        getAllBrands()
 
         initViews()
         homeViewModel.getMainData()
@@ -74,6 +84,7 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         runAutoScrollBanner()
+        (requireActivity() as MainActivity).closeKeyBoard()
     }
 
     override fun onPause() {
@@ -87,7 +98,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initViews() {
-        subAdapter.onClick = { result ->
+        latestAdapter.onClick = { result ->
             findNavController().navigate(R.id.detailsFragment)
         }
 
@@ -99,26 +110,31 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.filterFragment)
         }
 
-        binding.llCategory1.setOnClickListener {
-            findNavController().navigate(R.id.typesFragment)
-        }
     }
 
     private fun setUpRecyclers() {
         rvMainLatest = binding.rvMainLatest
         rvMainLatest.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        rvMainLatest.adapter = subAdapter
+        rvMainLatest.adapter = latestAdapter
 
         rvMainDaily = binding.rvMainDaily
         rvMainDaily.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        rvMainDaily.adapter = subAdapter
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        rvMainDaily.adapter = resultAdapter
+        rvMainDaily.addItemDecoration(SpacesItemDecoration(30))
 
         rvMainLongTerm = binding.rvMainLongTerm
         rvMainLongTerm.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        rvMainLongTerm.adapter = subAdapter
+        rvMainLongTerm.adapter = longTermAdapter
+
+        rvMainBrands = binding.rvBrands
+        rvMainBrands.apply {
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = brandsAdapter
+//            addItemDecoration(SpacesItemDecoration(16))
+        }
     }
 
     private fun setUpBanner(){
@@ -175,7 +191,8 @@ class HomeFragment : Fragment() {
 
                     }
                     is UiStateObject.SUCCESS -> {
-//                        Log.d("Network", "SUCCESS -- ${it.data}")
+                        latestAdapter.submitData(it.data.data.lastAdvertisements!!)
+                        Log.d("Network", "SUCCESS -- ${it.data.data.lastAdvertisements!!.size}")
                     }
                     is UiStateObject.ERROR -> {
                         Log.d("Network", it.message)
@@ -186,11 +203,12 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun getAds() {
+    private fun getBanners() {
         val ads = ArrayList<Int>()
-        ads.add(R.drawable.im_tesla_model3)
-        ads.add(R.drawable.im_tesla_model3)
-        ads.add(R.drawable.im_tesla_model3)
+        ads.add(R.drawable.im_banner_2)
+        ads.add(R.drawable.im_banner_1)
+        ads.add(R.drawable.im_banner_3)
+        ads.add(R.drawable.im_banner_5)
 
         adsAdapter.submitData(ads)
     }
@@ -200,7 +218,23 @@ class HomeFragment : Fragment() {
         items.add(Result(R.drawable.im_malibu, "Malibu 2", "", "200$"))
         items.add(Result(R.drawable.im_malibu, "Malibu 3", "", "250$"))
         items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
-        items.add(Result())
-        subAdapter.submitData(items)
+        items.add(Result(R.drawable.im_malibu, "Malibu 3", "", "250$"))
+        items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
+        //resultAdapter.submitData(items)
+//        items.add(Result())
+//        longTermAdapter.submitData(items)
+    }
+
+    private fun getAllBrands(){
+        val brands = ArrayList<Brands>()
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/tesla-logo.png", name = "Tesla", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/bmw-logo.png", name = "BMW", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/ferrari-logo.png", name = "Ferrari", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/ford-logo.png", name = "Ford", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/porsche-logo.png", name = "Porsche", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/lamborghini-logo.png", name = "Lamborghini", models = arrayListOf(Model())))
+        brands.add(Brands(image = "https://www.carlogos.org/car-logos/toyota-logo.png", name = "toyota", models = arrayListOf(Model())))
+
+        brandsAdapter.submitData(brands)
     }
 }

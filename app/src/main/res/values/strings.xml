@@ -22,6 +22,7 @@
     <string name="str_next">Next</string>
     <string name="str_features">Features</string>
     <string name="str_start_date">Start date</string>
+    <string name="str_end_date">End date</string>
     <string name="str_lifetime_min">Lifetime(min)</string>
     <string name="str_type">Type</string>
     <string name="str_model">Model</string>
@@ -48,10 +49,10 @@
 
     //sherzod
     <string name="str_hello_blank_fragment">Hello blank fragment</string>
-    <string name="str_choose_language">Choose language</string>
-    <string name="str_uzbek_language">Uzbek language</string>
-    <string name="str_english_language">English language</string>
-    <string name="str_russian_language">Russian language</string>
+    <string name="str_choose_language">Choose the language</string>
+    <string name="str_uzbek_language">Uzbek</string>
+    <string name="str_english_language">English</string>
+    <string name="str_russian_language">Russian</string>
     <string name="str_phone_number">PHONE NUMBER</string>
     <string name="str_logIn_update">Log In</string>
 
@@ -121,5 +122,6 @@
     <string name="str_price_month">/month</string>
     <string name="str_call">Call</string>
     <string name="str_enter_description">Enter description</string>
+    <string name="str_brands">Brands</string>
 
 </resources>

@@ -48,7 +48,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_marginVertical="10dp"
@@ -60,151 +59,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
+                <TextView
                     android:id="@+id/edt_search"
                     android:layout_width="0dp"
                     android:layout_height="44dp"
+                    android:gravity="center_vertical"
                     android:layout_weight="1"
                     android:background="@drawable/filter_rounded_corner"
-                    android:drawableLeft="@drawable/ic_search"
-                    android:drawableRight="@drawable/ic_arrow_forward"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawableEnd="@drawable/ic_arrow_forward"
                     android:hint="Search address, city, location"
+                    android:drawablePadding="10dp"
+                    android:focusable="false"
                     android:imeOptions="actionSearch"
                     android:textColorHint="#222222"
-                    android:inputType="text"
                     android:paddingStart="8dp"
                     android:paddingEnd="6dp"
                     android:textSize="16sp" />
 
             </LinearLayout>
 
-<!--            <LinearLayout-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:orientation="vertical"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-
-<!--                <TextView-->
-<!--                    android:text="Category"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-
-<!--                <LinearLayout-->
-<!--                    android:paddingVertical="10dp"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:background="@drawable/filter_borders_radius"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:layout_height="50dp">-->
-
-<!--                        <com.google.android.material.imageview.ShapeableImageView-->
-<!--                            android:src="@drawable/ic_car"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:paddingHorizontal="10dp"-->
-<!--                            android:paddingVertical="2dp"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"/>-->
-
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:background="@drawable/filter_borders_radius"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:layout_height="50dp">-->
-
-<!--                        <com.google.android.material.imageview.ShapeableImageView-->
-<!--                            android:src="@drawable/ic_lorry"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:paddingVertical="2dp"-->
-<!--                            android:paddingHorizontal="10dp"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"/>-->
-
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:background="@drawable/filter_borders_radius"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:layout_height="50dp">-->
-
-<!--                        <com.google.android.material.imageview.ShapeableImageView-->
-<!--                            android:src="@drawable/ic_bicycle"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:paddingHorizontal="10dp"-->
-<!--                            android:paddingVertical="2dp"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"/>-->
-
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:background="@drawable/filter_borders_radius"-->
-<!--                        android:layout_marginHorizontal="10dp"-->
-<!--                        android:layout_height="50dp">-->
-
-<!--                        <com.google.android.material.imageview.ShapeableImageView-->
-<!--                            android:src="@drawable/ic_motorcycle"-->
-<!--                            android:scaleType="fitXY"-->
-<!--                            android:paddingHorizontal="10dp"-->
-<!--                            android:paddingVertical="2dp"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"/>-->
-
-<!--                    </LinearLayout>-->
-
-<!--                </LinearLayout>-->
-
-<!--            </LinearLayout>-->
-
-            <!--            <LinearLayout-->
-            <!--                android:layout_marginTop="15dp"-->
-            <!--                android:orientation="vertical"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content">-->
-
-            <TextView
-                android:text="@string/str_type"
-                android:textSize="@dimen/text_type_18"
-                android:textStyle="normal"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-
             <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/ll_background_rounded_border"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.02">
+                android:layout_height="wrap_content">
 
-                <Spinner
-                    android:id="@+id/spn_cars"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_brands"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_main_brands" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="15dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -385,86 +275,6 @@
 
             </LinearLayout>
 
-<!--            <LinearLayout-->
-<!--                android:layout_marginTop="15dp"-->
-<!--                android:orientation="horizontal"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-
-
-<!--                <TextView-->
-<!--                    android:text="@string/str_min"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_gravity="center_vertical"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-
-<!--                &lt;!&ndash;                <TextView&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:text="($)"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:layout_gravity="center_vertical"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:textStyle="bold"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:textSize="18sp"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:textColor="@color/black"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    android:layout_height="wrap_content"/>&ndash;&gt;-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:layout_marginHorizontal="20dp"-->
-<!--                    android:background="@drawable/filter_items_borders"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="40dp">-->
-
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/et_minCost"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:background="@drawable/filter_items_borders"-->
-<!--                        android:gravity="center" />-->
-
-<!--                </LinearLayout>-->
-
-<!--                <TextView-->
-<!--                    android:text="@string/str_max"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:layout_gravity="center_vertical"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:gravity="center"-->
-<!--                    android:layout_marginHorizontal="20dp"-->
-<!--                    android:background="@drawable/filter_rounded_corner"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="40dp">-->
-
-
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/et_maxCost"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"/>-->
-
-<!--                    &lt;!&ndash;                    <TextView&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:text="$"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:textStyle="bold"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:textSize="18sp"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:textColor="@color/black"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        android:layout_height="wrap_content"/>&ndash;&gt;-->
-
-<!--                </LinearLayout>-->
-
-<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_marginTop="20dp"
@@ -497,9 +307,28 @@
                         android:id="@+id/tv_start_date"
                         android:text="@string/str_start_date"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/text_type_18"
                         android:layout_marginLeft="10dp"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="-"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/text_type_18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_end_date"
+                        android:text="@string/str_end_date"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_type_18"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
                         android:layout_height="wrap_content"/>
 
                 </LinearLayout>
@@ -544,17 +373,19 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal"
+                android:elevation="0dp"
+                android:layout_marginVertical="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="44dp">
 
                 <Button
                     android:id="@+id/btn_result"
                     android:text="@string/str_result"
                     android:backgroundTint="@color/orange_main_01"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/b_text_18"
+                    android:textSize="@dimen/text_type_16"
                     android:layout_marginHorizontal="20dp"
                     android:textAllCaps="false"
                     android:background="@drawable/filter_rounded_corner"
@@ -568,8 +399,8 @@
                     android:text="@string/str_clear"
                     android:layout_marginHorizontal="20dp"
                     android:background="@drawable/filter_rounded_corner"
-                    android:textColor="#EF8321"
-                    android:textSize="@dimen/b_text_18"
+                    android:textColor="@color/orange_main_01"
+                    android:textSize="@dimen/text_type_16"
                     android:textAllCaps="false"
                     app:backgroundTint="@null"
                     android:layout_weight="1"

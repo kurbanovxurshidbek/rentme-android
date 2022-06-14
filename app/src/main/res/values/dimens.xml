@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="side_40">40dp</dimen>
+    <dimen name="side_16">16dp</dimen>
     <dimen name="b_text_18">18sp</dimen>
     <dimen name="b_text_16">16sp</dimen>
     <dimen name="b_text_20">20sp</dimen>
