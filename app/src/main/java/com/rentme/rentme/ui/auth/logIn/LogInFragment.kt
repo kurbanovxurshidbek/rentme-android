@@ -1,15 +1,15 @@
 package com.rentme.rentme.ui.auth.logIn
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.isNotEmpty
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.fraggjkee.smsconfirmationview.SmsConfirmationView
@@ -19,6 +19,7 @@ import com.rentme.rentme.databinding.FragmentLogInBinding
 
 class LogInFragment : Fragment() {
     private lateinit var binding: FragmentLogInBinding
+    //private val viewModel by viewModels<LoginViewModel> ()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,13 +36,14 @@ class LogInFragment : Fragment() {
     }
 
     private fun initView() {
+
         binding.btnSendSms.setOnClickListener {
             binding.llSmsAndSmsCode.visibility = View.VISIBLE
             binding.btnSendSms.visibility = View.GONE
             binding.btnContinueSms.visibility = View.VISIBLE
             binding.btnSkip.visibility = View.GONE
         }
-        binding.edtPhoneNumber.addTextChangedListener(textWatchersendsms)
+       binding.edtPhonenumber.addTextChangedListener(textWatchersendsms)
         binding.smsCodeView.onChangeListener =
             SmsConfirmationView.OnChangeListener { code, isComplete ->
                 if (isComplete) {
@@ -65,17 +67,16 @@ class LogInFragment : Fragment() {
         binding.btnSkip.setOnClickListener {
             startMainActivity()
         }
+
     }
 
-    val textWatchersendsms = object : TextWatcher {
+    private val textWatchersendsms =object : TextWatcher{
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//            if (p0!!.length == 3) {
-//                p0!!.
-//            }
+
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            if (binding.btnSendSms.text?.toString()!!.isNotEmpty()) {
+            if (binding.edtPhonenumber.text?.length==13 ) {
                 binding.btnSendSms.isEnabled = true
                 binding.btnSendSms.isClickable = true
                 binding.btnSendSms.setBackgroundResource(R.drawable.button_background_rounded_border)
@@ -87,16 +88,10 @@ class LogInFragment : Fragment() {
         }
 
         override fun afterTextChanged(p0: Editable?) {
-            if (p0!!.length == 3) {
-                p0!!.insert(p0.length, " ")
-            } else {
-                if (p0!!.length == 6) {
-                    p0!!.insert(p0.length, " ")
-                }
-            }
-        }
-    }
 
+        }
+
+    }
     private fun startMainActivity() {
         val intent = Intent(requireContext(), MainActivity::class.java)
         startActivity(intent)

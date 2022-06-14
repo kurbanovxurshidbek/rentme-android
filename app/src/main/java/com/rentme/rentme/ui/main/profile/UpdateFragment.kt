@@ -43,7 +43,7 @@ class UpdateFragment : Fragment() {
         binding.llNewNumber1.visibility = View.GONE
         binding.btnSendSms.visibility = View.GONE
         binding.btnSaveSms.visibility = View.VISIBLE
-        binding.llNewNumber2.visibility = View.VISIBLE
+       // binding.llNewNumber2.visibility = View.VISIBLE
         binding.llSmsConsfirm.visibility = View.VISIBLE
     }
 

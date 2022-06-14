@@ -31,9 +31,6 @@ class InformationFragment : Fragment() {
 
     private fun initView() {
          binding.registration.setOnClickListener {
-//            if (binding.edtFirstNameChild.text.toString().) {
-//
-//            }
             startMainActivity()
         }
         binding.edtFirstNameChild.addTextChangedListener(textWatcher)
