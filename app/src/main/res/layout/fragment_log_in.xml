@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -113,10 +114,10 @@
                     android:layout_marginTop="50dp"
                     app:scv_codeLength="5"
                     app:scv_showCursor="false"
-                    app:scv_symbolBorderActiveColor="@color/ll_background"
-                    app:scv_symbolBorderColor="#D0020202"
+                    app:scv_symbolBorderActiveColor="#D0020202"
+                    app:scv_symbolBorderColor="#cbcbcb"
                     app:scv_symbolBorderCornerRadius="10dp"
-                    app:scv_symbolTextColor="#D0020202"
+                    app:scv_symbolTextColor="#cbcbcb"
                     app:scv_symbolsSpacing="15dp" />
 
                 <TextView
@@ -195,34 +196,3 @@
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <!--                <com.fredporciuncula.phonemoji.PhonemojiFlagTextView-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:gravity="center"-->
-    <!--                    android:textSize="16sp"-->
-    <!--                    app:phonemoji_flagFor="@id/phonemojiTextInputEditText"-->
-    <!--                    />-->
-
-    <!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
-    <!--                    android:id="@+id/phonemojiTextInputEditText"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    app:phonemoji_initialRegionCode="Uz"-->
-    <!--                    />-->
-
-    <!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout-->
-    <!--                    android:id="@+id/phone_number"-->
-    <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:hint="phone number">-->
-
-    <!--                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
-    <!--                        android:id="@+id/phone_number_"-->
-    <!--                        android:layout_width="match_parent"-->
-    <!--                        android:layout_height="match_parent"-->
-    <!--                        android:maxLength="17" />-->
-
-    <!--                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>-->

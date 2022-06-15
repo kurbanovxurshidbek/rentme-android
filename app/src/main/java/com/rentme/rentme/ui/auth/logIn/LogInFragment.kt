@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,8 @@ import com.fraggjkee.smsconfirmationview.SmsConfirmationView
 import com.rentme.rentme.ui.main.MainActivity
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentLogInBinding
+import com.rentme.rentme.utils.Extensions.hideKeyboard
+import com.rentme.rentme.utils.Extensions.showKeyboard
 
 class LogInFragment : Fragment() {
     private lateinit var binding: FragmentLogInBinding
@@ -42,6 +45,10 @@ class LogInFragment : Fragment() {
             binding.btnSendSms.visibility = View.GONE
             binding.btnContinueSms.visibility = View.VISIBLE
             binding.btnSkip.visibility = View.GONE
+            requireContext().showKeyboard()
+            binding.smsCodeView.requestFocus()
+            binding.edtPhonenumber.isEnabled = false
+
         }
        binding.edtPhonenumber.addTextChangedListener(textWatchersendsms)
         binding.smsCodeView.onChangeListener =
@@ -60,6 +67,7 @@ class LogInFragment : Fragment() {
             }
 
         binding.btnContinueSms.setOnClickListener {
+            hideKeyboard(requireContext())
             startInformationActivity()
 
         }
@@ -76,7 +84,7 @@ class LogInFragment : Fragment() {
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            if (binding.edtPhonenumber.text?.length==13 ) {
+            if (binding.edtPhonenumber.text?.toString()!!.length == 13 && binding.edtPhonenumber.text?.toString()!![12] != '#') {
                 binding.btnSendSms.isEnabled = true
                 binding.btnSendSms.isClickable = true
                 binding.btnSendSms.setBackgroundResource(R.drawable.button_background_rounded_border)
