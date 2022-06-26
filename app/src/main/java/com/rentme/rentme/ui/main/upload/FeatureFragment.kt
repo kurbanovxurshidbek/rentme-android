@@ -35,7 +35,7 @@ import com.sangcomz.fishbun.FishBun
 import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.File
@@ -116,7 +116,7 @@ class FeatureFragment : Fragment() {
             if (carImages.size < 9) pickFishBunCarImages()
         }
         carImageAdapter.clickClear = { position ->
-            carImageUrls.removeAt(position)
+            carImageUrls.removeAt(position-1)
             carImages.removeAt(position)
         }
 
@@ -180,14 +180,14 @@ class FeatureFragment : Fragment() {
                 prices.add(Price(binding.edtPriceDaily.text.toString().toInt(), Type.DAILY))
             if (binding.llMonthlyPrice.visibility == View.VISIBLE)
                 prices.add(Price(binding.edtPriceMonthly.text.toString().toInt(), Type.MONTHLY))
-            val transport = Transport( selectModelName, selectYear.toInt()
+            val transport = TransportUpload( selectModelName, selectYear.toInt()
             ,selectManagementSystem(), selectFuelType(), selectColorName, selectAllImageUrls(carImageUrls), checkAdditional())
             uploadAdvertisement?.description = binding.edtDescription.text.toString()
             uploadAdvertisement?.prices = prices
             uploadAdvertisement?.transport = transport
-            viewModel.createAdvertisement(uploadAdvertisement!!)
             val timeStamp = Extensions.toTimestamp(binding.tvStartDate.text.toString(), "dd-MM-yyyy")
             uploadAdvertisement?.startDate = Extensions.toDateFromTimestamp(timeStamp, "yyyy-MM-dd'T'hh:mm:ss.SSS'Z'")
+            viewModel.createAdvertisement(uploadAdvertisement!!)
             Log.d(TAG, "openMyAddsFragment: $uploadAdvertisement")
         }else{
             Toast.makeText(requireContext(), getString(R.string.str_fill_all_fields), Toast.LENGTH_SHORT).show()
@@ -345,7 +345,7 @@ class FeatureFragment : Fragment() {
         ins?.copyTo(fileOutputStream)
         ins?.close()
         fileOutputStream.close()
-        val reqFile = RequestBody.create(MediaType.parse("image/jpg"), file)
+        val reqFile = RequestBody.create("image/jpg".toMediaTypeOrNull(), file)
         return MultipartBody.Part.createFormData("file", file.name, reqFile)
     }
 

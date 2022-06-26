@@ -26,13 +26,16 @@ class BottomSheetFragment:BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             binding.uzbLanguage.setOnClickListener {
                 Toast.makeText(requireActivity(), "O`zbek tili tanlandi", Toast.LENGTH_SHORT).show()
+                dismiss()
             }
         binding.rusLanguage.setOnClickListener {
             Toast.makeText(requireActivity(), "Выбрано Русский язык", Toast.LENGTH_SHORT).show()
+            dismiss()
 
         }
         binding.engLanguage.setOnClickListener {
             Toast.makeText(requireActivity(), "English language selected", Toast.LENGTH_SHORT).show()
+            dismiss()
         }
     }
 

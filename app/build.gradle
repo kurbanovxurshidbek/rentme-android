@@ -65,8 +65,6 @@ dependencies {
     //sms verification layout gradle
     implementation "com.github.fraggjkee:sms-confirmation-view:1.6.0"
 
-    //phone number
-    implementation 'com.fredporciuncula:phonemoji:1.2.0'
 
     //tab-layout
     implementation 'io.github.ahmad-hamwi:tabsync:1.0.1'
@@ -75,6 +73,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:converter-jaxb:2.9.0'
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
 
     //by viewModel
     implementation "androidx.activity:activity-ktx:1.4.0"
@@ -94,14 +93,14 @@ dependencies {
     //Pager Indicator
     implementation "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:1.2.1"
 
-
     // FishBun for get photos in Gallery and Camera
     implementation 'io.github.sangcomz:fishbun:1.0.0-beta01'
 
     // Glide for load image that it`s url
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
-//bottom sheet material component
+
+    //bottom sheet material component
     implementation 'com.google.android.material:material:1.7.0-alpha02'
 
     // Slayer
@@ -126,5 +125,8 @@ dependencies {
     implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
 
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+
+    //Phone number mask
+    implementation 'com.github.santalu:maskara:1.0.0'
 
 }

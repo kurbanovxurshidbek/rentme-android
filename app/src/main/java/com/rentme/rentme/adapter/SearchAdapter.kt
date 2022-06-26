@@ -8,21 +8,27 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.rentme.rentme.data.local.entity.ModelsListEntity
-import com.rentme.rentme.databinding.ItemSearchHistoryBinding
+import com.rentme.rentme.databinding.ItemSearchModelNameBinding
 
-class SearchAdapter : ListAdapter<ModelsListEntity,SearchAdapter.VH>(ITEM_DIF), Filterable {
-
+class SearchAdapter : ListAdapter<ModelsListEntity, SearchAdapter.VH>(ITEM_DIF), Filterable {
+    var onClick: ((ModelsListEntity) -> Unit)? = null
     var carNames: List<ModelsListEntity> = ArrayList()
 
-    inner class VH(private val binding: ItemSearchHistoryBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class VH(private val binding: ItemSearchModelNameBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ModelsListEntity) {
-            binding.tvHistoryLocation.text = item.modelName
+            binding.apply {
+                tvHistoryLocation.text = item.modelName
+                root.setOnClickListener {
+                    onClick?.invoke(item)
+                }
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         return VH(
-            ItemSearchHistoryBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            ItemSearchModelNameBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
@@ -35,10 +41,16 @@ class SearchAdapter : ListAdapter<ModelsListEntity,SearchAdapter.VH>(ITEM_DIF), 
 
     companion object {
         private val ITEM_DIF = object : DiffUtil.ItemCallback<ModelsListEntity>() {
-            override fun areItemsTheSame(oldItem: ModelsListEntity, newItem: ModelsListEntity): Boolean =
+            override fun areItemsTheSame(
+                oldItem: ModelsListEntity,
+                newItem: ModelsListEntity
+            ): Boolean =
                 oldItem.modelName == newItem.modelName
 
-            override fun areContentsTheSame(oldItem: ModelsListEntity, newItem: ModelsListEntity): Boolean =
+            override fun areContentsTheSame(
+                oldItem: ModelsListEntity,
+                newItem: ModelsListEntity
+            ): Boolean =
                 oldItem.modelName == newItem.modelName
         }
     }

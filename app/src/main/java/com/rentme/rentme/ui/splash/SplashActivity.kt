@@ -5,31 +5,43 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.rentme.rentme.R
+import com.rentme.rentme.data.local.entity.ModelsListEntity
 import com.rentme.rentme.databinding.ActivitySplashBinding
+import com.rentme.rentme.repository.SplashRepository
 import com.rentme.rentme.ui.auth.LoginActivity
+import com.rentme.rentme.utils.UiStateObject
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySplashBinding
+    private  val viewModel by viewModels<SplashViewModel>()
     private val SPLASH_SCREEN = 1500
     var bottom: Animation? = null
-    private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setLightStatusBar()
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN or WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN)
         initView()
+        setUpObservers()
     }
+
 
     private fun initView() {
         //Animation
@@ -37,12 +49,33 @@ class SplashActivity : AppCompatActivity() {
 
         //Hooks
 
-     //   binding.llRentme.animate().translationY(-1400F).setDuration(2700).setStartDelay(0)
+        //   binding.llRentme.animate().translationY(-1400F).setDuration(2700).setStartDelay(0)
         Handler().postDelayed({
         val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, SPLASH_SCREEN.toLong())
+
+        viewModel.getModelListS()  // get all model lists from server
+    }
+
+
+    private fun setUpObservers() {
+        lifecycleScope.launchWhenStarted{
+            viewModel.stateModelListS.collect{
+                when(it){
+                    is UiStateObject.LOADING -> {}
+                    is UiStateObject.SUCCESS ->{
+                        Log.d("data splash", it.data.data.data.size.toString())
+                        it.data.data.data.forEach {  model ->
+                            viewModel.saveModelToLocal(ModelsListEntity(modelName = model))
+                        }
+                    }
+                    is UiStateObject.ERROR ->{
+                        Log.d("@SPlASHACTIVITY", "setUpObservers: ${it.message}")}
+                }
+            }
+        }
     }
 
     fun setLightStatusBar() {

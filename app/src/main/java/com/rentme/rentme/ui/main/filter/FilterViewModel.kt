@@ -7,6 +7,7 @@ import com.rentme.rentme.model.FilterPage
 import com.rentme.rentme.model.base.BaseResponseList
 import com.rentme.rentme.model.filtermodel.Advertisement
 import com.rentme.rentme.repository.FilterRepository
+import com.rentme.rentme.utils.UiStateList
 import com.rentme.rentme.utils.UiStateObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,18 +22,21 @@ class FilterViewModel @Inject constructor(
 //        getMainData()
 //    }
 
-    private val _filterState = MutableStateFlow<UiStateObject<BaseResponseList<Advertisement>>>(UiStateObject.EMPTY)
+    private val _filterState = MutableStateFlow<UiStateList<Advertisement>>(UiStateList.EMPTY)
     val filterState = _filterState
 
     fun getFilterResult(filterPage: FilterPage) = viewModelScope.launch {
-        _filterState.value = UiStateObject.LOADING
+        _filterState.value = UiStateList.LOADING
 
-        Log.d("Network", "Online")
         try {
             val filterData = filterRepository.getFilterResult(filterPage)
-            _filterState.value = UiStateObject.SUCCESS(filterData)
-        } catch (e: Exception) {
-            _filterState.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
+            if (filterData.data.success){
+                _filterState.value = UiStateList.SUCCESS(filterData.data.data)
+            }else{
+                _filterState.value = UiStateList.ERROR(filterData.data.error.message)
+            }
+         } catch (e: Exception) {
+            _filterState.value = UiStateList.ERROR(e.localizedMessage ?: "No Connection")
 
         }
     }

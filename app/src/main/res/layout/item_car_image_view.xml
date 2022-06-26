@@ -4,7 +4,7 @@
     android:layout_width="100dp"
     android:layout_height="100dp"
     android:orientation="vertical"
-    android:layout_marginEnd="16dp">
+    android:layout_marginStart="@dimen/side_16">
 
     <LinearLayout
         android:id="@+id/ll_car_add"

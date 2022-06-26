@@ -1,4 +1,4 @@
-package com.rentme.rentme.ui.main.profile
+package com.rentme.rentme.ui.main.profile.update
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -43,7 +43,7 @@ class UpdateFragment : Fragment() {
         binding.llNewNumber1.visibility = View.GONE
         binding.btnSendSms.visibility = View.GONE
         binding.btnSaveSms.visibility = View.VISIBLE
-        binding.llNewNumber2.visibility = View.VISIBLE
+       // binding.llNewNumber2.visibility = View.VISIBLE
         binding.llSmsConsfirm.visibility = View.VISIBLE
     }
 
