@@ -27,7 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="110dp"
                 android:layout_gravity="center"
-                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
                 android:src="@drawable/im_malibu" />
 
             <LinearLayout

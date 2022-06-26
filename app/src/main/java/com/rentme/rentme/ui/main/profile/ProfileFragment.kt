@@ -48,12 +48,12 @@ class ProfileFragment : Fragment() {
             showInfoAboutAppDialog()
         }
         }
-    fun startInformationActivity(){
+    private fun startInformationActivity(){
 //        val intent = Intent(requireActivity(), InformationActivity::class.java)
 //        startActivity(intent)
-        findNavController().navigate(R.id.informationFragment)
+        findNavController().navigate(R.id.informationFragment2)
     }
-    fun startUpdateActivity(){
+    private fun startUpdateActivity(){
         findNavController().navigate(R.id.updateFragment)
     }
     fun startLocazilationActivity(){

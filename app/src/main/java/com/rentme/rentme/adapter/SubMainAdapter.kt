@@ -63,6 +63,7 @@ class SubMainAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun submitData(list: List<Advertisement>) {
         dif.submitList(list)
+//        dif.currentList.add(Advertisement())
     }
 
     inner class SubMainVH(private val binding: ItemSubMainVehiclesBinding) :

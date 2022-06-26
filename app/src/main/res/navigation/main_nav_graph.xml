@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_profileFragment_to_myAddsFragment"
             app:destination="@id/myAddsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_informationFragment2"
+            app:destination="@id/informationFragment2" />
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
@@ -151,4 +154,8 @@
         android:name="com.rentme.rentme.ui.main.location.MapFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/informationFragment2"
+        android:name="com.rentme.rentme.ui.auth.information.InformationFragment"
+        android:label="InformationFragment" />
 </navigation>

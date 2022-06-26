@@ -1,5 +1,6 @@
 package com.rentme.rentme.ui.main.details
 
+import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,10 +11,18 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.DetailPhotoAdapter
 import com.rentme.rentme.databinding.FragmentDetailsBinding
 import com.rentme.rentme.model.DetailPhoto
+import com.rentme.rentme.model.filtermodel.Advertisement
 import java.util.*
 
 
@@ -30,6 +39,8 @@ class DetailsFragment : Fragment() {
     private var timerTask: TimerTask? = null
     private var position: Int = 0
     private lateinit var layoutManagerBanner: LinearLayoutManager
+
+    private lateinit var advertisement: Advertisement
 
     companion object {
         const val DELAY_MS: Long = 2500 //delay in milliseconds before task is to be executed
@@ -78,8 +89,12 @@ class DetailsFragment : Fragment() {
 
         setUpBanner()
 
+        arguments?.let {
+            advertisement = Gson().fromJson(it.getString("advertisement"), Advertisement::class.java)
+        }
+
         binding.bCallToUser.setOnClickListener {
-            callToOwner("990362607")
+            callToOwner("+998990362607")
         }
     }
 
@@ -132,7 +147,24 @@ class DetailsFragment : Fragment() {
         val callIntent = Intent(Intent.ACTION_CALL)
         callIntent.data = Uri.parse("tel:$phone") //change the number
 
-        startActivity(callIntent)
+        Dexter.withContext(requireContext())
+            .withPermission(Manifest.permission.CALL_PHONE)
+            .withListener(object: PermissionListener{
+                override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                    startActivity(callIntent)
+                }
+
+                override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                }
+
+                override fun onPermissionRationaleShouldBeShown(
+                    p0: PermissionRequest?,
+                    p1: PermissionToken?
+                ) {
+                    p1!!.continuePermissionRequest()
+                }
+
+            }).check()
     }
 
     private fun getAllDetailPhoto(){
@@ -143,7 +175,7 @@ class DetailsFragment : Fragment() {
         items.add(DetailPhoto(R.drawable.im_tesla_model3))
 
         photoList.addAll(items)
-        adapter.sumbitData(photoList)
+        adapter.submitData(advertisement!!.transport!!.pictures!!)
     }
 
 }

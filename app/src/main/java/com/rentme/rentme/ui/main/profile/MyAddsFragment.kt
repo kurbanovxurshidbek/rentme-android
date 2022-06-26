@@ -39,7 +39,7 @@ class MyAddsFragment : Fragment() {
         getAllResult()
 
         adapter.onClick = {result ->
-            findNavController().navigate(R.id.detailsFragment)
+//            findNavController().navigate(R.id.detailsFragment)
         }
 
         binding.ivBack.setOnClickListener {

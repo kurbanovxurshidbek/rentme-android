@@ -78,7 +78,6 @@ class FilterFragment : Fragment() {
         setupObservers()
 
         binding.btnResult.setOnClickListener{
-//            findNavController().navigate(R.id.resultFragment)
             openResultPage()
         }
 
@@ -94,6 +93,7 @@ class FilterFragment : Fragment() {
     private fun openResultPage() {
         var filterPage = FilterPage(colors = carColors, year = modelYear)
         viewModel.getFilterResult(filterPage)
+//            findNavController().navigate(R.id.resultFragment, bundle)
 
     }
 

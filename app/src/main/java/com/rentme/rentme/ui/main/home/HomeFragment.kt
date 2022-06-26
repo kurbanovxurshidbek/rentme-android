@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.rentme.rentme.R
 import com.rentme.rentme.adapter.BrandsAdapter
 import com.rentme.rentme.adapter.HomeAdsAdapter
@@ -72,12 +74,21 @@ class HomeFragment : Fragment() {
         setUpBanner()
         setUpRecyclers()
         getBanners()
-        getAllResult()
-        getAllBrands()
+//        getAllBrands()
 
         initViews()
         homeViewModel.getMainData()
         setUpObservers()
+
+        latestAdapter.onClick = {
+            findNavController().navigate(R.id.detailsFragment, bundleOf("advertisement" to Gson().toJson(it)))
+        }
+        resultAdapter.onClick = {
+            findNavController().navigate(R.id.detailsFragment, bundleOf("advertisement" to Gson().toJson(it)))
+        }
+        longTermAdapter.onClick = {
+            findNavController().navigate(R.id.detailsFragment, bundleOf("advertisement" to Gson().toJson(it)))
+        }
 
     }
 
