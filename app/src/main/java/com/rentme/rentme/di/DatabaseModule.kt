@@ -34,4 +34,8 @@ class DatabaseModule {
     @Provides
     @Singleton
     fun getModelsHistoryDao(database: MainPageDatabase) = database.getModelsHistoryDao()
+
+    @Provides
+    @Singleton
+    fun getBrandListDao(database: MainPageDatabase) = database.getBrandListDao()
 }

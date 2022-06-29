@@ -1,5 +1,6 @@
 package com.rentme.rentme.ui.splash
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
@@ -17,6 +18,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import com.rentme.rentme.R
+import com.rentme.rentme.data.local.entity.BrandListEntity
 import com.rentme.rentme.data.local.entity.ModelsListEntity
 import com.rentme.rentme.databinding.ActivitySplashBinding
 import com.rentme.rentme.repository.SplashRepository
@@ -26,6 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
+@SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
@@ -56,7 +59,8 @@ class SplashActivity : AppCompatActivity() {
             finish()
         }, SPLASH_SCREEN.toLong())
 
-        viewModel.getModelListS()  // get all model lists from server
+        viewModel.getModelListS()  // get all model list from server and save to Local
+        viewModel.getBrandList()  // get all brand list from server and save to Local
     }
 
 
@@ -72,13 +76,32 @@ class SplashActivity : AppCompatActivity() {
                         }
                     }
                     is UiStateObject.ERROR ->{
-                        Log.d("@SPlASHACTIVITY", "setUpObservers: ${it.message}")}
+                        Log.d("@SPlASHACTIVITY", "setUpO Models: ${it.message}")}
+                    else -> Unit
+                }
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.stateBrandList.collect{
+                when(it){
+                    is UiStateObject.LOADING -> {}
+                    is UiStateObject.SUCCESS ->{
+                        Log.d("data splash", it.data.data.data.size.toString())
+                        it.data.data.data.forEach {  brand ->
+                            val brandEntity = BrandListEntity(brand.name!!, brand.image!!, brand.models!!)
+                            viewModel.saveBrandToLocal(brandEntity)
+                        }
+                    }
+                    is UiStateObject.ERROR ->{
+                        Log.d("@SPlASHACTIVITY", "setUpO Brands: ${it.message}")}
+                    else -> Unit
                 }
             }
         }
     }
 
-    fun setLightStatusBar() {
+    private fun setLightStatusBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
             window.decorView.systemUiVisibility =

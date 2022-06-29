@@ -24,16 +24,21 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.rentme.rentme.R
+import com.rentme.rentme.adapter.BrandsUploadAdapter
 import com.rentme.rentme.adapter.CarImageAdapter
 import com.rentme.rentme.adapter.ColorAdapter
+import com.rentme.rentme.data.local.entity.BrandListEntity
+import com.rentme.rentme.data.local.entity.ModelsListEntity
 import com.rentme.rentme.databinding.FragmentFeaturesBinding
 import com.rentme.rentme.model.*
 import com.rentme.rentme.utils.Extensions
 import com.rentme.rentme.utils.SelectColor
+import com.rentme.rentme.utils.UiStateList
 import com.rentme.rentme.utils.UiStateObject
 import com.sangcomz.fishbun.FishBun
 import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -48,6 +53,7 @@ class FeatureFragment : Fragment() {
     private val viewModel: FeatureViewModel by viewModels()
 
     private val colorAdapter by lazy { ColorAdapter() }
+    private val brandsAdapter by lazy { BrandsUploadAdapter() }
     private lateinit var carImageAdapter: CarImageAdapter
     private val TAG = this::class.java.simpleName
 
@@ -99,7 +105,10 @@ class FeatureFragment : Fragment() {
             binding.minTypeTime.text = getString(R.string.str_months)
         }
 
-        selectModelSpinner()
+        binding.ivBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
         selectYearSpinner()
         allColorFunction()
         enterPriceFunction()
@@ -120,11 +129,29 @@ class FeatureFragment : Fragment() {
             carImages.removeAt(position)
         }
 
+        setAllBrandAndModel()
+
         setupObservers()
 
     }
 
     private fun setupObservers(){
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.brandListState.collect{
+                when(it){
+                    is UiStateList.LOADING -> {}
+                    is UiStateList.SUCCESS ->{
+                        Log.d(TAG, "brandSize: ${(it.data as ArrayList<BrandListEntity>).size}")
+                        brandsAdapter.submitData(it.data as ArrayList<BrandListEntity>)
+                    }
+                    is UiStateList.ERROR ->{
+                        Log.d(TAG, "Brands Error: ${it.message}")
+                    }
+                    else -> Unit
+                }
+            }
+        }
+
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.fileState.collect{
                 when(it){
@@ -157,7 +184,7 @@ class FeatureFragment : Fragment() {
                             findNavController().navigate(R.id.myAddsFragment)
                         }
                         is UiStateObject.ERROR -> {
-                            Log.d(TAG, "Error:" + it.message)
+                            Log.d(TAG, "Advertisement Create Error:" + it.message)
                         }
                         else -> Unit
                     }
@@ -165,6 +192,48 @@ class FeatureFragment : Fragment() {
             }
         }
 
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
+                viewModel.carModels.collect{
+                    when(it){
+                        is UiStateList.LOADING -> {}
+                        is UiStateList.SUCCESS -> {
+                            Log.d(TAG, "modelSize: ${(it.data as ArrayList<ModelsListEntity>).size}")
+                            val modelName = ArrayList<String>()
+                            it.data.forEach { model->
+                                modelName.add(model.modelName)
+                            }
+                            selectModelSpinner(modelName)
+                        }
+                        is UiStateList.ERROR -> {
+                            Log.d(TAG, "Models Error: ${it.message}")
+                        }
+                        else -> Unit
+                    }
+                }
+            }
+        }
+
+    }
+
+    private fun setAllBrandAndModel(){
+        binding.rvBrands.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        viewModel.getBrandList()
+        viewModel.getCarModels()
+        binding.rvBrands.adapter = brandsAdapter
+
+        brandsAdapter.onClick = { brand->
+            if(brand != null) selectModelSpinner(convertModelList(brand.models as ArrayList<Model>))
+            else Toast.makeText(requireContext(), "There are no models belonging to this brand!!!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun convertModelList(models: ArrayList<Model>) : ArrayList<String>{
+        val nameModel: ArrayList<String> = ArrayList()
+        for (model in models){
+            nameModel.add(model.name!!)
+        }
+        return nameModel
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -257,24 +326,7 @@ class FeatureFragment : Fragment() {
         }
     }
 
-    private fun selectModelSpinner(){
-        val models: ArrayList<String> = ArrayList()
-        models.add("Subaru Outback")
-        models.add("Suzuki Ciaz")
-        models.add("Malibu")
-        models.add("Captiva")
-        models.add("Gentra")
-        models.add("Lacetti")
-        models.add("Spark")
-        models.add("Camaro")
-        models.add("Blazer")
-        models.add("Tahoe")
-        models.add("Tracker")
-        models.add("Trailblazer")
-        models.add("Matiz")
-        models.add("Vintage")
-        models.add("Tico")
-
+    private fun selectModelSpinner(models: ArrayList<String>){
         binding.spnModels.adapter = ArrayAdapter<String>(requireContext(), R.layout.spinner_item_view, models)
         binding.spnModels.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {

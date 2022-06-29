@@ -6,24 +6,28 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.rentme.rentme.R
 import com.rentme.rentme.databinding.ItemDetailImagesBinding
+import com.rentme.rentme.model.DetailPhoto
 import com.rentme.rentme.model.filtermodel.Picture
 
 class DetailPhotoAdapter : RecyclerView.Adapter<DetailPhotoAdapter.DetailViewHolder>() {
     private val dif = AsyncListDiffer(this, ITEM_DIF)
-    var onClick: ((Picture) -> Unit)? = null
+    var onClick: ((DetailPhoto) -> Unit)? = null
 
     inner class DetailViewHolder(private val binding: ItemDetailImagesBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind() {
             val detailPhoto = dif.currentList[adapterPosition]
             binding.apply {
-
-                Glide.with(binding.root)
+                Glide.with(root)
                     .load(detailPhoto.path)
+                    .error(R.drawable.ic_launcher_background)
+                    .placeholder(R.drawable.ic_launcher_background)
                     .into(ivCarImages)
+
                 root.setOnClickListener {
-                    onClick?.invoke(detailPhoto)
+                    //onClick?.invoke(detailPhoto)
                 }
             }
         }
@@ -43,7 +47,7 @@ class DetailPhotoAdapter : RecyclerView.Adapter<DetailPhotoAdapter.DetailViewHol
 
     override fun getItemCount(): Int = dif.currentList.size
 
-    fun submitData(list: List<Picture>){
+    fun sumbitData(list: List<Picture>){
         dif.submitList(list)
     }
 
@@ -51,7 +55,7 @@ class DetailPhotoAdapter : RecyclerView.Adapter<DetailPhotoAdapter.DetailViewHol
         private val ITEM_DIF = object : DiffUtil.ItemCallback<Picture>() {
 
             override fun areItemsTheSame(oldItem: Picture, newItem: Picture): Boolean =
-                false
+                oldItem.main == newItem.main && oldItem.path == newItem.path
 
             override fun areContentsTheSame(oldItem: Picture, newItem: Picture): Boolean =
                 oldItem == newItem

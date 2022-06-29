@@ -1,6 +1,7 @@
 package com.rentme.rentme.ui.main.profile
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,10 +13,12 @@ import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.rentme.rentme.R
 import com.rentme.rentme.databinding.FragmentProfileBinding
+import com.rentme.rentme.ui.auth.LoginActivity
 import com.rentme.rentme.ui.main.MainActivity
+import com.rentme.rentme.ui.profile.BottomSheetFragmentLogOut
 
 class ProfileFragment : Fragment() {
-    private lateinit var binding : FragmentProfileBinding
+    private lateinit var binding: FragmentProfileBinding
 
 
     override fun onCreateView(
@@ -45,30 +48,28 @@ class ProfileFragment : Fragment() {
             findNavController().navigate(R.id.favouriteFragment)
         }
         binding.llLogOut.setOnClickListener {
-            (requireActivity() as MainActivity).showLogOutBottomSheet()
+            clickLogOut()
         }
         binding.llAboutUs.setOnClickListener {
             showInfoAboutAppDialog()
         }
+        binding.llMyAnnouncements.setOnClickListener {
+            findNavController().navigate(R.id.myAddsFragment)
         }
-    private fun startInformationActivity(){
-//        val intent = Intent(requireActivity(), InformationActivity::class.java)
-//        startActivity(intent)
-        findNavController().navigate(R.id.informationFragment2)
-    }
-    private fun startUpdateActivity(){
-        findNavController().navigate(R.id.updateFragment)
-    }
-    fun startLocazilationActivity(){
-//        val intent = Intent(requireActivity(),LocalizationActivity::class.java)
-//        startActivity(intent)
-        findNavController().navigate(R.id.localizationFragment)
-    }
-    fun startFavouriteActivity(){
-        findNavController().navigate(R.id.favouriteFragment)
     }
 
-    private fun showInfoAboutAppDialog(){
+    private fun clickLogOut(){
+        val bottomSheetFragmentLogOut = BottomSheetFragmentLogOut("Do you want to log out?")
+        bottomSheetFragmentLogOut.show((requireActivity() as MainActivity).supportFragmentManager,"BottomSheetfragmentLogOut")
+
+        bottomSheetFragmentLogOut.clickYes = {
+            val intent = Intent(requireContext(), LoginActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+    }
+
+    private fun showInfoAboutAppDialog() {
         val dialogBuilder = AlertDialog.Builder(requireContext())
         dialogBuilder.setMessage("This is a test application for renting cars, and help people to reach their destination with the help of others. ")
             // if the dialog is cancelable

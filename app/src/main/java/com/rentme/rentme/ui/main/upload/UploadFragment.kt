@@ -27,7 +27,6 @@ import com.rentme.rentme.databinding.FragmentUploadBinding
 import com.rentme.rentme.model.Category
 import com.rentme.rentme.model.Location
 import com.rentme.rentme.model.UploadAdvertisement
-import java.text.SimpleDateFormat
 import kotlin.collections.ArrayList
 
 class UploadFragment : Fragment() {

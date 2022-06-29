@@ -9,7 +9,7 @@ data class FavouriteModel (
     val startDate: String? = null,
     val minDuration: Long? = null,
     val maxDuration: Long? = null,
-    val transport: Transport? = null,
+    val transport: TransportDTO? = null,
     val createdAt: String? = null,
     val createdBy: Long? = null
 )

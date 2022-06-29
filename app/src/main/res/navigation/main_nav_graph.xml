@@ -147,7 +147,7 @@
         tools:layout="@layout/fragment_favourite" />
     <fragment
         android:id="@+id/myAddsFragment"
-        android:name="com.rentme.rentme.ui.main.profile.MyAddsFragment"
+        android:name="com.rentme.rentme.ui.main.profile.my_adds.MyAddsFragment"
         android:label="MyAddsFragment" />
     <fragment
         android:id="@+id/mapFragment"

@@ -65,8 +65,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:text="@string/str_location"
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16" />
@@ -132,8 +132,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -170,26 +170,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:text="@string/str_brands"
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_brands"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="horizontal"
-                tools:listitem="@layout/item_main_brands"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_main_brands" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="6dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:text="@string/str_model"
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16" />
@@ -197,10 +196,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginHorizontal="@dimen/side_16"
                 android:background="@drawable/ll_background_rounded_border"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:layout_marginHorizontal="@dimen/side_16"
                 android:paddingStart="10dp">
 
                 <Spinner
@@ -215,8 +214,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:orientation="horizontal">
 
                 <TextView
@@ -253,8 +252,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:text="@string/str_description"
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16"
@@ -263,9 +262,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_marginHorizontal="@dimen/side_16"
                 android:background="@drawable/ll_background_date_month"
                 android:orientation="vertical"
-                android:layout_marginHorizontal="@dimen/side_16"
                 android:padding="5dp">
 
                 <androidx.core.widget.NestedScrollView
@@ -290,8 +289,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -325,8 +324,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -499,8 +498,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:text="@string/str_fuel"
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16" />
@@ -539,8 +538,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:text="@string/str_additional_features"
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16" />
@@ -578,8 +577,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="21dp"
-                android:layout_marginEnd="@dimen/side_16"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/side_16"
                 android:text="@string/str_color"
                 android:textColor="@color/black"
                 android:textSize="@dimen/b_text_16" />
@@ -589,16 +588,16 @@
                 android:id="@+id/rv_colors"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal" />
 
             <Button
                 android:id="@+id/btn_save"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="25dp"
                 android:layout_marginHorizontal="@dimen/side_16"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/button_background_rounded_border"
                 android:text="@string/str_save"

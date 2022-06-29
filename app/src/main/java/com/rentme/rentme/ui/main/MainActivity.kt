@@ -112,9 +112,5 @@ class MainActivity : AppCompatActivity() {
         val bottomSheetFragment = BottomSheetFragment()
         bottomSheetFragment.show(supportFragmentManager,"BottomSheetDialog")
     }
-    fun showLogOutBottomSheet(){
-        val bottomSheetFragmentLogOut = BottomSheetFragmentLogOut()
-        bottomSheetFragmentLogOut.show(supportFragmentManager,"BottomSheetfragmentLogOut")
-    }
 
 }

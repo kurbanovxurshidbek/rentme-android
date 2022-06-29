@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <FrameLayout
+        android:id="@+id/fl_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:tint="#cbcbcb"

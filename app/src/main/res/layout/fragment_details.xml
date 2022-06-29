@@ -43,7 +43,7 @@
                     android:id="@+id/iv_favorite_delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="top|end"
                     android:src="@drawable/ic_favorite" />
@@ -209,8 +209,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
+                android:paddingVertical="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -297,13 +298,13 @@
                     app:tint="@color/orange_main_01"/>
 
                 <TextView
+                    android:id="@+id/tv_location"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
                     android:singleLine="true"
-                    android:text="Location"
                     android:textColor="@color/second_text_color"
                     android:textSize="@dimen/b_text_16" />
 
@@ -494,7 +495,9 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ll_line_conditioner"
                     android:layout_width="match_parent"
+                    android:orientation="vertical"
                     android:layout_height="2dp"
                     android:layout_marginHorizontal="16dp"
                     android:background="#E5E5E5" />

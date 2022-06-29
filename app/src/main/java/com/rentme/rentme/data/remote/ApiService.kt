@@ -8,6 +8,7 @@ import retrofit2.http.POST
 import com.rentme.rentme.model.base.BaseResponse
 import com.rentme.rentme.model.base.BaseResponseObject
 import com.rentme.rentme.model.base.BaseResponseList
+import com.rentme.rentme.model.base.DataLimit
 import okhttp3.MultipartBody
 import retrofit2.http.*
 
@@ -32,8 +33,13 @@ interface ApiService {
     @GET("advertisement/list-saved")
     suspend fun getFavouriteModels(@Query("size") size: Int = 5, @Query("page") page: Int = 0): BaseResponse<BaseResponseList<FavouriteModel>>
 
+    @GET("brand/list")
+    suspend fun getBrandList(@Query("size") size: Int, @Query("page") page: Int): BaseResponse<BaseResponseList<Brands>>
 
+    @POST("advertisement/list_my")
+    suspend fun getMyAdvertisementList(@Body dataLimit: DataLimit): BaseResponse<BaseResponseList<Advertisement>>
 
-
+    @DELETE("advertisement/delete/{id}")
+    suspend fun deleteAdvertisement(@Path("id") id: Int) : BaseResponse<BaseResponseObject<Boolean>>
 
 }

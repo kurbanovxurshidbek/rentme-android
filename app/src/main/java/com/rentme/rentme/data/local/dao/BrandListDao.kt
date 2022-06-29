@@ -13,8 +13,7 @@ interface BrandListDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveBrandData(brandListEntity: BrandListEntity)
 
-    @Query("SELECT * FROM `model_list`")
-    suspend fun getModelsListName(): List<ModelsListEntity>
-
+    @Query("SELECT * FROM brand_list")
+    suspend fun getBrandList(): List<BrandListEntity>
 
 }
