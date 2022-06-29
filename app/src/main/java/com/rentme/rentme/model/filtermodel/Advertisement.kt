@@ -1,5 +1,7 @@
 package com.rentme.rentme.model.filtermodel
 
+import com.rentme.rentme.model.Location
+
 data class Advertisement(
     val category: String,
     val createdAt: String,

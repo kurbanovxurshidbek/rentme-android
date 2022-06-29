@@ -19,7 +19,7 @@ class FavouriteAdapter:RecyclerView.Adapter<FavouriteAdapter.FavouriteViewHolder
             fun bind(){
                 val result = dif.currentList[adapterPosition]
                 binding.apply {
-                    tvCarsName.text = result.transport?.model
+                    tvCarsName.text = result.transport?.model?.name
                     tvCarsCostDay.text = result.prices?.first().toString()
                     tvCarsCostMonth.text = if (result.prices?.size!! > 1) result.prices[1].quantity.toString() else ""
 

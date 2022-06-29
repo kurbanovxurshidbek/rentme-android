@@ -14,28 +14,31 @@ import com.rentme.rentme.databinding.BottomSheetLocaliztionBinding
 import com.rentme.rentme.databinding.BottomSheetLogOutBinding
 import com.rentme.rentme.ui.auth.LoginActivity
 
-class BottomSheetFragmentLogOut:BottomSheetDialogFragment() {
+class BottomSheetFragmentLogOut(private val title: String) : BottomSheetDialogFragment() {
     private lateinit var binding: BottomSheetLogOutBinding
+    var clickYes:(() -> Unit)? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = BottomSheetLogOutBinding.inflate(inflater,container,false)
+        binding = BottomSheetLogOutBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun getTheme(): Int {
         return R.style.AppBottomSheetDialogTheme
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-           binding.btnYes.setOnClickListener {
-               val intent = Intent(activity,LoginActivity::class.java)
-               startActivity(intent)
-               requireActivity().finish()
-           }
+        binding.tvTitle.text = title
+        binding.btnYes.setOnClickListener {
+            clickYes?.invoke()
+        }
         binding.btnNo.setOnClickListener {
             this.dismiss()
         }
     }
+
 }

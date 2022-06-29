@@ -5,6 +5,7 @@ data class FilterPage (
     var page: Long? = null,
     var location: Location? = null,
     var category: String? = null,
+    var brand: String? = null,
     var model: String? = null,
     var year: Int? = null,
     var price: PriceFilter? = null,
