@@ -48,6 +48,15 @@ data class TransportUpload(
     val pictures: List<Picture>? = null,
     val wellEquipped: Boolean? = null
 )
+data class Transport(
+    val model: Model? = null,
+    val year: Int? = null,
+    val transmission: Transmission? = null,
+    val fuelType: FuelType? = null,
+    val color: String? = null,
+    val pictures: List<Picture>? = null,
+    val wellEquipped: Boolean? = null
+)
 
 enum class Transmission{
     AUTOMATIC,

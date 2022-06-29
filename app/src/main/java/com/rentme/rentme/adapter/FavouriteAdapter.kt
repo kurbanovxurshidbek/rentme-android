@@ -21,7 +21,7 @@ class FavouriteAdapter:RecyclerView.Adapter<FavouriteAdapter.FavouriteViewHolder
                 binding.apply {
                     tvCarsName.text = result.transport?.model?.name
                     tvCarsCostDay.text = result.prices?.first().toString()
-                    tvCarsCostMonth.text = if (result.prices?.size!! > 1) result.prices[1].quantity.toString() else ""
+                    tvCarsCostMonth.text = if (result.prices?.size!! > 1) result.prices.last().quantity.toString() else ""
 
                     Glide.with(binding.root)
                         .load(result.transport?.pictures?.first()?.path)

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:paddingHorizontal="16dp">
+
     <LinearLayout
         android:id="@+id/ll_rentme"
         android:layout_width="match_parent"
@@ -13,7 +14,7 @@
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent"
-        >
+        android:layout_marginTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,7 +34,7 @@
             android:text="Me"
             android:textColor="#6FCF97"
             android:textSize="60sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </LinearLayout>
 
 
@@ -60,59 +61,38 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Phone number"
-                android:layout_marginTop="23dp"
-                android:layout_marginLeft="15dp"
-                android:textColor="@color/black"/>
 
             <LinearLayout
-                android:id="@+id/ll_new_number_2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/bg_for_login_border"
-                android:orientation="horizontal"
-                android:padding="15dp"
-                android:visibility="visible">
-
-                <LinearLayout
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/uzb_flag" />
-
-                    <TextView
-                        android:id="@+id/tv_phone_num_code"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="+998"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-
-                <EditText
-                    android:id="@+id/edt_phone_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="5dp"
-                    android:background="@color/white"
-                    android:inputType="number"
-                    android:maxLength="9"
+                    android:text="+998"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/b_text_16"
+                    android:background="@drawable/bg_for_login_white_rounded_color"
+                    android:padding="12dp"
+                    android:layout_marginRight="10dp"/>
+
+            <com.santalu.maskara.widget.MaskEditText
+                android:id="@+id/edt_phonenumber"
+                android:ems="5"
+                android:width="360dp"
+                android:background="@drawable/bg_for_login_white_rounded_color"
+                android:padding="12dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                app:mask="(##) ###-####"
+                app:maskCharacter="#"
+                android:cursorVisible="true"
+                android:hint="@string/str_phone_number"
+                app:maskStyle="completable" />
+
             </LinearLayout>
-
-
         </FrameLayout>
 
         <FrameLayout
@@ -132,12 +112,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="50dp"
-                    app:scv_codeLength="6"
+                    app:scv_codeLength="5"
                     app:scv_showCursor="false"
-                    app:scv_symbolBorderActiveColor="@color/ll_background"
-                    app:scv_symbolBorderColor="#D0020202"
+                    app:scv_symbolBorderActiveColor="#D0020202"
+                    app:scv_symbolBorderColor="@color/orange_main_01"
                     app:scv_symbolBorderCornerRadius="10dp"
-                    app:scv_symbolTextColor="#D0020202"
+                    app:scv_symbolTextColor="@color/orange_main_01"
                     app:scv_symbolsSpacing="15dp" />
 
                 <TextView
@@ -186,15 +166,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button_background_not_click"
+            android:clickable="false"
+            android:enabled="false"
             android:text="Send SMS"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/b_text_18"
-            android:layout_marginTop="10dp"
             android:visibility="visible"
-            android:clickable="false"
-            android:enabled="false"
             app:backgroundTint="@null" />
         <!--    save sms-->
         <Button
@@ -204,46 +184,15 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background_not_click"
-            android:text="@string/str_continue"
-            android:textAllCaps="false"
-            android:textSize="@dimen/b_text_18"
-            android:visibility="gone"
             android:clickable="false"
             android:enabled="false"
+            android:text="@string/str_continue"
+            android:textAllCaps="false"
             android:textColor="@color/white"
+            android:textSize="@dimen/b_text_18"
+            android:visibility="gone"
             app:backgroundTint="@null" />
 
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <!--                <com.fredporciuncula.phonemoji.PhonemojiFlagTextView-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:gravity="center"-->
-    <!--                    android:textSize="16sp"-->
-    <!--                    app:phonemoji_flagFor="@id/phonemojiTextInputEditText"-->
-    <!--                    />-->
-
-    <!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
-    <!--                    android:id="@+id/phonemojiTextInputEditText"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    app:phonemoji_initialRegionCode="Uz"-->
-    <!--                    />-->
-
-    <!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout-->
-    <!--                    android:id="@+id/phone_number"-->
-    <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:hint="phone number">-->
-
-    <!--                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
-    <!--                        android:id="@+id/phone_number_"-->
-    <!--                        android:layout_width="match_parent"-->
-    <!--                        android:layout_height="match_parent"-->
-    <!--                        android:maxLength="17" />-->
-
-    <!--                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>-->

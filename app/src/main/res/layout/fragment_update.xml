@@ -91,56 +91,56 @@
                     android:textColor="#8c8c8c" />
             </LinearLayout>
             <!--        new number 2-->
-            <LinearLayout
-                android:id="@+id/ll_new_number_2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="gone">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/ll_new_number_2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:visibility="gone">-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="30dp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="5dp"
-                    android:text="New Number"
-                    android:textAllCaps="true"
-                    android:textColor="#8c8c8c"
-                    android:textSize="14dp" />
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginTop="30dp"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:paddingLeft="5dp"-->
+<!--                    android:text="New Number"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="#8c8c8c"-->
+<!--                    android:textSize="14dp" />-->
 
 
-                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
-                    android:outlineAmbientShadowColor="@color/orange_main_01"
-                    app:boxStrokeColor="@color/orange_main_01"
-                    app:boxStrokeErrorColor="#ff0000"
-                    android:textColorHighlight="#00FF0A"
-                    app:counterOverflowTextColor="@color/teal_200"
-                    android:id="@+id/enter_phone_number_2"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+<!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout-->
+<!--                    android:outlineAmbientShadowColor="@color/orange_main_01"-->
+<!--                    app:boxStrokeColor="@color/orange_main_01"-->
+<!--                    app:boxStrokeErrorColor="#ff0000"-->
+<!--                    android:textColorHighlight="#00FF0A"-->
+<!--                    app:counterOverflowTextColor="@color/teal_200"-->
+<!--                    android:id="@+id/enter_phone_number_2"-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    >-->
 
-                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:maxLength="17"
-                        android:textColor="@color/black"
+<!--                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:maxLength="17"-->
+<!--                        android:textColor="@color/black"-->
 
-                        />
+<!--                        />-->
 
-                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>
-                <!--            <EditText-->
-                <!--                android:id="@+id/et_new_number_2"-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="50dp"-->
-                <!--                android:background="@drawable/shape_border_text"-->
-                <!--                android:paddingLeft="10dp"-->
-                <!--                android:text="+998 "-->
-                <!--                android:textColor="#8c8c8c"-->
-                <!--                android:textSize="16sp" />-->
-            </LinearLayout>
+<!--                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>-->
+<!--                &lt;!&ndash;            <EditText&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:id="@+id/et_new_number_2"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:layout_height="50dp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:background="@drawable/shape_border_text"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:paddingLeft="10dp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:text="+998 "&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:textColor="#8c8c8c"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:textSize="16sp" />&ndash;&gt;-->
+<!--            </LinearLayout>-->
 
 
         </FrameLayout>
@@ -173,28 +173,28 @@
                     android:textSize="14dp" />
 
                 <!--            new number 1-->
-                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
-                    android:outlineAmbientShadowColor="@color/orange_main_01"
-                    app:boxStrokeColor="@color/orange_main_01"
-                    app:boxStrokeErrorColor="#ff0000"
-                    android:textColorHighlight="#00FF0A"
-                    app:counterOverflowTextColor="@color/teal_200"
-                    android:id="@+id/enter_phone_number_1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+<!--                <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout-->
+<!--                    android:outlineAmbientShadowColor="@color/orange_main_01"-->
+<!--                    app:boxStrokeColor="@color/orange_main_01"-->
+<!--                    app:boxStrokeErrorColor="#ff0000"-->
+<!--                    android:textColorHighlight="#00FF0A"-->
+<!--                    app:counterOverflowTextColor="@color/teal_200"-->
+<!--                    android:id="@+id/enter_phone_number_1"-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    >-->
 
-                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:maxLength="17"
-                        android:textColor="@color/black"
+<!--                    <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:maxLength="17"-->
+<!--                        android:textColor="@color/black"-->
 
 
-                        />
+<!--                        />-->
 
-                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>
+<!--                </com.fredporciuncula.phonemoji.PhonemojiTextInputLayout>-->
             </LinearLayout>
             <!--sms confirmation-->
             <LinearLayout

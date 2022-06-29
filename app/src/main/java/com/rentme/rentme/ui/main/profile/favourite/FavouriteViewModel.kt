@@ -18,14 +18,14 @@ class FavouriteViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _favouriteModels =
-        MutableStateFlow<UiStateObject<BaseResponse<BaseResponseList<FavouriteModel>>>>(UiStateObject.EMPTY)
+        MutableStateFlow<UiStateObject<BaseResponseList<FavouriteModel>>>(UiStateObject.EMPTY)
     val favouriteModels = _favouriteModels
 
     fun getFavouriteModels() = viewModelScope.launch {
         _favouriteModels.value = UiStateObject.LOADING
         try {
             val response = favouriteRepository.getFavouriteModelsFromServer()
-            _favouriteModels.value = UiStateObject.SUCCESS(response)
+            _favouriteModels.value = UiStateObject.SUCCESS(response.data)
         } catch (
             e: Exception
         ) {

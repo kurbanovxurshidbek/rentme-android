@@ -32,7 +32,7 @@ interface ApiService {
     suspend fun getModelLists(): BaseResponse<BaseResponseList<String>>
 
     @GET("advertisement/list-saved")
-    suspend fun getFavouriteModels(): BaseResponse<BaseResponseList<FavouriteModel>>
+    suspend fun getFavouriteModels(@Query("size") size: Int = 5, @Query("page") page: Int = 0): BaseResponse<BaseResponseList<FavouriteModel>>
 
     @GET("brand/list")
     suspend fun getBrandList(@Query("size") size: Int, @Query("page") page: Int): BaseResponse<BaseResponseList<Brands>>
