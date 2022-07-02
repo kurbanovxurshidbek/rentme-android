@@ -104,7 +104,7 @@ class DetailsFragment : Fragment() {
 
     private fun initViews() {
         binding.rvDetailImages.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        adapter.sumbitData(advertisement!!.transport.pictures)
+        adapter.sumbitData(advertisement!!.transport!!.pictures)
         binding.rvDetailImages.adapter = adapter
 
         binding.ivBackToDetails.setOnClickListener {
@@ -118,7 +118,7 @@ class DetailsFragment : Fragment() {
                     bottomSheetFragmentLogOut.show((requireActivity() as MainActivity).supportFragmentManager,"BottomSheetfragmentLogOut")
 
                     bottomSheetFragmentLogOut.clickYes = {
-                        viewModel.deleteAdvertisement(advertisement!!.id)
+                        viewModel.deleteAdvertisement(advertisement!!.id!!)
                         bottomSheetFragmentLogOut.dismiss()
                     }
                 }
@@ -182,28 +182,28 @@ class DetailsFragment : Fragment() {
             }
         }
 
-        binding.tvCarName.text = advertisement!!.transport.model.name
-        if (advertisement!!.prices.size < 2){
-            if (advertisement!!.prices[0].type == Type.MONTHLY) binding.tvCarsCostMonth.text = advertisement!!.prices[0].quantity.toString()
-            else binding.tvCarsCostDay.text = advertisement!!.prices[0].quantity.toString()
+        binding.tvCarName.text = advertisement!!.transport!!.model.name
+        if (advertisement!!.prices!!.size < 2){
+            if (advertisement!!.prices?.get(0)?.type  == Type.MONTHLY) binding.tvCarsCostMonth.text = advertisement!!.prices?.get(0)?.quantity.toString()
+            else binding.tvCarsCostDay.text = advertisement!!.prices?.get(0)?.quantity.toString()
         }else{
-            binding.tvCarsCostDay.text = advertisement!!.prices[0].quantity.toString()
-            binding.tvCarsCostMonth.text = advertisement!!.prices[1].quantity.toString()
+            binding.tvCarsCostDay.text = advertisement!!.prices?.get(0)?.quantity.toString()
+            binding.tvCarsCostMonth.text = advertisement!!.prices?.get(0)?.quantity.toString()
         }
         binding.tvDescription.text = advertisement!!.description
-        if (advertisement!!.minDuration >= 30){
-            binding.tvMinLimit.text = (advertisement!!.minDuration / 30).toString()
+        if (advertisement!!.minDuration!! >= 30){
+            binding.tvMinLimit.text = (advertisement!!.minDuration?.div(30)).toString()
             binding.tvMinType.text = getString(R.string.str_months)
         }else{
             binding.tvMinLimit.text = advertisement!!.minDuration.toString()
             binding.tvMinType.text = getString(R.string.str_days)
         }
-        binding.tvLocation.text = advertisement!!.location.name
-        binding.tvColorName.text = advertisement!!.transport.color
-        binding.tvManagementSystem.text = advertisement!!.transport.transmission.toString()
-        binding.tvFuel.text = advertisement!!.transport.fuelType.toString()
-        binding.tvYear.text = advertisement!!.transport.year.toString()
-        if (advertisement!!.transport.wellEquipped){
+        binding.tvLocation.text = advertisement!!.location!!.name
+        binding.tvColorName.text = advertisement!!.transport!!.color
+        binding.tvManagementSystem.text = advertisement!!.transport!!.transmission.toString()
+        binding.tvFuel.text = advertisement!!.transport!!.fuelType.toString()
+        binding.tvYear.text = advertisement!!.transport!!.year.toString()
+        if (advertisement!!.transport!!.wellEquipped){
             binding.llLineConditioner.visibility = View.VISIBLE
             binding.llConditionerDetails.visibility = View.VISIBLE
         } else {

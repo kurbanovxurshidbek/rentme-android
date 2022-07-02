@@ -81,13 +81,13 @@ class HomeFragment : Fragment() {
         setUpObservers()
 
         latestAdapter.onClick = {
-            findNavController().navigate(R.id.detailsFragment, bundleOf("advertisement" to Gson().toJson(it)))
+            findNavController().navigate(R.id.detailsFragment, bundleOf("selectAdvertisement" to Gson().toJson(it)))
         }
         resultAdapter.onClick = {
-            findNavController().navigate(R.id.detailsFragment, bundleOf("advertisement" to Gson().toJson(it)))
+            findNavController().navigate(R.id.detailsFragment, bundleOf("selectAdvertisement" to Gson().toJson(it)))
         }
         longTermAdapter.onClick = {
-            findNavController().navigate(R.id.detailsFragment, bundleOf("advertisement" to Gson().toJson(it)))
+            findNavController().navigate(R.id.detailsFragment, bundleOf("selectAdvertisement" to Gson().toJson(it)))
         }
 
     }
@@ -109,9 +109,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun initViews() {
-        latestAdapter.onClick = { result ->
-            findNavController().navigate(R.id.detailsFragment)
-        }
 
         binding.edtSearch.setOnClickListener {
             findNavController().navigate(R.id.searchFragment)
@@ -225,18 +222,6 @@ class HomeFragment : Fragment() {
         ads.add(R.drawable.im_banner_5)
 
         adsAdapter.submitData(ads)
-    }
-
-    private fun getAllResult() {
-        val items: ArrayList<Result> = ArrayList()
-        items.add(Result(R.drawable.im_malibu, "Malibu 2", "", "200$"))
-        items.add(Result(R.drawable.im_malibu, "Malibu 3", "", "250$"))
-        items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
-        items.add(Result(R.drawable.im_malibu, "Malibu 3", "", "250$"))
-        items.add(Result(R.drawable.im_malibu, "Nexia 2", "", "100$"))
-        //resultAdapter.submitData(items)
-//        items.add(Result())
-//        longTermAdapter.submitData(items)
     }
 
     private fun getAllBrands(){

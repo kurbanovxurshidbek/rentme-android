@@ -23,8 +23,8 @@ class MyAddAdapter : RecyclerView.Adapter<MyAddAdapter.MyAddViewHolder>() {
         fun bind() {
             val result = dif.currentList[adapterPosition]
             binding.apply {
-                tvCarName.text = result.transport.model.name
-                if (result.prices.size < 2) {
+                tvCarName.text = result.transport!!.model.name
+                if (result.prices!!.size < 2) {
                     tvLinePrice.visibility = View.GONE
                     if (result.prices[0].type == Type.DAILY) {
                         tvPriceDaily.text = result.prices[0].quantity.toString()
@@ -47,7 +47,7 @@ class MyAddAdapter : RecyclerView.Adapter<MyAddAdapter.MyAddViewHolder>() {
                 }
 
                 ivDeleteLike.setOnClickListener {
-                    deleteA?.invoke(result.id)
+                    deleteA?.invoke(result.id!!)
                 }
             }
         }
