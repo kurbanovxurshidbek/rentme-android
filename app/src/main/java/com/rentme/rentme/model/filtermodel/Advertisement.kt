@@ -9,8 +9,8 @@ data class Advertisement(
     val description: String? = null,
     val id: Int? = null,
     val location: Location? = null,
-    val maxDuration: Int? = null,
-    val minDuration: Int? = null,
+    val maxDuration: Int = 0,
+    val minDuration: Int = 0,
     val prices: List<Price>? = null,
     val startDate: String? = null,
     val transport: Transport? = null

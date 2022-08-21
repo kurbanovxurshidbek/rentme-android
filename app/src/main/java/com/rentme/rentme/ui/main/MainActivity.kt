@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
             }
             //                Log.d("@@@", "${controller.currentDestination!!.displayName} -- ${destination.displayName}")
         }
-
     }
 
     override fun onBackPressed() {
@@ -68,7 +67,7 @@ class MainActivity : AppCompatActivity() {
     fun clearLightStatusBar() {
         if (!isLightStatusBar && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             window.decorView.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             window.statusBarColor = Color.TRANSPARENT
             isLightStatusBar = true
         }

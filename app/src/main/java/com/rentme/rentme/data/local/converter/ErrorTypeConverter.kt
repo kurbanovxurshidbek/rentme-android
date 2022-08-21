@@ -1,8 +1,7 @@
-package com.rentme.rentme.data.local
+package com.rentme.rentme.data.local.converter
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
-import com.rentme.rentme.model.MainPage
 import com.rentme.rentme.model.base.Error
 
 class ErrorTypeConverter {

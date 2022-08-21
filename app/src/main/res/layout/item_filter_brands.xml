@@ -12,15 +12,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:tint="#cbcbcb"
-        android:background="@drawable/rounded_white_border">
+        android:background="@drawable/circler_white_border">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_brand"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:padding="5dp"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/ic_launcher_background"
+            app:shapeAppearanceOverlay="@style/circle" />
 
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/tv_brand_name"
+        android:text="TESLA"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -88,11 +88,11 @@
                         android:textColor="@color/black"
                         android:textSize="13sp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginHorizontal="10dp"
-                        android:background="#6C6767" />
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="2dp"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:background="#6C6767" />-->
 
                 </LinearLayout>
 
@@ -110,7 +110,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="880$"
-                        android:textColor="#6C6767"
+                        android:textColor="#000"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -121,11 +121,11 @@
                         android:textColor="@color/black"
                         android:textSize="13sp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginHorizontal="10dp"
-                        android:background="#6C6767" />
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="2dp"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:background="#6C6767" />-->
 
                 </LinearLayout>
 

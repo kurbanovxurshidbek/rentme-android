@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.rentme.rentme.data.local.entity.BrandListEntity
 import com.rentme.rentme.data.local.entity.ModelsListEntity
 import com.rentme.rentme.model.Brands
+import com.rentme.rentme.model.MainPage
 import com.rentme.rentme.model.base.BaseResponse
 import com.rentme.rentme.model.base.BaseResponseList
 import com.rentme.rentme.repository.SplashRepository
@@ -17,9 +18,10 @@ import javax.inject.Inject
 @HiltViewModel
 class SplashViewModel @Inject constructor(
     private val splashRepository: SplashRepository
-) : ViewModel(){
+) : ViewModel() {
 
-    private val _stateModelListS = MutableStateFlow<UiStateObject<BaseResponse<BaseResponseList<String>>>>(UiStateObject.EMPTY)
+    private val _stateModelListS =
+        MutableStateFlow<UiStateObject<BaseResponse<BaseResponseList<String>>>>(UiStateObject.EMPTY)
     val stateModelListS = _stateModelListS
 
     fun getModelListS() = viewModelScope.launch {
@@ -27,16 +29,17 @@ class SplashViewModel @Inject constructor(
         try {
             val modelList = splashRepository.getModelsList()
             _stateModelListS.value = UiStateObject.SUCCESS(modelList)
-        }catch (e : Exception){
+        } catch (e: Exception) {
             _stateModelListS.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
         }
     }
 
     fun saveModelToLocal(modelsListEntity: ModelsListEntity) = viewModelScope.launch {
-       splashRepository.saveModelsListToLocal(modelsListEntity)
+        splashRepository.saveModelsListToLocal(modelsListEntity)
     }
 
-    private val _stateBrandList = MutableStateFlow<UiStateObject<BaseResponse<BaseResponseList<Brands>>>>(UiStateObject.EMPTY)
+    private val _stateBrandList =
+        MutableStateFlow<UiStateObject<BaseResponse<BaseResponseList<Brands>>>>(UiStateObject.EMPTY)
     val stateBrandList = _stateBrandList
 
     fun getBrandList() = viewModelScope.launch {
@@ -44,13 +47,32 @@ class SplashViewModel @Inject constructor(
         try {
             val brandList = splashRepository.getBrandListToAPI()
             _stateBrandList.value = UiStateObject.SUCCESS(brandList)
-        }catch (e: Exception){
+        } catch (e: Exception) {
             _stateBrandList.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
         }
     }
 
     fun saveBrandToLocal(brandListEntity: BrandListEntity) = viewModelScope.launch {
         splashRepository.saveBrandListToLocal(brandListEntity = brandListEntity)
+    }
+
+    private val _stateMainPage = MutableStateFlow<UiStateObject<MainPage>>(UiStateObject.EMPTY)
+    val stateMainPage = _stateMainPage
+
+    fun saveMainPageDataToLocal() = viewModelScope.launch {
+        _stateMainPage.value = UiStateObject.LOADING
+        try {
+            val mainData = splashRepository.getMainPageDataFromServer()
+            if (splashRepository.getMainPageDataFromLocal().isNotEmpty()) {
+                val mainPage = mainData.data.data
+                mainPage.id = 1
+                splashRepository.updateMainPage(mainPage)
+            } else
+                splashRepository.saveMainPageToLocal(mainData.data.data)
+            _stateMainPage.value = UiStateObject.SUCCESS(mainData.data.data)
+        } catch (e: Exception) {
+            _stateMainPage.value = UiStateObject.ERROR(e.localizedMessage ?: "No Connection")
+        }
     }
 
 }

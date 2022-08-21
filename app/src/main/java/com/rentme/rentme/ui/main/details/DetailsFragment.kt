@@ -69,6 +69,7 @@ class DetailsFragment : Fragment() {
         arguments?.let {
             advertisement = Gson().fromJson(it.getString("selectAdvertisement"), Advertisement::class.java)
         }
+        Log.d("@@@", advertisement.toString())
     }
 
     override fun onCreateView(
@@ -183,7 +184,7 @@ class DetailsFragment : Fragment() {
         }
 
         binding.tvCarName.text = advertisement!!.transport!!.model.name
-        if (advertisement!!.prices!!.size < 2){
+        if (advertisement!!.prices?.size!! < 2){
             if (advertisement!!.prices?.get(0)?.type  == Type.MONTHLY) binding.tvCarsCostMonth.text = advertisement!!.prices?.get(0)?.quantity.toString()
             else binding.tvCarsCostDay.text = advertisement!!.prices?.get(0)?.quantity.toString()
         }else{
@@ -191,19 +192,19 @@ class DetailsFragment : Fragment() {
             binding.tvCarsCostMonth.text = advertisement!!.prices?.get(0)?.quantity.toString()
         }
         binding.tvDescription.text = advertisement!!.description
-        if (advertisement!!.minDuration!! >= 30){
-            binding.tvMinLimit.text = (advertisement!!.minDuration?.div(30)).toString()
+        if (advertisement!!.minDuration >= 30){
+            binding.tvMinLimit.text = (advertisement!!.minDuration.div(30)).toString()
             binding.tvMinType.text = getString(R.string.str_months)
         }else{
             binding.tvMinLimit.text = advertisement!!.minDuration.toString()
             binding.tvMinType.text = getString(R.string.str_days)
         }
-        binding.tvLocation.text = advertisement!!.location!!.name
-        binding.tvColorName.text = advertisement!!.transport!!.color
-        binding.tvManagementSystem.text = advertisement!!.transport!!.transmission.toString()
-        binding.tvFuel.text = advertisement!!.transport!!.fuelType.toString()
-        binding.tvYear.text = advertisement!!.transport!!.year.toString()
-        if (advertisement!!.transport!!.wellEquipped){
+        binding.tvLocation.text = advertisement!!.location?.name
+        binding.tvColorName.text = advertisement!!.transport?.color
+        binding.tvManagementSystem.text = advertisement!!.transport?.transmission.toString()
+        binding.tvFuel.text = advertisement!!.transport?.fuelType.toString()
+        binding.tvYear.text = advertisement!!.transport?.year.toString()
+        if (advertisement!!.transport?.wellEquipped!!){
             binding.llLineConditioner.visibility = View.VISIBLE
             binding.llConditionerDetails.visibility = View.VISIBLE
         } else {

@@ -15,7 +15,7 @@ import retrofit2.http.*
 interface ApiService {
 
     @POST("main-page")
-    suspend fun getMainDetails(@Body count: Int): BaseResponse<BaseResponseObject<MainPage>>
+    suspend fun getMainDetails(@Body count: Int = 5): BaseResponse<BaseResponseObject<MainPage>>
 
     @POST("advertisement/search")
     suspend fun getFilterResult(@Body filterPage: FilterPage): BaseResponse<BaseResponseList<Advertisement>>

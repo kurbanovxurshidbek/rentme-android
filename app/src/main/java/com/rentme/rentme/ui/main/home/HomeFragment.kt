@@ -1,5 +1,6 @@
 package com.rentme.rentme.ui.main.home
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,17 +16,15 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.rentme.rentme.R
-import com.rentme.rentme.adapter.BrandsAdapter
-import com.rentme.rentme.adapter.HomeAdsAdapter
-import com.rentme.rentme.adapter.ResultAdapter
-import com.rentme.rentme.adapter.SubMainAdapter
+import com.rentme.rentme.adapter.*
 import com.rentme.rentme.databinding.FragmentHomeBinding
-import com.rentme.rentme.databinding.FragmentHomeDemoBinding
+import com.rentme.rentme.databinding.FragmentHomeMainBinding
 import com.rentme.rentme.model.Brands
 import com.rentme.rentme.model.Model
 import com.rentme.rentme.model.Result
 import com.rentme.rentme.ui.main.MainActivity
 import com.rentme.rentme.utils.UiStateObject
+import com.sangcomz.fishbun.util.setStatusBarColor
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 import kotlin.collections.ArrayList
@@ -34,7 +33,7 @@ import kotlin.collections.ArrayList
 class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
-    private var _binding: FragmentHomeDemoBinding? = null
+    private var _binding: FragmentHomeMainBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var rvMainAds: RecyclerView
@@ -46,7 +45,7 @@ class HomeFragment : Fragment() {
     private val latestAdapter by lazy { SubMainAdapter() }
     private val longTermAdapter by lazy { SubMainAdapter() }
     private val resultAdapter by lazy { ResultAdapter() }
-    private val brandsAdapter by lazy { BrandsAdapter() }
+    private val brandsAdapter by lazy { BrandsMainAdapter() }
 
 
     private var timer: Timer? = null
@@ -64,12 +63,15 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentHomeDemoBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().setStatusBarColor(Color.WHITE)
+        (requireActivity() as MainActivity).clearLightStatusBar()
 
         setUpBanner()
         setUpRecyclers()
@@ -110,11 +112,11 @@ class HomeFragment : Fragment() {
 
     private fun initViews() {
 
-        binding.edtSearch.setOnClickListener {
+        binding.flSearch.setOnClickListener {
             findNavController().navigate(R.id.searchFragment)
         }
 
-        binding.fToFilter.setOnClickListener {
+        binding.flFilter.setOnClickListener {
             findNavController().navigate(R.id.filterFragment)
         }
 
@@ -199,11 +201,11 @@ class HomeFragment : Fragment() {
 
                     }
                     is UiStateObject.SUCCESS -> {
-                        latestAdapter.submitData(it.data.data.lastAdvertisements!!)
-                        resultAdapter.submitData(it.data.data.dailyAdvertisements!!)
-                        longTermAdapter.submitData(it.data.data.monthlyAdvertisements!!)
-                        brandsAdapter.submitData(it.data.data.brands!!)
-                        Log.d("Network", "SUCCESS -- ${it.data.data.lastAdvertisements!!.size}")
+                        latestAdapter.submitData(it.data.lastAdvertisements!!)
+                        resultAdapter.submitData(it.data.dailyAdvertisements!!)
+                        longTermAdapter.submitData(it.data.monthlyAdvertisements!!)
+                        brandsAdapter.submitData(it.data.brands!!)
+                        Log.d("Network", "SUCCESS -- ${it.data.lastAdvertisements!!.size}")
                     }
                     is UiStateObject.ERROR -> {
                         Log.d("Network", it.message)
@@ -219,7 +221,7 @@ class HomeFragment : Fragment() {
         ads.add(R.drawable.im_banner_2)
         ads.add(R.drawable.im_banner_1)
         ads.add(R.drawable.im_banner_3)
-        ads.add(R.drawable.im_banner_5)
+//        ads.add(R.drawable.im_banner_5)
 
         adsAdapter.submitData(ads)
     }

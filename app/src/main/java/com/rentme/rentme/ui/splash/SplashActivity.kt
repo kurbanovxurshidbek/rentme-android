@@ -61,6 +61,7 @@ class SplashActivity : AppCompatActivity() {
 
         viewModel.getModelListS()  // get all model list from server and save to Local
         viewModel.getBrandList()  // get all brand list from server and save to Local
+        viewModel.saveMainPageDataToLocal()
     }
 
 
@@ -97,6 +98,12 @@ class SplashActivity : AppCompatActivity() {
                         Log.d("@SPlASHACTIVITY", "setUpO Brands: ${it.message}")}
                     else -> Unit
                 }
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.stateMainPage.collect{
+
             }
         }
     }

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rentme.rentme.R
 import com.rentme.rentme.data.local.entity.BrandListEntity
-import com.rentme.rentme.databinding.ItemMainBrandsBinding
+import com.rentme.rentme.databinding.ItemFilterBrandsBinding
 
 
 class BrandsUploadAdapter : RecyclerView.Adapter<BrandsUploadAdapter.BrandUViewHolder>() {
@@ -17,7 +17,7 @@ class BrandsUploadAdapter : RecyclerView.Adapter<BrandsUploadAdapter.BrandUViewH
     private var clickedPosition: Int = -1
     var onClick: ((BrandListEntity?) -> Unit)? = null
 
-    inner class BrandUViewHolder(private val binding: ItemMainBrandsBinding) :
+    inner class BrandUViewHolder(private val binding: ItemFilterBrandsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("NotifyDataSetChanged")
         fun bind() {
@@ -49,7 +49,7 @@ class BrandsUploadAdapter : RecyclerView.Adapter<BrandsUploadAdapter.BrandUViewH
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BrandUViewHolder {
         return BrandUViewHolder(
-            ItemMainBrandsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemFilterBrandsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 

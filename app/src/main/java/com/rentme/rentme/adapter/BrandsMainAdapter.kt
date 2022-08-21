@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rentme.rentme.R
-import com.rentme.rentme.databinding.ItemFilterBrandsBinding
+import com.rentme.rentme.databinding.ItemMainBrandsBinding
 import com.rentme.rentme.model.Brands
 
-class BrandsAdapter: RecyclerView.Adapter<BrandsAdapter.BrandsVH>() {
+class BrandsMainAdapter: RecyclerView.Adapter<BrandsMainAdapter.BrandsVH>() {
 
     private val diff = AsyncListDiffer(this, ITEM_DIFF)
 
@@ -32,7 +32,7 @@ class BrandsAdapter: RecyclerView.Adapter<BrandsAdapter.BrandsVH>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BrandsVH {
-        return BrandsVH(ItemFilterBrandsBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return BrandsVH(ItemMainBrandsBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: BrandsVH, position: Int) {
@@ -41,11 +41,10 @@ class BrandsAdapter: RecyclerView.Adapter<BrandsAdapter.BrandsVH>() {
 
     override fun getItemCount() = diff.currentList.size
 
-    inner class BrandsVH(private val itemBinding: ItemFilterBrandsBinding): RecyclerView.ViewHolder(itemBinding.root){
+    inner class BrandsVH(private val itemBinding: ItemMainBrandsBinding): RecyclerView.ViewHolder(itemBinding.root){
         fun bind(){
             val brands = diff.currentList[adapterPosition]
 
-            itemBinding.tvBrandName.text = brands.name
             Glide.with(itemBinding.root)
                 .load(brands.image)
                 .error(R.drawable.ic_launcher_background)

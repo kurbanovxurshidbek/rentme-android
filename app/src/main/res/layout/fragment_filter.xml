@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_main_brands" />
+                    tools:listitem="@layout/item_filter_brands" />
 
             </LinearLayout>
 
